@@ -1,0 +1,3253 @@
+[
+  [
+    {
+      "pokemon": "Floette-Eternal-Mega",
+      "types": [
+        "Fairy"
+      ],
+      "ability": "Flower Veil",
+      "item": "Floettite",
+      "moves": [
+        {
+          "name": "Moonblast",
+          "type": "fairy"
+        },
+        {
+          "name": "Dazzling Gleam",
+          "type": "fairy"
+        },
+        {
+          "name": "Calm Mind",
+          "type": "psychic"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sneasler",
+      "types": [
+        "Fighting",
+        "Poison"
+      ],
+      "ability": "Unburden",
+      "item": "Grassy Seed",
+      "moves": [
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Dire Claw",
+          "type": "poison"
+        },
+        {
+          "name": "Rock Slide",
+          "type": "rock"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Incineroar",
+      "types": [
+        "Fire",
+        "Dark"
+      ],
+      "ability": "Intimidate",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        },
+        {
+          "name": "Throat Chop",
+          "type": "dark"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Parting Shot",
+          "type": "dark"
+        }
+      ]
+    },
+    {
+      "pokemon": "Rillaboom",
+      "types": [
+        "Grass"
+      ],
+      "ability": "Grassy Surge",
+      "item": "Miracle Seed",
+      "moves": [
+        {
+          "name": "Wood Hammer",
+          "type": "grass"
+        },
+        {
+          "name": "Grassy Glide",
+          "type": "grass"
+        },
+        {
+          "name": "High Horsepower",
+          "type": "ground"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Gholdengo",
+      "types": [
+        "Steel",
+        "Ghost"
+      ],
+      "ability": "Good as Gold",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Make It Rain",
+          "type": "steel"
+        },
+        {
+          "name": "Shadow Ball",
+          "type": "ghost"
+        },
+        {
+          "name": "Nasty Plot",
+          "type": "dark"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Raichu-Mega-Y",
+      "types": [
+        "Electric"
+      ],
+      "ability": "Lightning Rod",
+      "item": "Raichunite Y",
+      "moves": [
+        {
+          "name": "Zap Cannon",
+          "type": "electric"
+        },
+        {
+          "name": "Focus Blast",
+          "type": "fighting"
+        },
+        {
+          "name": "Encore",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Metagross-Mega",
+      "types": [
+        "Steel",
+        "Psychic"
+      ],
+      "ability": "Clear Body",
+      "item": "Metagrossite",
+      "moves": [
+        {
+          "name": "Iron Head",
+          "type": "steel"
+        },
+        {
+          "name": "Psychic Fangs",
+          "type": "psychic"
+        },
+        {
+          "name": "Body Press",
+          "type": "fighting"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Indeedee",
+      "types": [
+        "Psychic",
+        "Normal"
+      ],
+      "ability": "Psychic Surge",
+      "item": "Choice Scarf",
+      "moves": [
+        {
+          "name": "Expanding Force",
+          "type": "psychic"
+        },
+        {
+          "name": "Imprison",
+          "type": "psychic"
+        },
+        {
+          "name": "Trick",
+          "type": "psychic"
+        },
+        {
+          "name": "Trick Room",
+          "type": "psychic"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sneasler",
+      "types": [
+        "Fighting",
+        "Poison"
+      ],
+      "ability": "Unburden",
+      "item": "Psychic Seed",
+      "moves": [
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Dire Claw",
+          "type": "poison"
+        },
+        {
+          "name": "Rock Slide",
+          "type": "rock"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Arcanine-Hisui",
+      "types": [
+        "Fire",
+        "Rock"
+      ],
+      "ability": "Rock Head",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        },
+        {
+          "name": "Head Smash",
+          "type": "rock"
+        },
+        {
+          "name": "Rock Slide",
+          "type": "rock"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Salamence-Mega",
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
+      "ability": "Intimidate",
+      "item": "Salamencite",
+      "moves": [
+        {
+          "name": "Hyper Voice",
+          "type": "normal"
+        },
+        {
+          "name": "Dragon Pulse",
+          "type": "dragon"
+        },
+        {
+          "name": "Heat Wave",
+          "type": "fire"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Milotic",
+      "types": [
+        "Water"
+      ],
+      "ability": "Competitive",
+      "item": "Leftovers",
+      "moves": [
+        {
+          "name": "Scald",
+          "type": "water"
+        },
+        {
+          "name": "Icy Wind",
+          "type": "ice"
+        },
+        {
+          "name": "Recover",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Gengar-Mega",
+      "types": [
+        "Ghost",
+        "Poison"
+      ],
+      "ability": "Cursed Body",
+      "item": "Gengarite",
+      "moves": [
+        {
+          "name": "Perish Song",
+          "type": "normal"
+        },
+        {
+          "name": "Shadow Ball",
+          "type": "ghost"
+        },
+        {
+          "name": "Sludge Bomb",
+          "type": "poison"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Snorlax",
+      "types": [
+        "Normal"
+      ],
+      "ability": "Thick Fat",
+      "item": "Leftovers",
+      "moves": [
+        {
+          "name": "Yawn",
+          "type": "normal"
+        },
+        {
+          "name": "Encore",
+          "type": "normal"
+        },
+        {
+          "name": "Fissure",
+          "type": "ground"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Incineroar",
+      "types": [
+        "Fire",
+        "Dark"
+      ],
+      "ability": "Intimidate",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        },
+        {
+          "name": "Parting Shot",
+          "type": "dark"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Scrafty",
+      "types": [
+        "Dark",
+        "Fighting"
+      ],
+      "ability": "Intimidate",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Knock Off",
+          "type": "dark"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Dragonite",
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
+      "ability": "Inner Focus",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Dragon Claw",
+          "type": "dragon"
+        },
+        {
+          "name": "Low Kick",
+          "type": "fighting"
+        },
+        {
+          "name": "Extreme Speed",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Rillaboom",
+      "types": [
+        "Grass"
+      ],
+      "ability": "Grassy Surge",
+      "item": "Eject Button",
+      "moves": [
+        {
+          "name": "Grassy Glide",
+          "type": "grass"
+        },
+        {
+          "name": "U-turn",
+          "type": "bug"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Froslass-Mega",
+      "types": [
+        "Ice",
+        "Ghost"
+      ],
+      "ability": "Cursed Body",
+      "item": "Froslassite",
+      "moves": [
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Aurora Veil",
+          "type": "ice"
+        },
+        {
+          "name": "Shadow Ball",
+          "type": "ghost"
+        },
+        {
+          "name": "Blizzard",
+          "type": "ice"
+        }
+      ]
+    },
+    {
+      "pokemon": "Arcanine-Hisui",
+      "types": [
+        "Fire",
+        "Rock"
+      ],
+      "ability": "Rock Head",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Extreme Speed",
+          "type": "normal"
+        },
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        },
+        {
+          "name": "Head Smash",
+          "type": "rock"
+        }
+      ]
+    },
+    {
+      "pokemon": "Kingambit",
+      "types": [
+        "Dark",
+        "Steel"
+      ],
+      "ability": "Defiant",
+      "item": "Chople Berry",
+      "moves": [
+        {
+          "name": "Sucker Punch",
+          "type": "dark"
+        },
+        {
+          "name": "Kowtow Cleave",
+          "type": "dark"
+        },
+        {
+          "name": "Low Kick",
+          "type": "fighting"
+        },
+        {
+          "name": "Iron Head",
+          "type": "steel"
+        }
+      ]
+    },
+    {
+      "pokemon": "Farigiraf",
+      "types": [
+        "Normal",
+        "Psychic"
+      ],
+      "ability": "Armor Tail",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Trick Room",
+          "type": "psychic"
+        },
+        {
+          "name": "Helping Hand",
+          "type": "normal"
+        },
+        {
+          "name": "Psychic",
+          "type": "psychic"
+        }
+      ]
+    },
+    {
+      "pokemon": "Floette-Eternal-Mega",
+      "types": [
+        "Fairy"
+      ],
+      "ability": "Flower Veil",
+      "item": "Floettite",
+      "moves": [
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Dazzling Gleam",
+          "type": "fairy"
+        },
+        {
+          "name": "Moonblast",
+          "type": "fairy"
+        },
+        {
+          "name": "Light of Ruin",
+          "type": "fairy"
+        }
+      ]
+    },
+    {
+      "pokemon": "Toxapex",
+      "types": [
+        "Poison",
+        "Water"
+      ],
+      "ability": "Regenerator",
+      "item": "Leftovers",
+      "moves": [
+        {
+          "name": "Baneful Bunker",
+          "type": "poison"
+        },
+        {
+          "name": "Wide Guard",
+          "type": "rock"
+        },
+        {
+          "name": "Toxic",
+          "type": "poison"
+        },
+        {
+          "name": "Infestation",
+          "type": "bug"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Blastoise-Mega",
+      "types": [
+        "Water"
+      ],
+      "ability": "Rain Dish",
+      "item": "Blastoisinite",
+      "moves": [
+        {
+          "name": "Water Spout",
+          "type": "water"
+        },
+        {
+          "name": "Aura Sphere",
+          "type": "fighting"
+        },
+        {
+          "name": "Dark Pulse",
+          "type": "dark"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Golisopod-Mega",
+      "types": [
+        "Bug",
+        "Steel"
+      ],
+      "ability": "Emergency Exit",
+      "item": "Golisopite",
+      "moves": [
+        {
+          "name": "Leech Life",
+          "type": "bug"
+        },
+        {
+          "name": "Swords Dance",
+          "type": "normal"
+        },
+        {
+          "name": "Iron Head",
+          "type": "steel"
+        },
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        }
+      ]
+    },
+    {
+      "pokemon": "Torkoal",
+      "types": [
+        "Fire"
+      ],
+      "ability": "Drought",
+      "item": "Charcoal",
+      "moves": [
+        {
+          "name": "Eruption",
+          "type": "fire"
+        },
+        {
+          "name": "Weather Ball",
+          "type": "normal"
+        },
+        {
+          "name": "Solar Beam",
+          "type": "grass"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Farigiraf",
+      "types": [
+        "Normal",
+        "Psychic"
+      ],
+      "ability": "Armor Tail",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Twin Beam",
+          "type": "psychic"
+        },
+        {
+          "name": "Helping Hand",
+          "type": "normal"
+        },
+        {
+          "name": "Thunderbolt",
+          "type": "electric"
+        },
+        {
+          "name": "Trick Room",
+          "type": "psychic"
+        }
+      ]
+    },
+    {
+      "pokemon": "Basculegion",
+      "types": [
+        "Water",
+        "Ghost"
+      ],
+      "ability": "Adaptability",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Wave Crash",
+          "type": "water"
+        },
+        {
+          "name": "Last Respects",
+          "type": "ghost"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Aqua Jet",
+          "type": "water"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sylveon",
+      "types": [
+        "Fairy"
+      ],
+      "ability": "Pixilate",
+      "item": "Fairy Feather",
+      "moves": [
+        {
+          "name": "Hyper Voice",
+          "type": "normal"
+        },
+        {
+          "name": "Quick Attack",
+          "type": "normal"
+        },
+        {
+          "name": "Hyper Beam",
+          "type": "normal"
+        },
+        {
+          "name": "Detect",
+          "type": "fighting"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Froslass-Mega",
+      "types": [
+        "Ice",
+        "Ghost"
+      ],
+      "ability": "Snow Warning",
+      "item": "Froslassite",
+      "moves": [
+        {
+          "name": "Blizzard",
+          "type": "ice"
+        },
+        {
+          "name": "Aurora Veil",
+          "type": "ice"
+        },
+        {
+          "name": "Shadow Ball",
+          "type": "ghost"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sneasler",
+      "types": [
+        "Fighting",
+        "Poison"
+      ],
+      "ability": "Unburden",
+      "item": "White Herb",
+      "moves": [
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Dire Claw",
+          "type": "poison"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Kingambit",
+      "types": [
+        "Dark",
+        "Steel"
+      ],
+      "ability": "Defiant",
+      "item": "Black Glasses",
+      "moves": [
+        {
+          "name": "Kowtow Cleave",
+          "type": "dark"
+        },
+        {
+          "name": "Sucker Punch",
+          "type": "dark"
+        },
+        {
+          "name": "Swords Dance",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Lycanroc",
+      "types": [
+        "Rock"
+      ],
+      "ability": "Tough Claws",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Rock Slide",
+          "type": "rock"
+        },
+        {
+          "name": "Accelerock",
+          "type": "rock"
+        },
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Scovillain-Mega",
+      "types": [
+        "Grass",
+        "Fire"
+      ],
+      "ability": "Spicy Spray",
+      "item": "Scovillainite",
+      "moves": [
+        {
+          "name": "Giga Drain",
+          "type": "grass"
+        },
+        {
+          "name": "Overheat",
+          "type": "fire"
+        },
+        {
+          "name": "Rage Powder",
+          "type": "bug"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Basculegion",
+      "types": [
+        "Water",
+        "Ghost"
+      ],
+      "ability": "Adaptability",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Wave Crash",
+          "type": "water"
+        },
+        {
+          "name": "Last Respects",
+          "type": "ghost"
+        },
+        {
+          "name": "Aqua Jet",
+          "type": "water"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Grimmsnarl",
+      "types": [
+        "Dark",
+        "Fairy"
+      ],
+      "ability": "Prankster",
+      "item": "Light Clay",
+      "moves": [
+        {
+          "name": "Parting Shot",
+          "type": "dark"
+        },
+        {
+          "name": "Light Screen",
+          "type": "psychic"
+        },
+        {
+          "name": "Reflect",
+          "type": "psychic"
+        },
+        {
+          "name": "Spirit Break",
+          "type": "fairy"
+        }
+      ]
+    },
+    {
+      "pokemon": "Archaludon",
+      "types": [
+        "Steel",
+        "Dragon"
+      ],
+      "ability": "Stamina",
+      "item": "Leftovers",
+      "moves": [
+        {
+          "name": "Electro Shot",
+          "type": "electric"
+        },
+        {
+          "name": "Snarl",
+          "type": "dark"
+        },
+        {
+          "name": "Dragon Pulse",
+          "type": "dragon"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Swampert-Mega",
+      "types": [
+        "Water",
+        "Ground"
+      ],
+      "ability": "Torrent",
+      "item": "Swampertite",
+      "moves": [
+        {
+          "name": "Wave Crash",
+          "type": "water"
+        },
+        {
+          "name": "Ice Punch",
+          "type": "ice"
+        },
+        {
+          "name": "Earthquake",
+          "type": "ground"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Golisopod-Mega",
+      "types": [
+        "Bug",
+        "Steel"
+      ],
+      "ability": "Emergency Exit",
+      "item": "Golisopite",
+      "moves": [
+        {
+          "name": "Leech Life",
+          "type": "bug"
+        },
+        {
+          "name": "Iron Head",
+          "type": "steel"
+        },
+        {
+          "name": "Swords Dance",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Pelipper",
+      "types": [
+        "Water",
+        "Flying"
+      ],
+      "ability": "Drizzle",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Weather Ball",
+          "type": "normal"
+        },
+        {
+          "name": "Hurricane",
+          "type": "flying"
+        },
+        {
+          "name": "Wide Guard",
+          "type": "rock"
+        },
+        {
+          "name": "Tailwind",
+          "type": "flying"
+        }
+      ]
+    },
+    {
+      "pokemon": "Farigiraf",
+      "types": [
+        "Normal",
+        "Psychic"
+      ],
+      "ability": "Armor Tail",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Trick Room",
+          "type": "psychic"
+        },
+        {
+          "name": "Psychic",
+          "type": "psychic"
+        },
+        {
+          "name": "Thunderbolt",
+          "type": "electric"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Rillaboom",
+      "types": [
+        "Grass"
+      ],
+      "ability": "Grassy Surge",
+      "item": "Miracle Seed",
+      "moves": [
+        {
+          "name": "Grassy Glide",
+          "type": "grass"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Wood Hammer",
+          "type": "grass"
+        },
+        {
+          "name": "High Horsepower",
+          "type": "ground"
+        }
+      ]
+    },
+    {
+      "pokemon": "Incineroar",
+      "types": [
+        "Fire",
+        "Dark"
+      ],
+      "ability": "Intimidate",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Throat Chop",
+          "type": "dark"
+        },
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        },
+        {
+          "name": "Parting Shot",
+          "type": "dark"
+        }
+      ]
+    },
+    {
+      "pokemon": "Salamence-Mega",
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
+      "ability": "Intimidate",
+      "item": "Salamencite",
+      "moves": [
+        {
+          "name": "Hyper Voice",
+          "type": "normal"
+        },
+        {
+          "name": "Double-Edge",
+          "type": "normal"
+        },
+        {
+          "name": "Tailwind",
+          "type": "flying"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Volcarona",
+      "types": [
+        "Bug",
+        "Fire"
+      ],
+      "ability": "Flame Body",
+      "item": "Grassy Seed",
+      "moves": [
+        {
+          "name": "Quiver Dance",
+          "type": "bug"
+        },
+        {
+          "name": "Heat Wave",
+          "type": "fire"
+        },
+        {
+          "name": "Giga Drain",
+          "type": "grass"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Kingambit",
+      "types": [
+        "Dark",
+        "Steel"
+      ],
+      "ability": "Defiant",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Kowtow Cleave",
+          "type": "dark"
+        },
+        {
+          "name": "Sucker Punch",
+          "type": "dark"
+        },
+        {
+          "name": "Low Kick",
+          "type": "fighting"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Floette-Eternal-Mega",
+      "types": [
+        "Fairy"
+      ],
+      "ability": "Flower Veil",
+      "item": "Floettite",
+      "moves": [
+        {
+          "name": "Dazzling Gleam",
+          "type": "fairy"
+        },
+        {
+          "name": "Draining Kiss",
+          "type": "fairy"
+        },
+        {
+          "name": "Calm Mind",
+          "type": "psychic"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Rillaboom",
+      "types": [
+        "Grass"
+      ],
+      "ability": "Grassy Surge",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Wood Hammer",
+          "type": "grass"
+        },
+        {
+          "name": "Grassy Glide",
+          "type": "grass"
+        },
+        {
+          "name": "U-turn",
+          "type": "bug"
+        }
+      ]
+    },
+    {
+      "pokemon": "Charizard-Mega-Y",
+      "types": [
+        "Fire",
+        "Flying"
+      ],
+      "ability": "Blaze",
+      "item": "Charizardite Y",
+      "moves": [
+        {
+          "name": "Heat Wave",
+          "type": "fire"
+        },
+        {
+          "name": "Weather Ball",
+          "type": "normal"
+        },
+        {
+          "name": "Ancient Power",
+          "type": "rock"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Kingambit",
+      "types": [
+        "Dark",
+        "Steel"
+      ],
+      "ability": "Defiant",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Kowtow Cleave",
+          "type": "dark"
+        },
+        {
+          "name": "Iron Head",
+          "type": "steel"
+        },
+        {
+          "name": "Sucker Punch",
+          "type": "dark"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sylveon",
+      "types": [
+        "Fairy"
+      ],
+      "ability": "Pixilate",
+      "item": "Fairy Feather",
+      "moves": [
+        {
+          "name": "Hyper Beam",
+          "type": "normal"
+        },
+        {
+          "name": "Hyper Voice",
+          "type": "normal"
+        },
+        {
+          "name": "Quick Attack",
+          "type": "normal"
+        },
+        {
+          "name": "Detect",
+          "type": "fighting"
+        }
+      ]
+    },
+    {
+      "pokemon": "Salamence-Mega",
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
+      "ability": "Intimidate",
+      "item": "Salamencite",
+      "moves": [
+        {
+          "name": "Hyper Voice",
+          "type": "normal"
+        },
+        {
+          "name": "Tailwind",
+          "type": "flying"
+        },
+        {
+          "name": "Double-Edge",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sneasler",
+      "types": [
+        "Fighting",
+        "Poison"
+      ],
+      "ability": "Unburden",
+      "item": "Grassy Seed",
+      "moves": [
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Dire Claw",
+          "type": "poison"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Rillaboom",
+      "types": [
+        "Grass"
+      ],
+      "ability": "Grassy Surge",
+      "item": "Miracle Seed",
+      "moves": [
+        {
+          "name": "Wood Hammer",
+          "type": "grass"
+        },
+        {
+          "name": "Grassy Glide",
+          "type": "grass"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Drain Punch",
+          "type": "fighting"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sneasler",
+      "types": [
+        "Fighting",
+        "Poison"
+      ],
+      "ability": "Poison Touch",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Poison Jab",
+          "type": "poison"
+        },
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Quick Guard",
+          "type": "fighting"
+        }
+      ]
+    },
+    {
+      "pokemon": "Kingambit",
+      "types": [
+        "Dark",
+        "Steel"
+      ],
+      "ability": "Defiant",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Kowtow Cleave",
+          "type": "dark"
+        },
+        {
+          "name": "Sucker Punch",
+          "type": "dark"
+        },
+        {
+          "name": "Swords Dance",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Delphox-Mega",
+      "types": [
+        "Fire",
+        "Psychic"
+      ],
+      "ability": "Blaze",
+      "item": "Delphoxite",
+      "moves": [
+        {
+          "name": "Heat Wave",
+          "type": "fire"
+        },
+        {
+          "name": "Psyshock",
+          "type": "psychic"
+        },
+        {
+          "name": "Nasty Plot",
+          "type": "dark"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Floette-Eternal-Mega",
+      "types": [
+        "Fairy"
+      ],
+      "ability": "Flower Veil",
+      "item": "Floettite",
+      "moves": [
+        {
+          "name": "Dazzling Gleam",
+          "type": "fairy"
+        },
+        {
+          "name": "Draining Kiss",
+          "type": "fairy"
+        },
+        {
+          "name": "Calm Mind",
+          "type": "psychic"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Incineroar",
+      "types": [
+        "Fire",
+        "Dark"
+      ],
+      "ability": "Intimidate",
+      "item": "Passho Berry",
+      "moves": [
+        {
+          "name": "Parting Shot",
+          "type": "dark"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Throat Chop",
+          "type": "dark"
+        },
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Floette-Eternal-Mega",
+      "types": [
+        "Fairy"
+      ],
+      "ability": "Flower Veil",
+      "item": "Floettite",
+      "moves": [
+        {
+          "name": "Dazzling Gleam",
+          "type": "fairy"
+        },
+        {
+          "name": "Draining Kiss",
+          "type": "fairy"
+        },
+        {
+          "name": "Calm Mind",
+          "type": "psychic"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Raichu-Mega-Y",
+      "types": [
+        "Electric"
+      ],
+      "ability": "Lightning Rod",
+      "item": "Raichunite Y",
+      "moves": [
+        {
+          "name": "Zap Cannon",
+          "type": "electric"
+        },
+        {
+          "name": "Focus Blast",
+          "type": "fighting"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Gholdengo",
+      "types": [
+        "Steel",
+        "Ghost"
+      ],
+      "ability": "Good as Gold",
+      "item": "Grassy Seed",
+      "moves": [
+        {
+          "name": "Make It Rain",
+          "type": "steel"
+        },
+        {
+          "name": "Shadow Ball",
+          "type": "ghost"
+        },
+        {
+          "name": "Nasty Plot",
+          "type": "dark"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Rillaboom",
+      "types": [
+        "Grass"
+      ],
+      "ability": "Grassy Surge",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Grassy Glide",
+          "type": "grass"
+        },
+        {
+          "name": "Drum Beating",
+          "type": "grass"
+        },
+        {
+          "name": "High Horsepower",
+          "type": "ground"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Arcanine-Hisui",
+      "types": [
+        "Fire",
+        "Rock"
+      ],
+      "ability": "Rock Head",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        },
+        {
+          "name": "Head Smash",
+          "type": "rock"
+        },
+        {
+          "name": "Extreme Speed",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Salamence",
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
+      "ability": "Intimidate",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Draco Meteor",
+          "type": "dragon"
+        },
+        {
+          "name": "Heat Wave",
+          "type": "fire"
+        },
+        {
+          "name": "Tailwind",
+          "type": "flying"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Salamence-Mega",
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
+      "ability": "Intimidate",
+      "item": "Salamencite",
+      "moves": [
+        {
+          "name": "Hyper Voice",
+          "type": "normal"
+        },
+        {
+          "name": "Double-Edge",
+          "type": "normal"
+        },
+        {
+          "name": "Tailwind",
+          "type": "flying"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Froslass-Mega",
+      "types": [
+        "Ice",
+        "Ghost"
+      ],
+      "ability": "Cursed Body",
+      "item": "Froslassite",
+      "moves": [
+        {
+          "name": "Blizzard",
+          "type": "ice"
+        },
+        {
+          "name": "Aurora Veil",
+          "type": "ice"
+        },
+        {
+          "name": "Shadow Ball",
+          "type": "ghost"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Rillaboom",
+      "types": [
+        "Grass"
+      ],
+      "ability": "Grassy Surge",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Grassy Glide",
+          "type": "grass"
+        },
+        {
+          "name": "Wood Hammer",
+          "type": "grass"
+        },
+        {
+          "name": "High Horsepower",
+          "type": "ground"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sneasler",
+      "types": [
+        "Fighting",
+        "Poison"
+      ],
+      "ability": "Unburden",
+      "item": "White Herb",
+      "moves": [
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Dire Claw",
+          "type": "poison"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Gholdengo",
+      "types": [
+        "Steel",
+        "Ghost"
+      ],
+      "ability": "Good as Gold",
+      "item": "Grassy Seed",
+      "moves": [
+        {
+          "name": "Nasty Plot",
+          "type": "dark"
+        },
+        {
+          "name": "Shadow Ball",
+          "type": "ghost"
+        },
+        {
+          "name": "Make It Rain",
+          "type": "steel"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Arcanine-Hisui",
+      "types": [
+        "Fire",
+        "Rock"
+      ],
+      "ability": "Rock Head",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Head Smash",
+          "type": "rock"
+        },
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        },
+        {
+          "name": "Extreme Speed",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Basculegion",
+      "types": [
+        "Water",
+        "Ghost"
+      ],
+      "ability": "Adaptability",
+      "item": "Choice Scarf",
+      "moves": [
+        {
+          "name": "Aqua Jet",
+          "type": "water"
+        },
+        {
+          "name": "Last Respects",
+          "type": "ghost"
+        },
+        {
+          "name": "Wave Crash",
+          "type": "water"
+        },
+        {
+          "name": "Flip Turn",
+          "type": "water"
+        }
+      ]
+    },
+    {
+      "pokemon": "Farigiraf",
+      "types": [
+        "Normal",
+        "Psychic"
+      ],
+      "ability": "Armor Tail",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Psychic",
+          "type": "psychic"
+        },
+        {
+          "name": "Imprison",
+          "type": "psychic"
+        },
+        {
+          "name": "Trick Room",
+          "type": "psychic"
+        },
+        {
+          "name": "Helping Hand",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Blaziken",
+      "types": [
+        "Fire",
+        "Fighting"
+      ],
+      "ability": "Speed Boost",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Aura Sphere",
+          "type": "fighting"
+        },
+        {
+          "name": "Rock Slide",
+          "type": "rock"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Heat Wave",
+          "type": "fire"
+        }
+      ]
+    },
+    {
+      "pokemon": "Whimsicott",
+      "types": [
+        "Grass",
+        "Fairy"
+      ],
+      "ability": "Prankster",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Dazzling Gleam",
+          "type": "fairy"
+        },
+        {
+          "name": "Tailwind",
+          "type": "flying"
+        },
+        {
+          "name": "Fake Tears",
+          "type": "dark"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Floette-Eternal-Mega",
+      "types": [
+        "Fairy"
+      ],
+      "ability": "Flower Veil",
+      "item": "Floettite",
+      "moves": [
+        {
+          "name": "Moonblast",
+          "type": "fairy"
+        },
+        {
+          "name": "Dazzling Gleam",
+          "type": "fairy"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Light of Ruin",
+          "type": "fairy"
+        }
+      ]
+    },
+    {
+      "pokemon": "Salamence-Mega",
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
+      "ability": "Intimidate",
+      "item": "Salamencite",
+      "moves": [
+        {
+          "name": "Hyper Voice",
+          "type": "normal"
+        },
+        {
+          "name": "Tailwind",
+          "type": "flying"
+        },
+        {
+          "name": "Draco Meteor",
+          "type": "dragon"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Charizard-Mega-Y",
+      "types": [
+        "Fire",
+        "Flying"
+      ],
+      "ability": "Blaze",
+      "item": "Charizardite Y",
+      "moves": [
+        {
+          "name": "Weather Ball",
+          "type": "normal"
+        },
+        {
+          "name": "Heat Wave",
+          "type": "fire"
+        },
+        {
+          "name": "Ancient Power",
+          "type": "rock"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Rillaboom",
+      "types": [
+        "Grass"
+      ],
+      "ability": "Grassy Surge",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Wood Hammer",
+          "type": "grass"
+        },
+        {
+          "name": "Grassy Glide",
+          "type": "grass"
+        },
+        {
+          "name": "U-turn",
+          "type": "bug"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Incineroar",
+      "types": [
+        "Fire",
+        "Dark"
+      ],
+      "ability": "Intimidate",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        },
+        {
+          "name": "Throat Chop",
+          "type": "dark"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Parting Shot",
+          "type": "dark"
+        }
+      ]
+    },
+    {
+      "pokemon": "Toxapex",
+      "types": [
+        "Poison",
+        "Water"
+      ],
+      "ability": "Regenerator",
+      "item": "Leftovers",
+      "moves": [
+        {
+          "name": "Infestation",
+          "type": "bug"
+        },
+        {
+          "name": "Toxic",
+          "type": "poison"
+        },
+        {
+          "name": "Wide Guard",
+          "type": "rock"
+        },
+        {
+          "name": "Baneful Bunker",
+          "type": "poison"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sylveon",
+      "types": [
+        "Fairy"
+      ],
+      "ability": "Pixilate",
+      "item": "Fairy Feather",
+      "moves": [
+        {
+          "name": "Hyper Voice",
+          "type": "normal"
+        },
+        {
+          "name": "Yawn",
+          "type": "normal"
+        },
+        {
+          "name": "Quick Attack",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Farigiraf",
+      "types": [
+        "Normal",
+        "Psychic"
+      ],
+      "ability": "Armor Tail",
+      "item": "Rocky Helmet",
+      "moves": [
+        {
+          "name": "Psychic",
+          "type": "psychic"
+        },
+        {
+          "name": "Trick Room",
+          "type": "psychic"
+        },
+        {
+          "name": "Thunderbolt",
+          "type": "electric"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Baxcalibur-Mega",
+      "types": [
+        "Dragon",
+        "Ice"
+      ],
+      "ability": "Thermal Exchange",
+      "item": "Baxcalibrite",
+      "moves": [
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Dragon Dance",
+          "type": "dragon"
+        },
+        {
+          "name": "Glaive Rush",
+          "type": "dragon"
+        },
+        {
+          "name": "Ice Shard",
+          "type": "ice"
+        }
+      ]
+    },
+    {
+      "pokemon": "Archaludon",
+      "types": [
+        "Steel",
+        "Dragon"
+      ],
+      "ability": "Stamina",
+      "item": "Leftovers",
+      "moves": [
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Dragon Pulse",
+          "type": "dragon"
+        },
+        {
+          "name": "Flash Cannon",
+          "type": "steel"
+        },
+        {
+          "name": "Electro Shot",
+          "type": "electric"
+        }
+      ]
+    },
+    {
+      "pokemon": "Pelipper",
+      "types": [
+        "Water",
+        "Flying"
+      ],
+      "ability": "Drizzle",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Wide Guard",
+          "type": "rock"
+        },
+        {
+          "name": "Tailwind",
+          "type": "flying"
+        },
+        {
+          "name": "Weather Ball",
+          "type": "normal"
+        },
+        {
+          "name": "Hurricane",
+          "type": "flying"
+        }
+      ]
+    },
+    {
+      "pokemon": "Basculegion",
+      "types": [
+        "Water",
+        "Ghost"
+      ],
+      "ability": "Adaptability",
+      "item": "Choice Scarf",
+      "moves": [
+        {
+          "name": "Aqua Jet",
+          "type": "water"
+        },
+        {
+          "name": "Last Respects",
+          "type": "ghost"
+        },
+        {
+          "name": "Wave Crash",
+          "type": "water"
+        },
+        {
+          "name": "Flip Turn",
+          "type": "water"
+        }
+      ]
+    },
+    {
+      "pokemon": "Rillaboom",
+      "types": [
+        "Grass"
+      ],
+      "ability": "Grassy Surge",
+      "item": "Miracle Seed",
+      "moves": [
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Wood Hammer",
+          "type": "grass"
+        },
+        {
+          "name": "Grassy Glide",
+          "type": "grass"
+        },
+        {
+          "name": "High Horsepower",
+          "type": "ground"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sneasler",
+      "types": [
+        "Fighting",
+        "Poison"
+      ],
+      "ability": "Unburden",
+      "item": "White Herb",
+      "moves": [
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Coaching",
+          "type": "fighting"
+        },
+        {
+          "name": "Dire Claw",
+          "type": "poison"
+        },
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Salamence-Mega",
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
+      "ability": "Intimidate",
+      "item": "Salamencite",
+      "moves": [
+        {
+          "name": "Double-Edge",
+          "type": "normal"
+        },
+        {
+          "name": "Dragon Dance",
+          "type": "dragon"
+        },
+        {
+          "name": "Roost",
+          "type": "flying"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Floette-Eternal-Mega",
+      "types": [
+        "Fairy"
+      ],
+      "ability": "Flower Veil",
+      "item": "Floettite",
+      "moves": [
+        {
+          "name": "Moonblast",
+          "type": "fairy"
+        },
+        {
+          "name": "Dazzling Gleam",
+          "type": "fairy"
+        },
+        {
+          "name": "Calm Mind",
+          "type": "psychic"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sneasler",
+      "types": [
+        "Fighting",
+        "Poison"
+      ],
+      "ability": "Poison Touch",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Poison Jab",
+          "type": "poison"
+        },
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Coaching",
+          "type": "fighting"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Kingambit",
+      "types": [
+        "Dark",
+        "Steel"
+      ],
+      "ability": "Defiant",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Kowtow Cleave",
+          "type": "dark"
+        },
+        {
+          "name": "Swords Dance",
+          "type": "normal"
+        },
+        {
+          "name": "Sucker Punch",
+          "type": "dark"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Incineroar",
+      "types": [
+        "Fire",
+        "Dark"
+      ],
+      "ability": "Intimidate",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        },
+        {
+          "name": "Parting Shot",
+          "type": "dark"
+        },
+        {
+          "name": "Helping Hand",
+          "type": "normal"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sinistcha",
+      "types": [
+        "Grass",
+        "Ghost"
+      ],
+      "ability": "Hospitality",
+      "item": "Colbur Berry",
+      "moves": [
+        {
+          "name": "Matcha Gotcha",
+          "type": "grass"
+        },
+        {
+          "name": "Rage Powder",
+          "type": "bug"
+        },
+        {
+          "name": "Trick Room",
+          "type": "psychic"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Salamence-Mega",
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
+      "ability": "Intimidate",
+      "item": "Salamencite",
+      "moves": [
+        {
+          "name": "Hyper Voice",
+          "type": "normal"
+        },
+        {
+          "name": "Double-Edge",
+          "type": "normal"
+        },
+        {
+          "name": "Tailwind",
+          "type": "flying"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Rillaboom",
+      "types": [
+        "Grass"
+      ],
+      "ability": "Grassy Surge",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Wood Hammer",
+          "type": "grass"
+        },
+        {
+          "name": "Grassy Glide",
+          "type": "grass"
+        },
+        {
+          "name": "U-turn",
+          "type": "bug"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sneasler",
+      "types": [
+        "Fighting",
+        "Poison"
+      ],
+      "ability": "Unburden",
+      "item": "Grassy Seed",
+      "moves": [
+        {
+          "name": "Dire Claw",
+          "type": "poison"
+        },
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Arcanine-Hisui",
+      "types": [
+        "Fire",
+        "Rock"
+      ],
+      "ability": "Rock Head",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        },
+        {
+          "name": "Head Smash",
+          "type": "rock"
+        },
+        {
+          "name": "Extreme Speed",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Kingambit",
+      "types": [
+        "Dark",
+        "Steel"
+      ],
+      "ability": "Defiant",
+      "item": "Chople Berry",
+      "moves": [
+        {
+          "name": "Kowtow Cleave",
+          "type": "dark"
+        },
+        {
+          "name": "Iron Head",
+          "type": "steel"
+        },
+        {
+          "name": "Low Kick",
+          "type": "fighting"
+        },
+        {
+          "name": "Sucker Punch",
+          "type": "dark"
+        }
+      ]
+    },
+    {
+      "pokemon": "Basculegion",
+      "types": [
+        "Water",
+        "Ghost"
+      ],
+      "ability": "Adaptability",
+      "item": "Mystic Water",
+      "moves": [
+        {
+          "name": "Wave Crash",
+          "type": "water"
+        },
+        {
+          "name": "Last Respects",
+          "type": "ghost"
+        },
+        {
+          "name": "Aqua Jet",
+          "type": "water"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Rillaboom",
+      "types": [
+        "Grass"
+      ],
+      "ability": "Grassy Surge",
+      "item": "Miracle Seed",
+      "moves": [
+        {
+          "name": "Wood Hammer",
+          "type": "grass"
+        },
+        {
+          "name": "Grassy Glide",
+          "type": "grass"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "U-turn",
+          "type": "bug"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sneasler",
+      "types": [
+        "Fighting",
+        "Poison"
+      ],
+      "ability": "Unburden",
+      "item": "Grassy Seed",
+      "moves": [
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Dire Claw",
+          "type": "poison"
+        }
+      ]
+    },
+    {
+      "pokemon": "Kingambit",
+      "types": [
+        "Dark",
+        "Steel"
+      ],
+      "ability": "Defiant",
+      "item": "Chople Berry",
+      "moves": [
+        {
+          "name": "Iron Head",
+          "type": "steel"
+        },
+        {
+          "name": "Sucker Punch",
+          "type": "dark"
+        },
+        {
+          "name": "Kowtow Cleave",
+          "type": "dark"
+        },
+        {
+          "name": "Low Kick",
+          "type": "fighting"
+        }
+      ]
+    },
+    {
+      "pokemon": "Basculegion",
+      "types": [
+        "Water",
+        "Ghost"
+      ],
+      "ability": "Adaptability",
+      "item": "Mystic Water",
+      "moves": [
+        {
+          "name": "Wave Crash",
+          "type": "water"
+        },
+        {
+          "name": "Aqua Jet",
+          "type": "water"
+        },
+        {
+          "name": "Last Respects",
+          "type": "ghost"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Arcanine-Hisui",
+      "types": [
+        "Fire",
+        "Rock"
+      ],
+      "ability": "Rock Head",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Head Smash",
+          "type": "rock"
+        },
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        },
+        {
+          "name": "Extreme Speed",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Salamence-Mega",
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
+      "ability": "Aerilate",
+      "item": "Salamencite",
+      "moves": [
+        {
+          "name": "Double-Edge",
+          "type": "normal"
+        },
+        {
+          "name": "Hyper Voice",
+          "type": "normal"
+        },
+        {
+          "name": "Tailwind",
+          "type": "flying"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Indeedee",
+      "types": [
+        "Psychic",
+        "Normal"
+      ],
+      "ability": "Psychic Surge",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Trick Room",
+          "type": "psychic"
+        },
+        {
+          "name": "Imprison",
+          "type": "psychic"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Expanding Force",
+          "type": "psychic"
+        }
+      ]
+    },
+    {
+      "pokemon": "Glimmora-Mega",
+      "types": [
+        "Rock",
+        "Poison"
+      ],
+      "ability": "Toxic Debris",
+      "item": "Glimmoranite",
+      "moves": [
+        {
+          "name": "Spiky Shield",
+          "type": "grass"
+        },
+        {
+          "name": "Earth Power",
+          "type": "ground"
+        },
+        {
+          "name": "Power Gem",
+          "type": "rock"
+        },
+        {
+          "name": "Sludge Bomb",
+          "type": "poison"
+        }
+      ]
+    },
+    {
+      "pokemon": "Sneasler",
+      "types": [
+        "Fighting",
+        "Poison"
+      ],
+      "ability": "Unburden",
+      "item": "Psychic Seed",
+      "moves": [
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Dire Claw",
+          "type": "poison"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Throat Chop",
+          "type": "dark"
+        }
+      ]
+    },
+    {
+      "pokemon": "Ninetales-Alola",
+      "types": [
+        "Ice",
+        "Fairy"
+      ],
+      "ability": "Snow Cloak",
+      "item": "Choice Scarf",
+      "moves": [
+        {
+          "name": "Moonblast",
+          "type": "fairy"
+        },
+        {
+          "name": "Freeze-Dry",
+          "type": "ice"
+        },
+        {
+          "name": "Blizzard",
+          "type": "ice"
+        },
+        {
+          "name": "Icy Wind",
+          "type": "ice"
+        }
+      ]
+    },
+    {
+      "pokemon": "Charizard-Mega-Y",
+      "types": [
+        "Fire",
+        "Flying"
+      ],
+      "ability": "Blaze",
+      "item": "Charizardite Y",
+      "moves": [
+        {
+          "name": "Heat Wave",
+          "type": "fire"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Solar Beam",
+          "type": "grass"
+        },
+        {
+          "name": "Weather Ball",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Garchomp",
+      "types": [
+        "Dragon",
+        "Ground"
+      ],
+      "ability": "Rough Skin",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Dragon Claw",
+          "type": "dragon"
+        },
+        {
+          "name": "Rock Slide",
+          "type": "rock"
+        },
+        {
+          "name": "Stomping Tantrum",
+          "type": "ground"
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "pokemon": "Indeedee-F",
+      "types": [
+        "Psychic",
+        "Normal"
+      ],
+      "ability": "Psychic Surge",
+      "item": "Rocky Helmet",
+      "moves": [
+        {
+          "name": "Psychic",
+          "type": "psychic"
+        },
+        {
+          "name": "Helping Hand",
+          "type": "normal"
+        },
+        {
+          "name": "Follow Me",
+          "type": "normal"
+        },
+        {
+          "name": "Trick Room",
+          "type": "psychic"
+        }
+      ]
+    },
+    {
+      "pokemon": "Gardevoir-Mega",
+      "types": [
+        "Psychic",
+        "Fairy"
+      ],
+      "ability": "Trace",
+      "item": "Gardevoirite",
+      "moves": [
+        {
+          "name": "Hyper Voice",
+          "type": "normal"
+        },
+        {
+          "name": "Expanding Force",
+          "type": "psychic"
+        },
+        {
+          "name": "Trick Room",
+          "type": "psychic"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Armarouge",
+      "types": [
+        "Fire",
+        "Psychic"
+      ],
+      "ability": "Flash Fire",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Expanding Force",
+          "type": "psychic"
+        },
+        {
+          "name": "Armor Cannon",
+          "type": "fire"
+        },
+        {
+          "name": "Dark Pulse",
+          "type": "dark"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Annihilape",
+      "types": [
+        "Fighting",
+        "Ghost"
+      ],
+      "ability": "Defiant",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Phantom Force",
+          "type": "ghost"
+        },
+        {
+          "name": "Rock Slide",
+          "type": "rock"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Torkoal",
+      "types": [
+        "Fire"
+      ],
+      "ability": "Drought",
+      "item": "Charcoal",
+      "moves": [
+        {
+          "name": "Eruption",
+          "type": "fire"
+        },
+        {
+          "name": "Weather Ball",
+          "type": "normal"
+        },
+        {
+          "name": "Helping Hand",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ]
+    },
+    {
+      "pokemon": "Aerodactyl-Mega",
+      "types": [
+        "Rock",
+        "Flying"
+      ],
+      "ability": "Unnerve",
+      "item": "Aerodactylite",
+      "moves": [
+        {
+          "name": "Rock Slide",
+          "type": "rock"
+        },
+        {
+          "name": "Ice Fang",
+          "type": "ice"
+        },
+        {
+          "name": "Wide Guard",
+          "type": "rock"
+        },
+        {
+          "name": "Tailwind",
+          "type": "flying"
+        }
+      ]
+    }
+  ]
+]
