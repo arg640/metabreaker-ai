@@ -1,0 +1,197 @@
+{
+  "equipo": [
+    {
+      "pokemon": "Raichu-Mega-Y",
+      "types": [
+        "Electric"
+      ],
+      "ability": "Lightning Rod",
+      "item": "Raichunite Y",
+      "moves": [
+        {
+          "name": "Zap Cannon",
+          "type": "electric"
+        },
+        {
+          "name": "Focus Blast",
+          "type": "fighting"
+        },
+        {
+          "name": "Encore",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ],
+      "apariciones": 2
+    },
+    {
+      "pokemon": "Milotic",
+      "types": [
+        "Water"
+      ],
+      "ability": "Competitive",
+      "item": "Leftovers",
+      "moves": [
+        {
+          "name": "Scald",
+          "type": "water"
+        },
+        {
+          "name": "Icy Wind",
+          "type": "ice"
+        },
+        {
+          "name": "Recover",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ],
+      "apariciones": 1
+    },
+    {
+      "pokemon": "Arcanine-Hisui",
+      "types": [
+        "Fire",
+        "Rock"
+      ],
+      "ability": "Rock Head",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        },
+        {
+          "name": "Head Smash",
+          "type": "rock"
+        },
+        {
+          "name": "Rock Slide",
+          "type": "rock"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ],
+      "apariciones": 6
+    },
+    {
+      "pokemon": "Incineroar",
+      "types": [
+        "Fire",
+        "Dark"
+      ],
+      "ability": "Intimidate",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        },
+        {
+          "name": "Throat Chop",
+          "type": "dark"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Parting Shot",
+          "type": "dark"
+        }
+      ],
+      "apariciones": 6
+    },
+    {
+      "pokemon": "Scrafty",
+      "types": [
+        "Dark",
+        "Fighting"
+      ],
+      "ability": "Intimidate",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Knock Off",
+          "type": "dark"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ],
+      "apariciones": 1
+    },
+    {
+      "pokemon": "Armarouge",
+      "types": [
+        "Fire",
+        "Psychic"
+      ],
+      "ability": "Flash Fire",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Expanding Force",
+          "type": "psychic"
+        },
+        {
+          "name": "Armor Cannon",
+          "type": "fire"
+        },
+        {
+          "name": "Dark Pulse",
+          "type": "dark"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ],
+      "apariciones": 1
+    }
+  ],
+  "fitness": 0.8,
+  "logbook": [
+    {
+      "gen": 0,
+      "avg": 0.49000000000000005,
+      "max": 0.8,
+      "min": 0.3
+    },
+    {
+      "gen": 1,
+      "avg": 0.38,
+      "max": 0.6,
+      "min": 0.2
+    },
+    {
+      "gen": 2,
+      "avg": 0.51,
+      "max": 0.8,
+      "min": 0.3
+    },
+    {
+      "gen": 3,
+      "avg": 0.67,
+      "max": 0.8,
+      "min": 0.4
+    }
+  ]
+}
