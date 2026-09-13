@@ -15,7 +15,7 @@ Este proyecto construye un sistema que:
 
 - [x] **Fase 0**: Configuración del entorno
 - [x] **Fase 1**: Extracción y análisis del meta
-- [ ] **Fase 2**: Representación y simulación de equipos
+- [x] **Fase 2**: Representación y simulación de equipos
 - [ ] **Fase 3**: Algoritmo genético (GA)
 - [ ] **Fase 4**: Fitness anti-meta
 - [ ] **Fase 5**: Refinamiento y validación
