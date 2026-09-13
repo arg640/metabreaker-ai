@@ -1,82 +1,25 @@
 {
   "equipo": [
     {
-      "pokemon": "Indeedee-F",
+      "pokemon": "Charizard-Mega-Y",
       "types": [
-        "Psychic",
-        "Normal"
+        "Fire",
+        "Flying"
       ],
-      "ability": "Psychic Surge",
-      "item": "Rocky Helmet",
+      "ability": "Blaze",
+      "item": "Charizardite Y",
       "moves": [
         {
-          "name": "Psychic",
-          "type": "psychic"
+          "name": "Heat Wave",
+          "type": "fire"
         },
         {
-          "name": "Helping Hand",
+          "name": "Weather Ball",
           "type": "normal"
         },
         {
-          "name": "Follow Me",
-          "type": "normal"
-        },
-        {
-          "name": "Trick Room",
-          "type": "psychic"
-        }
-      ],
-      "apariciones": 1,
-      "species_key": "indeedee"
-    },
-    {
-      "pokemon": "Milotic",
-      "types": [
-        "Water"
-      ],
-      "ability": "Competitive",
-      "item": "Leftovers",
-      "moves": [
-        {
-          "name": "Scald",
-          "type": "water"
-        },
-        {
-          "name": "Icy Wind",
-          "type": "ice"
-        },
-        {
-          "name": "Recover",
-          "type": "normal"
-        },
-        {
-          "name": "Protect",
-          "type": "normal"
-        }
-      ],
-      "apariciones": 1,
-      "species_key": "milotic"
-    },
-    {
-      "pokemon": "Gholdengo",
-      "types": [
-        "Steel",
-        "Ghost"
-      ],
-      "ability": "Good as Gold",
-      "item": "Life Orb",
-      "moves": [
-        {
-          "name": "Make It Rain",
-          "type": "steel"
-        },
-        {
-          "name": "Shadow Ball",
-          "type": "ghost"
-        },
-        {
-          "name": "Nasty Plot",
-          "type": "dark"
+          "name": "Ancient Power",
+          "type": "rock"
         },
         {
           "name": "Protect",
@@ -84,102 +27,160 @@
         }
       ],
       "apariciones": 3,
-      "species_key": "gholdengo"
+      "species_key": "charizard"
     },
     {
-      "pokemon": "Gardevoir-Mega",
+      "pokemon": "Indeedee",
       "types": [
         "Psychic",
-        "Fairy"
+        "Normal"
       ],
-      "ability": "Trace",
-      "item": "Gardevoirite",
+      "ability": "Psychic Surge",
+      "item": "Choice Scarf",
+      "moves": [
+        {
+          "name": "Expanding Force",
+          "type": "psychic"
+        },
+        {
+          "name": "Imprison",
+          "type": "psychic"
+        },
+        {
+          "name": "Trick",
+          "type": "psychic"
+        },
+        {
+          "name": "Trick Room",
+          "type": "psychic"
+        }
+      ],
+      "apariciones": 2,
+      "species_key": "indeedee"
+    },
+    {
+      "pokemon": "Garchomp",
+      "types": [
+        "Dragon",
+        "Ground"
+      ],
+      "ability": "Rough Skin",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Dragon Claw",
+          "type": "dragon"
+        },
+        {
+          "name": "Rock Slide",
+          "type": "rock"
+        },
+        {
+          "name": "Stomping Tantrum",
+          "type": "ground"
+        }
+      ],
+      "apariciones": 1,
+      "species_key": "garchomp"
+    },
+    {
+      "pokemon": "Metagross-Mega",
+      "types": [
+        "Steel",
+        "Psychic"
+      ],
+      "ability": "Clear Body",
+      "item": "Metagrossite",
+      "moves": [
+        {
+          "name": "Iron Head",
+          "type": "steel"
+        },
+        {
+          "name": "Psychic Fangs",
+          "type": "psychic"
+        },
+        {
+          "name": "Body Press",
+          "type": "fighting"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ],
+      "apariciones": 1,
+      "species_key": "metagross"
+    },
+    {
+      "pokemon": "Kingambit",
+      "types": [
+        "Dark",
+        "Steel"
+      ],
+      "ability": "Defiant",
+      "item": "Chople Berry",
+      "moves": [
+        {
+          "name": "Sucker Punch",
+          "type": "dark"
+        },
+        {
+          "name": "Kowtow Cleave",
+          "type": "dark"
+        },
+        {
+          "name": "Low Kick",
+          "type": "fighting"
+        },
+        {
+          "name": "Iron Head",
+          "type": "steel"
+        }
+      ],
+      "apariciones": 8,
+      "species_key": "kingambit"
+    },
+    {
+      "pokemon": "Salamence-Mega",
+      "types": [
+        "Dragon",
+        "Flying"
+      ],
+      "ability": "Intimidate",
+      "item": "Salamencite",
       "moves": [
         {
           "name": "Hyper Voice",
           "type": "normal"
         },
         {
-          "name": "Expanding Force",
-          "type": "psychic"
+          "name": "Dragon Pulse",
+          "type": "dragon"
         },
         {
-          "name": "Trick Room",
-          "type": "psychic"
-        },
-        {
-          "name": "Protect",
-          "type": "normal"
-        }
-      ],
-      "apariciones": 1,
-      "species_key": "gardevoir"
-    },
-    {
-      "pokemon": "Aerodactyl-Mega",
-      "types": [
-        "Rock",
-        "Flying"
-      ],
-      "ability": "Unnerve",
-      "item": "Aerodactylite",
-      "moves": [
-        {
-          "name": "Rock Slide",
-          "type": "rock"
-        },
-        {
-          "name": "Ice Fang",
-          "type": "ice"
-        },
-        {
-          "name": "Wide Guard",
-          "type": "rock"
-        },
-        {
-          "name": "Tailwind",
-          "type": "flying"
-        }
-      ],
-      "apariciones": 1,
-      "species_key": "aerodactyl"
-    },
-    {
-      "pokemon": "Whimsicott",
-      "types": [
-        "Grass",
-        "Fairy"
-      ],
-      "ability": "Prankster",
-      "item": "Focus Sash",
-      "moves": [
-        {
-          "name": "Dazzling Gleam",
-          "type": "fairy"
-        },
-        {
-          "name": "Tailwind",
-          "type": "flying"
-        },
-        {
-          "name": "Fake Tears",
-          "type": "dark"
+          "name": "Heat Wave",
+          "type": "fire"
         },
         {
           "name": "Protect",
           "type": "normal"
         }
       ],
-      "apariciones": 1,
-      "species_key": "whimsicott"
+      "apariciones": 8,
+      "species_key": "salamence"
     }
   ],
-  "fitness": 0.7226190476190476,
+  "fitness": 0.8122619047619047,
   "desglose": {
-    "winrate_meta": 0.5714285714285714,
-    "cobertura_defensiva": 0.6,
-    "sinergia_ofensiva": 0.0,
-    "diversidad_tipos": 0.9
+    "winrate_meta": 0.6666666666666667,
+    "cobertura_defensiva": 0.85,
+    "sinergia_ofensiva": 0.8333333333333334,
+    "diversidad_tipos": 0.8
   },
   "pesos": {
     "winrate": 0.85,
@@ -190,39 +191,129 @@
   "logbook": [
     {
       "gen": 0,
-      "avg": 0.45788690476190474,
-      "max": 0.6408333333333335,
-      "min": 0.2973809523809524
+      "avg": 0.44766666666666666,
+      "max": 0.6666666666666669,
+      "min": 0.2555952380952381
     },
     {
       "gen": 1,
-      "avg": 0.5098452380952381,
-      "max": 0.6408333333333335,
-      "min": 0.29238095238095235
+      "avg": 0.4872904761904762,
+      "max": 0.6666666666666669,
+      "min": 0.2089285714285714
     },
     {
       "gen": 2,
-      "avg": 0.524702380952381,
-      "max": 0.6408333333333335,
-      "min": 0.38
+      "avg": 0.5335666666666667,
+      "max": 0.6666666666666669,
+      "min": 0.2735714285714286
     },
     {
       "gen": 3,
-      "avg": 0.5366440476190476,
-      "max": 0.6408333333333335,
-      "min": 0.27988095238095234
+      "avg": 0.5611238095238096,
+      "max": 0.6666666666666669,
+      "min": 0.18595238095238092
     },
     {
       "gen": 4,
-      "avg": 0.5477702380952382,
-      "max": 0.6729761904761904,
-      "min": 0.3170238095238095
+      "avg": 0.5873666666666667,
+      "max": 0.6666666666666669,
+      "min": 0.38166666666666665
     },
     {
       "gen": 5,
-      "avg": 0.5753416666666666,
-      "max": 0.7226190476190476,
-      "min": 0.33452380952380945
+      "avg": 0.560109523809524,
+      "max": 0.6666666666666669,
+      "min": 0.39166666666666666
+    },
+    {
+      "gen": 6,
+      "avg": 0.5753476190476191,
+      "max": 0.7121428571428572,
+      "min": 0.375
+    },
+    {
+      "gen": 7,
+      "avg": 0.5815714285714286,
+      "max": 0.7121428571428572,
+      "min": 0.38333333333333336
+    },
+    {
+      "gen": 8,
+      "avg": 0.580352380952381,
+      "max": 0.7121428571428572,
+      "min": 0.41880952380952385
+    },
+    {
+      "gen": 9,
+      "avg": 0.5804523809523809,
+      "max": 0.7121428571428572,
+      "min": 0.25690476190476186
+    },
+    {
+      "gen": 10,
+      "avg": 0.5812333333333334,
+      "max": 0.7121428571428572,
+      "min": 0.38833333333333336
+    },
+    {
+      "gen": 11,
+      "avg": 0.6243619047619048,
+      "max": 0.8122619047619047,
+      "min": 0.38833333333333336
+    },
+    {
+      "gen": 12,
+      "avg": 0.5645714285714285,
+      "max": 0.8122619047619047,
+      "min": 0.30738095238095237
+    },
+    {
+      "gen": 13,
+      "avg": 0.6204857142857143,
+      "max": 0.8122619047619047,
+      "min": 0.395
+    },
+    {
+      "gen": 14,
+      "avg": 0.6363,
+      "max": 0.8122619047619047,
+      "min": 0.4859523809523809
+    },
+    {
+      "gen": 15,
+      "avg": 0.6492190476190476,
+      "max": 0.8122619047619047,
+      "min": 0.37916666666666665
+    },
+    {
+      "gen": 16,
+      "avg": 0.686152380952381,
+      "max": 0.8122619047619047,
+      "min": 0.44464285714285706
+    },
+    {
+      "gen": 17,
+      "avg": 0.6651333333333334,
+      "max": 0.8122619047619047,
+      "min": 0.38833333333333336
+    },
+    {
+      "gen": 18,
+      "avg": 0.6634666666666666,
+      "max": 0.8122619047619047,
+      "min": 0.4321428571428571
+    },
+    {
+      "gen": 19,
+      "avg": 0.6828809523809524,
+      "max": 0.8122619047619047,
+      "min": 0.32952380952380944
+    },
+    {
+      "gen": 20,
+      "avg": 0.7034380952380953,
+      "max": 0.8122619047619047,
+      "min": 0.5435714285714286
     }
   ]
 }

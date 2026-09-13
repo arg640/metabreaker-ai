@@ -20,11 +20,11 @@ from src.fitness_components import (
 
 # ============ CONFIGURACIÓN ============
 EQUIPO_SIZE = 6
-N_BATALLAS_POR_RIVAL = 3   # antes 2 → menos ruido
+N_BATALLAS_POR_RIVAL = 3
 N_RIVALES = 7
-POP_SIZE = 20              # antes 15 → más diversidad
-N_GEN = 5                  # antes 4 → más tiempo                 # subimos de 2 a 4
-CXPB = 0.6                 # antes 0.5
+POP_SIZE = 25              # antes 20
+N_GEN = 20                 # antes 5
+CXPB = 0.6
 MUTPB = 0.3
 SEED = 42
 
