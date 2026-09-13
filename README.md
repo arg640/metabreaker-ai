@@ -11,14 +11,21 @@ Este proyecto construye un sistema que:
 4. Evalúa los equipos simulando batallas contra equipos reales del meta.
 5. Evoluciona los equipos con un algoritmo genético.
 
-## 🗺️ Fases del proyecto
+## Fases
+- [x] Fase 0: Configuración del entorno
+- [x] Fase 1: Extracción y análisis del meta
+- [x] Fase 2: Representación y simulación
+- [x] Fase 3: Algoritmo genético funcional
+- [x] Fase 4: Fitness anti-meta + heurísticas
+- [ ] Fase 5: Refinamiento y validación
 
-- [x] **Fase 0**: Configuración del entorno
-- [x] **Fase 1**: Extracción y análisis del meta
-- [x] **Fase 2**: Representación y simulación de equipos
-- [ ] **Fase 3**: Algoritmo genético (GA)
-- [ ] **Fase 4**: Fitness anti-meta
-- [ ] **Fase 5**: Refinamiento y validación
+## Resultados destacados
+
+### Fase 4 — Equipo anti-meta (66.7% winrate vs 3 rivales top)
+- Arcanine-Hisui, Annihilape, Whimsicott, Incineroar, Glimmora-Mega, Scovillain-Mega
+- 3 Pokémon con Fire (satura debilidad del meta)
+- 1 con Fighting (segundo tipo clave)
+- Sintetizado por el GA en 3 generaciones
 
 ## 🛠️ Stack tecnológico
 

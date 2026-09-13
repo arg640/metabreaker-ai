@@ -1,60 +1,6 @@
 {
   "equipo": [
     {
-      "pokemon": "Raichu-Mega-Y",
-      "types": [
-        "Electric"
-      ],
-      "ability": "Lightning Rod",
-      "item": "Raichunite Y",
-      "moves": [
-        {
-          "name": "Zap Cannon",
-          "type": "electric"
-        },
-        {
-          "name": "Focus Blast",
-          "type": "fighting"
-        },
-        {
-          "name": "Encore",
-          "type": "normal"
-        },
-        {
-          "name": "Protect",
-          "type": "normal"
-        }
-      ],
-      "apariciones": 2
-    },
-    {
-      "pokemon": "Milotic",
-      "types": [
-        "Water"
-      ],
-      "ability": "Competitive",
-      "item": "Leftovers",
-      "moves": [
-        {
-          "name": "Scald",
-          "type": "water"
-        },
-        {
-          "name": "Icy Wind",
-          "type": "ice"
-        },
-        {
-          "name": "Recover",
-          "type": "normal"
-        },
-        {
-          "name": "Protect",
-          "type": "normal"
-        }
-      ],
-      "apariciones": 1
-    },
-    {
       "pokemon": "Arcanine-Hisui",
       "types": [
         "Fire",
@@ -80,7 +26,66 @@
           "type": "normal"
         }
       ],
-      "apariciones": 6
+      "apariciones": 6,
+      "species_key": "arcanine"
+    },
+    {
+      "pokemon": "Annihilape",
+      "types": [
+        "Fighting",
+        "Ghost"
+      ],
+      "ability": "Defiant",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Phantom Force",
+          "type": "ghost"
+        },
+        {
+          "name": "Rock Slide",
+          "type": "rock"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ],
+      "apariciones": 1,
+      "species_key": "annihilape"
+    },
+    {
+      "pokemon": "Whimsicott",
+      "types": [
+        "Grass",
+        "Fairy"
+      ],
+      "ability": "Prankster",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Dazzling Gleam",
+          "type": "fairy"
+        },
+        {
+          "name": "Tailwind",
+          "type": "flying"
+        },
+        {
+          "name": "Fake Tears",
+          "type": "dark"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ],
+      "apariciones": 1,
+      "species_key": "whimsicott"
     },
     {
       "pokemon": "Incineroar",
@@ -108,90 +113,99 @@
           "type": "dark"
         }
       ],
-      "apariciones": 6
+      "apariciones": 6,
+      "species_key": "incineroar"
     },
     {
-      "pokemon": "Scrafty",
+      "pokemon": "Glimmora-Mega",
       "types": [
-        "Dark",
-        "Fighting"
+        "Rock",
+        "Poison"
       ],
-      "ability": "Intimidate",
-      "item": "Focus Sash",
+      "ability": "Toxic Debris",
+      "item": "Glimmoranite",
       "moves": [
         {
-          "name": "Close Combat",
-          "type": "fighting"
+          "name": "Spiky Shield",
+          "type": "grass"
         },
         {
-          "name": "Knock Off",
-          "type": "dark"
+          "name": "Earth Power",
+          "type": "ground"
         },
         {
-          "name": "Fake Out",
-          "type": "normal"
+          "name": "Power Gem",
+          "type": "rock"
         },
         {
-          "name": "Protect",
-          "type": "normal"
+          "name": "Sludge Bomb",
+          "type": "poison"
         }
       ],
-      "apariciones": 1
+      "apariciones": 1,
+      "species_key": "glimmora"
     },
     {
-      "pokemon": "Armarouge",
+      "pokemon": "Scovillain-Mega",
       "types": [
-        "Fire",
-        "Psychic"
+        "Grass",
+        "Fire"
       ],
-      "ability": "Flash Fire",
-      "item": "Life Orb",
+      "ability": "Spicy Spray",
+      "item": "Scovillainite",
       "moves": [
         {
-          "name": "Expanding Force",
-          "type": "psychic"
+          "name": "Giga Drain",
+          "type": "grass"
         },
         {
-          "name": "Armor Cannon",
+          "name": "Overheat",
           "type": "fire"
         },
         {
-          "name": "Dark Pulse",
-          "type": "dark"
+          "name": "Rage Powder",
+          "type": "bug"
         },
         {
           "name": "Protect",
           "type": "normal"
         }
       ],
-      "apariciones": 1
+      "apariciones": 1,
+      "species_key": "scovillain"
     }
   ],
-  "fitness": 0.8,
+  "fitness": 0.9533333333333334,
+  "desglose": {
+    "winrate_meta": 0.6666666666666666,
+    "cobertura_defensiva": 0.6,
+    "sinergia_ofensiva": 0.6666666666666666,
+    "diversidad_tipos": 0.8
+  },
+  "pesos": {
+    "winrate": 0.85,
+    "cobertura": 0.05,
+    "sinergia": 0.05,
+    "diversidad": 0.05
+  },
   "logbook": [
     {
       "gen": 0,
-      "avg": 0.49000000000000005,
-      "max": 0.8,
-      "min": 0.3
+      "avg": 0.5896875,
+      "max": 0.8133333333333335,
+      "min": 0.35750000000000004
     },
     {
       "gen": 1,
-      "avg": 0.38,
-      "max": 0.6,
-      "min": 0.2
+      "avg": 0.558125,
+      "max": 0.8116666666666668,
+      "min": 0.23416666666666663
     },
     {
       "gen": 2,
-      "avg": 0.51,
-      "max": 0.8,
-      "min": 0.3
-    },
-    {
-      "gen": 3,
-      "avg": 0.67,
-      "max": 0.8,
-      "min": 0.4
+      "avg": 0.6336458333333334,
+      "max": 0.9533333333333334,
+      "min": 0.24166666666666667
     }
   ]
 }

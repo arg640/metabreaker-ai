@@ -9,6 +9,8 @@ from pathlib import Path
 
 from src.pokemon_set import equipo_a_showdown
 from src.team_player import TeamPlayer
+import logging
+logging.getLogger("poke_env").setLevel(logging.ERROR)
 
 
 async def main():

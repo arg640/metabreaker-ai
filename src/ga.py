@@ -11,16 +11,28 @@ from deap import base, creator, tools, algorithms
 
 from src.pokemon_pool import construir_pool
 from src.simulator import simular_enfrentamiento
+from src.fitness_components import (
+    cobertura_defensiva,
+    sinergia_ofensiva,
+    diversidad_de_tipos,
+)
+
 
 # ============ CONFIGURACIÓN ============
 EQUIPO_SIZE = 6
-N_BATALLAS_POR_RIVAL = 2   # batallas por cada equipo meta
-N_RIVALES = 5              # cuántos equipos meta usar como referencia
-POP_SIZE = 10              # población inicial
-N_GEN = 3                  # generaciones
-CXPB = 0.5                 # probabilidad de cruce
-MUTPB = 0.3                # probabilidad de mutación
+N_BATALLAS_POR_RIVAL = 2   # bajamos de 3 a 2 (heurísticas tardan más)
+N_RIVALES = 7              # subimos de 3 a 7
+POP_SIZE = 15              # subimos de 8 a 15
+N_GEN = 4                  # subimos de 2 a 4
+CXPB = 0.6                 # antes 0.5
+MUTPB = 0.3
 SEED = 42
+
+# Pesos del fitness (suman 1.0)
+PESO_WINRATE = 0.85        # antes 0.5 → el winrate domina
+PESO_COBERTURA = 0.05      # antes 0.2 → solo desempate
+PESO_SINERGIA = 0.05       # antes 0.2 → solo desempate
+PESO_DIVERSIDAD = 0.05     # antes 0.1 → solo desempate
 
 random.seed(SEED)
 
@@ -32,39 +44,101 @@ N_POOL = len(POOL)
 with open("data/processed/sample_teams.json", encoding="utf-8") as f:
     EQUIPOS_META = json.load(f)
 
-# Seleccionamos N_RIVALES equipos del meta como referencia
 RIVALES = EQUIPOS_META[:N_RIVALES]
 
 
 # ============ GENOMA Y FITNESS ============
-# El genoma es una lista de EQUIPO_SIZE enteros (índices en el pool), sin repetir.
-# El fitness es el winrate promedio contra los rivales.
-
 creator.create("FitnessMax", base.Fitness, weights=(1.0,))
 creator.create("Individual", list, fitness=creator.FitnessMax)
 
 
 def crear_individuo():
-    """Crea un equipo aleatorio de 6 Pokémon del pool, sin repetir."""
-    indices = random.sample(range(N_POOL), EQUIPO_SIZE)
-    return creator.Individual(indices)
+    """Crea un equipo aleatorio de 6 Pokémon del pool, sin repetir species_key."""
+    seleccionados = []
+    keys_usados = set()
+    intentos = 0
+    while len(seleccionados) < EQUIPO_SIZE and intentos < 1000:
+        idx = random.randrange(N_POOL)
+        key = POOL[idx]["species_key"]
+        if key not in keys_usados:
+            keys_usados.add(key)
+            seleccionados.append(idx)
+        intentos += 1
+    return creator.Individual(seleccionados)
 
 
 def evaluar(individuo):
-    """Fitness: winrate promedio del equipo contra los rivales."""
+    """
+    Fitness combinado anti-meta:
+      0.85 * winrate_vs_meta
+    + 0.05 * cobertura_defensiva
+    + 0.05 * sinergia_ofensiva
+    + 0.05 * diversidad_de_tipos
+    """
     equipo = [POOL[i] for i in individuo]
 
+    # --- Componente 1: winrate vs meta ---
     winrates = []
     for rival in RIVALES:
         wr = simular_enfrentamiento(equipo, rival, n_batallas=N_BATALLAS_POR_RIVAL)
         winrates.append(wr)
+    winrate_meta = sum(winrates) / len(winrates) if winrates else 0.0
 
-    fitness = sum(winrates) / len(winrates) if winrates else 0.0
+    # --- Componentes 2-4: instantáneos ---
+    cob = cobertura_defensiva(equipo)
+    sin = sinergia_ofensiva(equipo)
+    div = diversidad_de_tipos(equipo)
+
+    # --- Fitness final ---
+    fitness = (
+        PESO_WINRATE * winrate_meta
+        + PESO_COBERTURA * cob
+        + PESO_SINERGIA * sin
+        + PESO_DIVERSIDAD * div
+    )
+
     return (fitness,)
 
 
+def _gen_aleatorio_libre(keys_usados: set, ya_incluidos: list[int]) -> int | None:
+    """Devuelve un índice del pool cuyo species_key no esté en uso."""
+    disponibles = [
+        i for i in range(N_POOL)
+        if POOL[i]["species_key"] not in keys_usados and i not in ya_incluidos
+    ]
+    if not disponibles:
+        return None
+    return random.choice(disponibles)
+
+
+def _deduplicar(genes: list[int]) -> list[int]:
+    """Asegura que no haya species_key repetidos."""
+    resultado = []
+    keys_usados = set()
+
+    for g in genes:
+        key = POOL[g]["species_key"]
+        if key not in keys_usados:
+            keys_usados.add(key)
+            resultado.append(g)
+        else:
+            nuevo = _gen_aleatorio_libre(keys_usados, resultado)
+            if nuevo is not None:
+                keys_usados.add(POOL[nuevo]["species_key"])
+                resultado.append(nuevo)
+
+    while len(resultado) < EQUIPO_SIZE:
+        nuevo = _gen_aleatorio_libre(keys_usados, resultado)
+        if nuevo is None:
+            break
+        keys_usados.add(POOL[nuevo]["species_key"])
+        resultado.append(nuevo)
+
+    return resultado
+
+
 def cruzar(ind1, ind2):
-    """Cruce: toma 3 genes de cada padre y rellena con aleatorios si hay duplicados."""
+    """Cruce: toma 3 genes de cada padre, deduplicando."""
     hijo1, hijo2 = [], []
 
     for i in range(EQUIPO_SIZE):
@@ -75,7 +149,6 @@ def cruzar(ind1, ind2):
             hijo1.append(ind2[i])
             hijo2.append(ind1[i])
 
-    # Deduplicación: reemplaza duplicados por genes aleatorios no presentes
     hijo1 = _deduplicar(hijo1)
     hijo2 = _deduplicar(hijo2)
 
@@ -84,31 +157,19 @@ def cruzar(ind1, ind2):
     return ind1, ind2
 
 
-def _deduplicar(genes: list[int]) -> list[int]:
-    """Asegura que no haya índices repetidos en la lista de genes."""
-    vistos = set()
-    resultado = []
-    for g in genes:
-        if g not in vistos:
-            vistos.add(g)
-            resultado.append(g)
-    # Rellena si faltan genes
-    while len(resultado) < EQUIPO_SIZE:
-        nuevo = random.randrange(N_POOL)
-        if nuevo not in vistos:
-            vistos.add(nuevo)
-            resultado.append(nuevo)
-    return resultado
-
-
 def mutar(individuo, indpb=0.3):
-    """Mutación: reemplaza algunos genes por otros aleatorios del pool."""
+    """Mutación: reemplaza genes respetando Species Clause."""
+    keys_actuales = {POOL[g]["species_key"] for g in individuo}
+
     for i in range(len(individuo)):
         if random.random() < indpb:
-            # Encuentra un índice que no esté ya en el individuo
-            candidatos = set(range(N_POOL)) - set(individuo)
-            nuevo = random.choice(list(candidatos))
-            individuo[i] = nuevo
+            key_vieja = POOL[individuo[i]]["species_key"]
+            keys_restantes = keys_actuales - {key_vieja}
+            nuevo = _gen_aleatorio_libre(keys_restantes, list(individuo))
+            if nuevo is not None:
+                keys_actuales.discard(key_vieja)
+                keys_actuales.add(POOL[nuevo]["species_key"])
+                individuo[i] = nuevo
     return (individuo,)
 
 
@@ -118,6 +179,7 @@ def main():
     print(f"Rivales (equipos meta): {N_RIVALES}")
     print(f"Población: {POP_SIZE}, Generaciones: {N_GEN}")
     print(f"Batallas por evaluación: {N_RIVALES * N_BATALLAS_POR_RIVAL}")
+    print(f"Pesos: WR={PESO_WINRATE}, COB={PESO_COBERTURA}, SIN={PESO_SINERGIA}, DIV={PESO_DIVERSIDAD}")
     print()
 
     # Toolbox
@@ -129,40 +191,66 @@ def main():
     toolbox.register("mutate", mutar)
     toolbox.register("select", tools.selTournament, tournsize=3)
 
-    # Población inicial
     pop = toolbox.population(n=POP_SIZE)
 
-    # Estadísticas
     stats = tools.Statistics(lambda ind: ind.fitness.values)
     stats.register("avg", lambda x: sum(v[0] for v in x) / len(x))
     stats.register("max", lambda x: max(v[0] for v in x))
     stats.register("min", lambda x: min(v[0] for v in x))
 
-    # Hall of Fame (mejores individuos históricos)
     hof = tools.HallOfFame(1)
 
-    # Evolución
     pop, logbook = algorithms.eaSimple(
         pop, toolbox,
         cxpb=CXPB, mutpb=MUTPB, ngen=N_GEN,
         stats=stats, halloffame=hof, verbose=True,
     )
 
-    # Resultado final
+    # ============ RESULTADO FINAL ============
     mejor = hof[0]
-    equipo_mejor = [POOL[i]["pokemon"] for i in mejor]
+    equipo_mejor = [POOL[i] for i in mejor]
+
+    # Recalcular desglose con batallas nuevas (más justo)
+    winrates_rivales = []
+    for rival in RIVALES:
+        wr = simular_enfrentamiento(equipo_mejor, rival, n_batallas=N_BATALLAS_POR_RIVAL)
+        winrates_rivales.append(wr)
+    wr_meta = sum(winrates_rivales) / len(winrates_rivales) if winrates_rivales else 0.0
+    cob = cobertura_defensiva(equipo_mejor)
+    sin = sinergia_ofensiva(equipo_mejor)
+    div = diversidad_de_tipos(equipo_mejor)
+
     print("\n" + "=" * 50)
     print("🏆 MEJOR EQUIPO ENCONTRADO")
     print("=" * 50)
-    for i, idx in enumerate(mejor):
-        print(f"  {i+1}. {POOL[idx]['pokemon']:<25} [{('/'.join(POOL[idx]['types']))}]")
-    print(f"\nFitness (winrate promedio vs meta): {mejor.fitness.values[0]:.1%}")
+    for i, p in enumerate(equipo_mejor):
+        tipos = "/".join(p["types"])
+        print(f"  {i+1}. {p['pokemon']:<25} [{tipos}]")
+    print(f"\n--- Desglose del fitness ---")
+    print(f"  Winrate vs meta:     {wr_meta:.1%}  (peso {PESO_WINRATE})")
+    print(f"  Cobertura defensiva: {cob:.2f}   (peso {PESO_COBERTURA})")
+    print(f"  Sinergia ofensiva:   {sin:.2f}   (peso {PESO_SINERGIA})")
+    print(f"  Diversidad de tipos: {div:.2f}   (peso {PESO_DIVERSIDAD})")
+    print(f"\n  FITNESS TOTAL:       {mejor.fitness.values[0]:.3f}")
 
-    # Guardar resultado
+    # ============ GUARDAR RESULTADO ============
     out_dir = Path("data/processed")
+    out_dir.mkdir(parents=True, exist_ok=True)
     resultado = {
-        "equipo": [POOL[i] for i in mejor],
+        "equipo": equipo_mejor,
         "fitness": mejor.fitness.values[0],
+        "desglose": {
+            "winrate_meta": wr_meta,
+            "cobertura_defensiva": cob,
+            "sinergia_ofensiva": sin,
+            "diversidad_tipos": div,
+        },
+        "pesos": {
+            "winrate": PESO_WINRATE,
+            "cobertura": PESO_COBERTURA,
+            "sinergia": PESO_SINERGIA,
+            "diversidad": PESO_DIVERSIDAD,
+        },
         "logbook": [
             {"gen": g, "avg": a, "max": m, "min": mn}
             for g, a, m, mn in zip(

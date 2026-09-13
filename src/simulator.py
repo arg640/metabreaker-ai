@@ -1,72 +1,20 @@
 # src/simulator.py
 """
 Simulador de batallas reutilizable para el algoritmo genético.
-Expone una función `simular_enfrentamiento` que devuelve el winrate
-del equipo 1 contra el equipo 2 en N batallas.
+Aplica limpieza de equipos (habilidades, Species Clause, Item Clause)
+tanto al equipo propio como a los rivales.
 """
 import asyncio
 import logging
 
 from src.pokemon_set import equipo_a_showdown
 from src.team_player import TeamPlayer
+from src.pokemon_pool import limpiar_equipo
 
-# Silencia los warnings de poke-env (Open Team Sheets, popups, etc.)
 logging.getLogger("poke_env").setLevel(logging.ERROR)
 logging.getLogger("TeamPlayer").setLevel(logging.ERROR)
 
 BATTLE_FORMAT = "gen9championsvgc2026regmc"
-
-# Items de respaldo para cuando hay duplicados (Item Clause)
-ITEMS_RESPALDO = [
-    "Sitrus Berry",
-    "Focus Sash",
-    "Choice Scarf",
-    "Leftovers",
-    "Life Orb",
-    "Miracle Seed",
-    "Light Clay",
-    "Rocky Helmet",
-    "Grassy Seed",
-    "Psychic Seed",
-    "White Herb",
-    "Eject Button",
-    "Black Glasses",
-    "Charcoal",
-    "Mystic Water",
-    "Fairy Feather",
-    "Chople Berry",
-    "Colbur Berry",
-    "Passho Berry",
-]
-
-
-def reparar_items_duplicados(equipo: list[dict]) -> list[dict]:
-    """
-    Repara un equipo para cumplir con la Item Clause de VGC.
-    Si dos Pokémon comparten el mismo item, el segundo (y siguientes) reciben
-    un item de respaldo que no esté ya en uso.
-    Devuelve una copia del equipo (no modifica el original).
-    """
-    equipo_reparado = [dict(p) for p in equipo]  # copia superficial
-    items_usados = set()
-
-    for p in equipo_reparado:
-        item = p.get("item") or ""
-        if item and item in items_usados:
-            # Busca un item de respaldo libre
-            for candidato in ITEMS_RESPALDO:
-                if candidato not in items_usados:
-                    p["item"] = candidato
-                    items_usados.add(candidato)
-                    break
-            else:
-                # Si no hay respaldo, quita el item
-                p["item"] = ""
-        else:
-            if item:
-                items_usados.add(item)
-
-    return equipo_reparado
 
 
 async def _simular_async(
@@ -74,10 +22,15 @@ async def _simular_async(
     equipo_2: list[dict],
     n_batallas: int = 3,
 ) -> float:
-    """Corre n_batallas batallas entre equipo_1 y equipo_2. Devuelve el winrate de equipo_1."""
-    # Reparar items antes de convertir a formato Showdown
-    equipo_1 = reparar_items_duplicados(equipo_1)
-    equipo_2 = reparar_items_duplicados(equipo_2)
+    """Corre n_batallas entre equipo_1 y equipo_2. Devuelve el winrate de equipo_1."""
+
+    # Limpiar AMBOS equipos (corrige habilidades, Species Clause, Item Clause)
+    equipo_1 = limpiar_equipo(equipo_1)
+    equipo_2 = limpiar_equipo(equipo_2)
+
+    # Si por alguna razón un equipo no tiene 6 Pokémon, fitness 0
+    if len(equipo_1) < 6 or len(equipo_2) < 6:
+        return 0.0
 
     equipo_1_txt = equipo_a_showdown(equipo_1)
     equipo_2_txt = equipo_a_showdown(equipo_2)
@@ -107,10 +60,7 @@ def simular_enfrentamiento(
     equipo_2: list[dict],
     n_batallas: int = 3,
 ) -> float:
-    """
-    Envoltorio síncrono de _simular_async.
-    Devuelve el winrate del equipo_1 contra el equipo_2 (0.0 a 1.0).
-    """
+    """Envoltorio síncrono de _simular_async."""
     return asyncio.run(_simular_async(equipo_1, equipo_2, n_batallas))
 
 

@@ -1,15 +1,11 @@
 # src/team_player.py
 """
-Player de poke-env que juega con un equipo específico en formato Showdown.
-Usa la política aleatoria incorporada, que maneja correctamente singles y doubles.
+Player de poke-env que juega con un equipo específico y usa
+la heurística simple de poke-env para elegir movimientos.
 """
-from poke_env.player import Player
+from poke_env.player import SimpleHeuristicsPlayer
 
 
-class TeamPlayer(Player):
+class TeamPlayer(SimpleHeuristicsPlayer):
     def __init__(self, team: str, *args, **kwargs):
         super().__init__(*args, team=team, **kwargs)
-
-    def choose_move(self, battle):
-        # choose_random_move ya maneja singles, doubles y team preview
-        return self.choose_random_move(battle)
