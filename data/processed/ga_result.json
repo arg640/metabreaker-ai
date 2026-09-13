@@ -1,54 +1,53 @@
 {
   "equipo": [
     {
-      "pokemon": "Arcanine-Hisui",
+      "pokemon": "Indeedee-F",
       "types": [
-        "Fire",
-        "Rock"
+        "Psychic",
+        "Normal"
       ],
-      "ability": "Rock Head",
-      "item": "Focus Sash",
+      "ability": "Psychic Surge",
+      "item": "Rocky Helmet",
       "moves": [
         {
-          "name": "Flare Blitz",
-          "type": "fire"
+          "name": "Psychic",
+          "type": "psychic"
         },
         {
-          "name": "Head Smash",
-          "type": "rock"
-        },
-        {
-          "name": "Rock Slide",
-          "type": "rock"
-        },
-        {
-          "name": "Protect",
+          "name": "Helping Hand",
           "type": "normal"
+        },
+        {
+          "name": "Follow Me",
+          "type": "normal"
+        },
+        {
+          "name": "Trick Room",
+          "type": "psychic"
         }
       ],
-      "apariciones": 6,
-      "species_key": "arcanine"
+      "apariciones": 1,
+      "species_key": "indeedee"
     },
     {
-      "pokemon": "Annihilape",
+      "pokemon": "Milotic",
       "types": [
-        "Fighting",
-        "Ghost"
+        "Water"
       ],
-      "ability": "Defiant",
-      "item": "Focus Sash",
+      "ability": "Competitive",
+      "item": "Leftovers",
       "moves": [
         {
-          "name": "Close Combat",
-          "type": "fighting"
+          "name": "Scald",
+          "type": "water"
         },
         {
-          "name": "Phantom Force",
-          "type": "ghost"
+          "name": "Icy Wind",
+          "type": "ice"
         },
         {
-          "name": "Rock Slide",
-          "type": "rock"
+          "name": "Recover",
+          "type": "normal"
         },
         {
           "name": "Protect",
@@ -56,7 +55,94 @@
         }
       ],
       "apariciones": 1,
-      "species_key": "annihilape"
+      "species_key": "milotic"
+    },
+    {
+      "pokemon": "Gholdengo",
+      "types": [
+        "Steel",
+        "Ghost"
+      ],
+      "ability": "Good as Gold",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Make It Rain",
+          "type": "steel"
+        },
+        {
+          "name": "Shadow Ball",
+          "type": "ghost"
+        },
+        {
+          "name": "Nasty Plot",
+          "type": "dark"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ],
+      "apariciones": 3,
+      "species_key": "gholdengo"
+    },
+    {
+      "pokemon": "Gardevoir-Mega",
+      "types": [
+        "Psychic",
+        "Fairy"
+      ],
+      "ability": "Trace",
+      "item": "Gardevoirite",
+      "moves": [
+        {
+          "name": "Hyper Voice",
+          "type": "normal"
+        },
+        {
+          "name": "Expanding Force",
+          "type": "psychic"
+        },
+        {
+          "name": "Trick Room",
+          "type": "psychic"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ],
+      "apariciones": 1,
+      "species_key": "gardevoir"
+    },
+    {
+      "pokemon": "Aerodactyl-Mega",
+      "types": [
+        "Rock",
+        "Flying"
+      ],
+      "ability": "Unnerve",
+      "item": "Aerodactylite",
+      "moves": [
+        {
+          "name": "Rock Slide",
+          "type": "rock"
+        },
+        {
+          "name": "Ice Fang",
+          "type": "ice"
+        },
+        {
+          "name": "Wide Guard",
+          "type": "rock"
+        },
+        {
+          "name": "Tailwind",
+          "type": "flying"
+        }
+      ],
+      "apariciones": 1,
+      "species_key": "aerodactyl"
     },
     {
       "pokemon": "Whimsicott",
@@ -86,101 +172,14 @@
       ],
       "apariciones": 1,
       "species_key": "whimsicott"
-    },
-    {
-      "pokemon": "Incineroar",
-      "types": [
-        "Fire",
-        "Dark"
-      ],
-      "ability": "Intimidate",
-      "item": "Sitrus Berry",
-      "moves": [
-        {
-          "name": "Flare Blitz",
-          "type": "fire"
-        },
-        {
-          "name": "Throat Chop",
-          "type": "dark"
-        },
-        {
-          "name": "Fake Out",
-          "type": "normal"
-        },
-        {
-          "name": "Parting Shot",
-          "type": "dark"
-        }
-      ],
-      "apariciones": 6,
-      "species_key": "incineroar"
-    },
-    {
-      "pokemon": "Glimmora-Mega",
-      "types": [
-        "Rock",
-        "Poison"
-      ],
-      "ability": "Toxic Debris",
-      "item": "Glimmoranite",
-      "moves": [
-        {
-          "name": "Spiky Shield",
-          "type": "grass"
-        },
-        {
-          "name": "Earth Power",
-          "type": "ground"
-        },
-        {
-          "name": "Power Gem",
-          "type": "rock"
-        },
-        {
-          "name": "Sludge Bomb",
-          "type": "poison"
-        }
-      ],
-      "apariciones": 1,
-      "species_key": "glimmora"
-    },
-    {
-      "pokemon": "Scovillain-Mega",
-      "types": [
-        "Grass",
-        "Fire"
-      ],
-      "ability": "Spicy Spray",
-      "item": "Scovillainite",
-      "moves": [
-        {
-          "name": "Giga Drain",
-          "type": "grass"
-        },
-        {
-          "name": "Overheat",
-          "type": "fire"
-        },
-        {
-          "name": "Rage Powder",
-          "type": "bug"
-        },
-        {
-          "name": "Protect",
-          "type": "normal"
-        }
-      ],
-      "apariciones": 1,
-      "species_key": "scovillain"
     }
   ],
-  "fitness": 0.9533333333333334,
+  "fitness": 0.7226190476190476,
   "desglose": {
-    "winrate_meta": 0.6666666666666666,
+    "winrate_meta": 0.5714285714285714,
     "cobertura_defensiva": 0.6,
-    "sinergia_ofensiva": 0.6666666666666666,
-    "diversidad_tipos": 0.8
+    "sinergia_ofensiva": 0.0,
+    "diversidad_tipos": 0.9
   },
   "pesos": {
     "winrate": 0.85,
@@ -191,21 +190,39 @@
   "logbook": [
     {
       "gen": 0,
-      "avg": 0.5896875,
-      "max": 0.8133333333333335,
-      "min": 0.35750000000000004
+      "avg": 0.45788690476190474,
+      "max": 0.6408333333333335,
+      "min": 0.2973809523809524
     },
     {
       "gen": 1,
-      "avg": 0.558125,
-      "max": 0.8116666666666668,
-      "min": 0.23416666666666663
+      "avg": 0.5098452380952381,
+      "max": 0.6408333333333335,
+      "min": 0.29238095238095235
     },
     {
       "gen": 2,
-      "avg": 0.6336458333333334,
-      "max": 0.9533333333333334,
-      "min": 0.24166666666666667
+      "avg": 0.524702380952381,
+      "max": 0.6408333333333335,
+      "min": 0.38
+    },
+    {
+      "gen": 3,
+      "avg": 0.5366440476190476,
+      "max": 0.6408333333333335,
+      "min": 0.27988095238095234
+    },
+    {
+      "gen": 4,
+      "avg": 0.5477702380952382,
+      "max": 0.6729761904761904,
+      "min": 0.3170238095238095
+    },
+    {
+      "gen": 5,
+      "avg": 0.5753416666666666,
+      "max": 0.7226190476190476,
+      "min": 0.33452380952380945
     }
   ]
 }

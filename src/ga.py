@@ -20,10 +20,10 @@ from src.fitness_components import (
 
 # ============ CONFIGURACIÓN ============
 EQUIPO_SIZE = 6
-N_BATALLAS_POR_RIVAL = 2   # bajamos de 3 a 2 (heurísticas tardan más)
-N_RIVALES = 7              # subimos de 3 a 7
-POP_SIZE = 15              # subimos de 8 a 15
-N_GEN = 4                  # subimos de 2 a 4
+N_BATALLAS_POR_RIVAL = 3   # antes 2 → menos ruido
+N_RIVALES = 7
+POP_SIZE = 20              # antes 15 → más diversidad
+N_GEN = 5                  # antes 4 → más tiempo                 # subimos de 2 a 4
 CXPB = 0.6                 # antes 0.5
 MUTPB = 0.3
 SEED = 42
@@ -189,7 +189,7 @@ def main():
     toolbox.register("evaluate", evaluar)
     toolbox.register("mate", cruzar)
     toolbox.register("mutate", mutar)
-    toolbox.register("select", tools.selTournament, tournsize=3)
+    toolbox.register("select", tools.selTournament, tournsize=5)
 
     pop = toolbox.population(n=POP_SIZE)
 
@@ -200,11 +200,56 @@ def main():
 
     hof = tools.HallOfFame(1)
 
-    pop, logbook = algorithms.eaSimple(
-        pop, toolbox,
-        cxpb=CXPB, mutpb=MUTPB, ngen=N_GEN,
-        stats=stats, halloffame=hof, verbose=True,
-    )
+        # ============ EVOLUCIÓN MANUAL CON ELITISMO ============
+    # Evaluar población inicial
+    fitnesses = list(map(toolbox.evaluate, pop))
+    for ind, fit in zip(pop, fitnesses):
+        ind.fitness.values = fit
+
+    # Inicializar estadísticas y logbook
+    logbook = tools.Logbook()
+    logbook.header = ["gen", "nevals"] + (stats.fields if stats else [])
+    hof.update(pop)
+
+    # Bucle de generaciones
+    for gen in range(N_GEN + 1):
+        if gen == 0:
+            nevals = len(pop)
+        else:
+            # Selección
+            offspring = toolbox.select(pop, len(pop))
+            offspring = [toolbox.clone(ind) for ind in offspring]
+
+            # Cruce
+            for c1, c2 in zip(offspring[::2], offspring[1::2]):
+                if random.random() < CXPB:
+                    toolbox.mate(c1, c2)
+                    del c1.fitness.values
+                    del c2.fitness.values
+
+            # Mutación
+            for mutant in offspring:
+                if random.random() < MUTPB:
+                    toolbox.mutate(mutant)
+                    del mutant.fitness.values
+
+            # Evaluar solo los nuevos (fitness inválido)
+            invalid = [ind for ind in offspring if not ind.fitness.valid]
+            fitnesses = list(map(toolbox.evaluate, invalid))
+            for ind, fit in zip(invalid, fitnesses):
+                ind.fitness.values = fit
+
+            # ELITISMO: los 2 mejores de la generación anterior sobreviven intactos
+            elite = tools.selBest(pop, 2)
+            offspring[-2:] = [toolbox.clone(ind) for ind in elite]
+
+            pop[:] = offspring
+            nevals = len(invalid)
+
+        hof.update(pop)
+        record = stats.compile(pop)
+        logbook.record(gen=gen, nevals=nevals, **record)
+        print(logbook.stream)
 
     # ============ RESULTADO FINAL ============
     mejor = hof[0]
