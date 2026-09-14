@@ -1,10 +1,13 @@
 # src/ga.py
 """
 Algoritmo Genético para evolucionar equipos anti-meta.
-Usa DEAP para la evolución y src.simulator para evaluar el fitness.
+- Sistema de guardado: ga_result.json, ga_history.json, ga_elites.json
+- Warm start: reinyecta elites históricos al inicio de cada corrida
+- Top 5 mostrado en el resultado final, ordenado por fitness recalculado
 """
 import json
 import random
+from datetime import datetime
 from pathlib import Path
 
 from deap import base, creator, tools, algorithms
@@ -22,17 +25,21 @@ from src.fitness_components import (
 EQUIPO_SIZE = 6
 N_BATALLAS_POR_RIVAL = 3
 N_RIVALES = 7
-POP_SIZE = 25              # antes 20
-N_GEN = 20                 # antes 5
+POP_SIZE = 20
+N_GEN = 5
 CXPB = 0.6
 MUTPB = 0.3
 SEED = 42
 
 # Pesos del fitness (suman 1.0)
-PESO_WINRATE = 0.85        # antes 0.5 → el winrate domina
-PESO_COBERTURA = 0.05      # antes 0.2 → solo desempate
-PESO_SINERGIA = 0.05       # antes 0.2 → solo desempate
-PESO_DIVERSIDAD = 0.05     # antes 0.1 → solo desempate
+PESO_WINRATE = 0.85
+PESO_COBERTURA = 0.05
+PESO_SINERGIA = 0.05
+PESO_DIVERSIDAD = 0.05
+
+# Warm start
+USE_WARM_START = True
+WARM_START_N = 3
 
 random.seed(SEED)
 
@@ -68,28 +75,19 @@ def crear_individuo():
 
 
 def evaluar(individuo):
-    """
-    Fitness combinado anti-meta:
-      0.85 * winrate_vs_meta
-    + 0.05 * cobertura_defensiva
-    + 0.05 * sinergia_ofensiva
-    + 0.05 * diversidad_de_tipos
-    """
+    """Fitness combinado anti-meta."""
     equipo = [POOL[i] for i in individuo]
 
-    # --- Componente 1: winrate vs meta ---
     winrates = []
     for rival in RIVALES:
         wr = simular_enfrentamiento(equipo, rival, n_batallas=N_BATALLAS_POR_RIVAL)
         winrates.append(wr)
     winrate_meta = sum(winrates) / len(winrates) if winrates else 0.0
 
-    # --- Componentes 2-4: instantáneos ---
     cob = cobertura_defensiva(equipo)
     sin = sinergia_ofensiva(equipo)
     div = diversidad_de_tipos(equipo)
 
-    # --- Fitness final ---
     fitness = (
         PESO_WINRATE * winrate_meta
         + PESO_COBERTURA * cob
@@ -101,7 +99,6 @@ def evaluar(individuo):
 
 
 def _gen_aleatorio_libre(keys_usados: set, ya_incluidos: list[int]) -> int | None:
-    """Devuelve un índice del pool cuyo species_key no esté en uso."""
     disponibles = [
         i for i in range(N_POOL)
         if POOL[i]["species_key"] not in keys_usados and i not in ya_incluidos
@@ -112,7 +109,6 @@ def _gen_aleatorio_libre(keys_usados: set, ya_incluidos: list[int]) -> int | Non
 
 
 def _deduplicar(genes: list[int]) -> list[int]:
-    """Asegura que no haya species_key repetidos."""
     resultado = []
     keys_usados = set()
 
@@ -138,7 +134,6 @@ def _deduplicar(genes: list[int]) -> list[int]:
 
 
 def cruzar(ind1, ind2):
-    """Cruce: toma 3 genes de cada padre, deduplicando."""
     hijo1, hijo2 = [], []
 
     for i in range(EQUIPO_SIZE):
@@ -158,7 +153,6 @@ def cruzar(ind1, ind2):
 
 
 def mutar(individuo, indpb=0.3):
-    """Mutación: reemplaza genes respetando Species Clause."""
     keys_actuales = {POOL[g]["species_key"] for g in individuo}
 
     for i in range(len(individuo)):
@@ -182,64 +176,66 @@ def main():
     print(f"Pesos: WR={PESO_WINRATE}, COB={PESO_COBERTURA}, SIN={PESO_SINERGIA}, DIV={PESO_DIVERSIDAD}")
     print()
 
-    # Toolbox
     toolbox = base.Toolbox()
     toolbox.register("individual", crear_individuo)
     toolbox.register("population", tools.initRepeat, list, toolbox.individual)
     toolbox.register("evaluate", evaluar)
     toolbox.register("mate", cruzar)
     toolbox.register("mutate", mutar)
-    toolbox.register("select", tools.selTournament, tournsize=5)
+    toolbox.register("select", tools.selTournament, tournsize=3)
 
     pop = toolbox.population(n=POP_SIZE)
+
+    # Warm start
+    ruta_elites = Path("data/processed/ga_elites.json")
+    if ruta_elites.exists() and USE_WARM_START:
+        elites_data = json.loads(ruta_elites.read_text(encoding="utf-8"))
+        n_reinyectar = min(len(elites_data), WARM_START_N)
+        for i in range(n_reinyectar):
+            genoma = elites_data[i]["genoma"]
+            if len(genoma) == EQUIPO_SIZE and all(0 <= g < N_POOL for g in genoma):
+                pop[i] = creator.Individual(genoma)
+        print(f"🔥 Warm start: {n_reinyectar} elites reinyectados\n")
 
     stats = tools.Statistics(lambda ind: ind.fitness.values)
     stats.register("avg", lambda x: sum(v[0] for v in x) / len(x))
     stats.register("max", lambda x: max(v[0] for v in x))
     stats.register("min", lambda x: min(v[0] for v in x))
 
-    hof = tools.HallOfFame(1)
+    hof = tools.HallOfFame(5)
 
-        # ============ EVOLUCIÓN MANUAL CON ELITISMO ============
-    # Evaluar población inicial
+    # Evolución manual con elitismo
     fitnesses = list(map(toolbox.evaluate, pop))
     for ind, fit in zip(pop, fitnesses):
         ind.fitness.values = fit
 
-    # Inicializar estadísticas y logbook
     logbook = tools.Logbook()
     logbook.header = ["gen", "nevals"] + (stats.fields if stats else [])
     hof.update(pop)
 
-    # Bucle de generaciones
     for gen in range(N_GEN + 1):
         if gen == 0:
             nevals = len(pop)
         else:
-            # Selección
             offspring = toolbox.select(pop, len(pop))
             offspring = [toolbox.clone(ind) for ind in offspring]
 
-            # Cruce
             for c1, c2 in zip(offspring[::2], offspring[1::2]):
                 if random.random() < CXPB:
                     toolbox.mate(c1, c2)
                     del c1.fitness.values
                     del c2.fitness.values
 
-            # Mutación
             for mutant in offspring:
                 if random.random() < MUTPB:
                     toolbox.mutate(mutant)
                     del mutant.fitness.values
 
-            # Evaluar solo los nuevos (fitness inválido)
             invalid = [ind for ind in offspring if not ind.fitness.valid]
             fitnesses = list(map(toolbox.evaluate, invalid))
             for ind, fit in zip(invalid, fitnesses):
                 ind.fitness.values = fit
 
-            # ELITISMO: los 2 mejores de la generación anterior sobreviven intactos
             elite = tools.selBest(pop, 2)
             offspring[-2:] = [toolbox.clone(ind) for ind in elite]
 
@@ -252,49 +248,91 @@ def main():
         print(logbook.stream)
 
     # ============ RESULTADO FINAL ============
-    mejor = hof[0]
-    equipo_mejor = [POOL[i] for i in mejor]
+    # Tomamos top 10 candidatos y reordenamos por fitness recalculado
+    candidatos = tools.selBest(pop, min(10, len(pop)))
 
-    # Recalcular desglose con batallas nuevas (más justo)
-    winrates_rivales = []
-    for rival in RIVALES:
-        wr = simular_enfrentamiento(equipo_mejor, rival, n_batallas=N_BATALLAS_POR_RIVAL)
-        winrates_rivales.append(wr)
-    wr_meta = sum(winrates_rivales) / len(winrates_rivales) if winrates_rivales else 0.0
-    cob = cobertura_defensiva(equipo_mejor)
-    sin = sinergia_ofensiva(equipo_mejor)
-    div = diversidad_de_tipos(equipo_mejor)
+    print("\n" + "=" * 60)
+    print("🏆 TOP 5 EQUIPOS ENCONTRADOS")
+    print("=" * 60)
 
-    print("\n" + "=" * 50)
-    print("🏆 MEJOR EQUIPO ENCONTRADO")
-    print("=" * 50)
-    for i, p in enumerate(equipo_mejor):
-        tipos = "/".join(p["types"])
-        print(f"  {i+1}. {p['pokemon']:<25} [{tipos}]")
-    print(f"\n--- Desglose del fitness ---")
-    print(f"  Winrate vs meta:     {wr_meta:.1%}  (peso {PESO_WINRATE})")
-    print(f"  Cobertura defensiva: {cob:.2f}   (peso {PESO_COBERTURA})")
-    print(f"  Sinergia ofensiva:   {sin:.2f}   (peso {PESO_SINERGIA})")
-    print(f"  Diversidad de tipos: {div:.2f}   (peso {PESO_DIVERSIDAD})")
-    print(f"\n  FITNESS TOTAL:       {mejor.fitness.values[0]:.3f}")
+    resultados_top5 = []
+    for ind in candidatos:
+        equipo = [POOL[i] for i in ind]
 
-    # ============ GUARDAR RESULTADO ============
+        # Recalcular winrate con batallas nuevas (más honesto)
+        winrates_rivales = []
+        for rival in RIVALES:
+            wr = simular_enfrentamiento(equipo, rival, n_batallas=N_BATALLAS_POR_RIVAL)
+            winrates_rivales.append(wr)
+        wr_meta = sum(winrates_rivales) / len(winrates_rivales) if winrates_rivales else 0.0
+        cob = cobertura_defensiva(equipo)
+        sin = sinergia_ofensiva(equipo)
+        div = diversidad_de_tipos(equipo)
+
+        # Fitness recalculado con batallas nuevas (más justo que el de la evolución)
+        fitness_recalculado = (
+            PESO_WINRATE * wr_meta
+            + PESO_COBERTURA * cob
+            + PESO_SINERGIA * sin
+            + PESO_DIVERSIDAD * div
+        )
+
+        resultados_top5.append({
+            "equipo": equipo,
+            "fitness": fitness_recalculado,
+            "fitness_evolucion": ind.fitness.values[0],
+            "desglose": {
+                "winrate_meta": wr_meta,
+                "cobertura_defensiva": cob,
+                "sinergia_ofensiva": sin,
+                "diversidad_tipos": div,
+            },
+        })
+
+    # Reordenar por fitness recalculado (más honesto)
+    resultados_top5.sort(key=lambda x: x["fitness"], reverse=True)
+    resultados_top5 = resultados_top5[:5]
+
+    # Asignar ranks y mostrar
+    for i, r in enumerate(resultados_top5, 1):
+        r["rank"] = i
+        equipo = r["equipo"]
+        d = r["desglose"]
+        print(f"\n--- #{i} ---")
+        for j, p in enumerate(equipo):
+            tipos = "/".join(p["types"])
+            print(f"  {j+1}. {p['pokemon']:<25} [{tipos}]")
+        print(f"  Winrate: {d['winrate_meta']:.1%} | Cobertura: {d['cobertura_defensiva']:.2f} | "
+              f"Sinergia: {d['sinergia_ofensiva']:.2f} | Diversidad: {d['diversidad_tipos']:.2f}")
+        print(f"  FITNESS (recalculado): {r['fitness']:.3f}  |  FITNESS (evolución): {r['fitness_evolucion']:.3f}")
+
+    mejor = resultados_top5[0]
+    equipo_mejor = mejor["equipo"]
+    wr_meta_mejor = mejor["desglose"]["winrate_meta"]
+
+    # ============ GUARDAR RESULTADOS ============
     out_dir = Path("data/processed")
     out_dir.mkdir(parents=True, exist_ok=True)
+
     resultado = {
+        "timestamp": datetime.now().isoformat(),
         "equipo": equipo_mejor,
-        "fitness": mejor.fitness.values[0],
-        "desglose": {
-            "winrate_meta": wr_meta,
-            "cobertura_defensiva": cob,
-            "sinergia_ofensiva": sin,
-            "diversidad_tipos": div,
-        },
-        "pesos": {
-            "winrate": PESO_WINRATE,
-            "cobertura": PESO_COBERTURA,
-            "sinergia": PESO_SINERGIA,
-            "diversidad": PESO_DIVERSIDAD,
+        "fitness": mejor["fitness"],
+        "fitness_evolucion": mejor["fitness_evolucion"],
+        "top5": resultados_top5,
+        "desglose": mejor["desglose"],
+        "config": {
+            "POP_SIZE": POP_SIZE,
+            "N_GEN": N_GEN,
+            "N_RIVALES": N_RIVALES,
+            "N_BATALLAS_POR_RIVAL": N_BATALLAS_POR_RIVAL,
+            "CXPB": CXPB,
+            "MUTPB": MUTPB,
+            "SEED": SEED,
+            "PESO_WINRATE": PESO_WINRATE,
+            "PESO_COBERTURA": PESO_COBERTURA,
+            "PESO_SINERGIA": PESO_SINERGIA,
+            "PESO_DIVERSIDAD": PESO_DIVERSIDAD,
         },
         "logbook": [
             {"gen": g, "avg": a, "max": m, "min": mn}
@@ -306,9 +344,58 @@ def main():
             )
         ],
     }
+
     ruta = out_dir / "ga_result.json"
     ruta.write_text(json.dumps(resultado, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"\n✅ Resultado guardado en {ruta}")
+
+    # Historial acumulativo
+    ruta_historial = out_dir / "ga_history.json"
+    if ruta_historial.exists():
+        historial = json.loads(ruta_historial.read_text(encoding="utf-8"))
+    else:
+        historial = []
+
+    resumen = {
+        "timestamp": resultado["timestamp"],
+        "fitness": resultado["fitness"],
+        "winrate_meta": wr_meta_mejor,
+        "config": resultado["config"],
+        "top5_nombres": [
+            {"rank": r["rank"], "equipo": [p["pokemon"] for p in r["equipo"]], "fitness": r["fitness"]}
+            for r in resultados_top5
+        ],
+    }
+    historial.append(resumen)
+    ruta_historial.write_text(json.dumps(historial, indent=2, ensure_ascii=False), encoding="utf-8")
+
+    # Elites para warm start
+    ruta_elites = out_dir / "ga_elites.json"
+    if ruta_elites.exists():
+        elites_previos = json.loads(ruta_elites.read_text(encoding="utf-8"))
+    else:
+        elites_previos = []
+
+    nuevos_elites = [
+        {
+            "genoma": [POOL.index(p) if p in POOL else i for i, p in enumerate(r["equipo"])],
+            "fitness": r["fitness"],
+            "nombres": [p["pokemon"] for p in r["equipo"]],
+        }
+        for r in resultados_top5
+    ]
+
+    todos = elites_previos + nuevos_elites
+    todos.sort(key=lambda x: x["fitness"], reverse=True)
+    elites_finales = todos[:10]
+
+    ruta_elites.write_text(
+        json.dumps(elites_finales, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
+
+    print(f"\n✅ Resultado: {ruta}")
+    print(f"✅ Historial: {ruta_historial} ({len(historial)} corridas)")
+    print(f"✅ Elites: {ruta_elites} ({len(elites_finales)} mejores históricos)")
 
 
 if __name__ == "__main__":

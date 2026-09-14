@@ -1,0 +1,192 @@
+[
+  {
+    "genoma": [
+      40,
+      7,
+      1,
+      37,
+      17,
+      0
+    ],
+    "fitness": 0.9583333333333334,
+    "nombres": [
+      "Indeedee-F",
+      "Basculegion",
+      "Rillaboom",
+      "Glimmora-Mega",
+      "Torkoal",
+      "Sneasler"
+    ]
+  },
+  {
+    "genoma": [
+      10,
+      44,
+      27,
+      37,
+      17,
+      0
+    ],
+    "fitness": 0.7991666666666667,
+    "nombres": [
+      "Froslass-Mega",
+      "Aerodactyl-Mega",
+      "Scovillain-Mega",
+      "Glimmora-Mega",
+      "Torkoal",
+      "Sneasler"
+    ]
+  },
+  {
+    "genoma": [
+      42,
+      14,
+      18,
+      5,
+      6,
+      24
+    ],
+    "fitness": 0.7301190476190476,
+    "nombres": [
+      "Armarouge",
+      "Indeedee",
+      "Archaludon",
+      "Incineroar",
+      "Arcanine-Hisui",
+      "Scrafty"
+    ]
+  },
+  {
+    "genoma": [
+      26,
+      14,
+      28,
+      37,
+      17,
+      0
+    ],
+    "fitness": 0.675,
+    "nombres": [
+      "Blastoise-Mega",
+      "Indeedee",
+      "Grimmsnarl",
+      "Glimmora-Mega",
+      "Torkoal",
+      "Sneasler"
+    ]
+  },
+  {
+    "genoma": [
+      42,
+      14,
+      18,
+      5,
+      6,
+      24
+    ],
+    "fitness": 0.6491666666666668,
+    "nombres": [
+      "Armarouge",
+      "Indeedee",
+      "Archaludon",
+      "Incineroar",
+      "Arcanine-Hisui",
+      "Scrafty"
+    ]
+  },
+  {
+    "genoma": [
+      42,
+      14,
+      21,
+      5,
+      6,
+      24
+    ],
+    "fitness": 0.6161904761904762,
+    "nombres": [
+      "Armarouge",
+      "Indeedee",
+      "Milotic",
+      "Incineroar",
+      "Arcanine-Hisui",
+      "Scrafty"
+    ]
+  },
+  {
+    "genoma": [
+      42,
+      14,
+      18,
+      5,
+      6,
+      24
+    ],
+    "fitness": 0.6086904761904761,
+    "nombres": [
+      "Armarouge",
+      "Indeedee",
+      "Archaludon",
+      "Incineroar",
+      "Arcanine-Hisui",
+      "Scrafty"
+    ]
+  },
+  {
+    "genoma": [
+      42,
+      14,
+      18,
+      5,
+      6,
+      24
+    ],
+    "fitness": 0.6086904761904761,
+    "nombres": [
+      "Armarouge",
+      "Indeedee",
+      "Archaludon",
+      "Incineroar",
+      "Arcanine-Hisui",
+      "Scrafty"
+    ]
+  },
+  {
+    "genoma": [
+      6,
+      43,
+      34,
+      37,
+      17,
+      0
+    ],
+    "fitness": 0.5191666666666667,
+    "nombres": [
+      "Arcanine-Hisui",
+      "Annihilape",
+      "Whimsicott",
+      "Glimmora-Mega",
+      "Torkoal",
+      "Sneasler"
+    ]
+  },
+  {
+    "genoma": [
+      10,
+      44,
+      27,
+      37,
+      17,
+      0
+    ],
+    "fitness": 0.37416666666666665,
+    "nombres": [
+      "Froslass-Mega",
+      "Aerodactyl-Mega",
+      "Scovillain-Mega",
+      "Glimmora-Mega",
+      "Torkoal",
+      "Sneasler"
+    ]
+  }
+]

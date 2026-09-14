@@ -1,33 +1,34 @@
 {
+  "timestamp": "2026-09-14T09:09:29.914078",
   "equipo": [
     {
-      "pokemon": "Charizard-Mega-Y",
+      "pokemon": "Armarouge",
       "types": [
         "Fire",
-        "Flying"
+        "Psychic"
       ],
-      "ability": "Blaze",
-      "item": "Charizardite Y",
+      "ability": "Flash Fire",
+      "item": "Life Orb",
       "moves": [
         {
-          "name": "Heat Wave",
+          "name": "Expanding Force",
+          "type": "psychic"
+        },
+        {
+          "name": "Armor Cannon",
           "type": "fire"
         },
         {
-          "name": "Weather Ball",
-          "type": "normal"
-        },
-        {
-          "name": "Ancient Power",
-          "type": "rock"
+          "name": "Dark Pulse",
+          "type": "dark"
         },
         {
           "name": "Protect",
           "type": "normal"
         }
       ],
-      "apariciones": 3,
-      "species_key": "charizard"
+      "apariciones": 1,
+      "species_key": "armarouge"
     },
     {
       "pokemon": "Indeedee",
@@ -59,261 +60,1115 @@
       "species_key": "indeedee"
     },
     {
-      "pokemon": "Garchomp",
-      "types": [
-        "Dragon",
-        "Ground"
-      ],
-      "ability": "Rough Skin",
-      "item": "Life Orb",
-      "moves": [
-        {
-          "name": "Protect",
-          "type": "normal"
-        },
-        {
-          "name": "Dragon Claw",
-          "type": "dragon"
-        },
-        {
-          "name": "Rock Slide",
-          "type": "rock"
-        },
-        {
-          "name": "Stomping Tantrum",
-          "type": "ground"
-        }
-      ],
-      "apariciones": 1,
-      "species_key": "garchomp"
-    },
-    {
-      "pokemon": "Metagross-Mega",
+      "pokemon": "Archaludon",
       "types": [
         "Steel",
-        "Psychic"
+        "Dragon"
       ],
-      "ability": "Clear Body",
-      "item": "Metagrossite",
+      "ability": "Stamina",
+      "item": "Leftovers",
       "moves": [
         {
-          "name": "Iron Head",
-          "type": "steel"
+          "name": "Electro Shot",
+          "type": "electric"
         },
         {
-          "name": "Psychic Fangs",
-          "type": "psychic"
-        },
-        {
-          "name": "Body Press",
-          "type": "fighting"
-        },
-        {
-          "name": "Protect",
-          "type": "normal"
-        }
-      ],
-      "apariciones": 1,
-      "species_key": "metagross"
-    },
-    {
-      "pokemon": "Kingambit",
-      "types": [
-        "Dark",
-        "Steel"
-      ],
-      "ability": "Defiant",
-      "item": "Chople Berry",
-      "moves": [
-        {
-          "name": "Sucker Punch",
+          "name": "Snarl",
           "type": "dark"
-        },
-        {
-          "name": "Kowtow Cleave",
-          "type": "dark"
-        },
-        {
-          "name": "Low Kick",
-          "type": "fighting"
-        },
-        {
-          "name": "Iron Head",
-          "type": "steel"
-        }
-      ],
-      "apariciones": 8,
-      "species_key": "kingambit"
-    },
-    {
-      "pokemon": "Salamence-Mega",
-      "types": [
-        "Dragon",
-        "Flying"
-      ],
-      "ability": "Intimidate",
-      "item": "Salamencite",
-      "moves": [
-        {
-          "name": "Hyper Voice",
-          "type": "normal"
         },
         {
           "name": "Dragon Pulse",
           "type": "dragon"
         },
         {
-          "name": "Heat Wave",
+          "name": "Protect",
+          "type": "normal"
+        }
+      ],
+      "apariciones": 2,
+      "species_key": "archaludon"
+    },
+    {
+      "pokemon": "Incineroar",
+      "types": [
+        "Fire",
+        "Dark"
+      ],
+      "ability": "Intimidate",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Flare Blitz",
           "type": "fire"
+        },
+        {
+          "name": "Throat Chop",
+          "type": "dark"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Parting Shot",
+          "type": "dark"
+        }
+      ],
+      "apariciones": 6,
+      "species_key": "incineroar"
+    },
+    {
+      "pokemon": "Arcanine-Hisui",
+      "types": [
+        "Fire",
+        "Rock"
+      ],
+      "ability": "Rock Head",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Flare Blitz",
+          "type": "fire"
+        },
+        {
+          "name": "Head Smash",
+          "type": "rock"
+        },
+        {
+          "name": "Rock Slide",
+          "type": "rock"
         },
         {
           "name": "Protect",
           "type": "normal"
         }
       ],
-      "apariciones": 8,
-      "species_key": "salamence"
+      "apariciones": 6,
+      "species_key": "arcanine"
+    },
+    {
+      "pokemon": "Scrafty",
+      "types": [
+        "Dark",
+        "Fighting"
+      ],
+      "ability": "Intimidate",
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Knock Off",
+          "type": "dark"
+        },
+        {
+          "name": "Fake Out",
+          "type": "normal"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        }
+      ],
+      "apariciones": 1,
+      "species_key": "scrafty"
     }
   ],
-  "fitness": 0.8122619047619047,
+  "fitness": 0.7301190476190476,
+  "fitness_evolucion": 0.7301190476190476,
+  "top5": [
+    {
+      "equipo": [
+        {
+          "pokemon": "Armarouge",
+          "types": [
+            "Fire",
+            "Psychic"
+          ],
+          "ability": "Flash Fire",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Expanding Force",
+              "type": "psychic"
+            },
+            {
+              "name": "Armor Cannon",
+              "type": "fire"
+            },
+            {
+              "name": "Dark Pulse",
+              "type": "dark"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 1,
+          "species_key": "armarouge"
+        },
+        {
+          "pokemon": "Indeedee",
+          "types": [
+            "Psychic",
+            "Normal"
+          ],
+          "ability": "Psychic Surge",
+          "item": "Choice Scarf",
+          "moves": [
+            {
+              "name": "Expanding Force",
+              "type": "psychic"
+            },
+            {
+              "name": "Imprison",
+              "type": "psychic"
+            },
+            {
+              "name": "Trick",
+              "type": "psychic"
+            },
+            {
+              "name": "Trick Room",
+              "type": "psychic"
+            }
+          ],
+          "apariciones": 2,
+          "species_key": "indeedee"
+        },
+        {
+          "pokemon": "Archaludon",
+          "types": [
+            "Steel",
+            "Dragon"
+          ],
+          "ability": "Stamina",
+          "item": "Leftovers",
+          "moves": [
+            {
+              "name": "Electro Shot",
+              "type": "electric"
+            },
+            {
+              "name": "Snarl",
+              "type": "dark"
+            },
+            {
+              "name": "Dragon Pulse",
+              "type": "dragon"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 2,
+          "species_key": "archaludon"
+        },
+        {
+          "pokemon": "Incineroar",
+          "types": [
+            "Fire",
+            "Dark"
+          ],
+          "ability": "Intimidate",
+          "item": "Sitrus Berry",
+          "moves": [
+            {
+              "name": "Flare Blitz",
+              "type": "fire"
+            },
+            {
+              "name": "Throat Chop",
+              "type": "dark"
+            },
+            {
+              "name": "Fake Out",
+              "type": "normal"
+            },
+            {
+              "name": "Parting Shot",
+              "type": "dark"
+            }
+          ],
+          "apariciones": 6,
+          "species_key": "incineroar"
+        },
+        {
+          "pokemon": "Arcanine-Hisui",
+          "types": [
+            "Fire",
+            "Rock"
+          ],
+          "ability": "Rock Head",
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Flare Blitz",
+              "type": "fire"
+            },
+            {
+              "name": "Head Smash",
+              "type": "rock"
+            },
+            {
+              "name": "Rock Slide",
+              "type": "rock"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 6,
+          "species_key": "arcanine"
+        },
+        {
+          "pokemon": "Scrafty",
+          "types": [
+            "Dark",
+            "Fighting"
+          ],
+          "ability": "Intimidate",
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Close Combat",
+              "type": "fighting"
+            },
+            {
+              "name": "Knock Off",
+              "type": "dark"
+            },
+            {
+              "name": "Fake Out",
+              "type": "normal"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 1,
+          "species_key": "scrafty"
+        }
+      ],
+      "fitness": 0.7301190476190476,
+      "fitness_evolucion": 0.7301190476190476,
+      "desglose": {
+        "winrate_meta": 0.7619047619047619,
+        "cobertura_defensiva": 0.35,
+        "sinergia_ofensiva": 0.5,
+        "diversidad_tipos": 0.8
+      },
+      "rank": 1
+    },
+    {
+      "equipo": [
+        {
+          "pokemon": "Armarouge",
+          "types": [
+            "Fire",
+            "Psychic"
+          ],
+          "ability": "Flash Fire",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Expanding Force",
+              "type": "psychic"
+            },
+            {
+              "name": "Armor Cannon",
+              "type": "fire"
+            },
+            {
+              "name": "Dark Pulse",
+              "type": "dark"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 1,
+          "species_key": "armarouge"
+        },
+        {
+          "pokemon": "Indeedee",
+          "types": [
+            "Psychic",
+            "Normal"
+          ],
+          "ability": "Psychic Surge",
+          "item": "Choice Scarf",
+          "moves": [
+            {
+              "name": "Expanding Force",
+              "type": "psychic"
+            },
+            {
+              "name": "Imprison",
+              "type": "psychic"
+            },
+            {
+              "name": "Trick",
+              "type": "psychic"
+            },
+            {
+              "name": "Trick Room",
+              "type": "psychic"
+            }
+          ],
+          "apariciones": 2,
+          "species_key": "indeedee"
+        },
+        {
+          "pokemon": "Archaludon",
+          "types": [
+            "Steel",
+            "Dragon"
+          ],
+          "ability": "Stamina",
+          "item": "Leftovers",
+          "moves": [
+            {
+              "name": "Electro Shot",
+              "type": "electric"
+            },
+            {
+              "name": "Snarl",
+              "type": "dark"
+            },
+            {
+              "name": "Dragon Pulse",
+              "type": "dragon"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 2,
+          "species_key": "archaludon"
+        },
+        {
+          "pokemon": "Incineroar",
+          "types": [
+            "Fire",
+            "Dark"
+          ],
+          "ability": "Intimidate",
+          "item": "Sitrus Berry",
+          "moves": [
+            {
+              "name": "Flare Blitz",
+              "type": "fire"
+            },
+            {
+              "name": "Throat Chop",
+              "type": "dark"
+            },
+            {
+              "name": "Fake Out",
+              "type": "normal"
+            },
+            {
+              "name": "Parting Shot",
+              "type": "dark"
+            }
+          ],
+          "apariciones": 6,
+          "species_key": "incineroar"
+        },
+        {
+          "pokemon": "Arcanine-Hisui",
+          "types": [
+            "Fire",
+            "Rock"
+          ],
+          "ability": "Rock Head",
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Flare Blitz",
+              "type": "fire"
+            },
+            {
+              "name": "Head Smash",
+              "type": "rock"
+            },
+            {
+              "name": "Rock Slide",
+              "type": "rock"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 6,
+          "species_key": "arcanine"
+        },
+        {
+          "pokemon": "Scrafty",
+          "types": [
+            "Dark",
+            "Fighting"
+          ],
+          "ability": "Intimidate",
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Close Combat",
+              "type": "fighting"
+            },
+            {
+              "name": "Knock Off",
+              "type": "dark"
+            },
+            {
+              "name": "Fake Out",
+              "type": "normal"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 1,
+          "species_key": "scrafty"
+        }
+      ],
+      "fitness": 0.6491666666666668,
+      "fitness_evolucion": 0.6491666666666668,
+      "desglose": {
+        "winrate_meta": 0.6666666666666667,
+        "cobertura_defensiva": 0.35,
+        "sinergia_ofensiva": 0.5,
+        "diversidad_tipos": 0.8
+      },
+      "rank": 2
+    },
+    {
+      "equipo": [
+        {
+          "pokemon": "Armarouge",
+          "types": [
+            "Fire",
+            "Psychic"
+          ],
+          "ability": "Flash Fire",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Expanding Force",
+              "type": "psychic"
+            },
+            {
+              "name": "Armor Cannon",
+              "type": "fire"
+            },
+            {
+              "name": "Dark Pulse",
+              "type": "dark"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 1,
+          "species_key": "armarouge"
+        },
+        {
+          "pokemon": "Indeedee",
+          "types": [
+            "Psychic",
+            "Normal"
+          ],
+          "ability": "Psychic Surge",
+          "item": "Choice Scarf",
+          "moves": [
+            {
+              "name": "Expanding Force",
+              "type": "psychic"
+            },
+            {
+              "name": "Imprison",
+              "type": "psychic"
+            },
+            {
+              "name": "Trick",
+              "type": "psychic"
+            },
+            {
+              "name": "Trick Room",
+              "type": "psychic"
+            }
+          ],
+          "apariciones": 2,
+          "species_key": "indeedee"
+        },
+        {
+          "pokemon": "Milotic",
+          "types": [
+            "Water"
+          ],
+          "ability": "Competitive",
+          "item": "Leftovers",
+          "moves": [
+            {
+              "name": "Scald",
+              "type": "water"
+            },
+            {
+              "name": "Icy Wind",
+              "type": "ice"
+            },
+            {
+              "name": "Recover",
+              "type": "normal"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 1,
+          "species_key": "milotic"
+        },
+        {
+          "pokemon": "Incineroar",
+          "types": [
+            "Fire",
+            "Dark"
+          ],
+          "ability": "Intimidate",
+          "item": "Sitrus Berry",
+          "moves": [
+            {
+              "name": "Flare Blitz",
+              "type": "fire"
+            },
+            {
+              "name": "Throat Chop",
+              "type": "dark"
+            },
+            {
+              "name": "Fake Out",
+              "type": "normal"
+            },
+            {
+              "name": "Parting Shot",
+              "type": "dark"
+            }
+          ],
+          "apariciones": 6,
+          "species_key": "incineroar"
+        },
+        {
+          "pokemon": "Arcanine-Hisui",
+          "types": [
+            "Fire",
+            "Rock"
+          ],
+          "ability": "Rock Head",
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Flare Blitz",
+              "type": "fire"
+            },
+            {
+              "name": "Head Smash",
+              "type": "rock"
+            },
+            {
+              "name": "Rock Slide",
+              "type": "rock"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 6,
+          "species_key": "arcanine"
+        },
+        {
+          "pokemon": "Scrafty",
+          "types": [
+            "Dark",
+            "Fighting"
+          ],
+          "ability": "Intimidate",
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Close Combat",
+              "type": "fighting"
+            },
+            {
+              "name": "Knock Off",
+              "type": "dark"
+            },
+            {
+              "name": "Fake Out",
+              "type": "normal"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 1,
+          "species_key": "scrafty"
+        }
+      ],
+      "fitness": 0.6161904761904762,
+      "fitness_evolucion": 0.6971428571428572,
+      "desglose": {
+        "winrate_meta": 0.619047619047619,
+        "cobertura_defensiva": 0.6,
+        "sinergia_ofensiva": 0.5,
+        "diversidad_tipos": 0.7
+      },
+      "rank": 3
+    },
+    {
+      "equipo": [
+        {
+          "pokemon": "Armarouge",
+          "types": [
+            "Fire",
+            "Psychic"
+          ],
+          "ability": "Flash Fire",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Expanding Force",
+              "type": "psychic"
+            },
+            {
+              "name": "Armor Cannon",
+              "type": "fire"
+            },
+            {
+              "name": "Dark Pulse",
+              "type": "dark"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 1,
+          "species_key": "armarouge"
+        },
+        {
+          "pokemon": "Indeedee",
+          "types": [
+            "Psychic",
+            "Normal"
+          ],
+          "ability": "Psychic Surge",
+          "item": "Choice Scarf",
+          "moves": [
+            {
+              "name": "Expanding Force",
+              "type": "psychic"
+            },
+            {
+              "name": "Imprison",
+              "type": "psychic"
+            },
+            {
+              "name": "Trick",
+              "type": "psychic"
+            },
+            {
+              "name": "Trick Room",
+              "type": "psychic"
+            }
+          ],
+          "apariciones": 2,
+          "species_key": "indeedee"
+        },
+        {
+          "pokemon": "Archaludon",
+          "types": [
+            "Steel",
+            "Dragon"
+          ],
+          "ability": "Stamina",
+          "item": "Leftovers",
+          "moves": [
+            {
+              "name": "Electro Shot",
+              "type": "electric"
+            },
+            {
+              "name": "Snarl",
+              "type": "dark"
+            },
+            {
+              "name": "Dragon Pulse",
+              "type": "dragon"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 2,
+          "species_key": "archaludon"
+        },
+        {
+          "pokemon": "Incineroar",
+          "types": [
+            "Fire",
+            "Dark"
+          ],
+          "ability": "Intimidate",
+          "item": "Sitrus Berry",
+          "moves": [
+            {
+              "name": "Flare Blitz",
+              "type": "fire"
+            },
+            {
+              "name": "Throat Chop",
+              "type": "dark"
+            },
+            {
+              "name": "Fake Out",
+              "type": "normal"
+            },
+            {
+              "name": "Parting Shot",
+              "type": "dark"
+            }
+          ],
+          "apariciones": 6,
+          "species_key": "incineroar"
+        },
+        {
+          "pokemon": "Arcanine-Hisui",
+          "types": [
+            "Fire",
+            "Rock"
+          ],
+          "ability": "Rock Head",
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Flare Blitz",
+              "type": "fire"
+            },
+            {
+              "name": "Head Smash",
+              "type": "rock"
+            },
+            {
+              "name": "Rock Slide",
+              "type": "rock"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 6,
+          "species_key": "arcanine"
+        },
+        {
+          "pokemon": "Scrafty",
+          "types": [
+            "Dark",
+            "Fighting"
+          ],
+          "ability": "Intimidate",
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Close Combat",
+              "type": "fighting"
+            },
+            {
+              "name": "Knock Off",
+              "type": "dark"
+            },
+            {
+              "name": "Fake Out",
+              "type": "normal"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 1,
+          "species_key": "scrafty"
+        }
+      ],
+      "fitness": 0.6086904761904761,
+      "fitness_evolucion": 0.7301190476190476,
+      "desglose": {
+        "winrate_meta": 0.619047619047619,
+        "cobertura_defensiva": 0.35,
+        "sinergia_ofensiva": 0.5,
+        "diversidad_tipos": 0.8
+      },
+      "rank": 4
+    },
+    {
+      "equipo": [
+        {
+          "pokemon": "Armarouge",
+          "types": [
+            "Fire",
+            "Psychic"
+          ],
+          "ability": "Flash Fire",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Expanding Force",
+              "type": "psychic"
+            },
+            {
+              "name": "Armor Cannon",
+              "type": "fire"
+            },
+            {
+              "name": "Dark Pulse",
+              "type": "dark"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 1,
+          "species_key": "armarouge"
+        },
+        {
+          "pokemon": "Indeedee",
+          "types": [
+            "Psychic",
+            "Normal"
+          ],
+          "ability": "Psychic Surge",
+          "item": "Choice Scarf",
+          "moves": [
+            {
+              "name": "Expanding Force",
+              "type": "psychic"
+            },
+            {
+              "name": "Imprison",
+              "type": "psychic"
+            },
+            {
+              "name": "Trick",
+              "type": "psychic"
+            },
+            {
+              "name": "Trick Room",
+              "type": "psychic"
+            }
+          ],
+          "apariciones": 2,
+          "species_key": "indeedee"
+        },
+        {
+          "pokemon": "Archaludon",
+          "types": [
+            "Steel",
+            "Dragon"
+          ],
+          "ability": "Stamina",
+          "item": "Leftovers",
+          "moves": [
+            {
+              "name": "Electro Shot",
+              "type": "electric"
+            },
+            {
+              "name": "Snarl",
+              "type": "dark"
+            },
+            {
+              "name": "Dragon Pulse",
+              "type": "dragon"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 2,
+          "species_key": "archaludon"
+        },
+        {
+          "pokemon": "Incineroar",
+          "types": [
+            "Fire",
+            "Dark"
+          ],
+          "ability": "Intimidate",
+          "item": "Sitrus Berry",
+          "moves": [
+            {
+              "name": "Flare Blitz",
+              "type": "fire"
+            },
+            {
+              "name": "Throat Chop",
+              "type": "dark"
+            },
+            {
+              "name": "Fake Out",
+              "type": "normal"
+            },
+            {
+              "name": "Parting Shot",
+              "type": "dark"
+            }
+          ],
+          "apariciones": 6,
+          "species_key": "incineroar"
+        },
+        {
+          "pokemon": "Arcanine-Hisui",
+          "types": [
+            "Fire",
+            "Rock"
+          ],
+          "ability": "Rock Head",
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Flare Blitz",
+              "type": "fire"
+            },
+            {
+              "name": "Head Smash",
+              "type": "rock"
+            },
+            {
+              "name": "Rock Slide",
+              "type": "rock"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 6,
+          "species_key": "arcanine"
+        },
+        {
+          "pokemon": "Scrafty",
+          "types": [
+            "Dark",
+            "Fighting"
+          ],
+          "ability": "Intimidate",
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Close Combat",
+              "type": "fighting"
+            },
+            {
+              "name": "Knock Off",
+              "type": "dark"
+            },
+            {
+              "name": "Fake Out",
+              "type": "normal"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "apariciones": 1,
+          "species_key": "scrafty"
+        }
+      ],
+      "fitness": 0.6086904761904761,
+      "fitness_evolucion": 0.6896428571428571,
+      "desglose": {
+        "winrate_meta": 0.619047619047619,
+        "cobertura_defensiva": 0.35,
+        "sinergia_ofensiva": 0.5,
+        "diversidad_tipos": 0.8
+      },
+      "rank": 5
+    }
+  ],
   "desglose": {
-    "winrate_meta": 0.6666666666666667,
-    "cobertura_defensiva": 0.85,
-    "sinergia_ofensiva": 0.8333333333333334,
+    "winrate_meta": 0.7619047619047619,
+    "cobertura_defensiva": 0.35,
+    "sinergia_ofensiva": 0.5,
     "diversidad_tipos": 0.8
   },
-  "pesos": {
-    "winrate": 0.85,
-    "cobertura": 0.05,
-    "sinergia": 0.05,
-    "diversidad": 0.05
+  "config": {
+    "POP_SIZE": 20,
+    "N_GEN": 5,
+    "N_RIVALES": 7,
+    "N_BATALLAS_POR_RIVAL": 3,
+    "CXPB": 0.6,
+    "MUTPB": 0.3,
+    "SEED": 42,
+    "PESO_WINRATE": 0.85,
+    "PESO_COBERTURA": 0.05,
+    "PESO_SINERGIA": 0.05,
+    "PESO_DIVERSIDAD": 0.05
   },
   "logbook": [
     {
       "gen": 0,
-      "avg": 0.44766666666666666,
-      "max": 0.6666666666666669,
-      "min": 0.2555952380952381
+      "avg": 0.46036904761904757,
+      "max": 0.6491666666666667,
+      "min": 0.2502380952380952
     },
     {
       "gen": 1,
-      "avg": 0.4872904761904762,
-      "max": 0.6666666666666669,
-      "min": 0.2089285714285714
+      "avg": 0.5064761904761904,
+      "max": 0.6491666666666667,
+      "min": 0.32119047619047614
     },
     {
       "gen": 2,
-      "avg": 0.5335666666666667,
-      "max": 0.6666666666666669,
-      "min": 0.2735714285714286
+      "avg": 0.5425952380952381,
+      "max": 0.6491666666666667,
+      "min": 0.34619047619047616
     },
     {
       "gen": 3,
-      "avg": 0.5611238095238096,
-      "max": 0.6666666666666669,
-      "min": 0.18595238095238092
+      "avg": 0.602625,
+      "max": 0.7301190476190476,
+      "min": 0.42714285714285716
     },
     {
       "gen": 4,
-      "avg": 0.5873666666666667,
-      "max": 0.6666666666666669,
-      "min": 0.38166666666666665
+      "avg": 0.6150654761904761,
+      "max": 0.7301190476190476,
+      "min": 0.4238095238095238
     },
     {
       "gen": 5,
-      "avg": 0.560109523809524,
-      "max": 0.6666666666666669,
-      "min": 0.39166666666666666
-    },
-    {
-      "gen": 6,
-      "avg": 0.5753476190476191,
-      "max": 0.7121428571428572,
-      "min": 0.375
-    },
-    {
-      "gen": 7,
-      "avg": 0.5815714285714286,
-      "max": 0.7121428571428572,
-      "min": 0.38333333333333336
-    },
-    {
-      "gen": 8,
-      "avg": 0.580352380952381,
-      "max": 0.7121428571428572,
-      "min": 0.41880952380952385
-    },
-    {
-      "gen": 9,
-      "avg": 0.5804523809523809,
-      "max": 0.7121428571428572,
-      "min": 0.25690476190476186
-    },
-    {
-      "gen": 10,
-      "avg": 0.5812333333333334,
-      "max": 0.7121428571428572,
-      "min": 0.38833333333333336
-    },
-    {
-      "gen": 11,
-      "avg": 0.6243619047619048,
-      "max": 0.8122619047619047,
-      "min": 0.38833333333333336
-    },
-    {
-      "gen": 12,
-      "avg": 0.5645714285714285,
-      "max": 0.8122619047619047,
-      "min": 0.30738095238095237
-    },
-    {
-      "gen": 13,
-      "avg": 0.6204857142857143,
-      "max": 0.8122619047619047,
-      "min": 0.395
-    },
-    {
-      "gen": 14,
-      "avg": 0.6363,
-      "max": 0.8122619047619047,
-      "min": 0.4859523809523809
-    },
-    {
-      "gen": 15,
-      "avg": 0.6492190476190476,
-      "max": 0.8122619047619047,
-      "min": 0.37916666666666665
-    },
-    {
-      "gen": 16,
-      "avg": 0.686152380952381,
-      "max": 0.8122619047619047,
-      "min": 0.44464285714285706
-    },
-    {
-      "gen": 17,
-      "avg": 0.6651333333333334,
-      "max": 0.8122619047619047,
-      "min": 0.38833333333333336
-    },
-    {
-      "gen": 18,
-      "avg": 0.6634666666666666,
-      "max": 0.8122619047619047,
-      "min": 0.4321428571428571
-    },
-    {
-      "gen": 19,
-      "avg": 0.6828809523809524,
-      "max": 0.8122619047619047,
-      "min": 0.32952380952380944
-    },
-    {
-      "gen": 20,
-      "avg": 0.7034380952380953,
-      "max": 0.8122619047619047,
-      "min": 0.5435714285714286
+      "avg": 0.6075952380952381,
+      "max": 0.7301190476190476,
+      "min": 0.4063095238095238
     }
   ]
 }

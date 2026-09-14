@@ -1,0 +1,162 @@
+[
+  {
+    "timestamp": "2026-09-14T08:40:19.190386",
+    "fitness": 0.9583333333333334,
+    "winrate_meta": 0.3333333333333333,
+    "config": {
+      "POP_SIZE": 8,
+      "N_GEN": 2,
+      "N_RIVALES": 3,
+      "N_BATALLAS_POR_RIVAL": 2,
+      "CXPB": 0.6,
+      "MUTPB": 0.3,
+      "SEED": 42,
+      "PESO_WINRATE": 0.85,
+      "PESO_COBERTURA": 0.05,
+      "PESO_SINERGIA": 0.05,
+      "PESO_DIVERSIDAD": 0.05
+    },
+    "top5_nombres": [
+      {
+        "rank": 1,
+        "equipo": [
+          "Indeedee-F",
+          "Basculegion",
+          "Rillaboom",
+          "Glimmora-Mega",
+          "Torkoal",
+          "Sneasler"
+        ],
+        "fitness": 0.9583333333333334
+      },
+      {
+        "rank": 2,
+        "equipo": [
+          "Froslass-Mega",
+          "Aerodactyl-Mega",
+          "Scovillain-Mega",
+          "Glimmora-Mega",
+          "Torkoal",
+          "Sneasler"
+        ],
+        "fitness": 0.7991666666666667
+      },
+      {
+        "rank": 3,
+        "equipo": [
+          "Blastoise-Mega",
+          "Indeedee",
+          "Grimmsnarl",
+          "Glimmora-Mega",
+          "Torkoal",
+          "Sneasler"
+        ],
+        "fitness": 0.675
+      },
+      {
+        "rank": 4,
+        "equipo": [
+          "Arcanine-Hisui",
+          "Annihilape",
+          "Whimsicott",
+          "Glimmora-Mega",
+          "Torkoal",
+          "Sneasler"
+        ],
+        "fitness": 0.5191666666666667
+      },
+      {
+        "rank": 5,
+        "equipo": [
+          "Froslass-Mega",
+          "Aerodactyl-Mega",
+          "Scovillain-Mega",
+          "Glimmora-Mega",
+          "Torkoal",
+          "Sneasler"
+        ],
+        "fitness": 0.37416666666666665
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-09-14T09:09:29.914078",
+    "fitness": 0.7301190476190476,
+    "winrate_meta": 0.7619047619047619,
+    "config": {
+      "POP_SIZE": 20,
+      "N_GEN": 5,
+      "N_RIVALES": 7,
+      "N_BATALLAS_POR_RIVAL": 3,
+      "CXPB": 0.6,
+      "MUTPB": 0.3,
+      "SEED": 42,
+      "PESO_WINRATE": 0.85,
+      "PESO_COBERTURA": 0.05,
+      "PESO_SINERGIA": 0.05,
+      "PESO_DIVERSIDAD": 0.05
+    },
+    "top5_nombres": [
+      {
+        "rank": 1,
+        "equipo": [
+          "Armarouge",
+          "Indeedee",
+          "Archaludon",
+          "Incineroar",
+          "Arcanine-Hisui",
+          "Scrafty"
+        ],
+        "fitness": 0.7301190476190476
+      },
+      {
+        "rank": 2,
+        "equipo": [
+          "Armarouge",
+          "Indeedee",
+          "Archaludon",
+          "Incineroar",
+          "Arcanine-Hisui",
+          "Scrafty"
+        ],
+        "fitness": 0.6491666666666668
+      },
+      {
+        "rank": 3,
+        "equipo": [
+          "Armarouge",
+          "Indeedee",
+          "Milotic",
+          "Incineroar",
+          "Arcanine-Hisui",
+          "Scrafty"
+        ],
+        "fitness": 0.6161904761904762
+      },
+      {
+        "rank": 4,
+        "equipo": [
+          "Armarouge",
+          "Indeedee",
+          "Archaludon",
+          "Incineroar",
+          "Arcanine-Hisui",
+          "Scrafty"
+        ],
+        "fitness": 0.6086904761904761
+      },
+      {
+        "rank": 5,
+        "equipo": [
+          "Armarouge",
+          "Indeedee",
+          "Archaludon",
+          "Incineroar",
+          "Arcanine-Hisui",
+          "Scrafty"
+        ],
+        "fitness": 0.6086904761904761
+      }
+    ]
+  }
+]
