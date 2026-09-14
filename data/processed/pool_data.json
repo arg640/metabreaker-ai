@@ -1,0 +1,30 @@
+[
+  {
+    "pokemon": "Rillaboom",
+    "types": [
+      "grass"
+    ],
+    "ability": "Grassy Surge",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Fake Out",
+        "type": "normal"
+      },
+      {
+        "name": "Grassy Glide",
+        "type": "grass"
+      },
+      {
+        "name": "Wood Hammer",
+        "type": "grass"
+      },
+      {
+        "name": "U-turn",
+        "type": "bug"
+      }
+    ],
+    "usage_pct": 37.61,
+    "species_key": "rillaboom"
+  }
+]
