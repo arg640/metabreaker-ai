@@ -24,7 +24,4166 @@
         "type": "bug"
       }
     ],
-    "usage_pct": 37.61,
+    "usage_pct": 38.0,
+    "games": 5937,
     "species_key": "rillaboom"
+  },
+  {
+    "pokemon": "Sneasler",
+    "types": [
+      "fighting",
+      "poison"
+    ],
+    "ability": "Poison Touch",
+    "item": "Grassy Seed",
+    "moves": [
+      {
+        "name": "Close Combat",
+        "type": "fighting"
+      },
+      {
+        "name": "Dire Claw",
+        "type": "poison"
+      },
+      {
+        "name": "Fake Out",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 37.0,
+    "games": 5783,
+    "species_key": "sneasler"
+  },
+  {
+    "pokemon": "Incineroar",
+    "types": [
+      "fire",
+      "dark"
+    ],
+    "ability": "Intimidate",
+    "item": "Sitrus Berry",
+    "moves": [
+      {
+        "name": "Fake Out",
+        "type": "normal"
+      },
+      {
+        "name": "Parting Shot",
+        "type": "dark"
+      },
+      {
+        "name": "Flare Blitz",
+        "type": "fire"
+      },
+      {
+        "name": "Darkest Lariat",
+        "type": "dark"
+      }
+    ],
+    "usage_pct": 28.0,
+    "games": 4491,
+    "species_key": "incineroar"
+  },
+  {
+    "pokemon": "Salamence",
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "ability": "Intimidate",
+    "item": "Salamencite",
+    "moves": [
+      {
+        "name": "Hyper Voice",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Double-Edge",
+        "type": "normal"
+      },
+      {
+        "name": "Tailwind",
+        "type": "flying"
+      }
+    ],
+    "usage_pct": 26.0,
+    "games": 4097,
+    "species_key": "salamence"
+  },
+  {
+    "pokemon": "Kingambit",
+    "types": [
+      "dark",
+      "steel"
+    ],
+    "ability": "Defiant",
+    "item": "Chople Berry",
+    "moves": [
+      {
+        "name": "Kowtow Cleave",
+        "type": "dark"
+      },
+      {
+        "name": "Sucker Punch",
+        "type": "dark"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Iron Head",
+        "type": "steel"
+      }
+    ],
+    "usage_pct": 25.0,
+    "games": 3939,
+    "species_key": "kingambit"
+  },
+  {
+    "pokemon": "Basculegion",
+    "types": [
+      "water",
+      "ghost"
+    ],
+    "ability": "Trace",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Wave Crash",
+        "type": "water"
+      },
+      {
+        "name": "Last Respects",
+        "type": "ghost"
+      },
+      {
+        "name": "Aqua Jet",
+        "type": "water"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 24.0,
+    "games": 3754,
+    "species_key": "basculegion"
+  },
+  {
+    "pokemon": "Golisopod",
+    "types": [
+      "bug",
+      "water"
+    ],
+    "ability": "Hospitality",
+    "item": "Golisopite",
+    "moves": [
+      {
+        "name": "Leech Life",
+        "type": "bug"
+      },
+      {
+        "name": "Iron Head",
+        "type": "steel"
+      },
+      {
+        "name": "First Impression",
+        "type": "bug"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 22.0,
+    "games": 3422,
+    "species_key": "golisopod"
+  },
+  {
+    "pokemon": "Indeedee-F",
+    "types": [
+      "psychic",
+      "normal"
+    ],
+    "ability": "Psychic Surge",
+    "item": "Psychic Seed",
+    "moves": [
+      {
+        "name": "Follow Me",
+        "type": "normal"
+      },
+      {
+        "name": "Helping Hand",
+        "type": "normal"
+      },
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      },
+      {
+        "name": "Psychic",
+        "type": "psychic"
+      }
+    ],
+    "usage_pct": 22.0,
+    "games": 3411,
+    "species_key": "indeedee-f"
+  },
+  {
+    "pokemon": "Farigiraf",
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "ability": "Trace",
+    "item": "Sitrus Berry",
+    "moves": [
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      },
+      {
+        "name": "Psychic",
+        "type": "psychic"
+      },
+      {
+        "name": "Helping Hand",
+        "type": "normal"
+      },
+      {
+        "name": "Thunderbolt",
+        "type": "electric"
+      }
+    ],
+    "usage_pct": 18.0,
+    "games": 2847,
+    "species_key": "farigiraf"
+  },
+  {
+    "pokemon": "Garchomp",
+    "types": [
+      "dragon",
+      "ground"
+    ],
+    "ability": "Rough Skin",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Earthquake",
+        "type": "ground"
+      },
+      {
+        "name": "Rock Slide",
+        "type": "rock"
+      },
+      {
+        "name": "Dragon Claw",
+        "type": "dragon"
+      }
+    ],
+    "usage_pct": 15.0,
+    "games": 2437,
+    "species_key": "garchomp"
+  },
+  {
+    "pokemon": "Pelipper",
+    "types": [
+      "water",
+      "flying"
+    ],
+    "ability": "Drizzle",
+    "item": "Sitrus Berry",
+    "moves": [
+      {
+        "name": "Hurricane",
+        "type": "flying"
+      },
+      {
+        "name": "Weather Ball",
+        "type": "normal"
+      },
+      {
+        "name": "Tailwind",
+        "type": "flying"
+      },
+      {
+        "name": "Wide Guard",
+        "type": "rock"
+      }
+    ],
+    "usage_pct": 15.0,
+    "games": 2337,
+    "species_key": "pelipper"
+  },
+  {
+    "pokemon": "Whimsicott",
+    "types": [
+      "grass",
+      "fairy"
+    ],
+    "ability": "Trace",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Tailwind",
+        "type": "flying"
+      },
+      {
+        "name": "Moonblast",
+        "type": "fairy"
+      },
+      {
+        "name": "Encore",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 11.0,
+    "games": 1805,
+    "species_key": "whimsicott"
+  },
+  {
+    "pokemon": "Sinistcha",
+    "types": [
+      "grass",
+      "ghost"
+    ],
+    "ability": "Trace",
+    "item": "Sitrus Berry",
+    "moves": [
+      {
+        "name": "Rage Powder",
+        "type": "bug"
+      },
+      {
+        "name": "Matcha Gotcha",
+        "type": "grass"
+      },
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 11.0,
+    "games": 1743,
+    "species_key": "sinistcha"
+  },
+  {
+    "pokemon": "Gholdengo",
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "ability": "Good as Gold",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Make It Rain",
+        "type": "steel"
+      },
+      {
+        "name": "Shadow Ball",
+        "type": "ghost"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Nasty Plot",
+        "type": "dark"
+      }
+    ],
+    "usage_pct": 10.0,
+    "games": 1639,
+    "species_key": "gholdengo"
+  },
+  {
+    "pokemon": "Archaludon",
+    "types": [
+      "steel",
+      "dragon"
+    ],
+    "ability": "Stamina",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Electro Shot",
+        "type": "electric"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Dragon Pulse",
+        "type": "dragon"
+      },
+      {
+        "name": "Flash Cannon",
+        "type": "steel"
+      }
+    ],
+    "usage_pct": 10.0,
+    "games": 1598,
+    "species_key": "archaludon"
+  },
+  {
+    "pokemon": "Floette-Eternal",
+    "types": [
+      "fairy"
+    ],
+    "ability": "Fairy Aura",
+    "item": "Floettite",
+    "moves": [
+      {
+        "name": "Dazzling Gleam",
+        "type": "fairy"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Calm Mind",
+        "type": "psychic"
+      },
+      {
+        "name": "Moonblast",
+        "type": "fairy"
+      }
+    ],
+    "usage_pct": 10.0,
+    "games": 1585,
+    "species_key": "floette"
+  },
+  {
+    "pokemon": "Tyranitar",
+    "types": [
+      "rock",
+      "dark"
+    ],
+    "ability": "Sand Stream",
+    "item": "Tyranitarite",
+    "moves": [
+      {
+        "name": "Rock Slide",
+        "type": "rock"
+      },
+      {
+        "name": "Knock Off",
+        "type": "dark"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Dragon Dance",
+        "type": "dragon"
+      }
+    ],
+    "usage_pct": 9.0,
+    "games": 1407,
+    "species_key": "tyranitar"
+  },
+  {
+    "pokemon": "Baxcalibur",
+    "types": [
+      "dragon",
+      "ice"
+    ],
+    "ability": "Thermal Exchange",
+    "item": "Baxcalibrite",
+    "moves": [
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Glaive Rush",
+        "type": "dragon"
+      },
+      {
+        "name": "Ice Shard",
+        "type": "ice"
+      },
+      {
+        "name": "Icicle Crash",
+        "type": "ice"
+      }
+    ],
+    "usage_pct": 8.0,
+    "games": 1329,
+    "species_key": "baxcalibur"
+  },
+  {
+    "pokemon": "Lucario",
+    "types": [
+      "fighting",
+      "steel"
+    ],
+    "ability": "Inner Focus",
+    "item": "Lucarionite Z",
+    "moves": [
+      {
+        "name": "Aura Sphere",
+        "type": "fighting"
+      },
+      {
+        "name": "Flash Cannon",
+        "type": "steel"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Calm Mind",
+        "type": "psychic"
+      }
+    ],
+    "usage_pct": 8.0,
+    "games": 1317,
+    "species_key": "lucario"
+  },
+  {
+    "pokemon": "Milotic",
+    "types": [
+      "water"
+    ],
+    "ability": "Competitive",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Scald",
+        "type": "water"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Icy Wind",
+        "type": "ice"
+      },
+      {
+        "name": "Coil",
+        "type": "poison"
+      }
+    ],
+    "usage_pct": 8.0,
+    "games": 1311,
+    "species_key": "milotic"
+  },
+  {
+    "pokemon": "Charizard",
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "ability": "Drought",
+    "item": "Charizardite Y",
+    "moves": [
+      {
+        "name": "Heat Wave",
+        "type": "fire"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Weather Ball",
+        "type": "normal"
+      },
+      {
+        "name": "Ancient Power",
+        "type": "rock"
+      }
+    ],
+    "usage_pct": 8.0,
+    "games": 1265,
+    "species_key": "charizard"
+  },
+  {
+    "pokemon": "Sylveon",
+    "types": [
+      "fairy"
+    ],
+    "ability": "Trace",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Hyper Voice",
+        "type": "normal"
+      },
+      {
+        "name": "Hyper Beam",
+        "type": "normal"
+      },
+      {
+        "name": "Detect",
+        "type": "fighting"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 8.0,
+    "games": 1231,
+    "species_key": "sylveon"
+  },
+  {
+    "pokemon": "Gardevoir",
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "ability": "Intimidate",
+    "item": "Gardevoirite",
+    "moves": [
+      {
+        "name": "Hyper Voice",
+        "type": "normal"
+      },
+      {
+        "name": "Expanding Force",
+        "type": "psychic"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      }
+    ],
+    "usage_pct": 8.0,
+    "games": 1202,
+    "species_key": "gardevoir"
+  },
+  {
+    "pokemon": "Torkoal",
+    "types": [
+      "fire"
+    ],
+    "ability": "Drought",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Eruption",
+        "type": "fire"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Weather Ball",
+        "type": "normal"
+      },
+      {
+        "name": "Heat Wave",
+        "type": "fire"
+      }
+    ],
+    "usage_pct": 7.0,
+    "games": 1112,
+    "species_key": "torkoal"
+  },
+  {
+    "pokemon": "Arcanine-Hisui",
+    "types": [
+      "fire",
+      "rock"
+    ],
+    "ability": "Intimidate",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Flare Blitz",
+        "type": "fire"
+      },
+      {
+        "name": "Head Smash",
+        "type": "rock"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Extreme Speed",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 6.0,
+    "games": 968,
+    "species_key": "arcanine-hisui"
+  },
+  {
+    "pokemon": "Armarouge",
+    "types": [
+      "fire",
+      "psychic"
+    ],
+    "ability": "Weak Armor",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Expanding Force",
+        "type": "psychic"
+      },
+      {
+        "name": "Armor Cannon",
+        "type": "fire"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      }
+    ],
+    "usage_pct": 6.0,
+    "games": 934,
+    "species_key": "armarouge"
+  },
+  {
+    "pokemon": "Raichu",
+    "types": [
+      "electric"
+    ],
+    "ability": "Electric Surge",
+    "item": "Raichunite Y",
+    "moves": [
+      {
+        "name": "Zap Cannon",
+        "type": "electric"
+      },
+      {
+        "name": "Fake Out",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Focus Blast",
+        "type": "fighting"
+      }
+    ],
+    "usage_pct": 6.0,
+    "games": 903,
+    "species_key": "raichu"
+  },
+  {
+    "pokemon": "Excadrill",
+    "types": [
+      "ground",
+      "steel"
+    ],
+    "ability": "Mold Breaker",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "High Horsepower",
+        "type": "ground"
+      },
+      {
+        "name": "Iron Head",
+        "type": "steel"
+      },
+      {
+        "name": "Rock Slide",
+        "type": "rock"
+      }
+    ],
+    "usage_pct": 6.0,
+    "games": 891,
+    "species_key": "excadrill"
+  },
+  {
+    "pokemon": "Froslass",
+    "types": [
+      "ice",
+      "ghost"
+    ],
+    "ability": "Snow Warning",
+    "item": "Froslassite",
+    "moves": [
+      {
+        "name": "Blizzard",
+        "type": "ice"
+      },
+      {
+        "name": "Aurora Veil",
+        "type": "ice"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Shadow Ball",
+        "type": "ghost"
+      }
+    ],
+    "usage_pct": 6.0,
+    "games": 875,
+    "species_key": "froslass"
+  },
+  {
+    "pokemon": "Ninetales-Alola",
+    "types": [
+      "ice",
+      "fairy"
+    ],
+    "ability": "Snow Warning",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Aurora Veil",
+        "type": "ice"
+      },
+      {
+        "name": "Blizzard",
+        "type": "ice"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Freeze-Dry",
+        "type": "ice"
+      }
+    ],
+    "usage_pct": 5.0,
+    "games": 859,
+    "species_key": "ninetales-alola"
+  },
+  {
+    "pokemon": "Staraptor",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "ability": "Intimidate",
+    "item": "Staraptite",
+    "moves": [
+      {
+        "name": "Close Combat",
+        "type": "fighting"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Brave Bird",
+        "type": "flying"
+      },
+      {
+        "name": "Final Gambit",
+        "type": "fighting"
+      }
+    ],
+    "usage_pct": 5.0,
+    "games": 845,
+    "species_key": "staraptor"
+  },
+  {
+    "pokemon": "Hatterene",
+    "types": [
+      "psychic",
+      "fairy"
+    ],
+    "ability": "Trace",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Expanding Force",
+        "type": "psychic"
+      },
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      },
+      {
+        "name": "Dazzling Gleam",
+        "type": "fairy"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 5.0,
+    "games": 828,
+    "species_key": "hatterene"
+  },
+  {
+    "pokemon": "Pawmot",
+    "types": [
+      "electric",
+      "fighting"
+    ],
+    "ability": "Volt Absorb",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Double Shock",
+        "type": "electric"
+      },
+      {
+        "name": "Close Combat",
+        "type": "fighting"
+      },
+      {
+        "name": "Fake Out",
+        "type": "normal"
+      },
+      {
+        "name": "Revival Blessing",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 5.0,
+    "games": 806,
+    "species_key": "pawmot"
+  },
+  {
+    "pokemon": "Absol",
+    "types": [
+      "dark"
+    ],
+    "ability": "Pressure",
+    "item": "Absolite Z",
+    "moves": [
+      {
+        "name": "Night Slash",
+        "type": "dark"
+      },
+      {
+        "name": "Shadow Claw",
+        "type": "ghost"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Close Combat",
+        "type": "fighting"
+      }
+    ],
+    "usage_pct": 5.0,
+    "games": 785,
+    "species_key": "absol"
+  },
+  {
+    "pokemon": "Aerodactyl",
+    "types": [
+      "rock",
+      "flying"
+    ],
+    "ability": "Unnerve",
+    "item": "Aerodactylite",
+    "moves": [
+      {
+        "name": "Rock Slide",
+        "type": "rock"
+      },
+      {
+        "name": "Tailwind",
+        "type": "flying"
+      },
+      {
+        "name": "Dual Wingbeat",
+        "type": "flying"
+      },
+      {
+        "name": "Wide Guard",
+        "type": "rock"
+      }
+    ],
+    "usage_pct": 5.0,
+    "games": 757,
+    "species_key": "aerodactyl"
+  },
+  {
+    "pokemon": "Indeedee",
+    "types": [
+      "psychic",
+      "normal"
+    ],
+    "ability": "Psychic Surge",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Expanding Force",
+        "type": "psychic"
+      },
+      {
+        "name": "Dazzling Gleam",
+        "type": "fairy"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      }
+    ],
+    "usage_pct": 5.0,
+    "games": 715,
+    "species_key": "indeedee"
+  },
+  {
+    "pokemon": "Grimmsnarl",
+    "types": [
+      "dark",
+      "fairy"
+    ],
+    "ability": "Hospitality",
+    "item": "Rocky Helmet",
+    "moves": [
+      {
+        "name": "Reflect",
+        "type": "psychic"
+      },
+      {
+        "name": "Light Screen",
+        "type": "psychic"
+      },
+      {
+        "name": "Parting Shot",
+        "type": "dark"
+      },
+      {
+        "name": "Spirit Break",
+        "type": "fairy"
+      }
+    ],
+    "usage_pct": 4.0,
+    "games": 689,
+    "species_key": "grimmsnarl"
+  },
+  {
+    "pokemon": "Primarina",
+    "types": [
+      "water",
+      "fairy"
+    ],
+    "ability": "Hospitality",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Hyper Voice",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Moonblast",
+        "type": "fairy"
+      },
+      {
+        "name": "Calm Mind",
+        "type": "psychic"
+      }
+    ],
+    "usage_pct": 4.0,
+    "games": 672,
+    "species_key": "primarina"
+  },
+  {
+    "pokemon": "Talonflame",
+    "types": [
+      "fire",
+      "flying"
+    ],
+    "ability": "Flame Body",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Tailwind",
+        "type": "flying"
+      },
+      {
+        "name": "Brave Bird",
+        "type": "flying"
+      },
+      {
+        "name": "Flare Blitz",
+        "type": "fire"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 4.0,
+    "games": 611,
+    "species_key": "talonflame"
+  },
+  {
+    "pokemon": "Dragonite",
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "ability": "Inner Focus",
+    "item": "Dragoninite",
+    "moves": [
+      {
+        "name": "Dragon Pulse",
+        "type": "dragon"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Heat Wave",
+        "type": "fire"
+      },
+      {
+        "name": "Extreme Speed",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 4.0,
+    "games": 576,
+    "species_key": "dragonite"
+  },
+  {
+    "pokemon": "Volcarona",
+    "types": [
+      "bug",
+      "fire"
+    ],
+    "ability": "Flame Body",
+    "item": "Grassy Seed",
+    "moves": [
+      {
+        "name": "Quiver Dance",
+        "type": "bug"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Fiery Dance",
+        "type": "fire"
+      },
+      {
+        "name": "Rage Powder",
+        "type": "bug"
+      }
+    ],
+    "usage_pct": 4.0,
+    "games": 562,
+    "species_key": "volcarona"
+  },
+  {
+    "pokemon": "Sableye",
+    "types": [
+      "dark",
+      "ghost"
+    ],
+    "ability": "Hospitality",
+    "item": "Roseli Berry",
+    "moves": [
+      {
+        "name": "Light Screen",
+        "type": "psychic"
+      },
+      {
+        "name": "Reflect",
+        "type": "psychic"
+      },
+      {
+        "name": "Rain Dance",
+        "type": "water"
+      },
+      {
+        "name": "Fake Out",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 4.0,
+    "games": 558,
+    "species_key": "sableye"
+  },
+  {
+    "pokemon": "Politoed",
+    "types": [
+      "water"
+    ],
+    "ability": "Drizzle",
+    "item": "Sitrus Berry",
+    "moves": [
+      {
+        "name": "Weather Ball",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Muddy Water",
+        "type": "water"
+      },
+      {
+        "name": "Perish Song",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 3.0,
+    "games": 552,
+    "species_key": "politoed"
+  },
+  {
+    "pokemon": "Glimmora",
+    "types": [
+      "rock",
+      "poison"
+    ],
+    "ability": "Hospitality",
+    "item": "Glimmoranite",
+    "moves": [
+      {
+        "name": "Power Gem",
+        "type": "rock"
+      },
+      {
+        "name": "Spiky Shield",
+        "type": "grass"
+      },
+      {
+        "name": "Earth Power",
+        "type": "ground"
+      },
+      {
+        "name": "Sludge Bomb",
+        "type": "poison"
+      }
+    ],
+    "usage_pct": 3.0,
+    "games": 544,
+    "species_key": "glimmora"
+  },
+  {
+    "pokemon": "Metagross",
+    "types": [
+      "steel",
+      "psychic"
+    ],
+    "ability": "Clear Body",
+    "item": "Metagrossite",
+    "moves": [
+      {
+        "name": "Psychic Fangs",
+        "type": "psychic"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Iron Head",
+        "type": "steel"
+      },
+      {
+        "name": "Steel Roller",
+        "type": "steel"
+      }
+    ],
+    "usage_pct": 3.0,
+    "games": 538,
+    "species_key": "metagross"
+  },
+  {
+    "pokemon": "Swampert",
+    "types": [
+      "water",
+      "ground"
+    ],
+    "ability": "Hospitality",
+    "item": "Swampertite",
+    "moves": [
+      {
+        "name": "Wave Crash",
+        "type": "water"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Earthquake",
+        "type": "ground"
+      },
+      {
+        "name": "Ice Punch",
+        "type": "ice"
+      }
+    ],
+    "usage_pct": 3.0,
+    "games": 538,
+    "species_key": "swampert"
+  },
+  {
+    "pokemon": "Delphox",
+    "types": [
+      "fire",
+      "psychic"
+    ],
+    "ability": "Hospitality",
+    "item": "Delphoxite",
+    "moves": [
+      {
+        "name": "Heat Wave",
+        "type": "fire"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Expanding Force",
+        "type": "psychic"
+      },
+      {
+        "name": "Nasty Plot",
+        "type": "dark"
+      }
+    ],
+    "usage_pct": 3.0,
+    "games": 484,
+    "species_key": "delphox"
+  },
+  {
+    "pokemon": "Gengar",
+    "types": [
+      "ghost",
+      "poison"
+    ],
+    "ability": "Cursed Body",
+    "item": "Gengarite",
+    "moves": [
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Perish Song",
+        "type": "normal"
+      },
+      {
+        "name": "Shadow Ball",
+        "type": "ghost"
+      },
+      {
+        "name": "Sludge Bomb",
+        "type": "poison"
+      }
+    ],
+    "usage_pct": 3.0,
+    "games": 464,
+    "species_key": "gengar"
+  },
+  {
+    "pokemon": "Sinistcha-Masterpiece",
+    "types": [
+      "grass",
+      "ghost"
+    ],
+    "ability": null,
+    "item": "Sitrus Berry",
+    "moves": [
+      {
+        "name": "Rage Powder",
+        "type": "bug"
+      },
+      {
+        "name": "Matcha Gotcha",
+        "type": "grass"
+      },
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 3.0,
+    "games": 444,
+    "species_key": "sinistcha-masterpiece"
+  },
+  {
+    "pokemon": "Venusaur",
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "ability": "Hospitality",
+    "item": "Venusaurite",
+    "moves": [
+      {
+        "name": "Sludge Bomb",
+        "type": "poison"
+      },
+      {
+        "name": "Sleep Powder",
+        "type": "grass"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Earth Power",
+        "type": "ground"
+      }
+    ],
+    "usage_pct": 3.0,
+    "games": 443,
+    "species_key": "venusaur"
+  },
+  {
+    "pokemon": "Blastoise",
+    "types": [
+      "water"
+    ],
+    "ability": "Hospitality",
+    "item": "Blastoisinite",
+    "moves": [
+      {
+        "name": "Water Spout",
+        "type": "water"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Shell Smash",
+        "type": "normal"
+      },
+      {
+        "name": "Dark Pulse",
+        "type": "dark"
+      }
+    ],
+    "usage_pct": 3.0,
+    "games": 430,
+    "species_key": "blastoise"
+  },
+  {
+    "pokemon": "Camerupt",
+    "types": [
+      "fire",
+      "ground"
+    ],
+    "ability": "Hospitality",
+    "item": "Cameruptite",
+    "moves": [
+      {
+        "name": "Heat Wave",
+        "type": "fire"
+      },
+      {
+        "name": "Earth Power",
+        "type": "ground"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Ancient Power",
+        "type": "rock"
+      }
+    ],
+    "usage_pct": 3.0,
+    "games": 423,
+    "species_key": "camerupt"
+  },
+  {
+    "pokemon": "Rotom-Wash",
+    "types": [
+      "electric",
+      "water"
+    ],
+    "ability": "Levitate",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Hydro Pump",
+        "type": "water"
+      },
+      {
+        "name": "Will-O-Wisp",
+        "type": "fire"
+      },
+      {
+        "name": "Thunderbolt",
+        "type": "electric"
+      },
+      {
+        "name": "Volt Switch",
+        "type": "electric"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 388,
+    "species_key": "rotom-wash"
+  },
+  {
+    "pokemon": "Annihilape",
+    "types": [
+      "fighting",
+      "ghost"
+    ],
+    "ability": "Defiant",
+    "item": "Sitrus Berry",
+    "moves": [
+      {
+        "name": "Rage Fist",
+        "type": "ghost"
+      },
+      {
+        "name": "Drain Punch",
+        "type": "fighting"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Bulk Up",
+        "type": "fighting"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 350,
+    "species_key": "annihilape"
+  },
+  {
+    "pokemon": "Alakazam",
+    "types": [
+      "psychic"
+    ],
+    "ability": "Grassy Surge",
+    "item": "Alakazite",
+    "moves": [
+      {
+        "name": "Expanding Force",
+        "type": "psychic"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Dazzling Gleam",
+        "type": "fairy"
+      },
+      {
+        "name": "Nasty Plot",
+        "type": "dark"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 349,
+    "species_key": "alakazam"
+  },
+  {
+    "pokemon": "Corviknight",
+    "types": [
+      "flying",
+      "steel"
+    ],
+    "ability": "Mirror Armor",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Brave Bird",
+        "type": "flying"
+      },
+      {
+        "name": "Tailwind",
+        "type": "flying"
+      },
+      {
+        "name": "Body Press",
+        "type": "fighting"
+      },
+      {
+        "name": "Roost",
+        "type": "flying"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 310,
+    "species_key": "corviknight"
+  },
+  {
+    "pokemon": "Gallade",
+    "types": [
+      "psychic",
+      "fighting"
+    ],
+    "ability": "Inner Focus",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Sacred Sword",
+        "type": "fighting"
+      },
+      {
+        "name": "Psycho Cut",
+        "type": "psychic"
+      },
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      },
+      {
+        "name": "Wide Guard",
+        "type": "rock"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 308,
+    "species_key": "gallade"
+  },
+  {
+    "pokemon": "Maushold-Four",
+    "types": [
+      "normal"
+    ],
+    "ability": "Hospitality",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Follow Me",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Population Bomb",
+        "type": "normal"
+      },
+      {
+        "name": "Beat Up",
+        "type": "dark"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 288,
+    "species_key": "maushold-four"
+  },
+  {
+    "pokemon": "Tsareena",
+    "types": [
+      "grass"
+    ],
+    "ability": "Trace",
+    "item": "Sitrus Berry",
+    "moves": [
+      {
+        "name": "Triple Axel",
+        "type": "ice"
+      },
+      {
+        "name": "Power Whip",
+        "type": "grass"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Low Kick",
+        "type": "fighting"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 266,
+    "species_key": "tsareena"
+  },
+  {
+    "pokemon": "Blaziken",
+    "types": [
+      "fire",
+      "fighting"
+    ],
+    "ability": "Speed Boost",
+    "item": "Blazikenite",
+    "moves": [
+      {
+        "name": "Flare Blitz",
+        "type": "fire"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Detect",
+        "type": "fighting"
+      },
+      {
+        "name": "Close Combat",
+        "type": "fighting"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 261,
+    "species_key": "blaziken"
+  },
+  {
+    "pokemon": "Toxapex",
+    "types": [
+      "poison",
+      "water"
+    ],
+    "ability": "Regenerator",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Toxic",
+        "type": "poison"
+      },
+      {
+        "name": "Infestation",
+        "type": "bug"
+      },
+      {
+        "name": "Baneful Bunker",
+        "type": "poison"
+      },
+      {
+        "name": "Wide Guard",
+        "type": "rock"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 261,
+    "species_key": "toxapex"
+  },
+  {
+    "pokemon": "Mawile",
+    "types": [
+      "steel",
+      "fairy"
+    ],
+    "ability": "Intimidate",
+    "item": "Mawilite",
+    "moves": [
+      {
+        "name": "Play Rough",
+        "type": "fairy"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Sucker Punch",
+        "type": "dark"
+      },
+      {
+        "name": "Iron Head",
+        "type": "steel"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 256,
+    "species_key": "mawile"
+  },
+  {
+    "pokemon": "Pincurchin",
+    "types": [
+      "electric"
+    ],
+    "ability": "Electric Surge",
+    "item": "Electric Seed",
+    "moves": [
+      {
+        "name": "Rising Voltage",
+        "type": "electric"
+      },
+      {
+        "name": "Thunder Wave",
+        "type": "electric"
+      },
+      {
+        "name": "Electroweb",
+        "type": "electric"
+      },
+      {
+        "name": "Sucker Punch",
+        "type": "dark"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 255,
+    "species_key": "pincurchin"
+  },
+  {
+    "pokemon": "Ceruledge",
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "ability": "Weak Armor",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Bitter Blade",
+        "type": "fire"
+      },
+      {
+        "name": "Shadow Sneak",
+        "type": "ghost"
+      },
+      {
+        "name": "Bulk Up",
+        "type": "fighting"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 254,
+    "species_key": "ceruledge"
+  },
+  {
+    "pokemon": "Scovillain",
+    "types": [
+      "grass",
+      "fire"
+    ],
+    "ability": "Spicy Spray",
+    "item": "Scovillainite",
+    "moves": [
+      {
+        "name": "Rage Powder",
+        "type": "bug"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Overheat",
+        "type": "fire"
+      },
+      {
+        "name": "Giga Drain",
+        "type": "grass"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 247,
+    "species_key": "scovillain"
+  },
+  {
+    "pokemon": "Maushold",
+    "types": [
+      "normal"
+    ],
+    "ability": "Hospitality",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Follow Me",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Population Bomb",
+        "type": "normal"
+      },
+      {
+        "name": "Super Fang",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 241,
+    "species_key": "maushold"
+  },
+  {
+    "pokemon": "Lycanroc",
+    "types": [
+      "rock"
+    ],
+    "ability": null,
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Rock Slide",
+        "type": "rock"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Accelerock",
+        "type": "rock"
+      },
+      {
+        "name": "Close Combat",
+        "type": "fighting"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 240,
+    "species_key": "lycanroc"
+  },
+  {
+    "pokemon": "Typhlosion-Hisui",
+    "types": [
+      "fire",
+      "ghost"
+    ],
+    "ability": "Frisk",
+    "item": "Choice Scarf",
+    "moves": [
+      {
+        "name": "Eruption",
+        "type": "fire"
+      },
+      {
+        "name": "Shadow Ball",
+        "type": "ghost"
+      },
+      {
+        "name": "Heat Wave",
+        "type": "fire"
+      },
+      {
+        "name": "Lava Plume",
+        "type": "fire"
+      }
+    ],
+    "usage_pct": 2.0,
+    "games": 239,
+    "species_key": "typhlosion-hisui"
+  },
+  {
+    "pokemon": "Hydreigon",
+    "types": [
+      "dark",
+      "dragon"
+    ],
+    "ability": "Levitate",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Dark Pulse",
+        "type": "dark"
+      },
+      {
+        "name": "Draco Meteor",
+        "type": "dragon"
+      },
+      {
+        "name": "Earth Power",
+        "type": "ground"
+      },
+      {
+        "name": "Snarl",
+        "type": "dark"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 220,
+    "species_key": "hydreigon"
+  },
+  {
+    "pokemon": "Dragapult",
+    "types": [
+      "dragon",
+      "ghost"
+    ],
+    "ability": "Clear Body",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Dragon Darts",
+        "type": "dragon"
+      },
+      {
+        "name": "Will-O-Wisp",
+        "type": "fire"
+      },
+      {
+        "name": "Reflect",
+        "type": "psychic"
+      },
+      {
+        "name": "Phantom Force",
+        "type": "ghost"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 207,
+    "species_key": "dragapult"
+  },
+  {
+    "pokemon": "Weavile",
+    "types": [
+      "dark",
+      "ice"
+    ],
+    "ability": "Pressure",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Knock Off",
+        "type": "dark"
+      },
+      {
+        "name": "Fake Out",
+        "type": "normal"
+      },
+      {
+        "name": "Ice Spinner",
+        "type": "ice"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 206,
+    "species_key": "weavile"
+  },
+  {
+    "pokemon": "Araquanid",
+    "types": [
+      "water",
+      "bug"
+    ],
+    "ability": "Water Bubble",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Liquidation",
+        "type": "water"
+      },
+      {
+        "name": "Wide Guard",
+        "type": "rock"
+      },
+      {
+        "name": "Leech Life",
+        "type": "bug"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 203,
+    "species_key": "araquanid"
+  },
+  {
+    "pokemon": "Kommo-o",
+    "types": [
+      "dragon",
+      "fighting"
+    ],
+    "ability": "Soundproof",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Clanging Scales",
+        "type": "dragon"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Clangorous Soul",
+        "type": "dragon"
+      },
+      {
+        "name": "Aura Sphere",
+        "type": "fighting"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 201,
+    "species_key": "kommo-o"
+  },
+  {
+    "pokemon": "Sirfetch’d",
+    "types": [
+      "fighting"
+    ],
+    "ability": "Scrappy",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Close Combat",
+        "type": "fighting"
+      },
+      {
+        "name": "Detect",
+        "type": "fighting"
+      },
+      {
+        "name": "Meteor Assault",
+        "type": "fighting"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 188,
+    "species_key": "sirfetch’d"
+  },
+  {
+    "pokemon": "Clefable",
+    "types": [
+      "fairy"
+    ],
+    "ability": "Hospitality",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Follow Me",
+        "type": "normal"
+      },
+      {
+        "name": "Moonblast",
+        "type": "fairy"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Life Dew",
+        "type": "water"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 185,
+    "species_key": "clefable"
+  },
+  {
+    "pokemon": "Aegislash",
+    "types": [
+      "steel",
+      "ghost"
+    ],
+    "ability": "Hospitality",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "King's Shield",
+        "type": "steel"
+      },
+      {
+        "name": "Iron Head",
+        "type": "steel"
+      },
+      {
+        "name": "Poltergeist",
+        "type": "ghost"
+      },
+      {
+        "name": "Wide Guard",
+        "type": "rock"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 180,
+    "species_key": "aegislash"
+  },
+  {
+    "pokemon": "Scizor",
+    "types": [
+      "bug",
+      "steel"
+    ],
+    "ability": "Hospitality",
+    "item": "Scizorite",
+    "moves": [
+      {
+        "name": "Bullet Punch",
+        "type": "steel"
+      },
+      {
+        "name": "Bug Bite",
+        "type": "bug"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Swords Dance",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 180,
+    "species_key": "scizor"
+  },
+  {
+    "pokemon": "Bellibolt",
+    "types": [
+      "electric"
+    ],
+    "ability": "Trace",
+    "item": "Sitrus Berry",
+    "moves": [
+      {
+        "name": "Parabolic Charge",
+        "type": "electric"
+      },
+      {
+        "name": "Thunderbolt",
+        "type": "electric"
+      },
+      {
+        "name": "Soak",
+        "type": "water"
+      },
+      {
+        "name": "Muddy Water",
+        "type": "water"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 169,
+    "species_key": "bellibolt"
+  },
+  {
+    "pokemon": "Rotom-Heat",
+    "types": [
+      "electric",
+      "fire"
+    ],
+    "ability": "Levitate",
+    "item": "Sitrus Berry",
+    "moves": [
+      {
+        "name": "Overheat",
+        "type": "fire"
+      },
+      {
+        "name": "Volt Switch",
+        "type": "electric"
+      },
+      {
+        "name": "Will-O-Wisp",
+        "type": "fire"
+      },
+      {
+        "name": "Thunderbolt",
+        "type": "electric"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 158,
+    "species_key": "rotom-heat"
+  },
+  {
+    "pokemon": "Crabominable",
+    "types": [
+      "fighting",
+      "ice"
+    ],
+    "ability": "Hyper Cutter",
+    "item": "Crabominite",
+    "moves": [
+      {
+        "name": "Drain Punch",
+        "type": "fighting"
+      },
+      {
+        "name": "Ice Hammer",
+        "type": "ice"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Rock Slide",
+        "type": "rock"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 154,
+    "species_key": "crabominable"
+  },
+  {
+    "pokemon": "Mamoswine",
+    "types": [
+      "ice",
+      "ground"
+    ],
+    "ability": "Oblivious",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "High Horsepower",
+        "type": "ground"
+      },
+      {
+        "name": "Ice Shard",
+        "type": "ice"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Earthquake",
+        "type": "ground"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 153,
+    "species_key": "mamoswine"
+  },
+  {
+    "pokemon": "Tinkaton",
+    "types": [
+      "fairy",
+      "steel"
+    ],
+    "ability": "Mold Breaker",
+    "item": "Air Balloon",
+    "moves": [
+      {
+        "name": "Fake Out",
+        "type": "normal"
+      },
+      {
+        "name": "Gigaton Hammer",
+        "type": "steel"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Play Rough",
+        "type": "fairy"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 153,
+    "species_key": "tinkaton"
+  },
+  {
+    "pokemon": "Inteleon",
+    "types": [
+      "water"
+    ],
+    "ability": "Hospitality",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Snipe Shot",
+        "type": "water"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Ice Beam",
+        "type": "ice"
+      },
+      {
+        "name": "Focus Energy",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 150,
+    "species_key": "inteleon"
+  },
+  {
+    "pokemon": "Meganium",
+    "types": [
+      "grass"
+    ],
+    "ability": null,
+    "item": "Meganiumite",
+    "moves": [
+      {
+        "name": "Weather Ball",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Dazzling Gleam",
+        "type": "fairy"
+      },
+      {
+        "name": "Solar Beam",
+        "type": "grass"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 150,
+    "species_key": "meganium"
+  },
+  {
+    "pokemon": "Starmie",
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "ability": "Hospitality",
+    "item": "Starminite",
+    "moves": [
+      {
+        "name": "Liquidation",
+        "type": "water"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Expanding Force",
+        "type": "psychic"
+      },
+      {
+        "name": "Ice Spinner",
+        "type": "ice"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 149,
+    "species_key": "starmie"
+  },
+  {
+    "pokemon": "Golurk",
+    "types": [
+      "ground",
+      "ghost"
+    ],
+    "ability": "Unseen Fist",
+    "item": "Golurkite",
+    "moves": [
+      {
+        "name": "Headlong Rush",
+        "type": "ground"
+      },
+      {
+        "name": "Poltergeist",
+        "type": "ghost"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Ice Punch",
+        "type": "ice"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 144,
+    "species_key": "golurk"
+  },
+  {
+    "pokemon": "Zoroark-Hisui",
+    "types": [
+      "normal",
+      "ghost"
+    ],
+    "ability": null,
+    "item": "Twisted Spoon",
+    "moves": [
+      {
+        "name": "Trick",
+        "type": "psychic"
+      },
+      {
+        "name": "Shadow Ball",
+        "type": "ghost"
+      },
+      {
+        "name": "Flamethrower",
+        "type": "fire"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 143,
+    "species_key": "zoroark-hisui"
+  },
+  {
+    "pokemon": "Gyarados",
+    "types": [
+      "water",
+      "flying"
+    ],
+    "ability": "Intimidate",
+    "item": "Gyaradosite",
+    "moves": [
+      {
+        "name": "Waterfall",
+        "type": "water"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Dragon Dance",
+        "type": "dragon"
+      },
+      {
+        "name": "Crunch",
+        "type": "dark"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 137,
+    "species_key": "gyarados"
+  },
+  {
+    "pokemon": "Vanilluxe",
+    "types": [
+      "ice"
+    ],
+    "ability": "Snow Warning",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Blizzard",
+        "type": "ice"
+      },
+      {
+        "name": "Freeze-Dry",
+        "type": "ice"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Aurora Veil",
+        "type": "ice"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 135,
+    "species_key": "vanilluxe"
+  },
+  {
+    "pokemon": "Meowscarada",
+    "types": [
+      "grass",
+      "dark"
+    ],
+    "ability": "Protean",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Triple Axel",
+        "type": "ice"
+      },
+      {
+        "name": "Knock Off",
+        "type": "dark"
+      },
+      {
+        "name": "Flower Trick",
+        "type": "grass"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 134,
+    "species_key": "meowscarada"
+  },
+  {
+    "pokemon": "Slowking-Galar",
+    "types": [
+      "poison",
+      "psychic"
+    ],
+    "ability": "Regenerator",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      },
+      {
+        "name": "Chilly Reception",
+        "type": "ice"
+      },
+      {
+        "name": "Sludge Bomb",
+        "type": "poison"
+      },
+      {
+        "name": "Psychic Noise",
+        "type": "psychic"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 132,
+    "species_key": "slowking-galar"
+  },
+  {
+    "pokemon": "Kleavor",
+    "types": [
+      "bug",
+      "rock"
+    ],
+    "ability": "Trace",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Stone Axe",
+        "type": "rock"
+      },
+      {
+        "name": "X-Scissor",
+        "type": "bug"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Tailwind",
+        "type": "flying"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 131,
+    "species_key": "kleavor"
+  },
+  {
+    "pokemon": "Kangaskhan",
+    "types": [
+      "normal"
+    ],
+    "ability": "Scrappy",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Fake Out",
+        "type": "normal"
+      },
+      {
+        "name": "Double-Edge",
+        "type": "normal"
+      },
+      {
+        "name": "Hammer Arm",
+        "type": "fighting"
+      },
+      {
+        "name": "Last Resort",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 128,
+    "species_key": "kangaskhan"
+  },
+  {
+    "pokemon": "Scrafty",
+    "types": [
+      "dark",
+      "fighting"
+    ],
+    "ability": "Intimidate",
+    "item": "Scraftinite",
+    "moves": [
+      {
+        "name": "Fake Out",
+        "type": "normal"
+      },
+      {
+        "name": "Knock Off",
+        "type": "dark"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Close Combat",
+        "type": "fighting"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 128,
+    "species_key": "scrafty"
+  },
+  {
+    "pokemon": "Oranguru",
+    "types": [
+      "normal",
+      "psychic"
+    ],
+    "ability": "Inner Focus",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      },
+      {
+        "name": "Instruct",
+        "type": "psychic"
+      },
+      {
+        "name": "Encore",
+        "type": "normal"
+      },
+      {
+        "name": "Psychic",
+        "type": "psychic"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 127,
+    "species_key": "oranguru"
+  },
+  {
+    "pokemon": "Grapploct",
+    "types": [
+      "fighting"
+    ],
+    "ability": "Hospitality",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Storm Throw",
+        "type": "fighting"
+      },
+      {
+        "name": "Mach Punch",
+        "type": "fighting"
+      },
+      {
+        "name": "Octolock",
+        "type": "fighting"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 117,
+    "species_key": "grapploct"
+  },
+  {
+    "pokemon": "Empoleon",
+    "types": [
+      "water",
+      "steel"
+    ],
+    "ability": "Competitive",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Flash Cannon",
+        "type": "steel"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Hydro Pump",
+        "type": "water"
+      },
+      {
+        "name": "Ice Beam",
+        "type": "ice"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 112,
+    "species_key": "empoleon"
+  },
+  {
+    "pokemon": "Toxtricity",
+    "types": [
+      "electric",
+      "poison"
+    ],
+    "ability": null,
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Overdrive",
+        "type": "electric"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Sludge Bomb",
+        "type": "poison"
+      },
+      {
+        "name": "Boomburst",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 111,
+    "species_key": "toxtricity"
+  },
+  {
+    "pokemon": "Snorlax",
+    "types": [
+      "normal"
+    ],
+    "ability": "Hospitality",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Fissure",
+        "type": "ground"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Stockpile",
+        "type": "normal"
+      },
+      {
+        "name": "Body Press",
+        "type": "fighting"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 110,
+    "species_key": "snorlax"
+  },
+  {
+    "pokemon": "Espathra",
+    "types": [
+      "psychic"
+    ],
+    "ability": "Speed Boost",
+    "item": "Grassy Seed",
+    "moves": [
+      {
+        "name": "Calm Mind",
+        "type": "psychic"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Baton Pass",
+        "type": "normal"
+      },
+      {
+        "name": "Lumina Crash",
+        "type": "psychic"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 105,
+    "species_key": "espathra"
+  },
+  {
+    "pokemon": "Drampa",
+    "types": [
+      "normal",
+      "dragon"
+    ],
+    "ability": "Cloud Nine",
+    "item": "Drampanite",
+    "moves": [
+      {
+        "name": "Hyper Voice",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Thunderbolt",
+        "type": "electric"
+      },
+      {
+        "name": "Earth Power",
+        "type": "ground"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 100,
+    "species_key": "drampa"
+  },
+  {
+    "pokemon": "Overqwil",
+    "types": [
+      "dark",
+      "poison"
+    ],
+    "ability": "Intimidate",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Minimize",
+        "type": "normal"
+      },
+      {
+        "name": "Stockpile",
+        "type": "normal"
+      },
+      {
+        "name": "Crunch",
+        "type": "dark"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 100,
+    "species_key": "overqwil"
+  },
+  {
+    "pokemon": "Chandelure",
+    "types": [
+      "ghost",
+      "fire"
+    ],
+    "ability": "Hospitality",
+    "item": "Chandelurite",
+    "moves": [
+      {
+        "name": "Heat Wave",
+        "type": "fire"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Shadow Ball",
+        "type": "ghost"
+      },
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 92,
+    "species_key": "chandelure"
+  },
+  {
+    "pokemon": "Slowbro",
+    "types": [
+      "water",
+      "psychic"
+    ],
+    "ability": "Oblivious",
+    "item": "Slowbronite",
+    "moves": [
+      {
+        "name": "Expanding Force",
+        "type": "psychic"
+      },
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Iron Defense",
+        "type": "steel"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 92,
+    "species_key": "slowbro"
+  },
+  {
+    "pokemon": "Sceptile",
+    "types": [
+      "grass"
+    ],
+    "ability": "Lightning Rod",
+    "item": "Sceptilite",
+    "moves": [
+      {
+        "name": "Dragon Pulse",
+        "type": "dragon"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Earth Power",
+        "type": "ground"
+      },
+      {
+        "name": "Energy Ball",
+        "type": "grass"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 91,
+    "species_key": "sceptile"
+  },
+  {
+    "pokemon": "Klefki",
+    "types": [
+      "steel",
+      "fairy"
+    ],
+    "ability": "Trace",
+    "item": "Sitrus Berry",
+    "moves": [
+      {
+        "name": "Thunder Wave",
+        "type": "electric"
+      },
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      },
+      {
+        "name": "Dazzling Gleam",
+        "type": "fairy"
+      },
+      {
+        "name": "Light Screen",
+        "type": "psychic"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 90,
+    "species_key": "klefki"
+  },
+  {
+    "pokemon": "Perrserker",
+    "types": [
+      "steel"
+    ],
+    "ability": "Trace",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Fake Out",
+        "type": "normal"
+      },
+      {
+        "name": "Iron Head",
+        "type": "steel"
+      },
+      {
+        "name": "Helping Hand",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 88,
+    "species_key": "perrserker"
+  },
+  {
+    "pokemon": "Vileplume",
+    "types": [
+      "grass",
+      "poison"
+    ],
+    "ability": "Trace",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Sleep Powder",
+        "type": "grass"
+      },
+      {
+        "name": "After You",
+        "type": "normal"
+      },
+      {
+        "name": "Solar Beam",
+        "type": "grass"
+      },
+      {
+        "name": "Leaf Storm",
+        "type": "grass"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 88,
+    "species_key": "vileplume"
+  },
+  {
+    "pokemon": "Cinderace",
+    "types": [
+      "fire"
+    ],
+    "ability": "Libero",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Pyro Ball",
+        "type": "fire"
+      },
+      {
+        "name": "U-turn",
+        "type": "bug"
+      },
+      {
+        "name": "High Jump Kick",
+        "type": "fighting"
+      },
+      {
+        "name": "Coaching",
+        "type": "fighting"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 87,
+    "species_key": "cinderace"
+  },
+  {
+    "pokemon": "Glalie",
+    "types": [
+      "ice"
+    ],
+    "ability": "Inner Focus",
+    "item": "Glalitite",
+    "moves": [
+      {
+        "name": "Explosion",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Body Slam",
+        "type": "normal"
+      },
+      {
+        "name": "Earthquake",
+        "type": "ground"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 86,
+    "species_key": "glalie"
+  },
+  {
+    "pokemon": "Malamar",
+    "types": [
+      "dark",
+      "psychic"
+    ],
+    "ability": "Hospitality",
+    "item": "Malamarite",
+    "moves": [
+      {
+        "name": "Superpower",
+        "type": "fighting"
+      },
+      {
+        "name": "Knock Off",
+        "type": "dark"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Skill Swap",
+        "type": "psychic"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 86,
+    "species_key": "malamar"
+  },
+  {
+    "pokemon": "Samurott-Hisui",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "ability": "Trace",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Ceaseless Edge",
+        "type": "dark"
+      },
+      {
+        "name": "Sacred Sword",
+        "type": "fighting"
+      },
+      {
+        "name": "Aqua Cutter",
+        "type": "water"
+      },
+      {
+        "name": "Sucker Punch",
+        "type": "dark"
+      }
+    ],
+    "usage_pct": 1.0,
+    "games": 83,
+    "species_key": "samurott-hisui"
+  },
+  {
+    "pokemon": "Krookodile",
+    "types": [
+      "ground",
+      "dark"
+    ],
+    "ability": "Intimidate",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Earthquake",
+        "type": "ground"
+      },
+      {
+        "name": "Knock Off",
+        "type": "dark"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Crunch",
+        "type": "dark"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 78,
+    "species_key": "krookodile"
+  },
+  {
+    "pokemon": "Palafin",
+    "types": [
+      "water"
+    ],
+    "ability": null,
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Wave Crash",
+        "type": "water"
+      },
+      {
+        "name": "Jet Punch",
+        "type": "water"
+      },
+      {
+        "name": "Close Combat",
+        "type": "fighting"
+      },
+      {
+        "name": "Drain Punch",
+        "type": "fighting"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 77,
+    "species_key": "palafin"
+  },
+  {
+    "pokemon": "Hawlucha",
+    "types": [
+      "fighting",
+      "flying"
+    ],
+    "ability": "Mold Breaker",
+    "item": "Hawluchanite",
+    "moves": [
+      {
+        "name": "Entrainment",
+        "type": "normal"
+      },
+      {
+        "name": "Close Combat",
+        "type": "fighting"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Acrobatics",
+        "type": "flying"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 76,
+    "species_key": "hawlucha"
+  },
+  {
+    "pokemon": "Heliolisk",
+    "types": [
+      "electric",
+      "normal"
+    ],
+    "ability": "Dry Skin",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Thunderbolt",
+        "type": "electric"
+      },
+      {
+        "name": "Shed Tail",
+        "type": "normal"
+      },
+      {
+        "name": "Hyper Voice",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 75,
+    "species_key": "heliolisk"
+  },
+  {
+    "pokemon": "Vivillon",
+    "types": [
+      "bug",
+      "flying"
+    ],
+    "ability": "Hospitality",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Sleep Powder",
+        "type": "grass"
+      },
+      {
+        "name": "Tailwind",
+        "type": "flying"
+      },
+      {
+        "name": "Hurricane",
+        "type": "flying"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 73,
+    "species_key": "vivillon"
+  },
+  {
+    "pokemon": "Dragalge",
+    "types": [
+      "poison",
+      "dragon"
+    ],
+    "ability": "Regenerator",
+    "item": "Dragalgite",
+    "moves": [
+      {
+        "name": "Sludge Bomb",
+        "type": "poison"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Draco Meteor",
+        "type": "dragon"
+      },
+      {
+        "name": "Dragon Pulse",
+        "type": "dragon"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 72,
+    "species_key": "dragalge"
+  },
+  {
+    "pokemon": "Altaria",
+    "types": [
+      "dragon",
+      "flying"
+    ],
+    "ability": "Cloud Nine",
+    "item": "Altarianite",
+    "moves": [
+      {
+        "name": "Hyper Voice",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Tailwind",
+        "type": "flying"
+      },
+      {
+        "name": "Will-O-Wisp",
+        "type": "fire"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 70,
+    "species_key": "altaria"
+  },
+  {
+    "pokemon": "Meowstic",
+    "types": [
+      "psychic"
+    ],
+    "ability": "Intimidate",
+    "item": "Sitrus Berry",
+    "moves": [
+      {
+        "name": "Skill Swap",
+        "type": "psychic"
+      },
+      {
+        "name": "Fake Out",
+        "type": "normal"
+      },
+      {
+        "name": "Yawn",
+        "type": "normal"
+      },
+      {
+        "name": "Gravity",
+        "type": "psychic"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 70,
+    "species_key": "meowstic"
+  },
+  {
+    "pokemon": "Palafin-Hero",
+    "types": [
+      "water"
+    ],
+    "ability": null,
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Flip Turn",
+        "type": "water"
+      },
+      {
+        "name": "Wave Crash",
+        "type": "water"
+      },
+      {
+        "name": "Jet Punch",
+        "type": "water"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 70,
+    "species_key": "palafin-hero"
+  },
+  {
+    "pokemon": "Aurorus",
+    "types": [
+      "rock",
+      "ice"
+    ],
+    "ability": "Snow Warning",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Blizzard",
+        "type": "ice"
+      },
+      {
+        "name": "Hyper Voice",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Aurora Veil",
+        "type": "ice"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 65,
+    "species_key": "aurorus"
+  },
+  {
+    "pokemon": "Ditto",
+    "types": [
+      "normal"
+    ],
+    "ability": "Imposter",
+    "item": "Grassy Seed",
+    "moves": [
+      {
+        "name": "Transform",
+        "type": "normal"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Tailwind",
+        "type": "flying"
+      },
+      {
+        "name": "Wave Crash",
+        "type": "water"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 61,
+    "species_key": "ditto"
+  },
+  {
+    "pokemon": "Noivern",
+    "types": [
+      "flying",
+      "dragon"
+    ],
+    "ability": "Frisk",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Tailwind",
+        "type": "flying"
+      },
+      {
+        "name": "Draco Meteor",
+        "type": "dragon"
+      },
+      {
+        "name": "U-turn",
+        "type": "bug"
+      },
+      {
+        "name": "Air Slash",
+        "type": "flying"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 61,
+    "species_key": "noivern"
+  },
+  {
+    "pokemon": "Persian-Alola",
+    "types": [
+      "dark"
+    ],
+    "ability": null,
+    "item": "Sitrus Berry",
+    "moves": [
+      {
+        "name": "Fake Out",
+        "type": "normal"
+      },
+      {
+        "name": "Foul Play",
+        "type": "dark"
+      },
+      {
+        "name": "Parting Shot",
+        "type": "dark"
+      },
+      {
+        "name": "Snarl",
+        "type": "dark"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 61,
+    "species_key": "persian-alola"
+  },
+  {
+    "pokemon": "Pyroar",
+    "types": [
+      "fire",
+      "normal"
+    ],
+    "ability": "Unnerve",
+    "item": "Pyroarite",
+    "moves": [
+      {
+        "name": "Heat Wave",
+        "type": "fire"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Overheat",
+        "type": "fire"
+      },
+      {
+        "name": "Solar Beam",
+        "type": "grass"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 61,
+    "species_key": "pyroar"
+  },
+  {
+    "pokemon": "Steelix",
+    "types": [
+      "steel",
+      "ground"
+    ],
+    "ability": "Sturdy",
+    "item": "Steelixite",
+    "moves": [
+      {
+        "name": "Body Press",
+        "type": "fighting"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Heavy Slam",
+        "type": "steel"
+      },
+      {
+        "name": "High Horsepower",
+        "type": "ground"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 59,
+    "species_key": "steelix"
+  },
+  {
+    "pokemon": "Ampharos",
+    "types": [
+      "electric"
+    ],
+    "ability": "Mold Breaker",
+    "item": "Ampharosite",
+    "moves": [
+      {
+        "name": "Dragon Pulse",
+        "type": "dragon"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Cotton Guard",
+        "type": "grass"
+      },
+      {
+        "name": "Parabolic Charge",
+        "type": "electric"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 58,
+    "species_key": "ampharos"
+  },
+  {
+    "pokemon": "Azumarill",
+    "types": [
+      "water",
+      "fairy"
+    ],
+    "ability": "Hospitality",
+    "item": "Sitrus Berry",
+    "moves": [
+      {
+        "name": "Belly Drum",
+        "type": "normal"
+      },
+      {
+        "name": "Play Rough",
+        "type": "fairy"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Aqua Jet",
+        "type": "water"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 58,
+    "species_key": "azumarill"
+  },
+  {
+    "pokemon": "Scolipede",
+    "types": [
+      "bug",
+      "poison"
+    ],
+    "ability": "Speed Boost",
+    "item": "Scolipite",
+    "moves": [
+      {
+        "name": "Leech Life",
+        "type": "bug"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Swords Dance",
+        "type": "normal"
+      },
+      {
+        "name": "Rock Slide",
+        "type": "rock"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 58,
+    "species_key": "scolipede"
+  },
+  {
+    "pokemon": "Mudsdale",
+    "types": [
+      "ground"
+    ],
+    "ability": "Stamina",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "High Horsepower",
+        "type": "ground"
+      },
+      {
+        "name": "Body Press",
+        "type": "fighting"
+      },
+      {
+        "name": "Rock Slide",
+        "type": "rock"
+      },
+      {
+        "name": "Heavy Slam",
+        "type": "steel"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 57,
+    "species_key": "mudsdale"
+  },
+  {
+    "pokemon": "Abomasnow",
+    "types": [
+      "grass",
+      "ice"
+    ],
+    "ability": "Snow Warning",
+    "item": "Abomasite",
+    "moves": [
+      {
+        "name": "Blizzard",
+        "type": "ice"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Giga Drain",
+        "type": "grass"
+      },
+      {
+        "name": "Earth Power",
+        "type": "ground"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 54,
+    "species_key": "abomasnow"
+  },
+  {
+    "pokemon": "Greninja",
+    "types": [
+      "water",
+      "dark"
+    ],
+    "ability": "Protean",
+    "item": "Greninjite",
+    "moves": [
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Dark Pulse",
+        "type": "dark"
+      },
+      {
+        "name": "Ice Beam",
+        "type": "ice"
+      },
+      {
+        "name": "Hydro Pump",
+        "type": "water"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 54,
+    "species_key": "greninja"
+  },
+  {
+    "pokemon": "Squawkabilly",
+    "types": [
+      "normal",
+      "flying"
+    ],
+    "ability": "Intimidate",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Parting Shot",
+        "type": "dark"
+      },
+      {
+        "name": "Tailwind",
+        "type": "flying"
+      },
+      {
+        "name": "Final Gambit",
+        "type": "fighting"
+      },
+      {
+        "name": "Brave Bird",
+        "type": "flying"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 54,
+    "species_key": "squawkabilly"
+  },
+  {
+    "pokemon": "Cofagrigus",
+    "types": [
+      "ghost"
+    ],
+    "ability": "Inner Focus",
+    "item": "Leftovers",
+    "moves": [
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      },
+      {
+        "name": "Shadow Ball",
+        "type": "ghost"
+      },
+      {
+        "name": "Will-O-Wisp",
+        "type": "fire"
+      },
+      {
+        "name": "Body Press",
+        "type": "fighting"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 53,
+    "species_key": "cofagrigus"
+  },
+  {
+    "pokemon": "Meowstic-F",
+    "types": [
+      "psychic"
+    ],
+    "ability": "Intimidate",
+    "item": "Meowsticite",
+    "moves": [
+      {
+        "name": "Expanding Force",
+        "type": "psychic"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Alluring Voice",
+        "type": "fairy"
+      },
+      {
+        "name": "Nasty Plot",
+        "type": "dark"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 53,
+    "species_key": "meowstic-f"
+  },
+  {
+    "pokemon": "Audino",
+    "types": [
+      "normal"
+    ],
+    "ability": "Regenerator",
+    "item": "Audinite",
+    "moves": [
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      },
+      {
+        "name": "Simple Beam",
+        "type": "normal"
+      },
+      {
+        "name": "Heal Pulse",
+        "type": "psychic"
+      },
+      {
+        "name": "Ally Switch",
+        "type": "psychic"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 52,
+    "species_key": "audino"
+  },
+  {
+    "pokemon": "Chesnaught",
+    "types": [
+      "grass",
+      "fighting"
+    ],
+    "ability": "Bulletproof",
+    "item": "Chesnaughtite",
+    "moves": [
+      {
+        "name": "Belly Drum",
+        "type": "normal"
+      },
+      {
+        "name": "Spiky Shield",
+        "type": "grass"
+      },
+      {
+        "name": "Grassy Glide",
+        "type": "grass"
+      },
+      {
+        "name": "Body Press",
+        "type": "fighting"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 51,
+    "species_key": "chesnaught"
+  },
+  {
+    "pokemon": "Mimikyu-Busted",
+    "types": [
+      "ghost",
+      "fairy"
+    ],
+    "ability": "Hospitality",
+    "item": "Life Orb",
+    "moves": [
+      {
+        "name": "Trick Room",
+        "type": "psychic"
+      },
+      {
+        "name": "Play Rough",
+        "type": "fairy"
+      },
+      {
+        "name": "Swords Dance",
+        "type": "normal"
+      },
+      {
+        "name": "Shadow Sneak",
+        "type": "ghost"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 51,
+    "species_key": "mimikyu-busted"
+  },
+  {
+    "pokemon": "Salazzle",
+    "types": [
+      "poison",
+      "fire"
+    ],
+    "ability": "Oblivious",
+    "item": "Focus Sash",
+    "moves": [
+      {
+        "name": "Fake Out",
+        "type": "normal"
+      },
+      {
+        "name": "Sludge Bomb",
+        "type": "poison"
+      },
+      {
+        "name": "Heat Wave",
+        "type": "fire"
+      },
+      {
+        "name": "Flamethrower",
+        "type": "fire"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 51,
+    "species_key": "salazzle"
+  },
+  {
+    "pokemon": "Houndoom",
+    "types": [
+      "dark",
+      "fire"
+    ],
+    "ability": "Solar Power",
+    "item": "Houndoominite",
+    "moves": [
+      {
+        "name": "Heat Wave",
+        "type": "fire"
+      },
+      {
+        "name": "Dark Pulse",
+        "type": "dark"
+      },
+      {
+        "name": "Protect",
+        "type": "normal"
+      },
+      {
+        "name": "Solar Beam",
+        "type": "grass"
+      }
+    ],
+    "usage_pct": 0.0,
+    "games": 50,
+    "species_key": "houndoom"
   }
 ]

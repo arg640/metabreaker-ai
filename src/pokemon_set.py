@@ -26,7 +26,7 @@ ESPECIALES_COMUNES = {
 # Mapea el nombre de Pikalytics al nombre corto que acepta el servidor.
 NOMBRES_CORTOS = {
     "Floette-Eternal-Mega": "Floette-Mega",
-    "Floette-Eternal": "Floette",
+    "Floette-Eternal": "Floette-Mega",
 }
 
 
