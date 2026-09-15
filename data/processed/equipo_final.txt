@@ -1,0 +1,65 @@
+Charizard-Mega-Y @ Charizardite Y
+Ability: Blaze
+Level: 50
+Tera Type: Fire
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- Heat Wave
+- Weather Ball
+- Ancient Power
+- Protect
+
+Indeedee @ Choice Scarf
+Ability: Psychic Surge
+Level: 50
+Tera Type: Psychic
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- Expanding Force
+- Imprison
+- Trick
+- Trick Room
+
+Garchomp @ Life Orb
+Ability: Rough Skin
+Level: 50
+Tera Type: Dragon
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
+- Protect
+- Dragon Claw
+- Rock Slide
+- Stomping Tantrum
+
+Metagross-Mega @ Metagrossite
+Ability: Clear Body
+Level: 50
+Tera Type: Steel
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
+- Iron Head
+- Psychic Fangs
+- Body Press
+- Protect
+
+Kingambit @ Chople Berry
+Ability: Defiant
+Level: 50
+Tera Type: Dark
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
+- Sucker Punch
+- Kowtow Cleave
+- Low Kick
+- Iron Head
+
+Salamence-Mega @ Salamencite
+Ability: Intimidate
+Level: 50
+Tera Type: Dragon
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
+- Hyper Voice
+- Dragon Pulse
+- Heat Wave
+- Protect

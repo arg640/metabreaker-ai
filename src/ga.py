@@ -1,11 +1,11 @@
 # src/ga.py
 """
 Algoritmo Genético con:
-- Island model (3 islas independientes con migración)
-- Penalización por similitud (diversidad)
-- Mutación alta (0.5)
+- Island model (múltiples islas + migración)
+- Diversidad por similitud (Jaccard)
+- Checkpoint tras cada generación
 - Warm start con elites
-- Top 5 final ordenado por fitness recalculado
+- Progreso en tiempo real por individuo
 """
 import json
 import random
@@ -24,14 +24,13 @@ from src.fitness_components import (
 
 
 # ============ CONFIGURACIÓN ============
-# ============ CONFIGURACIÓN ============
 EQUIPO_SIZE = 6
 
 # Island model
 N_ISLAS = 3
 POP_POR_ISLA = 8
 GENERACIONES_POR_CICLO = 3
-N_MIGRANTES = 2                # <- AÑADIR si falta
+N_MIGRANTES = 2
 
 # Evolución
 N_GEN = 9
@@ -39,8 +38,8 @@ CXPB = 0.6
 MUTPB = 0.5
 
 # Evaluación
-N_BATALLAS_POR_RIVAL = 3       # mi recomendación (era 3)
-N_RIVALES = 10
+N_BATALLAS_POR_RIVAL = 3
+N_RIVALES = 20
 SEED = 42
 
 # Pesos
@@ -57,19 +56,11 @@ UMBRAL_SIMILITUD = 0.3
 USE_WARM_START = True
 WARM_START_N = 3
 
-# Pesos
-PESO_WINRATE = 0.85
-PESO_COBERTURA = 0.05
-PESO_SINERGIA = 0.05
-PESO_DIVERSIDAD = 0.05
-
-# Penalización por similitud (diversidad)
-LAMBDA_DIVERSIDAD = 0.5          # 0 = sin penalización, 1 = máxima
-UMBRAL_SIMILITUD = 0.3           # a partir de aquí empieza a penalizar
-
-# Warm start
-USE_WARM_START = True
-WARM_START_N = 3
+# Archivos
+CHECKPOINT_FILE = Path("data/processed/checkpoint.json")
+ELITES_FILE = Path("data/processed/ga_elites.json")
+RESULT_FILE = Path("data/processed/ga_result.json")
+HISTORY_FILE = Path("data/processed/ga_history.json")
 
 random.seed(SEED)
 
@@ -102,7 +93,7 @@ def crear_individuo():
     return creator.Individual(seleccionados)
 
 
-def _gen_aleatorio_libre(keys_usados: set, ya_incluidos: list[int]) -> int | None:
+def _gen_aleatorio_libre(keys_usados, ya_incluidos):
     disponibles = [
         i for i in range(N_POOL)
         if POOL[i]["species_key"] not in keys_usados and i not in ya_incluidos
@@ -112,7 +103,7 @@ def _gen_aleatorio_libre(keys_usados: set, ya_incluidos: list[int]) -> int | Non
     return random.choice(disponibles)
 
 
-def _deduplicar(genes: list[int]) -> list[int]:
+def _deduplicar(genes):
     resultado = []
     keys_usados = set()
     for g in genes:
@@ -162,8 +153,7 @@ def mutar(individuo, indpb=0.5):
     return (individuo,)
 
 
-def evaluar_base(individuo):
-    """Fitness sin penalización de diversidad."""
+def evaluar_base(individuo, idx=None, total=None, isla_id=None):
     equipo = [POOL[i] for i in individuo]
     winrates = []
     for rival in RIVALES:
@@ -173,24 +163,28 @@ def evaluar_base(individuo):
     cob = cobertura_defensiva(equipo)
     sin = sinergia_ofensiva(equipo)
     div = diversidad_de_tipos(equipo)
-    return PESO_WINRATE * winrate_meta + PESO_COBERTURA * cob + PESO_SINERGIA * sin + PESO_DIVERSIDAD * div
+
+    if idx is not None and total is not None:
+        nombres = ", ".join(p["pokemon"] for p in equipo[:3])
+        print(f"    [Isla {isla_id}] {idx+1}/{total} | wr={winrate_meta:.1%} | {nombres}...")
+
+    return (
+        PESO_WINRATE * winrate_meta
+        + PESO_COBERTURA * cob
+        + PESO_SINERGIA * sin
+        + PESO_DIVERSIDAD * div
+    )
 
 
-def similitud_jaccard(a: list, b: list) -> float:
-    """Similitud de Jaccard entre dos genomas (0 = distintos, 1 = idénticos)."""
+def similitud_jaccard(a, b):
     sa, sb = set(a), set(b)
     return len(sa & sb) / len(sa | sb) if (sa | sb) else 0.0
 
 
 def aplicar_diversidad(poblacion):
-    """
-    Ajusta el fitness de cada individuo según su similitud con el resto.
-    Modifica fitness.values in-place.
-    """
     n = len(poblacion)
     if n < 2:
         return
-
     for i, ind in enumerate(poblacion):
         similitudes = []
         for j, otro in enumerate(poblacion):
@@ -198,35 +192,92 @@ def aplicar_diversidad(poblacion):
                 continue
             similitudes.append(similitud_jaccard(ind, otro))
         sim_promedio = sum(similitudes) / len(similitudes) if similitudes else 0.0
-
-        # Penalización: a partir de UMBRAL_SIMILITUD, reducir el fitness
         exceso = max(0.0, sim_promedio - UMBRAL_SIMILITUD)
         factor = max(0.3, 1.0 - LAMBDA_DIVERSIDAD * exceso)
-
         base = ind.fitness.values[0]
         ind.fitness.values = (base * factor,)
 
 
-def migrar(islas: list[list], n_migrantes: int):
-    """
-    Los n mejores de cada isla migran a la siguiente isla (rotación).
-    Devuelve la lista de islas modificada.
-    """
+def _fitness_seguro(ind):
+    if ind.fitness.valid and len(ind.fitness.values) > 0:
+        return ind.fitness.values[0]
+    return float("-inf")
+
+
+def _clonar_con_fitness(ind):
+    nuevo = creator.Individual(list(ind))
+    if ind.fitness.valid and len(ind.fitness.values) > 0:
+        nuevo.fitness.values = ind.fitness.values
+    return nuevo
+
+
+def migrar(islas, n_migrantes):
     migrantes = []
     for isla in islas:
-        top = tools.selBest(isla, n_migrantes)
-        migrantes.append([creator.Individual(ind) for ind in top])
+        validos = [ind for ind in isla if ind.fitness.valid and len(ind.fitness.values) > 0]
+        if not validos:
+            migrantes.append([])
+            continue
+        top = tools.selBest(validos, min(n_migrantes, len(validos)))
+        migrantes.append([_clonar_con_fitness(ind) for ind in top])
 
-    # Reasignar: los migrantes de isla i van a isla i+1
     for i, isla in enumerate(islas):
         origen = migrantes[i]
+        if not origen:
+            continue
         destino = islas[(i + 1) % len(islas)]
-        # Reemplazar los peores n de la isla destino
-        peores_idx = sorted(range(len(destino)), key=lambda k: destino[k].fitness.values[0])[:n_migrantes]
+        peores_idx = sorted(range(len(destino)), key=lambda k: _fitness_seguro(destino[k]))[:n_migrantes]
         for k, migrante in zip(peores_idx, origen):
-            destino[k] = migrante
-
+            destino[k] = _clonar_con_fitness(migrante)
     return islas
+
+
+# ============ CHECKPOINT ============
+def guardar_checkpoint(gen_global, ciclo, gen_local, islas):
+    estado = {
+        "gen_global": gen_global,
+        "ciclo": ciclo,
+        "gen_local": gen_local,
+        "islas": [
+            [
+                {
+                    "genoma": list(ind),
+                    "fitness": ind.fitness.values[0]
+                    if ind.fitness.valid and len(ind.fitness.values) > 0
+                    else None,
+                }
+                for ind in isla
+            ]
+            for isla in islas
+        ],
+    }
+    CHECKPOINT_FILE.parent.mkdir(parents=True, exist_ok=True)
+    CHECKPOINT_FILE.write_text(json.dumps(estado, indent=2), encoding="utf-8")
+
+
+def cargar_checkpoint():
+    if not CHECKPOINT_FILE.exists():
+        return None
+    try:
+        estado = json.loads(CHECKPOINT_FILE.read_text(encoding="utf-8"))
+        islas = []
+        for isla_data in estado["islas"]:
+            isla = []
+            for ind_data in isla_data:
+                ind = creator.Individual(ind_data["genoma"])
+                if ind_data["fitness"] is not None:
+                    ind.fitness.values = (ind_data["fitness"],)
+                isla.append(ind)
+            islas.append(isla)
+        return {
+            "gen_global": estado["gen_global"],
+            "ciclo": estado["ciclo"],
+            "gen_local": estado["gen_local"],
+            "islas": islas,
+        }
+    except Exception as e:
+        print(f"⚠️  Checkpoint corrupto, ignorando: {e}")
+        return None
 
 
 # ============ ALGORITMO PRINCIPAL ============
@@ -245,79 +296,91 @@ def main():
     toolbox.register("mutate", mutar)
     toolbox.register("select", tools.selTournament, tournsize=3)
 
-    # Crear islas
-    islas = [toolbox.population(n=POP_POR_ISLA) for _ in range(N_ISLAS)]
-
-    # Warm start: distribuir elites entre islas
-    ruta_elites = Path("data/processed/ga_elites.json")
-    if ruta_elites.exists() and USE_WARM_START:
-        elites_data = json.loads(ruta_elites.read_text(encoding="utf-8"))
-        n_reinyectar = min(len(elites_data), WARM_START_N)
-        for k in range(n_reinyectar):
-            genoma = elites_data[k]["genoma"]
-            if len(genoma) == EQUIPO_SIZE and all(0 <= g < N_POOL for g in genoma):
-                isla_destino = islas[k % N_ISLAS]
-                isla_destino[k // N_ISLAS] = creator.Individual(genoma)
-        print(f"🔥 Warm start: {n_reinyectar} elites reinyectados\n")
-
     hof = tools.HallOfFame(5)
     logbook = tools.Logbook()
     logbook.header = ["gen", "isla", "nevals", "avg", "max"]
 
-    # Ciclo principal
-    gen_global = 0
-    for ciclo in range(N_GEN // GENERACIONES_POR_CICLO):
-        for gen_local in range(GENERACIONES_POR_CICLO):
-            for idx_isla, isla in enumerate(islas):
-                # Evaluar
-                fitnesses = list(map(evaluar_base, isla))
-                for ind, fit in zip(isla, fitnesses):
-                    ind.fitness.values = (fit,)
+    # Checkpoint
+    estado = cargar_checkpoint()
+    if estado and USE_WARM_START:
+        islas = estado["islas"]
+        gen_global = estado["gen_global"]
+        ciclo = estado["ciclo"]
+        gen_local = estado["gen_local"]
+        print(f"📂 Checkpoint cargado: gen {gen_global}, ciclo {ciclo}, gen_local {gen_local}\n")
+    else:
+        islas = [toolbox.population(n=POP_POR_ISLA) for _ in range(N_ISLAS)]
+        gen_global = 0
+        ciclo = 0
+        gen_local = 0
 
-                # Aplicar penalización por diversidad
-                aplicar_diversidad(isla)
+        if USE_WARM_START and ELITES_FILE.exists():
+            try:
+                elites_data = json.loads(ELITES_FILE.read_text(encoding="utf-8"))
+                n_reinyectar = min(len(elites_data), WARM_START_N)
+                for k in range(n_reinyectar):
+                    genoma = elites_data[k]["genoma"]
+                    if len(genoma) == EQUIPO_SIZE and all(0 <= g < N_POOL for g in genoma):
+                        isla_destino = islas[k % N_ISLAS]
+                        isla_destino[k // N_ISLAS] = creator.Individual(genoma)
+                print(f"🔥 Warm start: {n_reinyectar} elites reinyectados\n")
+            except Exception as e:
+                print(f"⚠️  No se pudieron cargar elites: {e}\n")
 
-                # Registrar stats
-                avg = sum(ind.fitness.values[0] for ind in isla) / len(isla)
-                mx = max(ind.fitness.values[0] for ind in isla)
-                logbook.record(gen=gen_global, isla=idx_isla, nevals=len(isla), avg=avg, max=mx)
+    # Bucle principal
+    while gen_global < N_GEN:
+        for idx_isla, isla in enumerate(islas):
+            print(f"\n=== Gen {gen_global} | Isla {idx_isla} | Evaluando {len(isla)} ===")
 
-                hof.update(isla)
+            for k, ind in enumerate(isla):
+                fit = evaluar_base(ind, idx=k, total=len(isla), isla_id=idx_isla)
+                ind.fitness.values = (fit,)
 
-                # Siguiente generación (si no es la última del ciclo)
-                if gen_local < GENERACIONES_POR_CICLO - 1 or ciclo < (N_GEN // GENERACIONES_POR_CICLO) - 1:
-                    offspring = toolbox.select(isla, len(isla))
-                    offspring = [toolbox.clone(ind) for ind in offspring]
+            aplicar_diversidad(isla)
 
-                    for c1, c2 in zip(offspring[::2], offspring[1::2]):
-                        if random.random() < CXPB:
-                            toolbox.mate(c1, c2)
-                            del c1.fitness.values
-                            del c2.fitness.values
+            avg = sum(ind.fitness.values[0] for ind in isla) / len(isla)
+            mx = max(ind.fitness.values[0] for ind in isla)
+            logbook.record(gen=gen_global, isla=idx_isla, nevals=len(isla), avg=avg, max=mx)
+            hof.update(isla)
 
-                    for mutant in offspring:
-                        if random.random() < MUTPB:
-                            toolbox.mutate(mutant)
-                            del mutant.fitness.values
+            # Evolución
+            offspring = toolbox.select(isla, len(isla))
+            offspring = [toolbox.clone(ind) for ind in offspring]
 
-                    # Elitismo dentro de cada isla
-                    elite = tools.selBest(isla, 1)
-                    offspring[-1:] = [toolbox.clone(ind) for ind in elite]
+            for c1, c2 in zip(offspring[::2], offspring[1::2]):
+                if random.random() < CXPB:
+                    toolbox.mate(c1, c2)
+                    del c1.fitness.values
+                    del c2.fitness.values
 
-                    islas[idx_isla] = offspring
+            for mutant in offspring:
+                if random.random() < MUTPB:
+                    toolbox.mutate(mutant)
+                    del mutant.fitness.values
 
-            gen_global += 1
+            elite = tools.selBest(isla, 1)
+            offspring[-1:] = [toolbox.clone(ind) for ind in elite]
 
-        # Migración al final del ciclo
-        if ciclo < (N_GEN // GENERACIONES_POR_CICLO) - 1:
+            islas[idx_isla] = offspring
+
+        gen_global += 1
+        gen_local += 1
+
+        guardar_checkpoint(gen_global, ciclo, gen_local, islas)
+        print(f"\n💾 Checkpoint guardado (gen {gen_global})")
+
+        if gen_local >= GENERACIONES_POR_CICLO and gen_global < N_GEN:
             islas = migrar(islas, N_MIGRANTES)
             print(f"🔄 Migración tras gen {gen_global}")
+            ciclo += 1
+            gen_local = 0
+            guardar_checkpoint(gen_global, ciclo, gen_local, islas)
 
+    print()
     print(logbook.stream)
 
-    # Población combinada final
+    # ============ RESULTADO FINAL ============
     pop_final = [ind for isla in islas for ind in isla]
-    # Actualizar hof con la población final
     hof.update(pop_final)
 
     candidatos = tools.selBest(pop_final, min(10, len(pop_final)))
@@ -346,7 +409,7 @@ def main():
         resultados_top5.append({
             "equipo": equipo,
             "fitness": fitness_recalculado,
-            "fitness_evolucion": ind.fitness.values[0],
+            "fitness_evolucion": ind.fitness.values[0] if ind.fitness.valid else 0.0,
             "desglose": {
                 "winrate_meta": wr_meta,
                 "cobertura_defensiva": cob,
@@ -391,11 +454,9 @@ def main():
         },
         "logbook": [dict(r) for r in logbook],
     }
-    (out_dir / "ga_result.json").write_text(
-        json.dumps(resultado, indent=2, ensure_ascii=False), encoding="utf-8")
+    RESULT_FILE.write_text(json.dumps(resultado, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    ruta_hist = out_dir / "ga_history.json"
-    historial = json.loads(ruta_hist.read_text(encoding="utf-8")) if ruta_hist.exists() else []
+    historial = json.loads(HISTORY_FILE.read_text(encoding="utf-8")) if HISTORY_FILE.exists() else []
     historial.append({
         "timestamp": resultado["timestamp"],
         "fitness": mejor["fitness"],
@@ -406,22 +467,32 @@ def main():
             for r in resultados_top5
         ],
     })
-    ruta_hist.write_text(json.dumps(historial, indent=2, ensure_ascii=False), encoding="utf-8")
+    HISTORY_FILE.write_text(json.dumps(historial, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    ruta_elites = out_dir / "ga_elites.json"
-    elites_previos = json.loads(ruta_elites.read_text(encoding="utf-8")) if ruta_elites.exists() else []
+    elites_previos = json.loads(ELITES_FILE.read_text(encoding="utf-8")) if ELITES_FILE.exists() else []
+        # Solo individuos con fitness válido
+    candidatos_validos = [
+        ind for ind in pop_final
+        if ind.fitness.valid and len(ind.fitness.values) > 0
+    ]
+    top_validos = tools.selBest(candidatos_validos, min(5, len(candidatos_validos)))
     nuevos = [
         {"genoma": list(ind), "fitness": ind.fitness.values[0],
          "nombres": [POOL[i]["pokemon"] for i in ind]}
-        for ind in tools.selBest(pop_final, 5)
+        for ind in top_validos
     ]
     todos = elites_previos + nuevos
     todos.sort(key=lambda x: x["fitness"], reverse=True)
-    ruta_elites.write_text(json.dumps(todos[:10], indent=2, ensure_ascii=False), encoding="utf-8")
+    ELITES_FILE.write_text(json.dumps(todos[:10], indent=2, ensure_ascii=False), encoding="utf-8")
 
-    print(f"\n✅ Resultado: {out_dir / 'ga_result.json'}")
-    print(f"✅ Historial: {ruta_hist} ({len(historial)} corridas)")
-    print(f"✅ Elites: {ruta_elites}")
+    # Borrar checkpoint al terminar (para que la próxima corrida empiece limpia)
+    if CHECKPOINT_FILE.exists():
+        CHECKPOINT_FILE.unlink()
+
+    print(f"\n✅ Resultado: {RESULT_FILE}")
+    print(f"✅ Historial: {HISTORY_FILE} ({len(historial)} corridas)")
+    print(f"✅ Elites: {ELITES_FILE}")
+    print(f"💡 Checkpoint borrado (corrida terminada)")
 
 
 if __name__ == "__main__":

@@ -11,7 +11,10 @@ from pathlib import Path
 POOL_FILE = Path("data/processed/pool_data.json")
 VALID_ABILITIES_FILE = Path("data/raw/valid_abilities.json")
 
-POKEMON_EXCLUIDOS = set()
+POKEMON_EXCLUIDOS = {
+    "Ditto",                  # Solo aprende Transform
+    "Sinistcha-Masterpiece",  # Nombre >18 chars, Showdown lo rechaza
+}
 
 
 def _cargar_habilidades_validas() -> dict:

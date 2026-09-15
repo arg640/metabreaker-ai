@@ -1,0 +1,82 @@
+[
+  {
+    "timestamp": "2026-09-14T21:51:40.139652",
+    "fitness": 0.7133333333333334,
+    "winrate_meta": 0.7333333333333333,
+    "config": {
+      "N_ISLAS": 3,
+      "POP_POR_ISLA": 8,
+      "N_GEN": 9,
+      "GENERACIONES_POR_CICLO": 3,
+      "N_MIGRANTES": 2,
+      "CXPB": 0.6,
+      "MUTPB": 0.5,
+      "N_RIVALES": 10,
+      "N_BATALLAS_POR_RIVAL": 3,
+      "LAMBDA_DIVERSIDAD": 0.5,
+      "SEED": 42
+    },
+    "top5_nombres": [
+      {
+        "rank": 1,
+        "equipo": [
+          "Lycanroc",
+          "Rillaboom",
+          "Annihilape",
+          "Ceruledge",
+          "Tsareena",
+          "Indeedee"
+        ],
+        "fitness": 0.7133333333333334
+      },
+      {
+        "rank": 2,
+        "equipo": [
+          "Heliolisk",
+          "Tyranitar",
+          "Blaziken",
+          "Maushold-Four",
+          "Volcarona",
+          "Annihilape"
+        ],
+        "fitness": 0.6133333333333334
+      },
+      {
+        "rank": 3,
+        "equipo": [
+          "Heliolisk",
+          "Tyranitar",
+          "Blaziken",
+          "Ceruledge",
+          "Sinistcha",
+          "Indeedee"
+        ],
+        "fitness": 0.5775
+      },
+      {
+        "rank": 4,
+        "equipo": [
+          "Arcanine-Hisui",
+          "Annihilape",
+          "Kangaskhan",
+          "Whimsicott",
+          "Floette-Eternal",
+          "Indeedee"
+        ],
+        "fitness": 0.5608333333333333
+      },
+      {
+        "rank": 5,
+        "equipo": [
+          "Heliolisk",
+          "Kangaskhan",
+          "Blaziken",
+          "Golurk",
+          "Sinistcha",
+          "Indeedee"
+        ],
+        "fitness": 0.5566666666666666
+      }
+    ]
+  }
+]

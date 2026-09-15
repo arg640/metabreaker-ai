@@ -1,0 +1,97 @@
+[
+  {
+    "genoma": [
+      65,
+      0,
+      52,
+      62,
+      57,
+      35
+    ],
+    "fitness": 0.7133333333333334,
+    "nombres": [
+      "Lycanroc",
+      "Rillaboom",
+      "Annihilape",
+      "Ceruledge",
+      "Tsareena",
+      "Indeedee"
+    ]
+  },
+  {
+    "genoma": [
+      114,
+      16,
+      58,
+      56,
+      40,
+      52
+    ],
+    "fitness": 0.6133333333333334,
+    "nombres": [
+      "Heliolisk",
+      "Tyranitar",
+      "Blaziken",
+      "Maushold-Four",
+      "Volcarona",
+      "Annihilape"
+    ]
+  },
+  {
+    "genoma": [
+      114,
+      16,
+      58,
+      62,
+      12,
+      35
+    ],
+    "fitness": 0.5775,
+    "nombres": [
+      "Heliolisk",
+      "Tyranitar",
+      "Blaziken",
+      "Ceruledge",
+      "Sinistcha",
+      "Indeedee"
+    ]
+  },
+  {
+    "genoma": [
+      24,
+      52,
+      91,
+      11,
+      15,
+      35
+    ],
+    "fitness": 0.5608333333333333,
+    "nombres": [
+      "Arcanine-Hisui",
+      "Annihilape",
+      "Kangaskhan",
+      "Whimsicott",
+      "Floette-Eternal",
+      "Indeedee"
+    ]
+  },
+  {
+    "genoma": [
+      114,
+      91,
+      58,
+      84,
+      12,
+      35
+    ],
+    "fitness": 0.5566666666666666,
+    "nombres": [
+      "Heliolisk",
+      "Kangaskhan",
+      "Blaziken",
+      "Golurk",
+      "Sinistcha",
+      "Indeedee"
+    ]
+  }
+]
