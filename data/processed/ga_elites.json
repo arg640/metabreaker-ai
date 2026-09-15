@@ -1,6 +1,120 @@
 [
   {
     "genoma": [
+      35,
+      79,
+      68,
+      97,
+      1,
+      137
+    ],
+    "fitness": 0.8458333333333334,
+    "nombres": [
+      "Indeedee",
+      "Mamoswine",
+      "Dragapult",
+      "Snorlax",
+      "Sneasler",
+      "Salazzle"
+    ]
+  },
+  {
+    "genoma": [
+      66,
+      47,
+      68,
+      121,
+      9,
+      35
+    ],
+    "fitness": 0.7908333333333334,
+    "nombres": [
+      "Typhlosion-Hisui",
+      "Gengar",
+      "Dragapult",
+      "Noivern",
+      "Garchomp",
+      "Indeedee"
+    ]
+  },
+  {
+    "genoma": [
+      66,
+      47,
+      68,
+      121,
+      9,
+      35
+    ],
+    "fitness": 0.7908333333333334,
+    "nombres": [
+      "Typhlosion-Hisui",
+      "Gengar",
+      "Dragapult",
+      "Noivern",
+      "Garchomp",
+      "Indeedee"
+    ]
+  },
+  {
+    "genoma": [
+      66,
+      47,
+      68,
+      121,
+      9,
+      35
+    ],
+    "fitness": 0.7908333333333334,
+    "nombres": [
+      "Typhlosion-Hisui",
+      "Gengar",
+      "Dragapult",
+      "Noivern",
+      "Garchomp",
+      "Indeedee"
+    ]
+  },
+  {
+    "genoma": [
+      66,
+      75,
+      65,
+      110,
+      1,
+      24
+    ],
+    "fitness": 0.7475,
+    "nombres": [
+      "Typhlosion-Hisui",
+      "Scizor",
+      "Lycanroc",
+      "Samurott-Hisui",
+      "Sneasler",
+      "Arcanine-Hisui"
+    ]
+  },
+  {
+    "genoma": [
+      66,
+      79,
+      68,
+      110,
+      1,
+      137
+    ],
+    "fitness": 0.74,
+    "nombres": [
+      "Typhlosion-Hisui",
+      "Mamoswine",
+      "Dragapult",
+      "Samurott-Hisui",
+      "Sneasler",
+      "Salazzle"
+    ]
+  },
+  {
+    "genoma": [
       65,
       0,
       52,
@@ -16,6 +130,25 @@
       "Ceruledge",
       "Tsareena",
       "Indeedee"
+    ]
+  },
+  {
+    "genoma": [
+      65,
+      20,
+      52,
+      62,
+      57,
+      90
+    ],
+    "fitness": 0.6241666666666666,
+    "nombres": [
+      "Lycanroc",
+      "Charizard",
+      "Annihilape",
+      "Ceruledge",
+      "Tsareena",
+      "Kleavor"
     ]
   },
   {
@@ -52,44 +185,6 @@
       "Tyranitar",
       "Blaziken",
       "Ceruledge",
-      "Sinistcha",
-      "Indeedee"
-    ]
-  },
-  {
-    "genoma": [
-      24,
-      52,
-      91,
-      11,
-      15,
-      35
-    ],
-    "fitness": 0.5608333333333333,
-    "nombres": [
-      "Arcanine-Hisui",
-      "Annihilape",
-      "Kangaskhan",
-      "Whimsicott",
-      "Floette-Eternal",
-      "Indeedee"
-    ]
-  },
-  {
-    "genoma": [
-      114,
-      91,
-      58,
-      84,
-      12,
-      35
-    ],
-    "fitness": 0.5566666666666666,
-    "nombres": [
-      "Heliolisk",
-      "Kangaskhan",
-      "Blaziken",
-      "Golurk",
       "Sinistcha",
       "Indeedee"
     ]

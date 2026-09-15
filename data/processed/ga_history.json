@@ -78,5 +78,165 @@
         "fitness": 0.5566666666666666
       }
     ]
+  },
+  {
+    "timestamp": "2026-09-15T08:22:01.191373",
+    "fitness": 0.7000000000000001,
+    "winrate_meta": 0.7,
+    "config": {
+      "N_ISLAS": 3,
+      "POP_POR_ISLA": 8,
+      "N_GEN": 8,
+      "GENERACIONES_POR_CICLO": 3,
+      "N_MIGRANTES": 2,
+      "CXPB": 0.6,
+      "MUTPB": 0.5,
+      "N_RIVALES": 10,
+      "N_BATALLAS_POR_RIVAL": 3,
+      "LAMBDA_DIVERSIDAD": 0.5,
+      "SEED": 42
+    },
+    "top5_nombres": [
+      {
+        "rank": 1,
+        "equipo": [
+          "Lycanroc",
+          "Corviknight",
+          "Annihilape",
+          "Scolipede",
+          "Abomasnow",
+          "Indeedee"
+        ],
+        "fitness": 0.7000000000000001
+      },
+      {
+        "rank": 2,
+        "equipo": [
+          "Typhlosion-Hisui",
+          "Mamoswine",
+          "Dragapult",
+          "Samurott-Hisui",
+          "Sneasler",
+          "Salazzle"
+        ],
+        "fitness": 0.6833333333333335
+      },
+      {
+        "rank": 3,
+        "equipo": [
+          "Tinkaton",
+          "Sneasler",
+          "Squawkabilly",
+          "Maushold-Four",
+          "Araquanid",
+          "Annihilape"
+        ],
+        "fitness": 0.6583333333333334
+      },
+      {
+        "rank": 4,
+        "equipo": [
+          "Lycanroc",
+          "Rillaboom",
+          "Annihilape",
+          "Ceruledge",
+          "Tsareena",
+          "Indeedee"
+        ],
+        "fitness": 0.6000000000000001
+      },
+      {
+        "rank": 5,
+        "equipo": [
+          "Lycanroc",
+          "Corviknight",
+          "Annihilape",
+          "Scolipede",
+          "Abomasnow",
+          "Indeedee"
+        ],
+        "fitness": 0.5866666666666667
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-09-15T09:49:29.169524",
+    "fitness": 0.8041666666666667,
+    "winrate_meta": 0.8333333333333334,
+    "config": {
+      "N_ISLAS": 3,
+      "POP_POR_ISLA": 8,
+      "N_GEN": 8,
+      "GENERACIONES_POR_CICLO": 3,
+      "N_MIGRANTES": 2,
+      "CXPB": 0.6,
+      "MUTPB": 0.5,
+      "N_RIVALES": 10,
+      "N_BATALLAS_POR_RIVAL": 3,
+      "LAMBDA_DIVERSIDAD": 0.5,
+      "SEED": 43
+    },
+    "top5_nombres": [
+      {
+        "rank": 1,
+        "equipo": [
+          "Typhlosion-Hisui",
+          "Scizor",
+          "Lycanroc",
+          "Samurott-Hisui",
+          "Sneasler",
+          "Arcanine-Hisui"
+        ],
+        "fitness": 0.8041666666666667
+      },
+      {
+        "rank": 2,
+        "equipo": [
+          "Typhlosion-Hisui",
+          "Gengar",
+          "Dragapult",
+          "Noivern",
+          "Garchomp",
+          "Indeedee"
+        ],
+        "fitness": 0.7341666666666666
+      },
+      {
+        "rank": 3,
+        "equipo": [
+          "Typhlosion-Hisui",
+          "Gengar",
+          "Dragapult",
+          "Noivern",
+          "Garchomp",
+          "Indeedee"
+        ],
+        "fitness": 0.7341666666666666
+      },
+      {
+        "rank": 4,
+        "equipo": [
+          "Tyranitar",
+          "Blastoise",
+          "Dragapult",
+          "Samurott-Hisui",
+          "Sneasler",
+          "Arcanine-Hisui"
+        ],
+        "fitness": 0.6983333333333334
+      },
+      {
+        "rank": 5,
+        "equipo": [
+          "Typhlosion-Hisui",
+          "Raichu",
+          "Gholdengo",
+          "Steelix",
+          "Garchomp",
+          "Glimmora"
+        ],
+        "fitness": 0.6816666666666666
+      }
+    ]
   }
 ]

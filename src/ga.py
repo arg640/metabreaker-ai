@@ -33,14 +33,14 @@ GENERACIONES_POR_CICLO = 3
 N_MIGRANTES = 2
 
 # Evolución
-N_GEN = 9
+N_GEN = 8                      # ← antes 9 (3h en vez de 3.5h)
 CXPB = 0.6
 MUTPB = 0.5
 
 # Evaluación
 N_BATALLAS_POR_RIVAL = 3
-N_RIVALES = 20
-SEED = 42
+N_RIVALES = 10                 # ← antes 20 (mitad del tiempo)
+SEED = 43
 
 # Pesos
 PESO_WINRATE = 0.85
