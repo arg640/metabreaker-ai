@@ -32,7 +32,7 @@ Serious Nature
 - Phantom Force
 
 Houndoom @ Houndoominite
-Ability: Solar Power
+Ability: Early Bird
 Level: 50
 Tera Type: Dark
 EVs: 32 HP / 32 Atk / 2 Spe

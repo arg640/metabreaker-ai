@@ -20,7 +20,7 @@ Adamant Nature
 - Rock Slide
 - Dragon Claw
 
-Gholdengo @ Life Orb
+Gholdengo
 Ability: Good as Gold
 Level: 50
 Tera Type: Steel
@@ -53,7 +53,7 @@ Adamant Nature
 - Fake Out
 - Protect
 
-Meowscarada @ Life Orb
+Meowscarada
 Ability: Protean
 Level: 50
 Tera Type: Grass
