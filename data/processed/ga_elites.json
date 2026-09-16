@@ -78,6 +78,63 @@
   {
     "genoma": [
       66,
+      47,
+      68,
+      138,
+      69,
+      52
+    ],
+    "fitness": 0.7716666666666666,
+    "nombres": [
+      "Typhlosion-Hisui",
+      "Gengar",
+      "Dragapult",
+      "Houndoom",
+      "Weavile",
+      "Annihilape"
+    ]
+  },
+  {
+    "genoma": [
+      66,
+      47,
+      68,
+      138,
+      69,
+      52
+    ],
+    "fitness": 0.7716666666666666,
+    "nombres": [
+      "Typhlosion-Hisui",
+      "Gengar",
+      "Dragapult",
+      "Houndoom",
+      "Weavile",
+      "Annihilape"
+    ]
+  },
+  {
+    "genoma": [
+      66,
+      47,
+      68,
+      138,
+      1,
+      52
+    ],
+    "fitness": 0.7608333333333334,
+    "nombres": [
+      "Typhlosion-Hisui",
+      "Gengar",
+      "Dragapult",
+      "Houndoom",
+      "Sneasler",
+      "Annihilape"
+    ]
+  },
+  {
+    "genoma": [
+      66,
       75,
       65,
       110,
@@ -115,78 +172,21 @@
   },
   {
     "genoma": [
-      65,
-      0,
-      52,
-      62,
-      57,
-      35
+      66,
+      35,
+      68,
+      116,
+      1,
+      82
     ],
-    "fitness": 0.7133333333333334,
+    "fitness": 0.7183333333333334,
     "nombres": [
-      "Lycanroc",
-      "Rillaboom",
-      "Annihilape",
-      "Ceruledge",
-      "Tsareena",
-      "Indeedee"
-    ]
-  },
-  {
-    "genoma": [
-      65,
-      20,
-      52,
-      62,
-      57,
-      90
-    ],
-    "fitness": 0.6241666666666666,
-    "nombres": [
-      "Lycanroc",
-      "Charizard",
-      "Annihilape",
-      "Ceruledge",
-      "Tsareena",
-      "Kleavor"
-    ]
-  },
-  {
-    "genoma": [
-      114,
-      16,
-      58,
-      56,
-      40,
-      52
-    ],
-    "fitness": 0.6133333333333334,
-    "nombres": [
-      "Heliolisk",
-      "Tyranitar",
-      "Blaziken",
-      "Maushold-Four",
-      "Volcarona",
-      "Annihilape"
-    ]
-  },
-  {
-    "genoma": [
-      114,
-      16,
-      58,
-      62,
-      12,
-      35
-    ],
-    "fitness": 0.5775,
-    "nombres": [
-      "Heliolisk",
-      "Tyranitar",
-      "Blaziken",
-      "Ceruledge",
-      "Sinistcha",
-      "Indeedee"
+      "Typhlosion-Hisui",
+      "Indeedee",
+      "Dragapult",
+      "Dragalge",
+      "Sneasler",
+      "Meganium"
     ]
   }
 ]

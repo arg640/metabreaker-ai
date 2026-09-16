@@ -27,20 +27,20 @@ from src.fitness_components import (
 EQUIPO_SIZE = 6
 
 # Island model
-N_ISLAS = 3
-POP_POR_ISLA = 8
+N_ISLAS = 4
+POP_POR_ISLA = 10
 GENERACIONES_POR_CICLO = 3
-N_MIGRANTES = 2
+N_MIGRANTES = 3
 
 # Evolución
-N_GEN = 8                      # ← antes 9 (3h en vez de 3.5h)
+N_GEN = 15
 CXPB = 0.6
 MUTPB = 0.5
 
 # Evaluación
 N_BATALLAS_POR_RIVAL = 3
-N_RIVALES = 10                 # ← antes 20 (mitad del tiempo)
-SEED = 43
+N_RIVALES = 20
+SEED = 45
 
 # Pesos
 PESO_WINRATE = 0.85

@@ -238,5 +238,85 @@
         "fitness": 0.6816666666666666
       }
     ]
+  },
+  {
+    "timestamp": "2026-09-15T20:42:39.261991",
+    "fitness": 0.7991666666666667,
+    "winrate_meta": 0.8166666666666667,
+    "config": {
+      "N_ISLAS": 4,
+      "POP_POR_ISLA": 10,
+      "N_GEN": 15,
+      "GENERACIONES_POR_CICLO": 3,
+      "N_MIGRANTES": 3,
+      "CXPB": 0.6,
+      "MUTPB": 0.5,
+      "N_RIVALES": 20,
+      "N_BATALLAS_POR_RIVAL": 3,
+      "LAMBDA_DIVERSIDAD": 0.5,
+      "SEED": 45
+    },
+    "top5_nombres": [
+      {
+        "rank": 1,
+        "equipo": [
+          "Typhlosion-Hisui",
+          "Garchomp",
+          "Gholdengo",
+          "Scolipede",
+          "Sneasler",
+          "Meowscarada"
+        ],
+        "fitness": 0.7991666666666667
+      },
+      {
+        "rank": 2,
+        "equipo": [
+          "Indeedee",
+          "Mamoswine",
+          "Dragapult",
+          "Houndoom",
+          "Sneasler",
+          "Annihilape"
+        ],
+        "fitness": 0.7716666666666666
+      },
+      {
+        "rank": 3,
+        "equipo": [
+          "Typhlosion-Hisui",
+          "Garchomp",
+          "Gholdengo",
+          "Scolipede",
+          "Sneasler",
+          "Meowscarada"
+        ],
+        "fitness": 0.7708333333333334
+      },
+      {
+        "rank": 4,
+        "equipo": [
+          "Typhlosion-Hisui",
+          "Gengar",
+          "Dragapult",
+          "Houndoom",
+          "Weavile",
+          "Annihilape"
+        ],
+        "fitness": 0.7291666666666666
+      },
+      {
+        "rank": 5,
+        "equipo": [
+          "Indeedee",
+          "Mamoswine",
+          "Dragapult",
+          "Houndoom",
+          "Sneasler",
+          "Annihilape"
+        ],
+        "fitness": 0.715
+      }
+    ]
   }
 ]

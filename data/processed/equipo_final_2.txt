@@ -1,0 +1,65 @@
+Indeedee @ Focus Sash
+Ability: Psychic Surge
+Level: 50
+Tera Type: Psychic
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- Expanding Force
+- Dazzling Gleam
+- Protect
+- Trick Room
+
+Mamoswine @ Life Orb
+Ability: Oblivious
+Level: 50
+Tera Type: Ice
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- High Horsepower
+- Ice Shard
+- Protect
+- Earthquake
+
+Dragapult @ Life Orb
+Ability: Clear Body
+Level: 50
+Tera Type: Dragon
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Dragon Darts
+- Will-O-Wisp
+- Reflect
+- Phantom Force
+
+Houndoom @ Houndoominite
+Ability: Solar Power
+Level: 50
+Tera Type: Dark
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Heat Wave
+- Dark Pulse
+- Protect
+- Solar Beam
+
+Sneasler @ Grassy Seed
+Ability: Poison Touch
+Level: 50
+Tera Type: Fighting
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
+- Close Combat
+- Dire Claw
+- Fake Out
+- Protect
+
+Annihilape @ Sitrus Berry
+Ability: Defiant
+Level: 50
+Tera Type: Fighting
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Rage Fist
+- Drain Punch
+- Protect
+- Bulk Up

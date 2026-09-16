@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-15T09:49:29.169524",
+  "timestamp": "2026-09-15T20:42:39.261991",
   "equipo": [
     {
       "pokemon": "Typhlosion-Hisui",
@@ -32,20 +32,76 @@
       "species_key": "typhlosion-hisui"
     },
     {
-      "pokemon": "Scizor",
+      "pokemon": "Garchomp",
       "types": [
-        "bug",
-        "steel"
+        "dragon",
+        "ground"
       ],
-      "ability": "Hospitality",
-      "item": "Scizorite",
+      "ability": "Rough Skin",
+      "item": "Life Orb",
       "moves": [
         {
-          "name": "Bullet Punch",
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Earthquake",
+          "type": "ground"
+        },
+        {
+          "name": "Rock Slide",
+          "type": "rock"
+        },
+        {
+          "name": "Dragon Claw",
+          "type": "dragon"
+        }
+      ],
+      "usage_pct": 15.0,
+      "games": 2437,
+      "species_key": "garchomp"
+    },
+    {
+      "pokemon": "Gholdengo",
+      "types": [
+        "steel",
+        "ghost"
+      ],
+      "ability": "Good as Gold",
+      "item": "Life Orb",
+      "moves": [
+        {
+          "name": "Make It Rain",
           "type": "steel"
         },
         {
-          "name": "Bug Bite",
+          "name": "Shadow Ball",
+          "type": "ghost"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Nasty Plot",
+          "type": "dark"
+        }
+      ],
+      "usage_pct": 10.0,
+      "games": 1639,
+      "species_key": "gholdengo"
+    },
+    {
+      "pokemon": "Scolipede",
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "ability": "Speed Boost",
+      "item": "Scolipite",
+      "moves": [
+        {
+          "name": "Leech Life",
           "type": "bug"
         },
         {
@@ -55,70 +111,15 @@
         {
           "name": "Swords Dance",
           "type": "normal"
-        }
-      ],
-      "usage_pct": 1.0,
-      "games": 180,
-      "species_key": "scizor"
-    },
-    {
-      "pokemon": "Lycanroc",
-      "types": [
-        "rock"
-      ],
-      "ability": null,
-      "item": "Focus Sash",
-      "moves": [
+        },
         {
           "name": "Rock Slide",
           "type": "rock"
-        },
-        {
-          "name": "Protect",
-          "type": "normal"
-        },
-        {
-          "name": "Accelerock",
-          "type": "rock"
-        },
-        {
-          "name": "Close Combat",
-          "type": "fighting"
         }
       ],
-      "usage_pct": 2.0,
-      "games": 240,
-      "species_key": "lycanroc"
-    },
-    {
-      "pokemon": "Samurott-Hisui",
-      "types": [
-        "water",
-        "dark"
-      ],
-      "ability": "Trace",
-      "item": "Life Orb",
-      "moves": [
-        {
-          "name": "Ceaseless Edge",
-          "type": "dark"
-        },
-        {
-          "name": "Sacred Sword",
-          "type": "fighting"
-        },
-        {
-          "name": "Aqua Cutter",
-          "type": "water"
-        },
-        {
-          "name": "Sucker Punch",
-          "type": "dark"
-        }
-      ],
-      "usage_pct": 1.0,
-      "games": 83,
-      "species_key": "samurott-hisui"
+      "usage_pct": 0.0,
+      "games": 58,
+      "species_key": "scolipede"
     },
     {
       "pokemon": "Sneasler",
@@ -151,37 +152,37 @@
       "species_key": "sneasler"
     },
     {
-      "pokemon": "Arcanine-Hisui",
+      "pokemon": "Meowscarada",
       "types": [
-        "fire",
-        "rock"
+        "grass",
+        "dark"
       ],
-      "ability": "Intimidate",
-      "item": "Focus Sash",
+      "ability": "Protean",
+      "item": "Life Orb",
       "moves": [
         {
-          "name": "Flare Blitz",
-          "type": "fire"
+          "name": "Triple Axel",
+          "type": "ice"
         },
         {
-          "name": "Head Smash",
-          "type": "rock"
+          "name": "Knock Off",
+          "type": "dark"
+        },
+        {
+          "name": "Flower Trick",
+          "type": "grass"
         },
         {
           "name": "Protect",
           "type": "normal"
-        },
-        {
-          "name": "Extreme Speed",
-          "type": "normal"
         }
       ],
-      "usage_pct": 6.0,
-      "games": 968,
-      "species_key": "arcanine-hisui"
+      "usage_pct": 1.0,
+      "games": 134,
+      "species_key": "meowscarada"
     }
   ],
-  "fitness": 0.8041666666666667,
+  "fitness": 0.7991666666666667,
   "top5": [
     {
       "equipo": [
@@ -216,20 +217,76 @@
           "species_key": "typhlosion-hisui"
         },
         {
-          "pokemon": "Scizor",
+          "pokemon": "Garchomp",
           "types": [
-            "bug",
-            "steel"
+            "dragon",
+            "ground"
           ],
-          "ability": "Hospitality",
-          "item": "Scizorite",
+          "ability": "Rough Skin",
+          "item": "Life Orb",
           "moves": [
             {
-              "name": "Bullet Punch",
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Earthquake",
+              "type": "ground"
+            },
+            {
+              "name": "Rock Slide",
+              "type": "rock"
+            },
+            {
+              "name": "Dragon Claw",
+              "type": "dragon"
+            }
+          ],
+          "usage_pct": 15.0,
+          "games": 2437,
+          "species_key": "garchomp"
+        },
+        {
+          "pokemon": "Gholdengo",
+          "types": [
+            "steel",
+            "ghost"
+          ],
+          "ability": "Good as Gold",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Make It Rain",
               "type": "steel"
             },
             {
-              "name": "Bug Bite",
+              "name": "Shadow Ball",
+              "type": "ghost"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Nasty Plot",
+              "type": "dark"
+            }
+          ],
+          "usage_pct": 10.0,
+          "games": 1639,
+          "species_key": "gholdengo"
+        },
+        {
+          "pokemon": "Scolipede",
+          "types": [
+            "bug",
+            "poison"
+          ],
+          "ability": "Speed Boost",
+          "item": "Scolipite",
+          "moves": [
+            {
+              "name": "Leech Life",
               "type": "bug"
             },
             {
@@ -239,70 +296,15 @@
             {
               "name": "Swords Dance",
               "type": "normal"
-            }
-          ],
-          "usage_pct": 1.0,
-          "games": 180,
-          "species_key": "scizor"
-        },
-        {
-          "pokemon": "Lycanroc",
-          "types": [
-            "rock"
-          ],
-          "ability": null,
-          "item": "Focus Sash",
-          "moves": [
+            },
             {
               "name": "Rock Slide",
               "type": "rock"
-            },
-            {
-              "name": "Protect",
-              "type": "normal"
-            },
-            {
-              "name": "Accelerock",
-              "type": "rock"
-            },
-            {
-              "name": "Close Combat",
-              "type": "fighting"
             }
           ],
-          "usage_pct": 2.0,
-          "games": 240,
-          "species_key": "lycanroc"
-        },
-        {
-          "pokemon": "Samurott-Hisui",
-          "types": [
-            "water",
-            "dark"
-          ],
-          "ability": "Trace",
-          "item": "Life Orb",
-          "moves": [
-            {
-              "name": "Ceaseless Edge",
-              "type": "dark"
-            },
-            {
-              "name": "Sacred Sword",
-              "type": "fighting"
-            },
-            {
-              "name": "Aqua Cutter",
-              "type": "water"
-            },
-            {
-              "name": "Sucker Punch",
-              "type": "dark"
-            }
-          ],
-          "usage_pct": 1.0,
-          "games": 83,
-          "species_key": "samurott-hisui"
+          "usage_pct": 0.0,
+          "games": 58,
+          "species_key": "scolipede"
         },
         {
           "pokemon": "Sneasler",
@@ -335,107 +337,107 @@
           "species_key": "sneasler"
         },
         {
-          "pokemon": "Arcanine-Hisui",
+          "pokemon": "Meowscarada",
           "types": [
-            "fire",
-            "rock"
+            "grass",
+            "dark"
           ],
-          "ability": "Intimidate",
-          "item": "Focus Sash",
+          "ability": "Protean",
+          "item": "Life Orb",
           "moves": [
             {
-              "name": "Flare Blitz",
-              "type": "fire"
+              "name": "Triple Axel",
+              "type": "ice"
             },
             {
-              "name": "Head Smash",
-              "type": "rock"
+              "name": "Knock Off",
+              "type": "dark"
+            },
+            {
+              "name": "Flower Trick",
+              "type": "grass"
             },
             {
               "name": "Protect",
               "type": "normal"
-            },
-            {
-              "name": "Extreme Speed",
-              "type": "normal"
             }
           ],
-          "usage_pct": 6.0,
-          "games": 968,
-          "species_key": "arcanine-hisui"
+          "usage_pct": 1.0,
+          "games": 134,
+          "species_key": "meowscarada"
         }
       ],
-      "fitness": 0.8041666666666667,
-      "fitness_evolucion": 0.7475,
+      "fitness": 0.7991666666666667,
+      "fitness_evolucion": 0.6716666666666667,
       "desglose": {
-        "winrate_meta": 0.8333333333333334,
-        "cobertura_defensiva": 0.35,
-        "sinergia_ofensiva": 0.6666666666666666,
-        "diversidad_tipos": 0.9
+        "winrate_meta": 0.8166666666666667,
+        "cobertura_defensiva": 0.6,
+        "sinergia_ofensiva": 0.5,
+        "diversidad_tipos": 1.0
       },
       "rank": 1
     },
     {
       "equipo": [
         {
-          "pokemon": "Typhlosion-Hisui",
+          "pokemon": "Indeedee",
           "types": [
-            "fire",
-            "ghost"
+            "psychic",
+            "normal"
           ],
-          "ability": "Frisk",
-          "item": "Choice Scarf",
+          "ability": "Psychic Surge",
+          "item": "Focus Sash",
           "moves": [
             {
-              "name": "Eruption",
-              "type": "fire"
+              "name": "Expanding Force",
+              "type": "psychic"
             },
             {
-              "name": "Shadow Ball",
-              "type": "ghost"
+              "name": "Dazzling Gleam",
+              "type": "fairy"
             },
-            {
-              "name": "Heat Wave",
-              "type": "fire"
-            },
-            {
-              "name": "Lava Plume",
-              "type": "fire"
-            }
-          ],
-          "usage_pct": 2.0,
-          "games": 239,
-          "species_key": "typhlosion-hisui"
-        },
-        {
-          "pokemon": "Gengar",
-          "types": [
-            "ghost",
-            "poison"
-          ],
-          "ability": "Cursed Body",
-          "item": "Gengarite",
-          "moves": [
             {
               "name": "Protect",
               "type": "normal"
             },
             {
-              "name": "Perish Song",
+              "name": "Trick Room",
+              "type": "psychic"
+            }
+          ],
+          "usage_pct": 5.0,
+          "games": 715,
+          "species_key": "indeedee"
+        },
+        {
+          "pokemon": "Mamoswine",
+          "types": [
+            "ice",
+            "ground"
+          ],
+          "ability": "Oblivious",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "High Horsepower",
+              "type": "ground"
+            },
+            {
+              "name": "Ice Shard",
+              "type": "ice"
+            },
+            {
+              "name": "Protect",
               "type": "normal"
             },
             {
-              "name": "Shadow Ball",
-              "type": "ghost"
-            },
-            {
-              "name": "Sludge Bomb",
-              "type": "poison"
+              "name": "Earthquake",
+              "type": "ground"
             }
           ],
-          "usage_pct": 3.0,
-          "games": 464,
-          "species_key": "gengar"
+          "usage_pct": 1.0,
+          "games": 153,
+          "species_key": "mamoswine"
         },
         {
           "pokemon": "Dragapult",
@@ -468,103 +470,103 @@
           "species_key": "dragapult"
         },
         {
-          "pokemon": "Noivern",
+          "pokemon": "Houndoom",
           "types": [
-            "flying",
-            "dragon"
+            "dark",
+            "fire"
           ],
-          "ability": "Frisk",
-          "item": "Focus Sash",
+          "ability": "Solar Power",
+          "item": "Houndoominite",
           "moves": [
             {
-              "name": "Tailwind",
-              "type": "flying"
+              "name": "Heat Wave",
+              "type": "fire"
             },
             {
-              "name": "Draco Meteor",
-              "type": "dragon"
+              "name": "Dark Pulse",
+              "type": "dark"
             },
             {
-              "name": "U-turn",
-              "type": "bug"
+              "name": "Protect",
+              "type": "normal"
             },
             {
-              "name": "Air Slash",
-              "type": "flying"
+              "name": "Solar Beam",
+              "type": "grass"
             }
           ],
           "usage_pct": 0.0,
-          "games": 61,
-          "species_key": "noivern"
+          "games": 50,
+          "species_key": "houndoom"
         },
         {
-          "pokemon": "Garchomp",
+          "pokemon": "Sneasler",
           "types": [
-            "dragon",
-            "ground"
+            "fighting",
+            "poison"
           ],
-          "ability": "Rough Skin",
-          "item": "Life Orb",
+          "ability": "Poison Touch",
+          "item": "Grassy Seed",
           "moves": [
+            {
+              "name": "Close Combat",
+              "type": "fighting"
+            },
+            {
+              "name": "Dire Claw",
+              "type": "poison"
+            },
+            {
+              "name": "Fake Out",
+              "type": "normal"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "usage_pct": 37.0,
+          "games": 5783,
+          "species_key": "sneasler"
+        },
+        {
+          "pokemon": "Annihilape",
+          "types": [
+            "fighting",
+            "ghost"
+          ],
+          "ability": "Defiant",
+          "item": "Sitrus Berry",
+          "moves": [
+            {
+              "name": "Rage Fist",
+              "type": "ghost"
+            },
+            {
+              "name": "Drain Punch",
+              "type": "fighting"
+            },
             {
               "name": "Protect",
               "type": "normal"
             },
             {
-              "name": "Earthquake",
-              "type": "ground"
-            },
-            {
-              "name": "Rock Slide",
-              "type": "rock"
-            },
-            {
-              "name": "Dragon Claw",
-              "type": "dragon"
+              "name": "Bulk Up",
+              "type": "fighting"
             }
           ],
-          "usage_pct": 15.0,
-          "games": 2437,
-          "species_key": "garchomp"
-        },
-        {
-          "pokemon": "Indeedee",
-          "types": [
-            "psychic",
-            "normal"
-          ],
-          "ability": "Psychic Surge",
-          "item": "Focus Sash",
-          "moves": [
-            {
-              "name": "Expanding Force",
-              "type": "psychic"
-            },
-            {
-              "name": "Dazzling Gleam",
-              "type": "fairy"
-            },
-            {
-              "name": "Protect",
-              "type": "normal"
-            },
-            {
-              "name": "Trick Room",
-              "type": "psychic"
-            }
-          ],
-          "usage_pct": 5.0,
-          "games": 715,
-          "species_key": "indeedee"
+          "usage_pct": 2.0,
+          "games": 350,
+          "species_key": "annihilape"
         }
       ],
-      "fitness": 0.7341666666666666,
-      "fitness_evolucion": 0.7908333333333334,
+      "fitness": 0.7716666666666666,
+      "fitness_evolucion": 0.67763468013468,
       "desglose": {
-        "winrate_meta": 0.7666666666666666,
-        "cobertura_defensiva": 0.35,
-        "sinergia_ofensiva": 0.5,
-        "diversidad_tipos": 0.8
+        "winrate_meta": 0.75,
+        "cobertura_defensiva": 0.85,
+        "sinergia_ofensiva": 0.8333333333333334,
+        "diversidad_tipos": 1.0
       },
       "rank": 2
     },
@@ -601,6 +603,199 @@
           "species_key": "typhlosion-hisui"
         },
         {
+          "pokemon": "Garchomp",
+          "types": [
+            "dragon",
+            "ground"
+          ],
+          "ability": "Rough Skin",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Earthquake",
+              "type": "ground"
+            },
+            {
+              "name": "Rock Slide",
+              "type": "rock"
+            },
+            {
+              "name": "Dragon Claw",
+              "type": "dragon"
+            }
+          ],
+          "usage_pct": 15.0,
+          "games": 2437,
+          "species_key": "garchomp"
+        },
+        {
+          "pokemon": "Gholdengo",
+          "types": [
+            "steel",
+            "ghost"
+          ],
+          "ability": "Good as Gold",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Make It Rain",
+              "type": "steel"
+            },
+            {
+              "name": "Shadow Ball",
+              "type": "ghost"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Nasty Plot",
+              "type": "dark"
+            }
+          ],
+          "usage_pct": 10.0,
+          "games": 1639,
+          "species_key": "gholdengo"
+        },
+        {
+          "pokemon": "Scolipede",
+          "types": [
+            "bug",
+            "poison"
+          ],
+          "ability": "Speed Boost",
+          "item": "Scolipite",
+          "moves": [
+            {
+              "name": "Leech Life",
+              "type": "bug"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Swords Dance",
+              "type": "normal"
+            },
+            {
+              "name": "Rock Slide",
+              "type": "rock"
+            }
+          ],
+          "usage_pct": 0.0,
+          "games": 58,
+          "species_key": "scolipede"
+        },
+        {
+          "pokemon": "Sneasler",
+          "types": [
+            "fighting",
+            "poison"
+          ],
+          "ability": "Poison Touch",
+          "item": "Grassy Seed",
+          "moves": [
+            {
+              "name": "Close Combat",
+              "type": "fighting"
+            },
+            {
+              "name": "Dire Claw",
+              "type": "poison"
+            },
+            {
+              "name": "Fake Out",
+              "type": "normal"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "usage_pct": 37.0,
+          "games": 5783,
+          "species_key": "sneasler"
+        },
+        {
+          "pokemon": "Meowscarada",
+          "types": [
+            "grass",
+            "dark"
+          ],
+          "ability": "Protean",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Triple Axel",
+              "type": "ice"
+            },
+            {
+              "name": "Knock Off",
+              "type": "dark"
+            },
+            {
+              "name": "Flower Trick",
+              "type": "grass"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "usage_pct": 1.0,
+          "games": 134,
+          "species_key": "meowscarada"
+        }
+      ],
+      "fitness": 0.7708333333333334,
+      "fitness_evolucion": 0.6716666666666667,
+      "desglose": {
+        "winrate_meta": 0.7833333333333333,
+        "cobertura_defensiva": 0.6,
+        "sinergia_ofensiva": 0.5,
+        "diversidad_tipos": 1.0
+      },
+      "rank": 3
+    },
+    {
+      "equipo": [
+        {
+          "pokemon": "Typhlosion-Hisui",
+          "types": [
+            "fire",
+            "ghost"
+          ],
+          "ability": "Frisk",
+          "item": "Choice Scarf",
+          "moves": [
+            {
+              "name": "Eruption",
+              "type": "fire"
+            },
+            {
+              "name": "Shadow Ball",
+              "type": "ghost"
+            },
+            {
+              "name": "Heat Wave",
+              "type": "fire"
+            },
+            {
+              "name": "Lava Plume",
+              "type": "fire"
+            }
+          ],
+          "usage_pct": 2.0,
+          "games": 239,
+          "species_key": "typhlosion-hisui"
+        },
+        {
           "pokemon": "Gengar",
           "types": [
             "ghost",
@@ -661,65 +856,108 @@
           "species_key": "dragapult"
         },
         {
-          "pokemon": "Noivern",
+          "pokemon": "Houndoom",
           "types": [
-            "flying",
-            "dragon"
+            "dark",
+            "fire"
           ],
-          "ability": "Frisk",
-          "item": "Focus Sash",
+          "ability": "Solar Power",
+          "item": "Houndoominite",
           "moves": [
             {
-              "name": "Tailwind",
-              "type": "flying"
+              "name": "Heat Wave",
+              "type": "fire"
             },
             {
-              "name": "Draco Meteor",
-              "type": "dragon"
+              "name": "Dark Pulse",
+              "type": "dark"
             },
-            {
-              "name": "U-turn",
-              "type": "bug"
-            },
-            {
-              "name": "Air Slash",
-              "type": "flying"
-            }
-          ],
-          "usage_pct": 0.0,
-          "games": 61,
-          "species_key": "noivern"
-        },
-        {
-          "pokemon": "Garchomp",
-          "types": [
-            "dragon",
-            "ground"
-          ],
-          "ability": "Rough Skin",
-          "item": "Life Orb",
-          "moves": [
             {
               "name": "Protect",
               "type": "normal"
             },
             {
-              "name": "Earthquake",
-              "type": "ground"
-            },
-            {
-              "name": "Rock Slide",
-              "type": "rock"
-            },
-            {
-              "name": "Dragon Claw",
-              "type": "dragon"
+              "name": "Solar Beam",
+              "type": "grass"
             }
           ],
-          "usage_pct": 15.0,
-          "games": 2437,
-          "species_key": "garchomp"
+          "usage_pct": 0.0,
+          "games": 50,
+          "species_key": "houndoom"
         },
+        {
+          "pokemon": "Weavile",
+          "types": [
+            "dark",
+            "ice"
+          ],
+          "ability": "Pressure",
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Knock Off",
+              "type": "dark"
+            },
+            {
+              "name": "Fake Out",
+              "type": "normal"
+            },
+            {
+              "name": "Ice Spinner",
+              "type": "ice"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "usage_pct": 1.0,
+          "games": 206,
+          "species_key": "weavile"
+        },
+        {
+          "pokemon": "Annihilape",
+          "types": [
+            "fighting",
+            "ghost"
+          ],
+          "ability": "Defiant",
+          "item": "Sitrus Berry",
+          "moves": [
+            {
+              "name": "Rage Fist",
+              "type": "ghost"
+            },
+            {
+              "name": "Drain Punch",
+              "type": "fighting"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Bulk Up",
+              "type": "fighting"
+            }
+          ],
+          "usage_pct": 2.0,
+          "games": 350,
+          "species_key": "annihilape"
+        }
+      ],
+      "fitness": 0.7291666666666666,
+      "fitness_evolucion": 0.7716666666666666,
+      "desglose": {
+        "winrate_meta": 0.7666666666666666,
+        "cobertura_defensiva": 0.35,
+        "sinergia_ofensiva": 0.5,
+        "diversidad_tipos": 0.7
+      },
+      "rank": 4
+    },
+    {
+      "equipo": [
         {
           "pokemon": "Indeedee",
           "types": [
@@ -749,78 +987,36 @@
           "usage_pct": 5.0,
           "games": 715,
           "species_key": "indeedee"
-        }
-      ],
-      "fitness": 0.7341666666666666,
-      "fitness_evolucion": 0.7908333333333334,
-      "desglose": {
-        "winrate_meta": 0.7666666666666666,
-        "cobertura_defensiva": 0.35,
-        "sinergia_ofensiva": 0.5,
-        "diversidad_tipos": 0.8
-      },
-      "rank": 3
-    },
-    {
-      "equipo": [
-        {
-          "pokemon": "Tyranitar",
-          "types": [
-            "rock",
-            "dark"
-          ],
-          "ability": "Sand Stream",
-          "item": "Tyranitarite",
-          "moves": [
-            {
-              "name": "Rock Slide",
-              "type": "rock"
-            },
-            {
-              "name": "Knock Off",
-              "type": "dark"
-            },
-            {
-              "name": "Protect",
-              "type": "normal"
-            },
-            {
-              "name": "Dragon Dance",
-              "type": "dragon"
-            }
-          ],
-          "usage_pct": 9.0,
-          "games": 1407,
-          "species_key": "tyranitar"
         },
         {
-          "pokemon": "Blastoise",
+          "pokemon": "Mamoswine",
           "types": [
-            "water"
+            "ice",
+            "ground"
           ],
-          "ability": "Hospitality",
-          "item": "Blastoisinite",
+          "ability": "Oblivious",
+          "item": "Life Orb",
           "moves": [
             {
-              "name": "Water Spout",
-              "type": "water"
+              "name": "High Horsepower",
+              "type": "ground"
+            },
+            {
+              "name": "Ice Shard",
+              "type": "ice"
             },
             {
               "name": "Protect",
               "type": "normal"
             },
             {
-              "name": "Shell Smash",
-              "type": "normal"
-            },
-            {
-              "name": "Dark Pulse",
-              "type": "dark"
+              "name": "Earthquake",
+              "type": "ground"
             }
           ],
-          "usage_pct": 3.0,
-          "games": 430,
-          "species_key": "blastoise"
+          "usage_pct": 1.0,
+          "games": 153,
+          "species_key": "mamoswine"
         },
         {
           "pokemon": "Dragapult",
@@ -853,34 +1049,34 @@
           "species_key": "dragapult"
         },
         {
-          "pokemon": "Samurott-Hisui",
+          "pokemon": "Houndoom",
           "types": [
-            "water",
-            "dark"
+            "dark",
+            "fire"
           ],
-          "ability": "Trace",
-          "item": "Life Orb",
+          "ability": "Solar Power",
+          "item": "Houndoominite",
           "moves": [
             {
-              "name": "Ceaseless Edge",
+              "name": "Heat Wave",
+              "type": "fire"
+            },
+            {
+              "name": "Dark Pulse",
               "type": "dark"
             },
             {
-              "name": "Sacred Sword",
-              "type": "fighting"
+              "name": "Protect",
+              "type": "normal"
             },
             {
-              "name": "Aqua Cutter",
-              "type": "water"
-            },
-            {
-              "name": "Sucker Punch",
-              "type": "dark"
+              "name": "Solar Beam",
+              "type": "grass"
             }
           ],
-          "usage_pct": 1.0,
-          "games": 83,
-          "species_key": "samurott-hisui"
+          "usage_pct": 0.0,
+          "games": 50,
+          "species_key": "houndoom"
         },
         {
           "pokemon": "Sneasler",
@@ -913,426 +1109,234 @@
           "species_key": "sneasler"
         },
         {
-          "pokemon": "Arcanine-Hisui",
+          "pokemon": "Annihilape",
           "types": [
-            "fire",
-            "rock"
+            "fighting",
+            "ghost"
           ],
-          "ability": "Intimidate",
-          "item": "Focus Sash",
+          "ability": "Defiant",
+          "item": "Sitrus Berry",
           "moves": [
             {
-              "name": "Flare Blitz",
-              "type": "fire"
+              "name": "Rage Fist",
+              "type": "ghost"
             },
             {
-              "name": "Head Smash",
-              "type": "rock"
+              "name": "Drain Punch",
+              "type": "fighting"
             },
             {
               "name": "Protect",
               "type": "normal"
             },
             {
-              "name": "Extreme Speed",
-              "type": "normal"
-            }
-          ],
-          "usage_pct": 6.0,
-          "games": 968,
-          "species_key": "arcanine-hisui"
-        }
-      ],
-      "fitness": 0.6983333333333334,
-      "fitness_evolucion": 0.6983333333333334,
-      "desglose": {
-        "winrate_meta": 0.7,
-        "cobertura_defensiva": 0.6,
-        "sinergia_ofensiva": 0.6666666666666666,
-        "diversidad_tipos": 0.8
-      },
-      "rank": 4
-    },
-    {
-      "equipo": [
-        {
-          "pokemon": "Typhlosion-Hisui",
-          "types": [
-            "fire",
-            "ghost"
-          ],
-          "ability": "Frisk",
-          "item": "Choice Scarf",
-          "moves": [
-            {
-              "name": "Eruption",
-              "type": "fire"
-            },
-            {
-              "name": "Shadow Ball",
-              "type": "ghost"
-            },
-            {
-              "name": "Heat Wave",
-              "type": "fire"
-            },
-            {
-              "name": "Lava Plume",
-              "type": "fire"
+              "name": "Bulk Up",
+              "type": "fighting"
             }
           ],
           "usage_pct": 2.0,
-          "games": 239,
-          "species_key": "typhlosion-hisui"
-        },
-        {
-          "pokemon": "Raichu",
-          "types": [
-            "electric"
-          ],
-          "ability": "Electric Surge",
-          "item": "Raichunite Y",
-          "moves": [
-            {
-              "name": "Zap Cannon",
-              "type": "electric"
-            },
-            {
-              "name": "Fake Out",
-              "type": "normal"
-            },
-            {
-              "name": "Protect",
-              "type": "normal"
-            },
-            {
-              "name": "Focus Blast",
-              "type": "fighting"
-            }
-          ],
-          "usage_pct": 6.0,
-          "games": 903,
-          "species_key": "raichu"
-        },
-        {
-          "pokemon": "Gholdengo",
-          "types": [
-            "steel",
-            "ghost"
-          ],
-          "ability": "Good as Gold",
-          "item": "Life Orb",
-          "moves": [
-            {
-              "name": "Make It Rain",
-              "type": "steel"
-            },
-            {
-              "name": "Shadow Ball",
-              "type": "ghost"
-            },
-            {
-              "name": "Protect",
-              "type": "normal"
-            },
-            {
-              "name": "Nasty Plot",
-              "type": "dark"
-            }
-          ],
-          "usage_pct": 10.0,
-          "games": 1639,
-          "species_key": "gholdengo"
-        },
-        {
-          "pokemon": "Steelix",
-          "types": [
-            "steel",
-            "ground"
-          ],
-          "ability": "Sturdy",
-          "item": "Steelixite",
-          "moves": [
-            {
-              "name": "Body Press",
-              "type": "fighting"
-            },
-            {
-              "name": "Protect",
-              "type": "normal"
-            },
-            {
-              "name": "Heavy Slam",
-              "type": "steel"
-            },
-            {
-              "name": "High Horsepower",
-              "type": "ground"
-            }
-          ],
-          "usage_pct": 0.0,
-          "games": 59,
-          "species_key": "steelix"
-        },
-        {
-          "pokemon": "Garchomp",
-          "types": [
-            "dragon",
-            "ground"
-          ],
-          "ability": "Rough Skin",
-          "item": "Life Orb",
-          "moves": [
-            {
-              "name": "Protect",
-              "type": "normal"
-            },
-            {
-              "name": "Earthquake",
-              "type": "ground"
-            },
-            {
-              "name": "Rock Slide",
-              "type": "rock"
-            },
-            {
-              "name": "Dragon Claw",
-              "type": "dragon"
-            }
-          ],
-          "usage_pct": 15.0,
-          "games": 2437,
-          "species_key": "garchomp"
-        },
-        {
-          "pokemon": "Glimmora",
-          "types": [
-            "rock",
-            "poison"
-          ],
-          "ability": "Hospitality",
-          "item": "Glimmoranite",
-          "moves": [
-            {
-              "name": "Power Gem",
-              "type": "rock"
-            },
-            {
-              "name": "Spiky Shield",
-              "type": "grass"
-            },
-            {
-              "name": "Earth Power",
-              "type": "ground"
-            },
-            {
-              "name": "Sludge Bomb",
-              "type": "poison"
-            }
-          ],
-          "usage_pct": 3.0,
-          "games": 544,
-          "species_key": "glimmora"
+          "games": 350,
+          "species_key": "annihilape"
         }
       ],
-      "fitness": 0.6816666666666666,
-      "fitness_evolucion": 0.0,
+      "fitness": 0.715,
+      "fitness_evolucion": 0.67763468013468,
       "desglose": {
-        "winrate_meta": 0.7,
-        "cobertura_defensiva": 0.1,
+        "winrate_meta": 0.6833333333333333,
+        "cobertura_defensiva": 0.85,
         "sinergia_ofensiva": 0.8333333333333334,
-        "diversidad_tipos": 0.8
+        "diversidad_tipos": 1.0
       },
       "rank": 5
     }
   ],
   "desglose": {
-    "winrate_meta": 0.8333333333333334,
-    "cobertura_defensiva": 0.35,
-    "sinergia_ofensiva": 0.6666666666666666,
-    "diversidad_tipos": 0.9
+    "winrate_meta": 0.8166666666666667,
+    "cobertura_defensiva": 0.6,
+    "sinergia_ofensiva": 0.5,
+    "diversidad_tipos": 1.0
   },
   "config": {
-    "N_ISLAS": 3,
-    "POP_POR_ISLA": 8,
-    "N_GEN": 8,
+    "N_ISLAS": 4,
+    "POP_POR_ISLA": 10,
+    "N_GEN": 15,
     "GENERACIONES_POR_CICLO": 3,
-    "N_MIGRANTES": 2,
+    "N_MIGRANTES": 3,
     "CXPB": 0.6,
     "MUTPB": 0.5,
-    "N_RIVALES": 10,
+    "N_RIVALES": 20,
     "N_BATALLAS_POR_RIVAL": 3,
     "LAMBDA_DIVERSIDAD": 0.5,
-    "SEED": 43
+    "SEED": 45
   },
   "logbook": [
     {
-      "gen": 0,
+      "gen": 9,
       "isla": 0,
-      "nevals": 8,
-      "avg": 0.38958333333333334,
-      "max": 0.6833333333333333
+      "nevals": 10,
+      "avg": 0.5283315656565657,
+      "max": 0.6491666666666667
     },
     {
-      "gen": 0,
+      "gen": 9,
       "isla": 1,
-      "nevals": 8,
-      "avg": 0.39197916666666666,
-      "max": 0.5716666666666667
+      "nevals": 10,
+      "avg": 0.6024821548821548,
+      "max": 0.6865925925925925
     },
     {
-      "gen": 0,
+      "gen": 9,
       "isla": 2,
-      "nevals": 8,
-      "avg": 0.3293333333333333,
-      "max": 0.5675
+      "nevals": 10,
+      "avg": 0.555013468013468,
+      "max": 0.607742845117845
     },
     {
-      "gen": 1,
+      "gen": 9,
+      "isla": 3,
+      "nevals": 10,
+      "avg": 0.5996387305595638,
+      "max": 0.7466666666666666
+    },
+    {
+      "gen": 10,
       "isla": 0,
-      "nevals": 8,
-      "avg": 0.39693749999999994,
-      "max": 0.74
+      "nevals": 10,
+      "avg": 0.5348351571268238,
+      "max": 0.7183333333333333
     },
     {
-      "gen": 1,
+      "gen": 10,
       "isla": 1,
-      "nevals": 8,
-      "avg": 0.4459375,
-      "max": 0.5716666666666667
+      "nevals": 10,
+      "avg": 0.5570046296296296,
+      "max": 0.6725
     },
     {
-      "gen": 1,
+      "gen": 10,
       "isla": 2,
-      "nevals": 8,
-      "avg": 0.4252083333333333,
-      "max": 0.5675
+      "nevals": 10,
+      "avg": 0.5430749158249158,
+      "max": 0.6919170875420876
     },
     {
-      "gen": 2,
+      "gen": 10,
+      "isla": 3,
+      "nevals": 10,
+      "avg": 0.6195,
+      "max": 0.7749999999999999
+    },
+    {
+      "gen": 11,
       "isla": 0,
-      "nevals": 8,
-      "avg": 0.486875,
-      "max": 0.6266666666666667
+      "nevals": 10,
+      "avg": 0.5775587822671155,
+      "max": 0.6649166666666666
     },
     {
-      "gen": 2,
+      "gen": 11,
       "isla": 1,
-      "nevals": 8,
-      "avg": 0.493125,
-      "max": 0.6183333333333334
+      "nevals": 10,
+      "avg": 0.5720244648869649,
+      "max": 0.6919984567901234
     },
     {
-      "gen": 2,
+      "gen": 11,
       "isla": 2,
-      "nevals": 8,
-      "avg": 0.47833333333333333,
-      "max": 0.6033333333333333
+      "nevals": 10,
+      "avg": 0.558129938271605,
+      "max": 0.6997053872053872
     },
     {
-      "gen": 3,
+      "gen": 11,
+      "isla": 3,
+      "nevals": 10,
+      "avg": 0.5362626262626262,
+      "max": 0.7308282828282827
+    },
+    {
+      "gen": 12,
       "isla": 0,
-      "nevals": 8,
-      "avg": 0.5104166666666666,
-      "max": 0.6825
+      "nevals": 10,
+      "avg": 0.5198791386083053,
+      "max": 0.6063191638608305
     },
     {
-      "gen": 3,
+      "gen": 12,
       "isla": 1,
-      "nevals": 8,
-      "avg": 0.5372020652958153,
-      "max": 0.6983333333333334
+      "nevals": 10,
+      "avg": 0.6234835758377425,
+      "max": 0.715
     },
     {
-      "gen": 3,
+      "gen": 12,
       "isla": 2,
-      "nevals": 8,
-      "avg": 0.5433333333333333,
-      "max": 0.8166666666666668
+      "nevals": 10,
+      "avg": 0.6021462401795735,
+      "max": 0.72
     },
     {
-      "gen": 4,
+      "gen": 12,
+      "isla": 3,
+      "nevals": 10,
+      "avg": 0.5648816758858425,
+      "max": 0.6373437550104216
+    },
+    {
+      "gen": 13,
       "isla": 0,
-      "nevals": 8,
-      "avg": 0.5640625,
-      "max": 0.7108333333333333
+      "nevals": 10,
+      "avg": 0.548145524691358,
+      "max": 0.6571419753086418
     },
     {
-      "gen": 4,
+      "gen": 13,
       "isla": 1,
-      "nevals": 8,
-      "avg": 0.5355208333333333,
-      "max": 0.7583333333333333
+      "nevals": 10,
+      "avg": 0.5762134579926246,
+      "max": 0.7191829405162737
     },
     {
-      "gen": 4,
+      "gen": 13,
       "isla": 2,
-      "nevals": 8,
-      "avg": 0.4872916666666667,
-      "max": 0.67
+      "nevals": 10,
+      "avg": 0.6175385221260221,
+      "max": 0.699265873015873
     },
     {
-      "gen": 5,
+      "gen": 13,
+      "isla": 3,
+      "nevals": 10,
+      "avg": 0.5525645462562129,
+      "max": 0.6356099687349688
+    },
+    {
+      "gen": 14,
       "isla": 0,
-      "nevals": 8,
-      "avg": 0.59375,
-      "max": 0.7958333333333334
+      "nevals": 10,
+      "avg": 0.5633527356902357,
+      "max": 0.67763468013468
     },
     {
-      "gen": 5,
+      "gen": 14,
       "isla": 1,
-      "nevals": 8,
-      "avg": 0.6444990079365079,
-      "max": 0.7266666666666667
+      "nevals": 10,
+      "avg": 0.5546610209235209,
+      "max": 0.6716666666666667
     },
     {
-      "gen": 5,
+      "gen": 14,
       "isla": 2,
-      "nevals": 8,
-      "avg": 0.5111821338383838,
-      "max": 0.6383333333333334
+      "nevals": 10,
+      "avg": 0.586551455026455,
+      "max": 0.7716666666666666
     },
     {
-      "gen": 6,
-      "isla": 0,
-      "nevals": 8,
-      "avg": 0.5744791666666667,
-      "max": 0.7108333333333333
-    },
-    {
-      "gen": 6,
-      "isla": 1,
-      "nevals": 8,
-      "avg": 0.6037152520098948,
-      "max": 0.74989898989899
-    },
-    {
-      "gen": 6,
-      "isla": 2,
-      "nevals": 8,
-      "avg": 0.5209436778499279,
-      "max": 0.6416666666666667
-    },
-    {
-      "gen": 7,
-      "isla": 0,
-      "nevals": 8,
-      "avg": 0.5886654942279943,
-      "max": 0.7908333333333334
-    },
-    {
-      "gen": 7,
-      "isla": 1,
-      "nevals": 8,
-      "avg": 0.6343209325396826,
-      "max": 0.8458333333333334
-    },
-    {
-      "gen": 7,
-      "isla": 2,
-      "nevals": 8,
-      "avg": 0.5184375,
-      "max": 0.7475
+      "gen": 14,
+      "isla": 3,
+      "nevals": 10,
+      "avg": 0.6121853134519801,
+      "max": 0.7183333333333334
     }
   ]
 }
