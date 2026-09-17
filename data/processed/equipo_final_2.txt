@@ -1,3 +1,25 @@
+Malamar @ Malamarite
+Ability: Contrary
+Level: 50
+Tera Type: Dark
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Superpower
+- Knock Off
+- Protect
+- Skill Swap
+
+Tinkaton @ Air Balloon
+Ability: Mold Breaker
+Level: 50
+Tera Type: Fairy
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Fake Out
+- Gigaton Hammer
+- Protect
+- Play Rough
+
 Indeedee @ Focus Sash
 Ability: Psychic Surge
 Level: 50
@@ -9,48 +31,26 @@ Modest Nature
 - Protect
 - Trick Room
 
-Mamoswine @ Life Orb
-Ability: Oblivious
+Meowscarada @ Life Orb
+Ability: Protean
 Level: 50
-Tera Type: Ice
+Tera Type: Grass
 EVs: 32 HP / 32 Atk / 2 Spe
 Serious Nature
-- High Horsepower
-- Ice Shard
+- Triple Axel
+- Knock Off
+- Flower Trick
 - Protect
-- Earthquake
 
-Dragapult
-Ability: Clear Body
+Araquanid @ Leftovers
+Ability: Water Bubble
 Level: 50
-Tera Type: Dragon
+Tera Type: Water
 EVs: 32 HP / 32 Atk / 2 Spe
 Serious Nature
-- Dragon Darts
-- Will-O-Wisp
-- Reflect
-- Phantom Force
-
-Houndoom @ Houndoominite
-Ability: Early Bird
-Level: 50
-Tera Type: Dark
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
-- Heat Wave
-- Dark Pulse
-- Protect
-- Solar Beam
-
-Sneasler @ Grassy Seed
-Ability: Poison Touch
-Level: 50
-Tera Type: Fighting
-EVs: 2 HP / 32 Atk / 32 Spe
-Adamant Nature
-- Close Combat
-- Dire Claw
-- Fake Out
+- Liquidation
+- Wide Guard
+- Leech Life
 - Protect
 
 Annihilape @ Sitrus Berry

@@ -1,3 +1,24 @@
+Rotom-Wash @ Leftovers
+Ability: Levitate
+Level: 50
+Tera Type: Electric
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Hydro Pump
+- Will-O-Wisp
+- Thunderbolt
+- Volt Switch
+
+Persian-Alola @ Sitrus Berry
+Level: 50
+Tera Type: Dark
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Fake Out
+- Foul Play
+- Parting Shot
+- Snarl
+
 Indeedee @ Focus Sash
 Ability: Psychic Surge
 Level: 50
@@ -9,57 +30,34 @@ Modest Nature
 - Protect
 - Trick Room
 
-Mamoswine @ Life Orb
-Ability: Oblivious
+Palafin
 Level: 50
-Tera Type: Ice
+Tera Type: Water
 EVs: 32 HP / 32 Atk / 2 Spe
 Serious Nature
-- High Horsepower
-- Ice Shard
-- Protect
-- Earthquake
+- Wave Crash
+- Jet Punch
+- Close Combat
+- Drain Punch
 
-Dragapult
-Ability: Clear Body
+Garchomp @ Life Orb
+Ability: Rough Skin
 Level: 50
 Tera Type: Dragon
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
-- Dragon Darts
-- Will-O-Wisp
-- Reflect
-- Phantom Force
-
-Houndoom @ Houndoominite
-Ability: Early Bird
-Level: 50
-Tera Type: Dark
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
-- Heat Wave
-- Dark Pulse
-- Protect
-- Solar Beam
-
-Sneasler @ Grassy Seed
-Ability: Poison Touch
-Level: 50
-Tera Type: Fighting
 EVs: 2 HP / 32 Atk / 32 Spe
 Adamant Nature
-- Close Combat
-- Dire Claw
-- Fake Out
 - Protect
+- Earthquake
+- Rock Slide
+- Dragon Claw
 
-Annihilape @ Sitrus Berry
-Ability: Defiant
+Gholdengo
+Ability: Good as Gold
 Level: 50
-Tera Type: Fighting
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
-- Rage Fist
-- Drain Punch
+Tera Type: Steel
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- Make It Rain
+- Shadow Ball
 - Protect
-- Bulk Up
+- Nasty Plot

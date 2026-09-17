@@ -1,59 +1,37 @@
-Typhlosion-Hisui @ Choice Scarf
-Ability: Frisk
+Malamar @ Malamarite
+Ability: Contrary
 Level: 50
-Tera Type: Fire
+Tera Type: Dark
 EVs: 32 HP / 32 Atk / 2 Spe
 Serious Nature
-- Eruption
-- Shadow Ball
-- Heat Wave
-- Lava Plume
-
-Garchomp @ Life Orb
-Ability: Rough Skin
-Level: 50
-Tera Type: Dragon
-EVs: 2 HP / 32 Atk / 32 Spe
-Adamant Nature
+- Superpower
+- Knock Off
 - Protect
-- Earthquake
-- Rock Slide
-- Dragon Claw
+- Skill Swap
 
-Gholdengo
-Ability: Good as Gold
+Rotom-Wash @ Leftovers
+Ability: Levitate
 Level: 50
-Tera Type: Steel
+Tera Type: Electric
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Hydro Pump
+- Will-O-Wisp
+- Thunderbolt
+- Volt Switch
+
+Indeedee @ Focus Sash
+Ability: Psychic Surge
+Level: 50
+Tera Type: Psychic
 EVs: 2 HP / 32 SpA / 32 Spe
 Modest Nature
-- Make It Rain
-- Shadow Ball
+- Expanding Force
+- Dazzling Gleam
 - Protect
-- Nasty Plot
+- Trick Room
 
-Scolipede @ Scolipite
-Ability: Speed Boost
-Level: 50
-Tera Type: Bug
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
-- Leech Life
-- Protect
-- Swords Dance
-- Rock Slide
-
-Sneasler @ Grassy Seed
-Ability: Poison Touch
-Level: 50
-Tera Type: Fighting
-EVs: 2 HP / 32 Atk / 32 Spe
-Adamant Nature
-- Close Combat
-- Dire Claw
-- Fake Out
-- Protect
-
-Meowscarada
+Meowscarada @ Life Orb
 Ability: Protean
 Level: 50
 Tera Type: Grass
@@ -63,3 +41,25 @@ Serious Nature
 - Knock Off
 - Flower Trick
 - Protect
+
+Araquanid
+Ability: Water Bubble
+Level: 50
+Tera Type: Water
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Liquidation
+- Wide Guard
+- Leech Life
+- Protect
+
+Annihilape @ Sitrus Berry
+Ability: Defiant
+Level: 50
+Tera Type: Fighting
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Rage Fist
+- Drain Punch
+- Protect
+- Bulk Up

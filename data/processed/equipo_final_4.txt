@@ -1,56 +1,56 @@
-Typhlosion-Hisui @ Choice Scarf
-Ability: Frisk
+Pincurchin @ Electric Seed
+Ability: Electric Surge
 Level: 50
-Tera Type: Fire
+Tera Type: Electric
 EVs: 32 HP / 32 Atk / 2 Spe
 Serious Nature
-- Eruption
-- Shadow Ball
-- Heat Wave
-- Lava Plume
+- Rising Voltage
+- Thunder Wave
+- Electroweb
+- Sucker Punch
 
-Gengar @ Gengarite
-Ability: Cursed Body
+Tinkaton @ Air Balloon
+Ability: Mold Breaker
 Level: 50
-Tera Type: Ghost
+Tera Type: Fairy
 EVs: 32 HP / 32 Atk / 2 Spe
 Serious Nature
-- Protect
-- Perish Song
-- Shadow Ball
-- Sludge Bomb
-
-Dragapult @ Life Orb
-Ability: Clear Body
-Level: 50
-Tera Type: Dragon
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
-- Dragon Darts
-- Will-O-Wisp
-- Reflect
-- Phantom Force
-
-Houndoom @ Houndoominite
-Ability: Early Bird
-Level: 50
-Tera Type: Dark
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
-- Heat Wave
-- Dark Pulse
-- Protect
-- Solar Beam
-
-Weavile @ Focus Sash
-Ability: Pressure
-Level: 50
-Tera Type: Dark
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
-- Knock Off
 - Fake Out
-- Ice Spinner
+- Gigaton Hammer
+- Protect
+- Play Rough
+
+Indeedee @ Focus Sash
+Ability: Psychic Surge
+Level: 50
+Tera Type: Psychic
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- Expanding Force
+- Dazzling Gleam
+- Protect
+- Trick Room
+
+Meowscarada @ Life Orb
+Ability: Protean
+Level: 50
+Tera Type: Grass
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Triple Axel
+- Knock Off
+- Flower Trick
+- Protect
+
+Araquanid @ Leftovers
+Ability: Water Bubble
+Level: 50
+Tera Type: Water
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Liquidation
+- Wide Guard
+- Leech Life
 - Protect
 
 Annihilape @ Sitrus Berry

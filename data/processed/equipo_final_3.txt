@@ -1,3 +1,25 @@
+Hydreigon @ Life Orb
+Ability: Levitate
+Level: 50
+Tera Type: Dark
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Dark Pulse
+- Draco Meteor
+- Earth Power
+- Snarl
+
+Kleavor @ Focus Sash
+Ability: Swarm
+Level: 50
+Tera Type: Bug
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Stone Axe
+- X-Scissor
+- Protect
+- Tailwind
+
 Typhlosion-Hisui @ Choice Scarf
 Ability: Frisk
 Level: 50
@@ -9,7 +31,17 @@ Serious Nature
 - Heat Wave
 - Lava Plume
 
-Garchomp @ Life Orb
+Palafin @ Leftovers
+Level: 50
+Tera Type: Water
+EVs: 32 HP / 32 Atk / 2 Spe
+Serious Nature
+- Wave Crash
+- Jet Punch
+- Close Combat
+- Drain Punch
+
+Garchomp
 Ability: Rough Skin
 Level: 50
 Tera Type: Dragon
@@ -20,46 +52,13 @@ Adamant Nature
 - Rock Slide
 - Dragon Claw
 
-Gholdengo
-Ability: Good as Gold
+Charizard @ Charizardite Y
+Ability: Blaze
 Level: 50
-Tera Type: Steel
-EVs: 2 HP / 32 SpA / 32 Spe
-Modest Nature
-- Make It Rain
-- Shadow Ball
-- Protect
-- Nasty Plot
-
-Scolipede @ Scolipite
-Ability: Speed Boost
-Level: 50
-Tera Type: Bug
+Tera Type: Fire
 EVs: 32 HP / 32 Atk / 2 Spe
 Serious Nature
-- Leech Life
+- Heat Wave
 - Protect
-- Swords Dance
-- Rock Slide
-
-Sneasler @ Grassy Seed
-Ability: Poison Touch
-Level: 50
-Tera Type: Fighting
-EVs: 2 HP / 32 Atk / 32 Spe
-Adamant Nature
-- Close Combat
-- Dire Claw
-- Fake Out
-- Protect
-
-Meowscarada
-Ability: Protean
-Level: 50
-Tera Type: Grass
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
-- Triple Axel
-- Knock Off
-- Flower Trick
-- Protect
+- Weather Ball
+- Ancient Power
