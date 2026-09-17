@@ -318,5 +318,86 @@
         "fitness": 0.715
       }
     ]
+  },
+  {
+    "timestamp": "2026-09-16T19:45:38.377940",
+    "fitness": 0.8475,
+    "config": {
+      "N_ISLAS": 4,
+      "POP_POR_ISLA": 12,
+      "N_GEN": 20,
+      "GENERACIONES_POR_CICLO": 3,
+      "N_MIGRANTES": 3,
+      "CXPB": 0.6,
+      "MUTPB": 0.5,
+      "N_RIVALES_POBLACION": 16,
+      "N_BATALLAS_COEVOLUCION": 1,
+      "PESO_WINRATE": 0.65,
+      "PESO_ROLES": 0.15,
+      "LAMBDA_DIVERSIDAD": 0.8,
+      "SEED": 46
+    },
+    "top5_nombres": [
+      {
+        "rank": 1,
+        "equipo": [
+          "Malamar",
+          "Rotom-Wash",
+          "Indeedee",
+          "Meowscarada",
+          "Araquanid",
+          "Annihilape"
+        ],
+        "fitness": 0.8475
+      },
+      {
+        "rank": 2,
+        "equipo": [
+          "Malamar",
+          "Tinkaton",
+          "Indeedee",
+          "Meowscarada",
+          "Araquanid",
+          "Annihilape"
+        ],
+        "fitness": 0.7516666666666667
+      },
+      {
+        "rank": 3,
+        "equipo": [
+          "Hydreigon",
+          "Kleavor",
+          "Typhlosion-Hisui",
+          "Palafin",
+          "Garchomp",
+          "Charizard"
+        ],
+        "fitness": 0.7116666666666667
+      },
+      {
+        "rank": 4,
+        "equipo": [
+          "Pincurchin",
+          "Tinkaton",
+          "Indeedee",
+          "Meowscarada",
+          "Araquanid",
+          "Annihilape"
+        ],
+        "fitness": 0.7108333333333333
+      },
+      {
+        "rank": 5,
+        "equipo": [
+          "Rotom-Wash",
+          "Persian-Alola",
+          "Indeedee",
+          "Palafin",
+          "Garchomp",
+          "Gholdengo"
+        ],
+        "fitness": 0.7075
+      }
+    ]
   }
 ]

@@ -1,192 +1,97 @@
 [
   {
     "genoma": [
+      51,
+      122,
       35,
-      79,
-      68,
-      97,
-      1,
-      137
+      112,
+      9,
+      13
     ],
-    "fitness": 0.8458333333333334,
+    "fitness": 0.7725,
     "nombres": [
+      "Rotom-Wash",
+      "Persian-Alola",
       "Indeedee",
-      "Mamoswine",
-      "Dragapult",
-      "Snorlax",
-      "Sneasler",
-      "Salazzle"
-    ]
-  },
-  {
-    "genoma": [
-      66,
-      47,
-      68,
-      121,
-      9,
-      35
-    ],
-    "fitness": 0.7908333333333334,
-    "nombres": [
-      "Typhlosion-Hisui",
-      "Gengar",
-      "Dragapult",
-      "Noivern",
+      "Palafin",
       "Garchomp",
-      "Indeedee"
+      "Gholdengo"
     ]
   },
   {
     "genoma": [
+      67,
+      90,
       66,
-      47,
-      68,
-      121,
+      112,
       9,
-      35
+      20
     ],
-    "fitness": 0.7908333333333334,
+    "fitness": 0.7572580219424396,
     "nombres": [
+      "Hydreigon",
+      "Kleavor",
       "Typhlosion-Hisui",
-      "Gengar",
-      "Dragapult",
-      "Noivern",
+      "Palafin",
       "Garchomp",
-      "Indeedee"
+      "Charizard"
     ]
   },
   {
     "genoma": [
+      67,
+      90,
       66,
-      47,
-      68,
-      121,
+      112,
       9,
-      35
+      20
     ],
-    "fitness": 0.7908333333333334,
+    "fitness": 0.7572580219424396,
     "nombres": [
+      "Hydreigon",
+      "Kleavor",
       "Typhlosion-Hisui",
-      "Gengar",
-      "Dragapult",
-      "Noivern",
+      "Palafin",
       "Garchomp",
-      "Indeedee"
+      "Charizard"
     ]
   },
   {
     "genoma": [
+      67,
+      90,
       66,
-      47,
-      68,
-      138,
-      69,
-      52
+      112,
+      9,
+      20
     ],
-    "fitness": 0.7716666666666666,
+    "fitness": 0.7572580219424396,
     "nombres": [
+      "Hydreigon",
+      "Kleavor",
       "Typhlosion-Hisui",
-      "Gengar",
-      "Dragapult",
-      "Houndoom",
-      "Weavile",
-      "Annihilape"
+      "Palafin",
+      "Garchomp",
+      "Charizard"
     ]
   },
   {
     "genoma": [
-      66,
-      47,
-      68,
-      138,
-      69,
-      52
-    ],
-    "fitness": 0.7716666666666666,
-    "nombres": [
-      "Typhlosion-Hisui",
-      "Gengar",
-      "Dragapult",
-      "Houndoom",
-      "Weavile",
-      "Annihilape"
-    ]
-  },
-  {
-    "genoma": [
-      66,
-      47,
-      68,
-      138,
-      1,
-      52
-    ],
-    "fitness": 0.7608333333333334,
-    "nombres": [
-      "Typhlosion-Hisui",
-      "Gengar",
-      "Dragapult",
-      "Houndoom",
-      "Sneasler",
-      "Annihilape"
-    ]
-  },
-  {
-    "genoma": [
-      66,
-      75,
-      65,
-      110,
-      1,
-      24
-    ],
-    "fitness": 0.7475,
-    "nombres": [
-      "Typhlosion-Hisui",
-      "Scizor",
-      "Lycanroc",
-      "Samurott-Hisui",
-      "Sneasler",
-      "Arcanine-Hisui"
-    ]
-  },
-  {
-    "genoma": [
-      66,
-      79,
-      68,
-      110,
-      1,
-      137
-    ],
-    "fitness": 0.74,
-    "nombres": [
-      "Typhlosion-Hisui",
-      "Mamoswine",
-      "Dragapult",
-      "Samurott-Hisui",
-      "Sneasler",
-      "Salazzle"
-    ]
-  },
-  {
-    "genoma": [
-      66,
+      109,
+      51,
       35,
-      68,
-      116,
-      1,
-      82
+      88,
+      70,
+      52
     ],
-    "fitness": 0.7183333333333334,
+    "fitness": 0.7418750000000001,
     "nombres": [
-      "Typhlosion-Hisui",
+      "Malamar",
+      "Rotom-Wash",
       "Indeedee",
-      "Dragapult",
-      "Dragalge",
-      "Sneasler",
-      "Meganium"
+      "Meowscarada",
+      "Araquanid",
+      "Annihilape"
     ]
   }
 ]
