@@ -1,6 +1,8 @@
 # src/pokemon_pool.py
 """
-Pool de Pokémon para el GA. Valida habilidades contra el pokedex de Showdown.
+Pool de Pokémon para el GA.
+- Valida habilidades contra el pokedex de Showdown.
+- Filtra formas duplicadas (se queda con la más usada del meta).
 """
 import json
 import re
@@ -30,6 +32,7 @@ VALID_ABILITIES = _cargar_habilidades_validas()
 
 
 def species_key(nombre: str) -> str:
+    """Nombre base de la especie (sin sufijos de forma) para Species Clause."""
     base = re.split(
         r"-(?:Mega|M|F|Hero|Midday|Midnight|Eternal|Hisui|Alola|Galar|Paldea|Dusk|Dawn|Busted|Blade|Crowned|Eternamax|Antique|Icy|Snow|Rainy|Sunny|River|Meadow|Polar|Tundra|Continental|Elegant|Garden|High|Plains|Modern|Monsoon|Ocean|Sandstorm|Savanna|Lemon|Mint|Ruby|Matcha|Salted|Caramel|Rainbow|Star)",
         nombre,
@@ -41,16 +44,13 @@ def _buscar_habilidades_validas(nombre: str) -> list | None:
     """Busca las habilidades válidas probando nombre exacto y variantes."""
     if nombre in VALID_ABILITIES:
         return VALID_ABILITIES[nombre]
-    # Probar variantes comunes
     for variante in [nombre, nombre.capitalize(), nombre.lower()]:
         if variante in VALID_ABILITIES:
             return VALID_ABILITIES[variante]
-    # Búsqueda case-insensitive
     nombre_lower = nombre.lower()
     for k, v in VALID_ABILITIES.items():
         if k.lower() == nombre_lower:
             return v
-    # Búsqueda por species base (para formas como "Indeedee-F" -> "Indeedee")
     base = species_key(nombre)
     for k, v in VALID_ABILITIES.items():
         if species_key(k) == base:
@@ -71,12 +71,11 @@ def corregir_habilidad(p: dict) -> dict:
 
     validas = _buscar_habilidades_validas(nombre)
     if not validas:
-        return p  # No sabemos qué habilidades tiene, dejamos como está
+        return p
 
     if ab_actual in validas:
-        return p  # Ya es válida
+        return p
 
-    # Corregir: usar la primera habilidad válida
     p = dict(p)
     p["ability"] = validas[0]
     return p
@@ -112,32 +111,59 @@ def limpiar_equipo(equipo: list[dict]) -> list[dict]:
 
 
 def construir_pool() -> list[dict]:
+    """
+    Carga el pool desde el JSON generado por parse_api.py.
+    Filtra formas duplicadas: cuando dos Pokémon comparten species_key,
+    se queda con el de MAYOR usage.
+    """
     if not POOL_FILE.exists():
         raise FileNotFoundError(
             f"No existe {POOL_FILE}. Corre primero: python src/parse_api.py"
         )
     with open(POOL_FILE, encoding="utf-8") as f:
         pool = json.load(f)
-    return [p for p in pool if p["pokemon"] not in POKEMON_EXCLUIDOS]
+
+    # Filtrar excluidos
+    pool = [p for p in pool if p["pokemon"] not in POKEMON_EXCLUIDOS]
+
+    # Agrupar por species_key y quedarse con la forma más usada
+    por_key: dict[str, dict] = {}
+    for p in pool:
+        key = species_key(p["pokemon"])
+        if key not in por_key:
+            por_key[key] = p
+        else:
+            if p.get("usage_pct", 0) > por_key[key].get("usage_pct", 0):
+                por_key[key] = p
+
+    return list(por_key.values())
 
 
 if __name__ == "__main__":
     pool = construir_pool()
-    print(f"Pool total: {len(pool)} Pokémon")
+    print(f"Pool total: {len(pool)} Pokémon (filtrado por forma más usada)")
     print(f"Habilidades válidas cargadas: {len(VALID_ABILITIES)} especies\n")
 
-    keys = Counter(p["species_key"] for p in pool)
-    duplicados = {k: v for k, v in keys.items() if v > 1}
-    print(f"Species keys duplicados: {len(duplicados)}\n")
+    # Verificar formas colapsadas
+    print("Verificación de formas colapsadas:")
+    for p in pool:
+        nombre_lower = p["pokemon"].lower()
+        if "indeedee" in nombre_lower:
+            print(f"  Indeedee seleccionada: {p['pokemon']} (usage={p['usage_pct']:.2f}%)")
+        if "sinistcha" in nombre_lower:
+            print(f"  Sinistcha seleccionada: {p['pokemon']} (usage={p['usage_pct']:.2f}%)")
+        if "palafin" in nombre_lower:
+            print(f"  Palafin seleccionada: {p['pokemon']} (usage={p['usage_pct']:.2f}%)")
 
-    print("Verificación de corrección de habilidades (primeros 20):")
-    n_corregidas = 0
-    for p in pool[:20]:
-        original = p.get("ability") or "—"
-        corregido = corregir_habilidad(p).get("ability") or "—"
-        if original != corregido:
-            print(f"  {p['pokemon']:<25} {original:<18} → {corregido}  ⚠️")
-            n_corregidas += 1
-        else:
-            print(f"  {p['pokemon']:<25} {original:<18} (ok)")
-    print(f"\nCorregidas en los primeros 20: {n_corregidas}")
+    keys = Counter(species_key(p["pokemon"]) for p in pool)
+    duplicados = {k: v for k, v in keys.items() if v > 1}
+    if duplicados:
+        print(f"\n⚠️  Aún hay duplicados: {duplicados}")
+    else:
+        print(f"\n✅ Sin duplicados de species_key")
+
+    print(f"\nPrimeros 15:")
+    for i, p in enumerate(pool[:15]):
+        tipos = "/".join(p["types"])
+        ab = p["ability"] or "—"
+        print(f"  [{i:>3}] {p['pokemon']:<25} [{tipos:<20}] usage={p['usage_pct']:.2f}%  ab={ab}")

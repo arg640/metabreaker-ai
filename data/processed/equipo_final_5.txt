@@ -2,8 +2,8 @@ Rotom-Wash @ Leftovers
 Ability: Levitate
 Level: 50
 Tera Type: Electric
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
 - Hydro Pump
 - Will-O-Wisp
 - Thunderbolt
@@ -12,8 +12,8 @@ Serious Nature
 Persian-Alola @ Sitrus Berry
 Level: 50
 Tera Type: Dark
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
 - Fake Out
 - Foul Play
 - Parting Shot
@@ -33,8 +33,8 @@ Modest Nature
 Palafin
 Level: 50
 Tera Type: Water
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
 - Wave Crash
 - Jet Punch
 - Close Combat

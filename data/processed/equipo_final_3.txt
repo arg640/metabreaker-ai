@@ -2,8 +2,8 @@ Hydreigon @ Life Orb
 Ability: Levitate
 Level: 50
 Tera Type: Dark
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
 - Dark Pulse
 - Draco Meteor
 - Earth Power
@@ -13,8 +13,8 @@ Kleavor @ Focus Sash
 Ability: Swarm
 Level: 50
 Tera Type: Bug
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
 - Stone Axe
 - X-Scissor
 - Protect
@@ -24,8 +24,8 @@ Typhlosion-Hisui @ Choice Scarf
 Ability: Frisk
 Level: 50
 Tera Type: Fire
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
 - Eruption
 - Shadow Ball
 - Heat Wave
@@ -34,8 +34,8 @@ Serious Nature
 Palafin @ Leftovers
 Level: 50
 Tera Type: Water
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
 - Wave Crash
 - Jet Punch
 - Close Combat
@@ -56,8 +56,8 @@ Charizard @ Charizardite Y
 Ability: Blaze
 Level: 50
 Tera Type: Fire
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
 - Heat Wave
 - Protect
 - Weather Ball

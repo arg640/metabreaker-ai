@@ -1,6 +1,101 @@
 [
   {
     "genoma": [
+      4,
+      64,
+      44,
+      8,
+      30,
+      77
+    ],
+    "fitness": 0.787883407395843,
+    "nombres": [
+      "Kingambit",
+      "Typhlosion-Hisui",
+      "Swampert",
+      "Farigiraf",
+      "Staraptor",
+      "Mamoswine"
+    ]
+  },
+  {
+    "genoma": [
+      4,
+      64,
+      44,
+      8,
+      30,
+      77
+    ],
+    "fitness": 0.787883407395843,
+    "nombres": [
+      "Kingambit",
+      "Typhlosion-Hisui",
+      "Swampert",
+      "Farigiraf",
+      "Staraptor",
+      "Mamoswine"
+    ]
+  },
+  {
+    "genoma": [
+      4,
+      64,
+      44,
+      8,
+      30,
+      77
+    ],
+    "fitness": 0.787883407395843,
+    "nombres": [
+      "Kingambit",
+      "Typhlosion-Hisui",
+      "Swampert",
+      "Farigiraf",
+      "Staraptor",
+      "Mamoswine"
+    ]
+  },
+  {
+    "genoma": [
+      24,
+      64,
+      44,
+      132,
+      67,
+      27
+    ],
+    "fitness": 0.7758333333333333,
+    "nombres": [
+      "Arcanine-Hisui",
+      "Typhlosion-Hisui",
+      "Swampert",
+      "Mimikyu-Busted",
+      "Weavile",
+      "Excadrill"
+    ]
+  },
+  {
+    "genoma": [
+      51,
+      64,
+      131,
+      24,
+      19,
+      25
+    ],
+    "fitness": 0.7733333333333333,
+    "nombres": [
+      "Annihilape",
+      "Typhlosion-Hisui",
+      "Chesnaught",
+      "Arcanine-Hisui",
+      "Milotic",
+      "Armarouge"
+    ]
+  },
+  {
+    "genoma": [
       51,
       122,
       35,

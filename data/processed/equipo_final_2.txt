@@ -2,8 +2,8 @@ Malamar @ Malamarite
 Ability: Contrary
 Level: 50
 Tera Type: Dark
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
 - Superpower
 - Knock Off
 - Protect
@@ -13,8 +13,8 @@ Tinkaton @ Air Balloon
 Ability: Mold Breaker
 Level: 50
 Tera Type: Fairy
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
 - Fake Out
 - Gigaton Hammer
 - Protect
@@ -35,8 +35,8 @@ Meowscarada @ Life Orb
 Ability: Protean
 Level: 50
 Tera Type: Grass
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
 - Triple Axel
 - Knock Off
 - Flower Trick
@@ -46,8 +46,8 @@ Araquanid @ Leftovers
 Ability: Water Bubble
 Level: 50
 Tera Type: Water
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
 - Liquidation
 - Wide Guard
 - Leech Life
@@ -57,8 +57,8 @@ Annihilape @ Sitrus Berry
 Ability: Defiant
 Level: 50
 Tera Type: Fighting
-EVs: 32 HP / 32 Atk / 2 Spe
-Serious Nature
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
 - Rage Fist
 - Drain Punch
 - Protect

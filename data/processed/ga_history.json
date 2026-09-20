@@ -399,5 +399,92 @@
         "fitness": 0.7075
       }
     ]
+  },
+  {
+    "timestamp": "2026-09-19T21:53:57.240741",
+    "fitness": 0.7308333333333334,
+    "winrate_fijo": 0.9666666666666666,
+    "config": {
+      "N_ISLAS": 4,
+      "POP_POR_ISLA": 12,
+      "N_GEN": 20,
+      "GENERACIONES_POR_CICLO": 3,
+      "N_MIGRANTES": 3,
+      "CXPB": 0.6,
+      "MUTPB": 0.5,
+      "N_RIVALES_FIJOS": 5,
+      "N_BATALLAS_FIJOS": 2,
+      "N_RIVALES_POBLACION": 12,
+      "N_BATALLAS_COEVOLUCION": 1,
+      "PESO_WINRATE_FIJO": 0.4,
+      "PESO_WINRATE_POBLACION": 0.3,
+      "PESO_ROLES": 0.15,
+      "PESO_COBERTURA": 0.1,
+      "PESO_SINERGIA": 0.05,
+      "LAMBDA_DIVERSIDAD": 0.8,
+      "SEED": 47
+    },
+    "top5_nombres": [
+      {
+        "rank": 1,
+        "equipo": [
+          "Meowscarada",
+          "Typhlosion-Hisui",
+          "Weavile",
+          "Arcanine-Hisui",
+          "Milotic",
+          "Armarouge"
+        ],
+        "fitness": 0.7308333333333334
+      },
+      {
+        "rank": 2,
+        "equipo": [
+          "Annihilape",
+          "Typhlosion-Hisui",
+          "Chesnaught",
+          "Arcanine-Hisui",
+          "Milotic",
+          "Armarouge"
+        ],
+        "fitness": 0.7033333333333333
+      },
+      {
+        "rank": 3,
+        "equipo": [
+          "Arcanine-Hisui",
+          "Typhlosion-Hisui",
+          "Swampert",
+          "Mimikyu-Busted",
+          "Weavile",
+          "Excadrill"
+        ],
+        "fitness": 0.6508333333333333
+      },
+      {
+        "rank": 4,
+        "equipo": [
+          "Kingambit",
+          "Typhlosion-Hisui",
+          "Swampert",
+          "Farigiraf",
+          "Staraptor",
+          "Mamoswine"
+        ],
+        "fitness": 0.6175
+      },
+      {
+        "rank": 5,
+        "equipo": [
+          "Meowscarada",
+          "Typhlosion-Hisui",
+          "Weavile",
+          "Arcanine-Hisui",
+          "Milotic",
+          "Armarouge"
+        ],
+        "fitness": 0.6141666666666667
+      }
+    ]
   }
 ]
