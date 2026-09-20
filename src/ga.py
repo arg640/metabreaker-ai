@@ -40,7 +40,7 @@ CXPB = 0.6
 MUTPB = 0.5
 
 # Rivales FIJOS (ancla al meta real)
-N_RIVALES_FIJOS = 5
+N_RIVALES_FIJOS = 10       # ← Cambio: 5 → 10
 N_BATALLAS_FIJOS = 2
 
 # Co-evolución (rivales de la población)
@@ -60,7 +60,7 @@ UMBRAL_SIMILITUD = 0.2
 
 # Warm start
 USE_WARM_START = True
-WARM_START_N = 0    # 0 = no reinyectar elites (evita dominancia)
+WARM_START_N = 0
 
 # Archivos
 CHECKPOINT_FILE = Path("data/processed/checkpoint.json")
