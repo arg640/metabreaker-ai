@@ -35,7 +35,7 @@ GENERACIONES_POR_CICLO = 3
 N_MIGRANTES = 3
 
 # Evolución
-N_GEN = 20
+N_GEN = 8
 CXPB = 0.6
 MUTPB = 0.5
 
