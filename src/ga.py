@@ -24,27 +24,26 @@ from src.fit import (
 )
 from src.roles import score_roles
 
-
 # ============ CONFIGURACIÓN ============
 EQUIPO_SIZE = 6
 
 # Island model
-N_ISLAS = 4
-POP_POR_ISLA = 12
+N_ISLAS = 2
+POP_POR_ISLA = 6
 GENERACIONES_POR_CICLO = 3
-N_MIGRANTES = 3
+N_MIGRANTES = 2
 
 # Evolución
-N_GEN = 8
+N_GEN = 3
 CXPB = 0.6
 MUTPB = 0.5
 
 # Rivales FIJOS (ancla al meta real)
-N_RIVALES_FIJOS = 10       # ← Cambio: 5 → 10
-N_BATALLAS_FIJOS = 2
+N_RIVALES_FIJOS = 3
+N_BATALLAS_FIJOS = 1
 
 # Co-evolución (rivales de la población)
-N_RIVALES_POBLACION = 12
+N_RIVALES_POBLACION = 4
 N_BATALLAS_COEVOLUCION = 1
 
 # Pesos del fitness (suman 1.0)

@@ -1,0 +1,89 @@
+[
+  {
+    "timestamp": "2026-09-25T23:42:09.099520",
+    "fitness": 0.7308333333333333,
+    "winrate_fijo": 0.7333333333333333,
+    "config": {
+      "N_ISLAS": 2,
+      "POP_POR_ISLA": 6,
+      "N_GEN": 3,
+      "GENERACIONES_POR_CICLO": 3,
+      "N_MIGRANTES": 2,
+      "CXPB": 0.6,
+      "MUTPB": 0.5,
+      "N_RIVALES_FIJOS": 3,
+      "N_BATALLAS_FIJOS": 1,
+      "N_RIVALES_POBLACION": 4,
+      "N_BATALLAS_COEVOLUCION": 1,
+      "PESO_WINRATE_FIJO": 0.4,
+      "PESO_WINRATE_POBLACION": 0.3,
+      "PESO_ROLES": 0.15,
+      "PESO_COBERTURA": 0.1,
+      "PESO_SINERGIA": 0.05,
+      "LAMBDA_DIVERSIDAD": 0.8,
+      "SEED": 47
+    },
+    "top5_nombres": [
+      {
+        "rank": 1,
+        "equipo": [
+          "Gallade",
+          "Rillaboom",
+          "Arcanine-Hisui",
+          "Kingambit",
+          "Sneasler",
+          "Basculegion"
+        ],
+        "fitness": 0.7308333333333333
+      },
+      {
+        "rank": 2,
+        "equipo": [
+          "Gallade",
+          "Rillaboom",
+          "Arcanine-Hisui",
+          "Kingambit",
+          "Sneasler",
+          "Basculegion"
+        ],
+        "fitness": 0.6741666666666667
+      },
+      {
+        "rank": 3,
+        "equipo": [
+          "Venusaur",
+          "Pawmot",
+          "Arcanine-Hisui",
+          "Kingambit",
+          "Samurott-Hisui",
+          "Typhlosion-Hisui"
+        ],
+        "fitness": 0.615
+      },
+      {
+        "rank": 4,
+        "equipo": [
+          "Heliolisk",
+          "Archaludon",
+          "Snorlax",
+          "Basculegion",
+          "Kangaskhan",
+          "Gholdengo"
+        ],
+        "fitness": 0.6126666666666667
+      },
+      {
+        "rank": 5,
+        "equipo": [
+          "Pelipper",
+          "Starmie",
+          "Sneasler",
+          "Milotic",
+          "Kingambit",
+          "Tyranitar"
+        ],
+        "fitness": 0.5941666666666667
+      }
+    ]
+  }
+]

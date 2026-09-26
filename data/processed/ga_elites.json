@@ -1,0 +1,97 @@
+[
+  {
+    "genoma": [
+      54,
+      0,
+      24,
+      4,
+      1,
+      5
+    ],
+    "fitness": 0.8075,
+    "nombres": [
+      "Gallade",
+      "Rillaboom",
+      "Arcanine-Hisui",
+      "Kingambit",
+      "Sneasler",
+      "Basculegion"
+    ]
+  },
+  {
+    "genoma": [
+      54,
+      0,
+      24,
+      4,
+      1,
+      5
+    ],
+    "fitness": 0.8075,
+    "nombres": [
+      "Gallade",
+      "Rillaboom",
+      "Arcanine-Hisui",
+      "Kingambit",
+      "Sneasler",
+      "Basculegion"
+    ]
+  },
+  {
+    "genoma": [
+      47,
+      32,
+      24,
+      4,
+      108,
+      64
+    ],
+    "fitness": 0.7766666666666666,
+    "nombres": [
+      "Venusaur",
+      "Pawmot",
+      "Arcanine-Hisui",
+      "Kingambit",
+      "Samurott-Hisui",
+      "Typhlosion-Hisui"
+    ]
+  },
+  {
+    "genoma": [
+      112,
+      14,
+      95,
+      5,
+      89,
+      13
+    ],
+    "fitness": 0.761,
+    "nombres": [
+      "Heliolisk",
+      "Archaludon",
+      "Snorlax",
+      "Basculegion",
+      "Kangaskhan",
+      "Gholdengo"
+    ]
+  },
+  {
+    "genoma": [
+      112,
+      14,
+      95,
+      5,
+      89,
+      13
+    ],
+    "fitness": 0.761,
+    "nombres": [
+      "Heliolisk",
+      "Archaludon",
+      "Snorlax",
+      "Basculegion",
+      "Kangaskhan",
+      "Gholdengo"
+    ]
+  }
+]

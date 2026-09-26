@@ -1,4 +1,4 @@
-"""Behavior Cloning v3 - features ricas + slot (para dobles)."""
+"""Behavior Cloning v7 - features ricas SIN leakage de moves."""
 import json
 import re
 from pathlib import Path
@@ -12,15 +12,21 @@ LOGS_PATH = Path("C:/vgc-projects/battle_logs/logs_gen9championsvgc2026regmc.jso
 OUTPUT_DIR = Path("models_bc")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
-MAX_SPECIES = 200
-MAX_ACTIONS = 200
+MAX_SPECIES = 100
+MAX_ACTIONS = 150
+N_FIXED = 28
+N_SPECIES_BLOCK = MAX_SPECIES * 4
+N_MOVES_BLOCK = MAX_ACTIONS
+N_COUNT_BLOCK = 4
+N_FEATURES = N_FIXED + N_SPECIES_BLOCK + N_MOVES_BLOCK + N_COUNT_BLOCK
+N_ACTIONS = MAX_ACTIONS
 
 SPECIES_VOCAB = {}
 MOVE_VOCAB = {}
 
-N_FIXED = 28
-N_FEATURES = N_FIXED + (MAX_SPECIES * 4)
-N_ACTIONS = MAX_ACTIONS
+EPOCHS = 200
+PATIENCE = 20
+VAL_SPLIT = 0.15
 
 
 def norm(name):
@@ -70,6 +76,8 @@ def parse_log(log):
     p1_fainted = [0, 0]
     p2_fainted = [0, 0]
 
+    moves_seen = {"p1a": set(), "p1b": set(), "p2a": set(), "p2b": set()}
+
     tailwind_p1 = 0
     tailwind_p2 = 0
     trick_room = 0
@@ -97,6 +105,8 @@ def parse_log(log):
                 hp_match = re.search(r"(\d+)/(\d+)", parts[3]) if len(parts) > 3 else None
                 hp_frac = (int(hp_match.group(1)) / max(1, int(hp_match.group(2)))) if hp_match else 1.0
                 slot_idx = 0 if slot_str.endswith("a") else 1
+                if slot_str in moves_seen:
+                    moves_seen[slot_str] = set()
                 if slot_str.startswith("p1"):
                     p1_active[slot_idx] = sp_name
                     p1_hp[slot_idx] = hp_frac
@@ -180,34 +190,70 @@ def parse_log(log):
 
         elif t == "move":
             side = parts[2]
-            if ": " in side and side.startswith("p1"):
+            if ": " in side:
+                slot_str = side.split(":")[0]
                 move_name = norm(parts[3].strip())
-                action_id = MOVE_VOCAB.get(move_name, -1)
-                if action_id < 0:
-                    continue
 
-                feats = np.zeros(N_FEATURES, dtype=np.float32)
-                feats[0] = turno / 20.0
-                feats[1:5] = [p1_hp[0], p1_hp[1], p2_hp[0], p2_hp[1]]
-                feats[5:9] = [p1_status[0], p1_status[1], p2_status[0], p2_status[1]]
-                feats[9:13] = [p1_fainted[0], p1_fainted[1], p2_fainted[0], p2_fainted[1]]
-                feats[13] = tailwind_p1
-                feats[14] = tailwind_p2
-                feats[15] = trick_room
-                feats[16:21] = weather
-                feats[21:26] = terrain
-                # Slot del Pokémon que actúa (0 = "a", 1 = "b")
-                slot = 0 if side.split(":")[0].endswith("a") else 1
-                feats[26] = slot
+                # 1) Construir features SIN el move actual
+                if slot_str.startswith("p1"):
+                    action_id = MOVE_VOCAB.get(move_name, -1)
+                    if action_id >= 0:
+                        feats = np.zeros(N_FEATURES, dtype=np.float32)
+                        feats[0] = turno / 20.0
+                        feats[1:5] = [p1_hp[0], p1_hp[1], p2_hp[0], p2_hp[1]]
+                        feats[5:9] = [p1_status[0], p1_status[1], p2_status[0], p2_status[1]]
+                        feats[9:13] = [p1_fainted[0], p1_fainted[1], p2_fainted[0], p2_fainted[1]]
+                        feats[13] = tailwind_p1
+                        feats[14] = tailwind_p2
+                        feats[15] = trick_room
+                        feats[16:21] = weather
+                        feats[21:26] = terrain
+                        slot = 0 if slot_str.endswith("a") else 1
+                        feats[26] = slot
 
-                species_one_hot(p1_active[0] or "", feats, N_FIXED)
-                species_one_hot(p1_active[1] or "", feats, N_FIXED + MAX_SPECIES)
-                species_one_hot(p2_active[0] or "", feats, N_FIXED + MAX_SPECIES * 2)
-                species_one_hot(p2_active[1] or "", feats, N_FIXED + MAX_SPECIES * 3)
+                        # Species one-hot
+                        off = N_FIXED
+                        species_one_hot(p1_active[0] or "", feats, off)
+                        species_one_hot(p1_active[1] or "", feats, off + MAX_SPECIES)
+                        species_one_hot(p2_active[0] or "", feats, off + MAX_SPECIES * 2)
+                        species_one_hot(p2_active[1] or "", feats, off + MAX_SPECIES * 3)
 
-                pairs.append((feats, action_id))
+                        # Moves vistos ANTES del turno actual (sin leakage)
+                        moves_off = N_FIXED + N_SPECIES_BLOCK
+                        for mv in moves_seen[slot_str]:
+                            idx = MOVE_VOCAB.get(mv, -1)
+                            if idx >= 0:
+                                feats[moves_off + idx] = 1.0
+
+                        # Counts de moves vistos
+                        counts_off = moves_off + N_MOVES_BLOCK
+                        feats[counts_off + 0] = min(len(moves_seen["p1a"]) / 4.0, 1.0)
+                        feats[counts_off + 1] = min(len(moves_seen["p1b"]) / 4.0, 1.0)
+                        feats[counts_off + 2] = min(len(moves_seen["p2a"]) / 4.0, 1.0)
+                        feats[counts_off + 3] = min(len(moves_seen["p2b"]) / 4.0, 1.0)
+
+                        pairs.append((feats, action_id))
+
+                # 2) Registrar el move DESPUÉS de construir features
+                if slot_str in moves_seen:
+                    moves_seen[slot_str].add(move_name)
 
     return pairs
+
+
+def evaluate(model, loader, criterion):
+    model.eval()
+    total_loss = 0.0
+    correct = 0
+    total = 0
+    with torch.no_grad():
+        for bx, by in loader:
+            logits = model(bx)
+            loss = criterion(logits, by)
+            total_loss += loss.item()
+            correct += (logits.argmax(1) == by).sum().item()
+            total += len(by)
+    return total_loss / len(loader), correct / total
 
 
 def main():
@@ -221,41 +267,61 @@ def main():
     all_states = []
     all_actions = []
     for i, (_, (_, log)) in enumerate(logs.items()):
-        if i % 200 == 0:
+        if i % 1000 == 0:
             print(f"  {i}/{len(logs)}")
         for state, action in parse_log(log):
             all_states.append(state)
             all_actions.append(action)
 
     print(f"\nTotal pairs: {len(all_states)}")
+    print(f"Features: {N_FEATURES}")
+
     if len(all_states) < 1000:
         print("⚠️ Muy pocos datos.")
         return
 
     X = torch.tensor(np.array(all_states), dtype=torch.float32)
     y = torch.tensor(all_actions, dtype=torch.long)
-    print(f"Dataset: X={X.shape}, y={y.shape}")
+
+    n_total = len(X)
+    n_val = int(n_total * VAL_SPLIT)
+    perm = torch.randperm(n_total)
+    val_idx = perm[:n_val]
+    train_idx = perm[n_val:]
+
+    X_train, y_train = X[train_idx], y[train_idx]
+    X_val, y_val = X[val_idx], y[val_idx]
+
+    print(f"Train: {len(X_train)} | Val: {len(X_val)}")
+
+    train_loader = DataLoader(TensorDataset(X_train, y_train), batch_size=256, shuffle=True)
+    val_loader = DataLoader(TensorDataset(X_val, y_val), batch_size=512, shuffle=False)
 
     model = nn.Sequential(
         nn.Linear(N_FEATURES, 512),
         nn.ReLU(),
-        nn.Dropout(0.2),
+        nn.Dropout(0.3),
         nn.Linear(512, 256),
         nn.ReLU(),
-        nn.Dropout(0.2),
+        nn.Dropout(0.3),
         nn.Linear(256, N_ACTIONS),
     )
 
     optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
     criterion = nn.CrossEntropyLoss()
-    loader = DataLoader(TensorDataset(X, y), batch_size=128, shuffle=True)
 
-    EPOCHS = 50
+    best_val_loss = float("inf")
+    best_epoch = 0
+    epochs_sin_mejora = 0
+
+    print(f"\nEntrenando (max {EPOCHS} epochs, paciencia {PATIENCE})...\n")
+
     for epoch in range(EPOCHS):
+        model.train()
         total_loss = 0.0
         correct = 0
         total = 0
-        for bx, by in loader:
+        for bx, by in train_loader:
             optimizer.zero_grad()
             logits = model(bx)
             loss = criterion(logits, by)
@@ -264,17 +330,39 @@ def main():
             total_loss += loss.item()
             correct += (logits.argmax(1) == by).sum().item()
             total += len(by)
-        acc = correct / total
-        print(f"Epoch {epoch+1}/{EPOCHS}: loss={total_loss/len(loader):.4f} acc={acc:.3f}")
+        train_loss = total_loss / len(train_loader)
+        train_acc = correct / total
 
-    torch.save({
-        "state_dict": model.state_dict(),
-        "species_vocab": SPECIES_VOCAB,
-        "move_vocab": MOVE_VOCAB,
-        "n_features": N_FEATURES,
-        "n_actions": N_ACTIONS,
-    }, OUTPUT_DIR / "bc_model.pt")
-    print(f"\n✅ Modelo guardado en {OUTPUT_DIR / 'bc_model.pt'}")
+        val_loss, val_acc = evaluate(model, val_loader, criterion)
+
+        marker = ""
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            best_epoch = epoch + 1
+            epochs_sin_mejora = 0
+            torch.save({
+                "state_dict": model.state_dict(),
+                "species_vocab": SPECIES_VOCAB,
+                "move_vocab": MOVE_VOCAB,
+                "n_features": N_FEATURES,
+                "n_actions": N_ACTIONS,
+                "best_epoch": best_epoch,
+                "best_val_loss": best_val_loss,
+                "val_acc": val_acc,
+            }, OUTPUT_DIR / "bc_model.pt")
+            marker = " ⭐"
+        else:
+            epochs_sin_mejora += 1
+
+        print(f"Epoch {epoch+1:3}/{EPOCHS} | "
+              f"train_acc={train_acc:.3f} | "
+              f"val_acc={val_acc:.3f} val_loss={val_loss:.4f}{marker}")
+
+        if epochs_sin_mejora >= PATIENCE:
+            print(f"\n🛑 Early stopping.")
+            break
+
+    print(f"\n✅ Mejor: epoch {best_epoch} (val_loss={best_val_loss:.4f}, val_acc en ese punto)")
 
 
 if __name__ == "__main__":
