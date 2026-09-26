@@ -1,4 +1,4 @@
-"""Behavior Cloning v2 - features ricas (especies, HP, status, campo)."""
+"""Behavior Cloning v3 - features ricas + slot (para dobles)."""
 import json
 import re
 from pathlib import Path
@@ -12,14 +12,13 @@ LOGS_PATH = Path("C:/vgc-projects/battle_logs/logs_gen9championsvgc2026regmc.jso
 OUTPUT_DIR = Path("models_bc")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
-MAX_SPECIES = 200   # Top N especies más comunes
-MAX_ACTIONS = 200   # Top N moves más comunes
+MAX_SPECIES = 200
+MAX_ACTIONS = 200
 
 SPECIES_VOCAB = {}
 MOVE_VOCAB = {}
 
-# Features fijas + 4 slots de species one-hot
-N_FIXED = 26
+N_FIXED = 28
 N_FEATURES = N_FIXED + (MAX_SPECIES * 4)
 N_ACTIONS = MAX_ACTIONS
 
@@ -74,8 +73,8 @@ def parse_log(log):
     tailwind_p1 = 0
     tailwind_p2 = 0
     trick_room = 0
-    weather = [0, 0, 0, 0, 0]  # none, sun, rain, sand, snow
-    terrain = [0, 0, 0, 0, 0]  # none, elec, grassy, psychic, misty
+    weather = [0, 0, 0, 0, 0]
+    terrain = [0, 0, 0, 0, 0]
     turno = 0
 
     for line in log.split("\n"):
@@ -197,8 +196,10 @@ def parse_log(log):
                 feats[15] = trick_room
                 feats[16:21] = weather
                 feats[21:26] = terrain
+                # Slot del Pokémon que actúa (0 = "a", 1 = "b")
+                slot = 0 if side.split(":")[0].endswith("a") else 1
+                feats[26] = slot
 
-                # Species one-hot: 4 slots × MAX_SPECIES
                 species_one_hot(p1_active[0] or "", feats, N_FIXED)
                 species_one_hot(p1_active[1] or "", feats, N_FIXED + MAX_SPECIES)
                 species_one_hot(p2_active[0] or "", feats, N_FIXED + MAX_SPECIES * 2)
@@ -249,7 +250,7 @@ def main():
     criterion = nn.CrossEntropyLoss()
     loader = DataLoader(TensorDataset(X, y), batch_size=128, shuffle=True)
 
-    EPOCHS = 30
+    EPOCHS = 50
     for epoch in range(EPOCHS):
         total_loss = 0.0
         correct = 0
