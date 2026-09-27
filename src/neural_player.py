@@ -1,5 +1,5 @@
-"""NeuralPlayer: usa el modelo BC v7 (con moves vistos) para elegir moves."""
-import random
+"""NeuralPlayer con captura de logs para DAgger (solo batallas ganadas)."""
+import json
 from pathlib import Path
 
 import numpy as np
@@ -10,8 +10,10 @@ from poke_env.player import SimpleHeuristicsPlayer, DoubleBattleOrder
 
 
 MODEL_PATH = Path("models_bc/bc_model.pt")
+LOG_DIR = Path("data/ga_logs")
+LOG_DIR.mkdir(parents=True, exist_ok=True)
+WINNER_LOGS = LOG_DIR / "winner_logs.jsonl"
 
-# Debe coincidir con bc_train.py v7
 MAX_SPECIES = 100
 MAX_ACTIONS = 150
 N_FIXED = 28
@@ -30,9 +32,11 @@ class NeuralPlayer(SimpleHeuristicsPlayer):
     def __init__(self, team: str, *args, **kwargs):
         super().__init__(*args, team=team, **kwargs)
         self._load_model()
+        self._battle_buffer = {}
+        self._seen_keys = {}
 
     def _load_model(self):
-        self.device = torch.device("cpu")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         ckpt = torch.load(MODEL_PATH, map_location=self.device, weights_only=False)
         self.species_vocab = ckpt["species_vocab"]
         self.move_vocab = ckpt["move_vocab"]
@@ -48,10 +52,51 @@ class NeuralPlayer(SimpleHeuristicsPlayer):
             nn.Linear(256, N_ACTIONS),
         )
         self.model.load_state_dict(ckpt["state_dict"])
+        self.model.to(self.device)
         self.model.eval()
 
+    # ============================================================
+    # HOOK DE FIN DE BATALLA
+    # ============================================================
+    def _battle_finished_callback(self, battle):
+        try:
+            tag = battle.battle_tag
+            datos = self._battle_buffer.pop(tag, None)
+            self._seen_keys.pop(tag, None)
+
+            if battle.won and datos:
+                with WINNER_LOGS.open("a", encoding="utf-8") as f:
+                    for feats, action in datos:
+                        f.write(json.dumps({"f": feats, "a": action}) + "\n")
+                pass  # Victoria: logs guardados silenciosamente
+            else:
+                pass  # Derrota: no guardamos
+        except Exception:
+            pass
+
+    def _log_state_action(self, battle, feats: np.ndarray, action_id: int):
+        try:
+            tag = battle.battle_tag
+            if tag not in self._battle_buffer:
+                self._battle_buffer[tag] = []
+                self._seen_keys[tag] = set()
+
+            turn = battle.turn
+            slot = int(feats[26])
+            key = (turn, slot)
+
+            if key in self._seen_keys[tag]:
+                return
+
+            self._seen_keys[tag].add(key)
+            self._battle_buffer[tag].append((feats.tolist(), action_id))
+        except Exception:
+            pass
+
+    # ============================================================
+    # FEATURES
+    # ============================================================
     def _moves_seen_pokemon(self, pokemon):
-        """Set de IDs de moves que un Pokémon tiene revelados."""
         if pokemon is None:
             return set()
         try:
@@ -60,7 +105,6 @@ class NeuralPlayer(SimpleHeuristicsPlayer):
             return set()
 
     def _extract_features(self, battle, acting_slot: int) -> np.ndarray:
-        """Construye el vector de 582 features para el Pokémon activo en `acting_slot`."""
         feats = np.zeros(N_FEATURES, dtype=np.float32)
 
         feats[0] = min(battle.turn / 20.0, 1.0)
@@ -141,7 +185,6 @@ class NeuralPlayer(SimpleHeuristicsPlayer):
         return feats
 
     def _choose_for_slot(self, battle, slot: int):
-        """Elige un move para el Pokémon activo en `slot` (0 o 1)."""
         active_list = list(battle.active_pokemon) if battle.active_pokemon else []
         if slot >= len(active_list) or active_list[slot] is None:
             return None
@@ -151,30 +194,24 @@ class NeuralPlayer(SimpleHeuristicsPlayer):
         if not movimientos:
             return None
 
-        # Filtrar a moves realmente disponibles en este turno
         disponibles_ids = set()
         try:
-            # En poke-env, battle.available_moves es la lista del Pokémon activo en su slot
-            # Para el segundo slot puede haber battle.available_moves en cada Pokémon
             if slot == 0:
                 disponibles_ids = {norm(m.id) for m in battle.available_moves}
             else:
-                # Intentar obtener los moves del segundo Pokémon
-                # poke-env expone battle.active_pokemon[slot].moves como dict
-                # y battle.available_moves solo para el primer slot
-                # Como fallback: usar todos los moves conocidos
                 disponibles_ids = {norm(m.id) for m in movimientos}
         except Exception:
             disponibles_ids = {norm(m.id) for m in movimientos}
 
         feats = self._extract_features(battle, slot)
         with torch.no_grad():
-            x = torch.tensor(feats, dtype=torch.float32).unsqueeze(0)
+            x = torch.tensor(feats, dtype=torch.float32).unsqueeze(0).to(self.device)
             logits = self.model(x)
-            probs = torch.softmax(logits, dim=1).squeeze(0).numpy()
+            probs = torch.softmax(logits, dim=1).squeeze(0).cpu().numpy()
 
         best_prob = -1
         best_move = None
+        best_move_id = -1
         for move in movimientos:
             m_id = norm(move.id)
             if m_id not in disponibles_ids:
@@ -183,10 +220,14 @@ class NeuralPlayer(SimpleHeuristicsPlayer):
             if idx >= 0 and probs[idx] > best_prob:
                 best_prob = probs[idx]
                 best_move = move
+                best_move_id = idx
 
-        # Si no encontró ninguno con el modelo, usar el primero disponible
         if best_move is None and movimientos:
             best_move = movimientos[0]
+            best_move_id = self.move_vocab.get(norm(best_move.id), -1)
+
+        if best_move_id >= 0:
+            self._log_state_action(battle, feats, best_move_id)
 
         return best_move
 
@@ -195,37 +236,31 @@ class NeuralPlayer(SimpleHeuristicsPlayer):
             active_list = list(battle.active_pokemon) if battle.active_pokemon else []
             n_actives = len(active_list)
 
-            # Singles: devolver un BattleOrder simple
             if n_actives <= 1:
                 move = self._choose_for_slot(battle, 0)
                 if move is not None:
                     return self.create_order(move)
                 return super().choose_move(battle)
 
-            # Dobles: construir 2 BattleOrders y combinarlos
             move1 = self._choose_for_slot(battle, 0)
             move2 = self._choose_for_slot(battle, 1)
 
             order1 = None
             order2 = None
-
             if move1 is not None:
                 try:
                     order1 = self.create_order(move1)
                 except Exception:
                     order1 = None
-
             if move2 is not None:
                 try:
                     order2 = self.create_order(move2)
                 except Exception:
                     order2 = None
 
-            # Si ambos existen, combinar en DoubleBattleOrder
             if order1 is not None and order2 is not None:
                 return DoubleBattleOrder(first_order=order1, second_order=order2)
 
-            # Si falta uno, usar el padre (que sí sabe manejar dobles)
             return super().choose_move(battle)
 
         except Exception:

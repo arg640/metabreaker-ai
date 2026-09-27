@@ -32,9 +32,8 @@ VALID_ABILITIES = _cargar_habilidades_validas()
 
 
 def species_key(nombre: str) -> str:
-    """Nombre base de la especie (sin sufijos de forma) para Species Clause."""
     base = re.split(
-        r"-(?:Mega|M|F|Hero|Midday|Midnight|Eternal|Hisui|Alola|Galar|Paldea|Dusk|Dawn|Busted|Blade|Crowned|Eternamax|Antique|Icy|Snow|Rainy|Sunny|River|Meadow|Polar|Tundra|Continental|Elegant|Garden|High|Plains|Modern|Monsoon|Ocean|Sandstorm|Savanna|Lemon|Mint|Ruby|Matcha|Salted|Caramel|Rainbow|Star)",
+        r"-(?:Mega|M|F|Hero|Midday|Midnight|Eternal|Hisui|Alola|Galar|Paldea|Dusk|Dawn|Busted|Blade|Crowned|Eternamax|Antique|Icy|Snow|Rainy|Sunny|River|Meadow|Polar|Tundra|Continental|Elegant|Garden|High|Plains|Modern|Monsoon|Ocean|Sandstorm|Savanna|Lemon|Mint|Ruby|Matcha|Salted|Caramel|Rainbow|Star|Wash|Heat|Mow|Frost|Fan)",
         nombre,
     )[0]
     return base.lower()

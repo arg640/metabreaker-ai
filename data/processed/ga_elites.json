@@ -1,97 +1,97 @@
 [
   {
     "genoma": [
-      54,
-      0,
-      24,
-      4,
-      1,
-      5
+      9,
+      51,
+      18,
+      30,
+      58,
+      63
     ],
-    "fitness": 0.8075,
+    "fitness": 0.8225000000000001,
     "nombres": [
-      "Gallade",
-      "Rillaboom",
-      "Arcanine-Hisui",
-      "Kingambit",
-      "Sneasler",
-      "Basculegion"
+      "Garchomp",
+      "Annihilape",
+      "Lucario",
+      "Staraptor",
+      "Toxapex",
+      "Lycanroc"
     ]
   },
   {
     "genoma": [
-      54,
-      0,
-      24,
-      4,
-      1,
-      5
-    ],
-    "fitness": 0.8075,
-    "nombres": [
-      "Gallade",
-      "Rillaboom",
-      "Arcanine-Hisui",
-      "Kingambit",
-      "Sneasler",
-      "Basculegion"
-    ]
-  },
-  {
-    "genoma": [
-      47,
-      32,
-      24,
-      4,
-      108,
-      64
-    ],
-    "fitness": 0.7766666666666666,
-    "nombres": [
-      "Venusaur",
-      "Pawmot",
-      "Arcanine-Hisui",
-      "Kingambit",
-      "Samurott-Hisui",
-      "Typhlosion-Hisui"
-    ]
-  },
-  {
-    "genoma": [
-      112,
+      65,
       14,
-      95,
-      5,
-      89,
-      13
+      99,
+      31,
+      17,
+      104
     ],
-    "fitness": 0.761,
+    "fitness": 0.8100000000000002,
     "nombres": [
-      "Heliolisk",
+      "Hydreigon",
       "Archaludon",
-      "Snorlax",
-      "Basculegion",
-      "Kangaskhan",
-      "Gholdengo"
+      "Slowbro",
+      "Hatterene",
+      "Baxcalibur",
+      "Cinderace"
     ]
   },
   {
     "genoma": [
-      112,
+      65,
       14,
-      95,
-      5,
-      89,
-      13
+      99,
+      31,
+      17,
+      104
     ],
-    "fitness": 0.761,
+    "fitness": 0.8100000000000002,
     "nombres": [
-      "Heliolisk",
+      "Hydreigon",
       "Archaludon",
-      "Snorlax",
-      "Basculegion",
-      "Kangaskhan",
-      "Gholdengo"
+      "Slowbro",
+      "Hatterene",
+      "Baxcalibur",
+      "Cinderace"
+    ]
+  },
+  {
+    "genoma": [
+      9,
+      51,
+      18,
+      24,
+      41,
+      93
+    ],
+    "fitness": 0.8008333333333334,
+    "nombres": [
+      "Garchomp",
+      "Annihilape",
+      "Lucario",
+      "Arcanine-Hisui",
+      "Politoed",
+      "Toxtricity"
+    ]
+  },
+  {
+    "genoma": [
+      100,
+      51,
+      18,
+      30,
+      45,
+      63
+    ],
+    "fitness": 0.7719894660894662,
+    "nombres": [
+      "Sceptile",
+      "Annihilape",
+      "Lucario",
+      "Staraptor",
+      "Delphox",
+      "Lycanroc"
     ]
   }
 ]

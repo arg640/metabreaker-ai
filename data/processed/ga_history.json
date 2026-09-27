@@ -85,5 +85,92 @@
         "fitness": 0.5941666666666667
       }
     ]
+  },
+  {
+    "timestamp": "2026-09-26T22:58:04.765456",
+    "fitness": 0.6758333333333334,
+    "winrate_fijo": 0.8,
+    "config": {
+      "N_ISLAS": 4,
+      "POP_POR_ISLA": 8,
+      "N_GEN": 8,
+      "GENERACIONES_POR_CICLO": 3,
+      "N_MIGRANTES": 2,
+      "CXPB": 0.6,
+      "MUTPB": 0.5,
+      "N_RIVALES_FIJOS": 5,
+      "N_BATALLAS_FIJOS": 1,
+      "N_RIVALES_POBLACION": 5,
+      "N_BATALLAS_COEVOLUCION": 1,
+      "PESO_WINRATE_FIJO": 0.4,
+      "PESO_WINRATE_POBLACION": 0.3,
+      "PESO_ROLES": 0.15,
+      "PESO_COBERTURA": 0.1,
+      "PESO_SINERGIA": 0.05,
+      "LAMBDA_DIVERSIDAD": 0.8,
+      "SEED": 47
+    },
+    "top5_nombres": [
+      {
+        "rank": 1,
+        "equipo": [
+          "Sceptile",
+          "Annihilape",
+          "Lucario",
+          "Staraptor",
+          "Delphox",
+          "Lycanroc"
+        ],
+        "fitness": 0.6758333333333334
+      },
+      {
+        "rank": 2,
+        "equipo": [
+          "Sceptile",
+          "Annihilape",
+          "Lucario",
+          "Staraptor",
+          "Delphox",
+          "Lycanroc"
+        ],
+        "fitness": 0.6741666666666667
+      },
+      {
+        "rank": 3,
+        "equipo": [
+          "Gholdengo",
+          "Annihilape",
+          "Venusaur",
+          "Kingambit",
+          "Bellibolt",
+          "Basculegion"
+        ],
+        "fitness": 0.6625
+      },
+      {
+        "rank": 4,
+        "equipo": [
+          "Hydreigon",
+          "Archaludon",
+          "Slowbro",
+          "Hatterene",
+          "Baxcalibur",
+          "Cinderace"
+        ],
+        "fitness": 0.6533333333333334
+      },
+      {
+        "rank": 5,
+        "equipo": [
+          "Salamence",
+          "Lycanroc",
+          "Sneasler",
+          "Arcanine-Hisui",
+          "Politoed",
+          "Toxtricity"
+        ],
+        "fitness": 0.6491666666666667
+      }
+    ]
   }
 ]
