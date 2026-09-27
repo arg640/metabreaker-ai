@@ -24,3 +24,6 @@ data/raw/
 # Sistema operativo
 .DS_Store
 Thumbs.db
+
+data/ga_logs/*.jsonl
+data/ga_logs/*.json
