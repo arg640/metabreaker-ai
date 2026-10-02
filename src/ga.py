@@ -34,7 +34,7 @@ GENERACIONES_POR_CICLO = 3
 N_MIGRANTES = 2
 
 # Evolución
-N_GEN = 8
+N_GEN = 15
 CXPB = 0.6
 MUTPB = 0.5
 
@@ -59,7 +59,7 @@ UMBRAL_SIMILITUD = 0.2
 
 # Warm start
 USE_WARM_START = True
-WARM_START_N = 0
+WARM_START_N = 3
 
 # Archivos
 CHECKPOINT_FILE = Path("data/processed/checkpoint.json")
@@ -447,7 +447,8 @@ def main():
 
     # ============ RESULTADO FINAL ============
     pop_final = [ind for isla in islas for ind in isla]
-    candidatos = tools.selBest(pop_final, min(10, len(pop_final)))
+    # 20 candidatos × 25 batallas (mismo tiempo que 10×50, mejor Top 5)
+    candidatos = tools.selBest(pop_final, min(20, len(pop_final)))
 
     print("\n" + "=" * 60)
     print("🏆 TOP 5 EQUIPOS ENCONTRADOS")
@@ -457,16 +458,18 @@ def main():
     for ind in candidatos:
         equipo = [POOL[i] for i in ind]
 
-        rivales_eval = random.sample(RIVALES_FIJOS, min(len(RIVALES_FIJOS), 10))
+        # 5 rivales fijos × 3 batallas = 15
+        rivales_eval = random.sample(RIVALES_FIJOS, min(len(RIVALES_FIJOS), 5))
         winrates = []
         for rival in rivales_eval:
             wr = simular_enfrentamiento(equipo, rival, n_batallas=3)
             winrates.append(wr)
         wr_fijo = sum(winrates) / len(winrates) if winrates else 0.0
 
+        # 5 rivales población × 2 batallas = 10
         rivales_pob_eval = random.sample(
             [p for p in pop_final if list(p) != list(ind)],
-            min(10, len(pop_final) - 1)
+            min(5, len(pop_final) - 1)
         )
         winrates_pob = []
         for rival_ind in rivales_pob_eval:
@@ -474,6 +477,7 @@ def main():
             wr = simular_enfrentamiento(equipo, rival_eq, n_batallas=2)
             winrates_pob.append(wr)
         wr_pob = sum(winrates_pob) / len(winrates_pob) if winrates_pob else 0.0
+        # Total: 25 batallas por candidato × 20 candidatos = 500 (mismo costo)
 
         roles_score = score_roles(equipo)
         cob = cobertura_defensiva(equipo)

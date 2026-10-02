@@ -1,3 +1,14 @@
+Golurk @ Golurkite
+Ability: Iron Fist
+Level: 50
+Tera Type: Ground
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
+- Headlong Rush
+- Poltergeist
+- Protect
+- Ice Punch
+
 Rotom-Wash @ Leftovers
 Ability: Levitate
 Level: 50
@@ -9,55 +20,46 @@ Modest Nature
 - Thunderbolt
 - Volt Switch
 
-Persian-Alola @ Sitrus Berry
+Camerupt @ Cameruptite
+Ability: Magma Armor
 Level: 50
-Tera Type: Dark
+Tera Type: Fire
 EVs: 2 HP / 32 SpA / 32 Spe
 Modest Nature
-- Fake Out
-- Foul Play
-- Parting Shot
-- Snarl
-
-Indeedee @ Focus Sash
-Ability: Psychic Surge
-Level: 50
-Tera Type: Psychic
-EVs: 2 HP / 32 SpA / 32 Spe
-Modest Nature
-- Expanding Force
-- Dazzling Gleam
+- Heat Wave
+- Earth Power
 - Protect
-- Trick Room
+- Ancient Power
 
-Palafin
+Scizor @ Scizorite
+Ability: Swarm
 Level: 50
-Tera Type: Water
+Tera Type: Bug
 EVs: 2 HP / 32 Atk / 32 Spe
 Adamant Nature
-- Wave Crash
-- Jet Punch
-- Close Combat
-- Drain Punch
+- Bullet Punch
+- Bug Bite
+- Protect
+- Swords Dance
 
-Garchomp @ Life Orb
-Ability: Rough Skin
+Bellibolt @ Sitrus Berry
+Ability: Electromorphosis
+Level: 50
+Tera Type: Electric
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- Parabolic Charge
+- Thunderbolt
+- Soak
+- Muddy Water
+
+Dragapult @ Life Orb
+Ability: Clear Body
 Level: 50
 Tera Type: Dragon
 EVs: 2 HP / 32 Atk / 32 Spe
 Adamant Nature
-- Protect
-- Earthquake
-- Rock Slide
-- Dragon Claw
-
-Gholdengo
-Ability: Good as Gold
-Level: 50
-Tera Type: Steel
-EVs: 2 HP / 32 SpA / 32 Spe
-Modest Nature
-- Make It Rain
-- Shadow Ball
-- Protect
-- Nasty Plot
+- Dragon Darts
+- Will-O-Wisp
+- Reflect
+- Phantom Force

@@ -172,5 +172,179 @@
         "fitness": 0.6491666666666667
       }
     ]
+  },
+  {
+    "timestamp": "2026-09-28T19:08:32.051048",
+    "fitness": 0.7541666666666665,
+    "winrate_fijo": 0.7333333333333333,
+    "config": {
+      "N_ISLAS": 4,
+      "POP_POR_ISLA": 8,
+      "N_GEN": 10,
+      "GENERACIONES_POR_CICLO": 3,
+      "N_MIGRANTES": 2,
+      "CXPB": 0.6,
+      "MUTPB": 0.5,
+      "N_RIVALES_FIJOS": 5,
+      "N_BATALLAS_FIJOS": 1,
+      "N_RIVALES_POBLACION": 5,
+      "N_BATALLAS_COEVOLUCION": 1,
+      "PESO_WINRATE_FIJO": 0.4,
+      "PESO_WINRATE_POBLACION": 0.3,
+      "PESO_ROLES": 0.15,
+      "PESO_COBERTURA": 0.1,
+      "PESO_SINERGIA": 0.05,
+      "LAMBDA_DIVERSIDAD": 0.8,
+      "SEED": 47
+    },
+    "top5_nombres": [
+      {
+        "rank": 1,
+        "equipo": [
+          "Sylveon",
+          "Sneasler",
+          "Chandelure",
+          "Mimikyu-Busted",
+          "Bellibolt",
+          "Dragapult"
+        ],
+        "fitness": 0.7541666666666665
+      },
+      {
+        "rank": 2,
+        "equipo": [
+          "Charizard",
+          "Rotom-Wash",
+          "Camerupt",
+          "Swampert",
+          "Aegislash",
+          "Gyarados"
+        ],
+        "fitness": 0.7026666666666667
+      },
+      {
+        "rank": 3,
+        "equipo": [
+          "Sylveon",
+          "Swampert",
+          "Chandelure",
+          "Corviknight",
+          "Golurk",
+          "Pyroar"
+        ],
+        "fitness": 0.6916666666666667
+      },
+      {
+        "rank": 4,
+        "equipo": [
+          "Archaludon",
+          "Kommo-o",
+          "Venusaur",
+          "Politoed",
+          "Bellibolt",
+          "Gholdengo"
+        ],
+        "fitness": 0.6783333333333333
+      },
+      {
+        "rank": 5,
+        "equipo": [
+          "Golurk",
+          "Rotom-Wash",
+          "Camerupt",
+          "Scizor",
+          "Bellibolt",
+          "Dragapult"
+        ],
+        "fitness": 0.6749999999999999
+      }
+    ]
+  },
+  {
+    "timestamp": "2026-10-02T12:28:15.633936",
+    "fitness": 0.8125,
+    "winrate_fijo": 0.8666666666666666,
+    "config": {
+      "N_ISLAS": 4,
+      "POP_POR_ISLA": 8,
+      "N_GEN": 15,
+      "GENERACIONES_POR_CICLO": 3,
+      "N_MIGRANTES": 2,
+      "CXPB": 0.6,
+      "MUTPB": 0.5,
+      "N_RIVALES_FIJOS": 5,
+      "N_BATALLAS_FIJOS": 1,
+      "N_RIVALES_POBLACION": 5,
+      "N_BATALLAS_COEVOLUCION": 1,
+      "PESO_WINRATE_FIJO": 0.4,
+      "PESO_WINRATE_POBLACION": 0.3,
+      "PESO_ROLES": 0.15,
+      "PESO_COBERTURA": 0.1,
+      "PESO_SINERGIA": 0.05,
+      "LAMBDA_DIVERSIDAD": 0.8,
+      "SEED": 47
+    },
+    "top5_nombres": [
+      {
+        "rank": 1,
+        "equipo": [
+          "Metagross",
+          "Blastoise",
+          "Pyroar",
+          "Golurk",
+          "Ceruledge",
+          "Aerodactyl"
+        ],
+        "fitness": 0.8125
+      },
+      {
+        "rank": 2,
+        "equipo": [
+          "Metagross",
+          "Altaria",
+          "Palafin",
+          "Annihilape",
+          "Pelipper",
+          "Typhlosion-Hisui"
+        ],
+        "fitness": 0.8041666666666668
+      },
+      {
+        "rank": 3,
+        "equipo": [
+          "Sirfetch’d",
+          "Abomasnow",
+          "Dragalge",
+          "Annihilape",
+          "Pelipper",
+          "Typhlosion-Hisui"
+        ],
+        "fitness": 0.7441666666666668
+      },
+      {
+        "rank": 4,
+        "equipo": [
+          "Toxtricity",
+          "Squawkabilly",
+          "Krookodile",
+          "Annihilape",
+          "Pelipper",
+          "Typhlosion-Hisui"
+        ],
+        "fitness": 0.7241666666666667
+      },
+      {
+        "rank": 5,
+        "equipo": [
+          "Metagross",
+          "Altaria",
+          "Palafin",
+          "Annihilape",
+          "Pelipper",
+          "Typhlosion-Hisui"
+        ],
+        "fitness": 0.7208333333333333
+      }
+    ]
   }
 ]

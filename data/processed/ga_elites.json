@@ -1,97 +1,192 @@
 [
   {
     "genoma": [
-      9,
+      43,
+      114,
+      109,
       51,
-      18,
-      30,
-      58,
-      63
+      10,
+      64
     ],
-    "fitness": 0.8225000000000001,
+    "fitness": 0.8608333333333335,
     "nombres": [
-      "Garchomp",
+      "Metagross",
+      "Altaria",
+      "Palafin",
       "Annihilape",
-      "Lucario",
-      "Staraptor",
-      "Toxapex",
-      "Lycanroc"
+      "Pelipper",
+      "Typhlosion-Hisui"
     ]
   },
   {
     "genoma": [
-      65,
+      43,
+      48,
+      119,
+      81,
+      61,
+      34
+    ],
+    "fitness": 0.8358333333333334,
+    "nombres": [
+      "Metagross",
+      "Blastoise",
+      "Pyroar",
+      "Golurk",
+      "Ceruledge",
+      "Aerodactyl"
+    ]
+  },
+  {
+    "genoma": [
+      21,
+      44,
+      98,
+      53,
+      81,
+      119
+    ],
+    "fitness": 0.8350000000000002,
+    "nombres": [
+      "Sylveon",
+      "Swampert",
+      "Chandelure",
+      "Corviknight",
+      "Golurk",
+      "Pyroar"
+    ]
+  },
+  {
+    "genoma": [
+      102,
+      54,
+      96,
+      44,
+      78,
+      83
+    ],
+    "fitness": 0.8175,
+    "nombres": [
+      "Perrserker",
+      "Gallade",
+      "Drampa",
+      "Swampert",
+      "Inteleon",
+      "Gyarados"
+    ]
+  },
+  {
+    "genoma": [
+      102,
+      54,
+      96,
+      44,
+      78,
+      83
+    ],
+    "fitness": 0.8175,
+    "nombres": [
+      "Perrserker",
+      "Gallade",
+      "Drampa",
+      "Swampert",
+      "Inteleon",
+      "Gyarados"
+    ]
+  },
+  {
+    "genoma": [
       14,
-      99,
-      31,
-      17,
-      104
+      69,
+      119,
+      73,
+      74,
+      13
     ],
-    "fitness": 0.8100000000000002,
+    "fitness": 0.7966666666666667,
     "nombres": [
-      "Hydreigon",
       "Archaludon",
-      "Slowbro",
-      "Hatterene",
-      "Baxcalibur",
-      "Cinderace"
+      "Kommo-o",
+      "Pyroar",
+      "Scizor",
+      "Bellibolt",
+      "Gholdengo"
     ]
   },
   {
     "genoma": [
-      65,
       14,
-      99,
-      31,
-      17,
-      104
+      69,
+      119,
+      73,
+      74,
+      13
     ],
-    "fitness": 0.8100000000000002,
+    "fitness": 0.7966666666666667,
     "nombres": [
-      "Hydreigon",
       "Archaludon",
-      "Slowbro",
-      "Hatterene",
-      "Baxcalibur",
-      "Cinderace"
+      "Kommo-o",
+      "Pyroar",
+      "Scizor",
+      "Bellibolt",
+      "Gholdengo"
     ]
   },
   {
     "genoma": [
-      9,
+      43,
+      114,
+      109,
       51,
-      18,
-      24,
-      41,
-      93
+      10,
+      64
     ],
-    "fitness": 0.8008333333333334,
+    "fitness": 0.7941770562770564,
     "nombres": [
-      "Garchomp",
+      "Metagross",
+      "Altaria",
+      "Palafin",
       "Annihilape",
-      "Lucario",
-      "Arcanine-Hisui",
-      "Politoed",
-      "Toxtricity"
+      "Pelipper",
+      "Typhlosion-Hisui"
     ]
   },
   {
     "genoma": [
-      100,
-      51,
-      18,
-      30,
-      45,
-      63
+      34,
+      124,
+      112,
+      52,
+      74,
+      84
     ],
-    "fitness": 0.7719894660894662,
+    "fitness": 0.7641666666666668,
     "nombres": [
-      "Sceptile",
-      "Annihilape",
-      "Lucario",
-      "Staraptor",
-      "Delphox",
-      "Lycanroc"
+      "Aerodactyl",
+      "Mudsdale",
+      "Vivillon",
+      "Alakazam",
+      "Bellibolt",
+      "Vanilluxe"
+    ]
+  },
+  {
+    "genoma": [
+      34,
+      124,
+      112,
+      52,
+      74,
+      84
+    ],
+    "fitness": 0.7241666666666667,
+    "nombres": [
+      "Aerodactyl",
+      "Mudsdale",
+      "Vivillon",
+      "Alakazam",
+      "Bellibolt",
+      "Vanilluxe"
     ]
   }
 ]

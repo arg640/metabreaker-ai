@@ -11,9 +11,8 @@ LOG_FILE = Path("data/ga_logs/winner_logs.jsonl")
 
 
 async def main():
-    if LOG_FILE.exists():
-        LOG_FILE.unlink()
-        print("Logs previos eliminados")
+    # NO borrar los logs previos
+    print(f"Logs existentes: {LOG_FILE.stat().st_size if LOG_FILE.exists() else 0} bytes")
 
     with open("data/processed/sample_teams.json", encoding="utf-8") as f:
         rivales = json.load(f)
@@ -40,11 +39,7 @@ async def main():
     print(f"\nP1 ganó: {p1.n_won_battles} | P2 ganó: {p2.n_won_battles}")
 
     if LOG_FILE.exists():
-        with LOG_FILE.open(encoding="utf-8") as f:
-            n = sum(1 for _ in f)
-        print(f"✅ Logs capturados: {n} registros")
-    else:
-        print("❌ No se creó archivo de logs")
+        print(f"Logs acumulados: {LOG_FILE.stat().st_size / 1e6:.1f} MB")
 
 
 if __name__ == "__main__":

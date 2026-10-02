@@ -1,65 +1,65 @@
-Pincurchin @ Electric Seed
-Ability: Electric Surge
+Archaludon @ Leftovers
+Ability: Stamina
 Level: 50
-Tera Type: Electric
-EVs: 2 HP / 32 Atk / 32 Spe
-Adamant Nature
-- Rising Voltage
-- Thunder Wave
-- Electroweb
-- Sucker Punch
-
-Tinkaton @ Air Balloon
-Ability: Mold Breaker
-Level: 50
-Tera Type: Fairy
-EVs: 2 HP / 32 Atk / 32 Spe
-Adamant Nature
-- Fake Out
-- Gigaton Hammer
-- Protect
-- Play Rough
-
-Indeedee @ Focus Sash
-Ability: Psychic Surge
-Level: 50
-Tera Type: Psychic
+Tera Type: Steel
 EVs: 2 HP / 32 SpA / 32 Spe
 Modest Nature
-- Expanding Force
-- Dazzling Gleam
+- Electro Shot
 - Protect
-- Trick Room
+- Dragon Pulse
+- Flash Cannon
 
-Meowscarada @ Life Orb
-Ability: Protean
+Kommo-o
+Ability: Soundproof
+Level: 50
+Tera Type: Dragon
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
+- Clanging Scales
+- Protect
+- Clangorous Soul
+- Aura Sphere
+
+Venusaur @ Venusaurite
+Ability: Overgrow
 Level: 50
 Tera Type: Grass
-EVs: 2 HP / 32 Atk / 32 Spe
-Adamant Nature
-- Triple Axel
-- Knock Off
-- Flower Trick
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- Sludge Bomb
+- Sleep Powder
 - Protect
+- Earth Power
 
-Araquanid @ Leftovers
-Ability: Water Bubble
+Politoed @ Sitrus Berry
+Ability: Drizzle
 Level: 50
 Tera Type: Water
-EVs: 2 HP / 32 Atk / 32 Spe
-Adamant Nature
-- Liquidation
-- Wide Guard
-- Leech Life
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- Weather Ball
 - Protect
+- Muddy Water
+- Perish Song
 
-Annihilape @ Sitrus Berry
-Ability: Defiant
+Bellibolt
+Ability: Electromorphosis
 Level: 50
-Tera Type: Fighting
-EVs: 2 HP / 32 Atk / 32 Spe
-Adamant Nature
-- Rage Fist
-- Drain Punch
+Tera Type: Electric
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- Parabolic Charge
+- Thunderbolt
+- Soak
+- Muddy Water
+
+Gholdengo @ Life Orb
+Ability: Good as Gold
+Level: 50
+Tera Type: Steel
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- Make It Rain
+- Shadow Ball
 - Protect
-- Bulk Up
+- Nasty Plot

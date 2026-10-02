@@ -1,64 +1,65 @@
-Hydreigon @ Life Orb
-Ability: Levitate
+Sylveon @ Life Orb
+Ability: Cute Charm
 Level: 50
-Tera Type: Dark
+Tera Type: Fairy
 EVs: 2 HP / 32 SpA / 32 Spe
 Modest Nature
-- Dark Pulse
-- Draco Meteor
-- Earth Power
-- Snarl
-
-Kleavor @ Focus Sash
-Ability: Swarm
-Level: 50
-Tera Type: Bug
-EVs: 2 HP / 32 Atk / 32 Spe
-Adamant Nature
-- Stone Axe
-- X-Scissor
+- Hyper Voice
+- Hyper Beam
+- Detect
 - Protect
-- Tailwind
 
-Typhlosion-Hisui @ Choice Scarf
-Ability: Frisk
-Level: 50
-Tera Type: Fire
-EVs: 2 HP / 32 SpA / 32 Spe
-Modest Nature
-- Eruption
-- Shadow Ball
-- Heat Wave
-- Lava Plume
-
-Palafin @ Leftovers
+Swampert @ Swampertite
+Ability: Torrent
 Level: 50
 Tera Type: Water
 EVs: 2 HP / 32 Atk / 32 Spe
 Adamant Nature
 - Wave Crash
-- Jet Punch
-- Close Combat
-- Drain Punch
-
-Garchomp
-Ability: Rough Skin
-Level: 50
-Tera Type: Dragon
-EVs: 2 HP / 32 Atk / 32 Spe
-Adamant Nature
 - Protect
 - Earthquake
-- Rock Slide
-- Dragon Claw
+- Ice Punch
 
-Charizard @ Charizardite Y
-Ability: Blaze
+Chandelure @ Chandelurite
+Ability: Flash Fire
+Level: 50
+Tera Type: Ghost
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- Heat Wave
+- Protect
+- Shadow Ball
+- Trick Room
+
+Corviknight @ Leftovers
+Ability: Mirror Armor
+Level: 50
+Tera Type: Flying
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
+- Brave Bird
+- Tailwind
+- Body Press
+- Roost
+
+Golurk @ Golurkite
+Ability: Iron Fist
+Level: 50
+Tera Type: Ground
+EVs: 2 HP / 32 Atk / 32 Spe
+Adamant Nature
+- Headlong Rush
+- Poltergeist
+- Protect
+- Ice Punch
+
+Pyroar @ Pyroarite
+Ability: Unnerve
 Level: 50
 Tera Type: Fire
 EVs: 2 HP / 32 SpA / 32 Spe
 Modest Nature
 - Heat Wave
 - Protect
-- Weather Ball
-- Ancient Power
+- Overheat
+- Solar Beam

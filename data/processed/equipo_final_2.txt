@@ -1,65 +1,65 @@
-Malamar @ Malamarite
-Ability: Contrary
+Charizard @ Charizardite Y
+Ability: Blaze
 Level: 50
-Tera Type: Dark
-EVs: 2 HP / 32 Atk / 32 Spe
-Adamant Nature
-- Superpower
-- Knock Off
-- Protect
-- Skill Swap
-
-Tinkaton @ Air Balloon
-Ability: Mold Breaker
-Level: 50
-Tera Type: Fairy
-EVs: 2 HP / 32 Atk / 32 Spe
-Adamant Nature
-- Fake Out
-- Gigaton Hammer
-- Protect
-- Play Rough
-
-Indeedee @ Focus Sash
-Ability: Psychic Surge
-Level: 50
-Tera Type: Psychic
+Tera Type: Fire
 EVs: 2 HP / 32 SpA / 32 Spe
 Modest Nature
-- Expanding Force
-- Dazzling Gleam
+- Heat Wave
 - Protect
-- Trick Room
+- Weather Ball
+- Ancient Power
 
-Meowscarada @ Life Orb
-Ability: Protean
+Rotom-Wash @ Leftovers
+Ability: Levitate
 Level: 50
-Tera Type: Grass
-EVs: 2 HP / 32 Atk / 32 Spe
-Adamant Nature
-- Triple Axel
-- Knock Off
-- Flower Trick
-- Protect
+Tera Type: Electric
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- Hydro Pump
+- Will-O-Wisp
+- Thunderbolt
+- Volt Switch
 
-Araquanid @ Leftovers
-Ability: Water Bubble
+Camerupt @ Cameruptite
+Ability: Magma Armor
+Level: 50
+Tera Type: Fire
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- Heat Wave
+- Earth Power
+- Protect
+- Ancient Power
+
+Swampert @ Swampertite
+Ability: Torrent
 Level: 50
 Tera Type: Water
 EVs: 2 HP / 32 Atk / 32 Spe
 Adamant Nature
-- Liquidation
-- Wide Guard
-- Leech Life
+- Wave Crash
 - Protect
+- Earthquake
+- Ice Punch
 
-Annihilape @ Sitrus Berry
-Ability: Defiant
+Aegislash
+Ability: Stance Change
 Level: 50
-Tera Type: Fighting
+Tera Type: Steel
+EVs: 2 HP / 32 SpA / 32 Spe
+Modest Nature
+- King's Shield
+- Iron Head
+- Poltergeist
+- Wide Guard
+
+Gyarados @ Gyaradosite
+Ability: Intimidate
+Level: 50
+Tera Type: Water
 EVs: 2 HP / 32 Atk / 32 Spe
 Adamant Nature
-- Rage Fist
-- Drain Punch
+- Waterfall
 - Protect
-- Bulk Up
+- Dragon Dance
+- Crunch

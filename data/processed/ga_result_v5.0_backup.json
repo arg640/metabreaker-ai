@@ -1,0 +1,1345 @@
+{
+  "timestamp": "2026-09-26T22:58:04.765456",
+  "equipo": [
+    {
+      "pokemon": "Sceptile",
+      "types": [
+        "grass"
+      ],
+      "ability": "Lightning Rod",
+      "item": "Sceptilite",
+      "moves": [
+        {
+          "name": "Dragon Pulse",
+          "type": "dragon"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Earth Power",
+          "type": "ground"
+        },
+        {
+          "name": "Energy Ball",
+          "type": "grass"
+        }
+      ],
+      "usage_pct": 1.0,
+      "games": 91,
+      "species_key": "sceptile"
+    },
+    {
+      "pokemon": "Annihilape",
+      "types": [
+        "fighting",
+        "ghost"
+      ],
+      "ability": "Defiant",
+      "item": "Sitrus Berry",
+      "moves": [
+        {
+          "name": "Rage Fist",
+          "type": "ghost"
+        },
+        {
+          "name": "Drain Punch",
+          "type": "fighting"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Bulk Up",
+          "type": "fighting"
+        }
+      ],
+      "usage_pct": 2.0,
+      "games": 350,
+      "species_key": "annihilape"
+    },
+    {
+      "pokemon": "Lucario",
+      "types": [
+        "fighting",
+        "steel"
+      ],
+      "ability": "Inner Focus",
+      "item": "Lucarionite Z",
+      "moves": [
+        {
+          "name": "Aura Sphere",
+          "type": "fighting"
+        },
+        {
+          "name": "Flash Cannon",
+          "type": "steel"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Calm Mind",
+          "type": "psychic"
+        }
+      ],
+      "usage_pct": 8.0,
+      "games": 1317,
+      "species_key": "lucario"
+    },
+    {
+      "pokemon": "Staraptor",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "ability": "Intimidate",
+      "item": "Staraptite",
+      "moves": [
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Brave Bird",
+          "type": "flying"
+        },
+        {
+          "name": "Final Gambit",
+          "type": "fighting"
+        }
+      ],
+      "usage_pct": 5.0,
+      "games": 845,
+      "species_key": "staraptor"
+    },
+    {
+      "pokemon": "Delphox",
+      "types": [
+        "fire",
+        "psychic"
+      ],
+      "ability": "Hospitality",
+      "item": "Delphoxite",
+      "moves": [
+        {
+          "name": "Heat Wave",
+          "type": "fire"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Expanding Force",
+          "type": "psychic"
+        },
+        {
+          "name": "Nasty Plot",
+          "type": "dark"
+        }
+      ],
+      "usage_pct": 3.0,
+      "games": 484,
+      "species_key": "delphox"
+    },
+    {
+      "pokemon": "Lycanroc",
+      "types": [
+        "rock"
+      ],
+      "ability": null,
+      "item": "Focus Sash",
+      "moves": [
+        {
+          "name": "Rock Slide",
+          "type": "rock"
+        },
+        {
+          "name": "Protect",
+          "type": "normal"
+        },
+        {
+          "name": "Accelerock",
+          "type": "rock"
+        },
+        {
+          "name": "Close Combat",
+          "type": "fighting"
+        }
+      ],
+      "usage_pct": 2.0,
+      "games": 240,
+      "species_key": "lycanroc"
+    }
+  ],
+  "fitness": 0.6758333333333334,
+  "top5": [
+    {
+      "equipo": [
+        {
+          "pokemon": "Sceptile",
+          "types": [
+            "grass"
+          ],
+          "ability": "Lightning Rod",
+          "item": "Sceptilite",
+          "moves": [
+            {
+              "name": "Dragon Pulse",
+              "type": "dragon"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Earth Power",
+              "type": "ground"
+            },
+            {
+              "name": "Energy Ball",
+              "type": "grass"
+            }
+          ],
+          "usage_pct": 1.0,
+          "games": 91,
+          "species_key": "sceptile"
+        },
+        {
+          "pokemon": "Annihilape",
+          "types": [
+            "fighting",
+            "ghost"
+          ],
+          "ability": "Defiant",
+          "item": "Sitrus Berry",
+          "moves": [
+            {
+              "name": "Rage Fist",
+              "type": "ghost"
+            },
+            {
+              "name": "Drain Punch",
+              "type": "fighting"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Bulk Up",
+              "type": "fighting"
+            }
+          ],
+          "usage_pct": 2.0,
+          "games": 350,
+          "species_key": "annihilape"
+        },
+        {
+          "pokemon": "Lucario",
+          "types": [
+            "fighting",
+            "steel"
+          ],
+          "ability": "Inner Focus",
+          "item": "Lucarionite Z",
+          "moves": [
+            {
+              "name": "Aura Sphere",
+              "type": "fighting"
+            },
+            {
+              "name": "Flash Cannon",
+              "type": "steel"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Calm Mind",
+              "type": "psychic"
+            }
+          ],
+          "usage_pct": 8.0,
+          "games": 1317,
+          "species_key": "lucario"
+        },
+        {
+          "pokemon": "Staraptor",
+          "types": [
+            "normal",
+            "flying"
+          ],
+          "ability": "Intimidate",
+          "item": "Staraptite",
+          "moves": [
+            {
+              "name": "Close Combat",
+              "type": "fighting"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Brave Bird",
+              "type": "flying"
+            },
+            {
+              "name": "Final Gambit",
+              "type": "fighting"
+            }
+          ],
+          "usage_pct": 5.0,
+          "games": 845,
+          "species_key": "staraptor"
+        },
+        {
+          "pokemon": "Delphox",
+          "types": [
+            "fire",
+            "psychic"
+          ],
+          "ability": "Hospitality",
+          "item": "Delphoxite",
+          "moves": [
+            {
+              "name": "Heat Wave",
+              "type": "fire"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Expanding Force",
+              "type": "psychic"
+            },
+            {
+              "name": "Nasty Plot",
+              "type": "dark"
+            }
+          ],
+          "usage_pct": 3.0,
+          "games": 484,
+          "species_key": "delphox"
+        },
+        {
+          "pokemon": "Lycanroc",
+          "types": [
+            "rock"
+          ],
+          "ability": null,
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Rock Slide",
+              "type": "rock"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Accelerock",
+              "type": "rock"
+            },
+            {
+              "name": "Close Combat",
+              "type": "fighting"
+            }
+          ],
+          "usage_pct": 2.0,
+          "games": 240,
+          "species_key": "lycanroc"
+        }
+      ],
+      "fitness": 0.6758333333333334,
+      "fitness_evolucion": 0.7719894660894662,
+      "desglose": {
+        "winrate_fijo": 0.8,
+        "winrate_poblacion": 0.65,
+        "score_roles": 0.45000000000000007,
+        "cobertura_defensiva": 0.6,
+        "sinergia_ofensiva": 0.6666666666666666
+      },
+      "rank": 1
+    },
+    {
+      "equipo": [
+        {
+          "pokemon": "Sceptile",
+          "types": [
+            "grass"
+          ],
+          "ability": "Lightning Rod",
+          "item": "Sceptilite",
+          "moves": [
+            {
+              "name": "Dragon Pulse",
+              "type": "dragon"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Earth Power",
+              "type": "ground"
+            },
+            {
+              "name": "Energy Ball",
+              "type": "grass"
+            }
+          ],
+          "usage_pct": 1.0,
+          "games": 91,
+          "species_key": "sceptile"
+        },
+        {
+          "pokemon": "Annihilape",
+          "types": [
+            "fighting",
+            "ghost"
+          ],
+          "ability": "Defiant",
+          "item": "Sitrus Berry",
+          "moves": [
+            {
+              "name": "Rage Fist",
+              "type": "ghost"
+            },
+            {
+              "name": "Drain Punch",
+              "type": "fighting"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Bulk Up",
+              "type": "fighting"
+            }
+          ],
+          "usage_pct": 2.0,
+          "games": 350,
+          "species_key": "annihilape"
+        },
+        {
+          "pokemon": "Lucario",
+          "types": [
+            "fighting",
+            "steel"
+          ],
+          "ability": "Inner Focus",
+          "item": "Lucarionite Z",
+          "moves": [
+            {
+              "name": "Aura Sphere",
+              "type": "fighting"
+            },
+            {
+              "name": "Flash Cannon",
+              "type": "steel"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Calm Mind",
+              "type": "psychic"
+            }
+          ],
+          "usage_pct": 8.0,
+          "games": 1317,
+          "species_key": "lucario"
+        },
+        {
+          "pokemon": "Staraptor",
+          "types": [
+            "normal",
+            "flying"
+          ],
+          "ability": "Intimidate",
+          "item": "Staraptite",
+          "moves": [
+            {
+              "name": "Close Combat",
+              "type": "fighting"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Brave Bird",
+              "type": "flying"
+            },
+            {
+              "name": "Final Gambit",
+              "type": "fighting"
+            }
+          ],
+          "usage_pct": 5.0,
+          "games": 845,
+          "species_key": "staraptor"
+        },
+        {
+          "pokemon": "Delphox",
+          "types": [
+            "fire",
+            "psychic"
+          ],
+          "ability": "Hospitality",
+          "item": "Delphoxite",
+          "moves": [
+            {
+              "name": "Heat Wave",
+              "type": "fire"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Expanding Force",
+              "type": "psychic"
+            },
+            {
+              "name": "Nasty Plot",
+              "type": "dark"
+            }
+          ],
+          "usage_pct": 3.0,
+          "games": 484,
+          "species_key": "delphox"
+        },
+        {
+          "pokemon": "Lycanroc",
+          "types": [
+            "rock"
+          ],
+          "ability": null,
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Rock Slide",
+              "type": "rock"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Accelerock",
+              "type": "rock"
+            },
+            {
+              "name": "Close Combat",
+              "type": "fighting"
+            }
+          ],
+          "usage_pct": 2.0,
+          "games": 240,
+          "species_key": "lycanroc"
+        }
+      ],
+      "fitness": 0.6741666666666667,
+      "fitness_evolucion": 0.7719894660894662,
+      "desglose": {
+        "winrate_fijo": 0.8333333333333334,
+        "winrate_poblacion": 0.6,
+        "score_roles": 0.45000000000000007,
+        "cobertura_defensiva": 0.6,
+        "sinergia_ofensiva": 0.6666666666666666
+      },
+      "rank": 2
+    },
+    {
+      "equipo": [
+        {
+          "pokemon": "Gholdengo",
+          "types": [
+            "steel",
+            "ghost"
+          ],
+          "ability": "Good as Gold",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Make It Rain",
+              "type": "steel"
+            },
+            {
+              "name": "Shadow Ball",
+              "type": "ghost"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Nasty Plot",
+              "type": "dark"
+            }
+          ],
+          "usage_pct": 10.0,
+          "games": 1639,
+          "species_key": "gholdengo"
+        },
+        {
+          "pokemon": "Annihilape",
+          "types": [
+            "fighting",
+            "ghost"
+          ],
+          "ability": "Defiant",
+          "item": "Sitrus Berry",
+          "moves": [
+            {
+              "name": "Rage Fist",
+              "type": "ghost"
+            },
+            {
+              "name": "Drain Punch",
+              "type": "fighting"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Bulk Up",
+              "type": "fighting"
+            }
+          ],
+          "usage_pct": 2.0,
+          "games": 350,
+          "species_key": "annihilape"
+        },
+        {
+          "pokemon": "Venusaur",
+          "types": [
+            "grass",
+            "poison"
+          ],
+          "ability": "Hospitality",
+          "item": "Venusaurite",
+          "moves": [
+            {
+              "name": "Sludge Bomb",
+              "type": "poison"
+            },
+            {
+              "name": "Sleep Powder",
+              "type": "grass"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Earth Power",
+              "type": "ground"
+            }
+          ],
+          "usage_pct": 3.0,
+          "games": 443,
+          "species_key": "venusaur"
+        },
+        {
+          "pokemon": "Kingambit",
+          "types": [
+            "dark",
+            "steel"
+          ],
+          "ability": "Defiant",
+          "item": "Chople Berry",
+          "moves": [
+            {
+              "name": "Kowtow Cleave",
+              "type": "dark"
+            },
+            {
+              "name": "Sucker Punch",
+              "type": "dark"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Iron Head",
+              "type": "steel"
+            }
+          ],
+          "usage_pct": 25.0,
+          "games": 3939,
+          "species_key": "kingambit"
+        },
+        {
+          "pokemon": "Bellibolt",
+          "types": [
+            "electric"
+          ],
+          "ability": "Trace",
+          "item": "Sitrus Berry",
+          "moves": [
+            {
+              "name": "Parabolic Charge",
+              "type": "electric"
+            },
+            {
+              "name": "Thunderbolt",
+              "type": "electric"
+            },
+            {
+              "name": "Soak",
+              "type": "water"
+            },
+            {
+              "name": "Muddy Water",
+              "type": "water"
+            }
+          ],
+          "usage_pct": 1.0,
+          "games": 169,
+          "species_key": "bellibolt"
+        },
+        {
+          "pokemon": "Basculegion",
+          "types": [
+            "water",
+            "ghost"
+          ],
+          "ability": "Trace",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Wave Crash",
+              "type": "water"
+            },
+            {
+              "name": "Last Respects",
+              "type": "ghost"
+            },
+            {
+              "name": "Aqua Jet",
+              "type": "water"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "usage_pct": 24.0,
+          "games": 3754,
+          "species_key": "basculegion"
+        }
+      ],
+      "fitness": 0.6625,
+      "fitness_evolucion": 0.7341666666666667,
+      "desglose": {
+        "winrate_fijo": 0.7333333333333333,
+        "winrate_poblacion": 0.65,
+        "score_roles": 0.65,
+        "cobertura_defensiva": 0.6,
+        "sinergia_ofensiva": 0.3333333333333333
+      },
+      "rank": 3
+    },
+    {
+      "equipo": [
+        {
+          "pokemon": "Hydreigon",
+          "types": [
+            "dark",
+            "dragon"
+          ],
+          "ability": "Levitate",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Dark Pulse",
+              "type": "dark"
+            },
+            {
+              "name": "Draco Meteor",
+              "type": "dragon"
+            },
+            {
+              "name": "Earth Power",
+              "type": "ground"
+            },
+            {
+              "name": "Snarl",
+              "type": "dark"
+            }
+          ],
+          "usage_pct": 1.0,
+          "games": 220,
+          "species_key": "hydreigon"
+        },
+        {
+          "pokemon": "Archaludon",
+          "types": [
+            "steel",
+            "dragon"
+          ],
+          "ability": "Stamina",
+          "item": "Leftovers",
+          "moves": [
+            {
+              "name": "Electro Shot",
+              "type": "electric"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Dragon Pulse",
+              "type": "dragon"
+            },
+            {
+              "name": "Flash Cannon",
+              "type": "steel"
+            }
+          ],
+          "usage_pct": 10.0,
+          "games": 1598,
+          "species_key": "archaludon"
+        },
+        {
+          "pokemon": "Slowbro",
+          "types": [
+            "water",
+            "psychic"
+          ],
+          "ability": "Oblivious",
+          "item": "Slowbronite",
+          "moves": [
+            {
+              "name": "Expanding Force",
+              "type": "psychic"
+            },
+            {
+              "name": "Trick Room",
+              "type": "psychic"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Iron Defense",
+              "type": "steel"
+            }
+          ],
+          "usage_pct": 1.0,
+          "games": 92,
+          "species_key": "slowbro"
+        },
+        {
+          "pokemon": "Hatterene",
+          "types": [
+            "psychic",
+            "fairy"
+          ],
+          "ability": "Trace",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Expanding Force",
+              "type": "psychic"
+            },
+            {
+              "name": "Trick Room",
+              "type": "psychic"
+            },
+            {
+              "name": "Dazzling Gleam",
+              "type": "fairy"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "usage_pct": 5.0,
+          "games": 828,
+          "species_key": "hatterene"
+        },
+        {
+          "pokemon": "Baxcalibur",
+          "types": [
+            "dragon",
+            "ice"
+          ],
+          "ability": "Thermal Exchange",
+          "item": "Baxcalibrite",
+          "moves": [
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Glaive Rush",
+              "type": "dragon"
+            },
+            {
+              "name": "Ice Shard",
+              "type": "ice"
+            },
+            {
+              "name": "Icicle Crash",
+              "type": "ice"
+            }
+          ],
+          "usage_pct": 8.0,
+          "games": 1329,
+          "species_key": "baxcalibur"
+        },
+        {
+          "pokemon": "Cinderace",
+          "types": [
+            "fire"
+          ],
+          "ability": "Libero",
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Pyro Ball",
+              "type": "fire"
+            },
+            {
+              "name": "U-turn",
+              "type": "bug"
+            },
+            {
+              "name": "High Jump Kick",
+              "type": "fighting"
+            },
+            {
+              "name": "Coaching",
+              "type": "fighting"
+            }
+          ],
+          "usage_pct": 1.0,
+          "games": 87,
+          "species_key": "cinderace"
+        }
+      ],
+      "fitness": 0.6533333333333334,
+      "fitness_evolucion": 0.8100000000000002,
+      "desglose": {
+        "winrate_fijo": 0.6333333333333333,
+        "winrate_poblacion": 0.7,
+        "score_roles": 0.7,
+        "cobertura_defensiva": 0.6,
+        "sinergia_ofensiva": 0.5
+      },
+      "rank": 4
+    },
+    {
+      "equipo": [
+        {
+          "pokemon": "Salamence",
+          "types": [
+            "dragon",
+            "flying"
+          ],
+          "ability": "Intimidate",
+          "item": "Salamencite",
+          "moves": [
+            {
+              "name": "Hyper Voice",
+              "type": "normal"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Double-Edge",
+              "type": "normal"
+            },
+            {
+              "name": "Tailwind",
+              "type": "flying"
+            }
+          ],
+          "usage_pct": 26.0,
+          "games": 4097,
+          "species_key": "salamence"
+        },
+        {
+          "pokemon": "Lycanroc",
+          "types": [
+            "rock"
+          ],
+          "ability": null,
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Rock Slide",
+              "type": "rock"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Accelerock",
+              "type": "rock"
+            },
+            {
+              "name": "Close Combat",
+              "type": "fighting"
+            }
+          ],
+          "usage_pct": 2.0,
+          "games": 240,
+          "species_key": "lycanroc"
+        },
+        {
+          "pokemon": "Sneasler",
+          "types": [
+            "fighting",
+            "poison"
+          ],
+          "ability": "Poison Touch",
+          "item": "Grassy Seed",
+          "moves": [
+            {
+              "name": "Close Combat",
+              "type": "fighting"
+            },
+            {
+              "name": "Dire Claw",
+              "type": "poison"
+            },
+            {
+              "name": "Fake Out",
+              "type": "normal"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            }
+          ],
+          "usage_pct": 37.0,
+          "games": 5783,
+          "species_key": "sneasler"
+        },
+        {
+          "pokemon": "Arcanine-Hisui",
+          "types": [
+            "fire",
+            "rock"
+          ],
+          "ability": "Intimidate",
+          "item": "Focus Sash",
+          "moves": [
+            {
+              "name": "Flare Blitz",
+              "type": "fire"
+            },
+            {
+              "name": "Head Smash",
+              "type": "rock"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Extreme Speed",
+              "type": "normal"
+            }
+          ],
+          "usage_pct": 6.0,
+          "games": 968,
+          "species_key": "arcanine-hisui"
+        },
+        {
+          "pokemon": "Politoed",
+          "types": [
+            "water"
+          ],
+          "ability": "Drizzle",
+          "item": "Sitrus Berry",
+          "moves": [
+            {
+              "name": "Weather Ball",
+              "type": "normal"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Muddy Water",
+              "type": "water"
+            },
+            {
+              "name": "Perish Song",
+              "type": "normal"
+            }
+          ],
+          "usage_pct": 3.0,
+          "games": 552,
+          "species_key": "politoed"
+        },
+        {
+          "pokemon": "Toxtricity",
+          "types": [
+            "electric",
+            "poison"
+          ],
+          "ability": null,
+          "item": "Life Orb",
+          "moves": [
+            {
+              "name": "Overdrive",
+              "type": "electric"
+            },
+            {
+              "name": "Protect",
+              "type": "normal"
+            },
+            {
+              "name": "Sludge Bomb",
+              "type": "poison"
+            },
+            {
+              "name": "Boomburst",
+              "type": "normal"
+            }
+          ],
+          "usage_pct": 1.0,
+          "games": 111,
+          "species_key": "toxtricity"
+        }
+      ],
+      "fitness": 0.6491666666666667,
+      "fitness_evolucion": 0.7675000000000001,
+      "desglose": {
+        "winrate_fijo": 0.6666666666666666,
+        "winrate_poblacion": 0.65,
+        "score_roles": 0.85,
+        "cobertura_defensiva": 0.35,
+        "sinergia_ofensiva": 0.5
+      },
+      "rank": 5
+    }
+  ],
+  "desglose": {
+    "winrate_fijo": 0.8,
+    "winrate_poblacion": 0.65,
+    "score_roles": 0.45000000000000007,
+    "cobertura_defensiva": 0.6,
+    "sinergia_ofensiva": 0.6666666666666666
+  },
+  "config": {
+    "N_ISLAS": 4,
+    "POP_POR_ISLA": 8,
+    "N_GEN": 8,
+    "GENERACIONES_POR_CICLO": 3,
+    "N_MIGRANTES": 2,
+    "CXPB": 0.6,
+    "MUTPB": 0.5,
+    "N_RIVALES_FIJOS": 5,
+    "N_BATALLAS_FIJOS": 1,
+    "N_RIVALES_POBLACION": 5,
+    "N_BATALLAS_COEVOLUCION": 1,
+    "PESO_WINRATE_FIJO": 0.4,
+    "PESO_WINRATE_POBLACION": 0.3,
+    "PESO_ROLES": 0.15,
+    "PESO_COBERTURA": 0.1,
+    "PESO_SINERGIA": 0.05,
+    "LAMBDA_DIVERSIDAD": 0.8,
+    "SEED": 47
+  },
+  "logbook": [
+    {
+      "gen": 2,
+      "isla": 0,
+      "nevals": 8,
+      "avg": 0.5687968229293554,
+      "max": 0.7643333333333334
+    },
+    {
+      "gen": 2,
+      "isla": 1,
+      "nevals": 8,
+      "avg": 0.4717747294372295,
+      "max": 0.6900000000000001
+    },
+    {
+      "gen": 2,
+      "isla": 2,
+      "nevals": 8,
+      "avg": 0.5850592614924758,
+      "max": 0.7628434343434345
+    },
+    {
+      "gen": 2,
+      "isla": 3,
+      "nevals": 8,
+      "avg": 0.46804480519480524,
+      "max": 0.6916666666666668
+    },
+    {
+      "gen": 3,
+      "isla": 0,
+      "nevals": 8,
+      "avg": 0.6028026566687281,
+      "max": 0.7300000000000001
+    },
+    {
+      "gen": 3,
+      "isla": 1,
+      "nevals": 8,
+      "avg": 0.7219166666666668,
+      "max": 0.8108333333333334
+    },
+    {
+      "gen": 3,
+      "isla": 2,
+      "nevals": 8,
+      "avg": 0.6557278354978355,
+      "max": 0.8108333333333334
+    },
+    {
+      "gen": 3,
+      "isla": 3,
+      "nevals": 8,
+      "avg": 0.641938085999138,
+      "max": 0.7628434343434345
+    },
+    {
+      "gen": 4,
+      "isla": 0,
+      "nevals": 8,
+      "avg": 0.6092644841269842,
+      "max": 0.7052242424242425
+    },
+    {
+      "gen": 4,
+      "isla": 1,
+      "nevals": 8,
+      "avg": 0.5032291666666667,
+      "max": 0.8108333333333334
+    },
+    {
+      "gen": 4,
+      "isla": 2,
+      "nevals": 8,
+      "avg": 0.5977071789321791,
+      "max": 0.7282757575757577
+    },
+    {
+      "gen": 4,
+      "isla": 3,
+      "nevals": 8,
+      "avg": 0.5510533073155801,
+      "max": 0.7092132292623203
+    },
+    {
+      "gen": 5,
+      "isla": 0,
+      "nevals": 8,
+      "avg": 0.47321865223665227,
+      "max": 0.6841666666666667
+    },
+    {
+      "gen": 5,
+      "isla": 1,
+      "nevals": 8,
+      "avg": 0.5382236111111112,
+      "max": 0.7941666666666668
+    },
+    {
+      "gen": 5,
+      "isla": 2,
+      "nevals": 8,
+      "avg": 0.4536819206349207,
+      "max": 0.5419666666666667
+    },
+    {
+      "gen": 5,
+      "isla": 3,
+      "nevals": 8,
+      "avg": 0.5362188528415847,
+      "max": 0.7374999999999999
+    },
+    {
+      "gen": 6,
+      "isla": 0,
+      "nevals": 8,
+      "avg": 0.5639791666666667,
+      "max": 0.7841666666666668
+    },
+    {
+      "gen": 6,
+      "isla": 1,
+      "nevals": 8,
+      "avg": 0.6379476190476191,
+      "max": 0.783715295815296
+    },
+    {
+      "gen": 6,
+      "isla": 2,
+      "nevals": 8,
+      "avg": 0.6439826839826841,
+      "max": 0.8008333333333334
+    },
+    {
+      "gen": 6,
+      "isla": 3,
+      "nevals": 8,
+      "avg": 0.6544321866625438,
+      "max": 0.8008333333333334
+    },
+    {
+      "gen": 7,
+      "isla": 0,
+      "nevals": 8,
+      "avg": 0.6089672619047619,
+      "max": 0.7675000000000001
+    },
+    {
+      "gen": 7,
+      "isla": 1,
+      "nevals": 8,
+      "avg": 0.4744973454770338,
+      "max": 0.6841666666666667
+    },
+    {
+      "gen": 7,
+      "isla": 2,
+      "nevals": 8,
+      "avg": 0.5563306998556998,
+      "max": 0.7719894660894662
+    },
+    {
+      "gen": 7,
+      "isla": 3,
+      "nevals": 8,
+      "avg": 0.6322722222222223,
+      "max": 0.8225000000000001
+    }
+  ]
+}
