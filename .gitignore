@@ -12,17 +12,20 @@ __pycache__/
 build/
 dist/
 
-# Datos crudos y procesados
+# Datos crudos y procesados (regenerables)
 data/raw/
 data/processed/
+data/ga_logs/
+!data/.gitkeep
 !data/processed/.gitkeep
 
-# Modelos (son binarios grandes)
+# Modelos (binarios grandes)
+models/
 models_bc/*.pt
 models_bc/*.pkl
 models_bc/*.pth
 
-# Servidor de Showdown
+# Servidor Showdown
 pokemon-showdown/
 
 # IDE
