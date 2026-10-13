@@ -107,14 +107,14 @@ def main():
     df_top20 = parse_top20(soup)
     ruta_top20 = OUT_DIR / "meta_top20.csv"
     df_top20.to_csv(ruta_top20, index=False, encoding="utf-8")
-    print(f"✅ Top 20 guardado en {ruta_top20}")
+    print(f"[OK] Top 20 guardado en {ruta_top20}")
     print(df_top20.to_string(index=False))
 
     # 2) Equipos de muestra
     equipos = parse_sample_teams(soup)
     ruta_teams = OUT_DIR / "sample_teams.json"
     ruta_teams.write_text(json.dumps(equipos, indent=2, ensure_ascii=False), encoding="utf-8")
-    print(f"\n✅ {len(equipos)} equipos guardados en {ruta_teams}")
+    print(f"\n[OK] {len(equipos)} equipos guardados en {ruta_teams}")
 
     # 3) Frecuencia de Pokémon en equipos
     freq = Counter()
@@ -126,7 +126,7 @@ def main():
     )
     ruta_freq = OUT_DIR / "pokemon_freq.csv"
     df_freq.to_csv(ruta_freq, index=False, encoding="utf-8")
-    print(f"\n✅ Frecuencia guardada en {ruta_freq}")
+    print(f"\n[OK] Frecuencia guardada en {ruta_freq}")
     print(df_freq.head(15).to_string(index=False))
 
 

@@ -1,7 +1,18 @@
-"""NeuralPlayer con expert lookup (DAgger real)."""
+# src/neural_player.py
+"""
+NeuralPlayer con expert lookup (DAgger real) + teampreview VGC-aware.
+
+Cambios vs versión anterior:
+- Constantes importadas de src.config (una sola fuente de verdad).
+- Caché multi-modelo: se pueden tener cargados bc_model.pt y bc_model_2.pt
+  al mismo tiempo (uno por agente).
+- teampreview() custom: puntúa cada Pokémon del team y elige los 4 mejores,
+  ordenando leads por score (Fake Out > Intimidate > Speed Control > ...).
+"""
 import json
 import pickle
 from pathlib import Path
+from typing import Optional
 
 import numpy as np
 import torch
@@ -9,63 +20,63 @@ import torch.nn as nn
 
 from poke_env.player import SimpleHeuristicsPlayer, DoubleBattleOrder
 
-
-MODEL_PATH = Path("models_bc/bc_model.pt")
-EXPERT_INDEX_PATH = Path("models_bc/expert_index.pkl")
-LOG_DIR = Path("data/ga_logs")
-LOG_DIR.mkdir(parents=True, exist_ok=True)
-WINNER_LOGS = LOG_DIR / "winner_logs.jsonl"
-
-MAX_SPECIES = 100
-MAX_ACTIONS = 150
-N_FIXED = 28
-N_SPECIES_BLOCK = MAX_SPECIES * 4
-N_MOVES_BLOCK = MAX_ACTIONS
-N_COUNT_BLOCK = 4
-N_FEATURES = N_FIXED + N_SPECIES_BLOCK + N_MOVES_BLOCK + N_COUNT_BLOCK
-N_ACTIONS = MAX_ACTIONS
+from src.config import (
+    EXPERT_INDEX_PATH,
+    MAX_SPECIES,
+    MODEL_PATH,
+    N_ACTIONS,
+    N_COUNT_BLOCK,
+    N_FEATURES,
+    N_FIXED,
+    N_MOVES_BLOCK,
+    N_SPECIES_BLOCK,
+    WINNER_LOGS,
+)
 
 # Umbral de distancia para considerar que un estado es "similar" a uno humano
 EXPERT_DISTANCE_THRESHOLD = 0.15
 
 
 # ============================================================
-# CACHÉ GLOBAL DE MODELO Y EXPERTO
+# CACHÉS GLOBALES
 # ============================================================
-_CACHED_CKPT = None
-_CACHED_CKPT_PATH = None
+_CACHED_CKPTS: dict[str, dict] = {}          # path -> checkpoint
 _CACHED_TREE = None
 _CACHED_TREE_X = None
 _CACHED_TREE_Y = None
 
-# Contadores globales
 _EXPERT_STATS = {"hits": 0, "misses": 0, "avg_distance": 0.0}
 
 
 def _get_cached_ckpt(model_path: Path) -> dict:
-    global _CACHED_CKPT, _CACHED_CKPT_PATH
-    if _CACHED_CKPT is None or _CACHED_CKPT_PATH != str(model_path):
-        print(f"[NeuralPlayer] 📂 Cargando modelo desde {model_path}...")
-        _CACHED_CKPT = torch.load(model_path, map_location="cpu", weights_only=False)
-        _CACHED_CKPT_PATH = str(model_path)
-        print(f"[NeuralPlayer] ✅ Modelo cacheado (val_acc={_CACHED_CKPT.get('val_acc', '?')})")
-    return _CACHED_CKPT
+    """Carga (y cachea) el checkpoint de un modelo por path."""
+    key = str(model_path)
+    if key not in _CACHED_CKPTS:
+        print(f"[NeuralPlayer] [LOAD] Cargando modelo desde {model_path}...")
+        _CACHED_CKPTS[key] = torch.load(
+            model_path, map_location="cpu", weights_only=False
+        )
+        print(
+            f"[NeuralPlayer] [OK] Cacheado (val_acc="
+            f"{_CACHED_CKPTS[key].get('val_acc', '?')})"
+        )
+    return _CACHED_CKPTS[key]
 
 
 def _get_cached_expert() -> tuple:
     global _CACHED_TREE, _CACHED_TREE_X, _CACHED_TREE_Y
     if _CACHED_TREE is None:
         if not EXPERT_INDEX_PATH.exists():
-            print(f"[NeuralPlayer] ⚠️ No existe {EXPERT_INDEX_PATH}. Sin experto.")
+            print(f"[NeuralPlayer] [WARN] No existe {EXPERT_INDEX_PATH}. Sin experto.")
             _CACHED_TREE = False
             return None, None, None
-        print(f"[NeuralPlayer] 📂 Cargando índice del experto...")
+        print(f"[NeuralPlayer] [LOAD] Cargando índice del experto...")
         with EXPERT_INDEX_PATH.open("rb") as f:
             data = pickle.load(f)
         _CACHED_TREE = data["tree"]
         _CACHED_TREE_X = data["X"]
         _CACHED_TREE_Y = data["y"]
-        print(f"[NeuralPlayer] ✅ Experto cacheado ({data['n_samples']} muestras)")
+        print(f"[NeuralPlayer] [OK] Experto cacheado ({data['n_samples']} muestras)")
     if _CACHED_TREE is False:
         return None, None, None
     return _CACHED_TREE, _CACHED_TREE_X, _CACHED_TREE_Y
@@ -88,7 +99,7 @@ def _crear_modelo(state_dict: dict, use_fp16: bool) -> nn.Module:
     return model
 
 
-def norm(name):
+def norm(name: str) -> str:
     return name.lower().replace(" ", "").replace("-", "").replace("'", "")
 
 
@@ -103,26 +114,100 @@ def extract_compact(feats_full: np.ndarray) -> np.ndarray:
         return int(block.argmax()) if block.max() > 0 else -1
 
     s_p1a = get_species_idx(feats_full[N_FIXED:N_FIXED + MAX_SPECIES])
-    s_p1b = get_species_idx(feats_full[N_FIXED + MAX_SPECIES:N_FIXED + MAX_SPECIES * 2])
-    s_p2a = get_species_idx(feats_full[N_FIXED + MAX_SPECIES * 2:N_FIXED + MAX_SPECIES * 3])
-    s_p2b = get_species_idx(feats_full[N_FIXED + MAX_SPECIES * 3:N_FIXED + MAX_SPECIES * 4])
+    s_p1b = get_species_idx(
+        feats_full[N_FIXED + MAX_SPECIES:N_FIXED + MAX_SPECIES * 2]
+    )
+    s_p2a = get_species_idx(
+        feats_full[N_FIXED + MAX_SPECIES * 2:N_FIXED + MAX_SPECIES * 3]
+    )
+    s_p2b = get_species_idx(
+        feats_full[N_FIXED + MAX_SPECIES * 3:N_FIXED + MAX_SPECIES * 4]
+    )
 
-    species_norm = np.array([s_p1a, s_p1b, s_p2a, s_p2b], dtype=np.float32) / max(1, MAX_SPECIES - 1)
+    species_norm = np.array(
+        [s_p1a, s_p1b, s_p2a, s_p2b], dtype=np.float32
+    ) / max(1, MAX_SPECIES - 1)
 
     return np.concatenate([[turn], hp, status, fainted, species_norm])
 
 
+# ============================================================
+# TEAMPREVIEW SCORING
+# ============================================================
+_MOVES_SPEED_CONTROL = {"tailwind", "trickroom", "icywind", "electroweb"}
+_MOVES_PROTECT = {
+    "protect", "detect", "kingsshield", "spikyshield",
+    "banefulbunker", "obstruct", "silktrap", "burningbulwark",
+}
+_ABILITIES_WEATHER = {
+    "drought", "drizzle", "sandstream", "snowwarning",
+    "orichalcumpulse", "hadronengine",
+}
+
+
+def _score_lead(pokemon) -> int:
+    """
+    Score de qué tan buen lead es un Pokémon en VGC dobles.
+    Pesos calibrados sobre el meta Reg M-C:
+      Fake Out     +100
+      Intimidate   +50
+      Speed Ctrl   +40
+      Weather set  +25
+      Mega Stone   +15
+      Protect      +10
+    """
+    if pokemon is None:
+        return -9999
+    score = 0
+    try:
+        moves = {norm(m.id) for m in pokemon.moves.values() if m is not None}
+    except Exception:
+        moves = set()
+    ability = (pokemon.ability or "").lower()
+
+    if "fakeout" in moves:
+        score += 100
+    if ability == "intimidate":
+        score += 50
+    if moves & _MOVES_SPEED_CONTROL:
+        score += 40
+    if moves & _MOVES_PROTECT:
+        score += 10
+    if ability in _ABILITIES_WEATHER:
+        score += 25
+
+    # Detección laxa de Mega Stone (contiene "ite"/"itey")
+    item = (pokemon.item or "").lower()
+    if "ite" in item or "itey" in item:
+        score += 15
+    return score
+
+
+# ============================================================
+# PLAYER
+# ============================================================
 class NeuralPlayer(SimpleHeuristicsPlayer):
-    def __init__(self, team: str, *args, model_path: str | Path | None = None, **kwargs):
+    def __init__(
+        self,
+        team: str,
+        *args,
+        model_path: Optional[str | Path] = None,
+        **kwargs,
+    ):
         super().__init__(*args, team=team, **kwargs)
         self._model_path = Path(model_path) if model_path else MODEL_PATH
         self._load_model()
         self._load_expert()
-        self._battle_buffer = {}
-        self._seen_keys = {}
+        self._battle_buffer: dict = {}
+        self._seen_keys: dict = {}
 
+    # ------------------------------------------------------------
+    # Carga de recursos
+    # ------------------------------------------------------------
     def _load_model(self):
-        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device(
+            "cuda" if torch.cuda.is_available() else "cpu"
+        )
         ckpt = _get_cached_ckpt(self._model_path)
         self.species_vocab = ckpt["species_vocab"]
         self.move_vocab = ckpt["move_vocab"]
@@ -133,31 +218,47 @@ class NeuralPlayer(SimpleHeuristicsPlayer):
     def _load_expert(self):
         self.expert_tree, self.expert_X, self.expert_y = _get_cached_expert()
 
-    # ============================================================
-    # EXPERT LOOKUP
-    # ============================================================
+    # ------------------------------------------------------------
+    # Team preview
+    # ------------------------------------------------------------
+    def teampreview(self, battle):
+        """
+        Elige los 4 a llevar y su orden. Los 2 primeros son leads.
+        Ordena por score descendente de _score_lead.
+        """
+        try:
+            team = battle.team
+            if not team or len(team) < 4:
+                return self.random_teampreview(battle)
+
+            scored = [(pos, _score_lead(p)) for pos, p in team.items()]
+            scored.sort(key=lambda x: -x[1])
+            elegidos = [pos for pos, _ in scored[:4]]
+            return "/team " + "".join(elegidos)
+        except Exception:
+            return self.random_teampreview(battle)
+
+    # ------------------------------------------------------------
+    # Expert lookup
+    # ------------------------------------------------------------
     def _buscar_experto(self, feats_full: np.ndarray) -> tuple:
         if self.expert_tree is None:
             return None, float("inf")
-
         compact = extract_compact(feats_full).reshape(1, -1)
         dist, idx = self.expert_tree.query(compact, k=1)
         d = float(dist[0][0])
-
         if d <= EXPERT_DISTANCE_THRESHOLD:
-            action = int(self.expert_y[idx[0][0]])
-            return action, d
+            return int(self.expert_y[idx[0][0]]), d
         return None, d
 
-    # ============================================================
-    # HOOK DE FIN DE BATALLA
-    # ============================================================
+    # ------------------------------------------------------------
+    # Hook fin de batalla
+    # ------------------------------------------------------------
     def _battle_finished_callback(self, battle):
         try:
             tag = battle.battle_tag
             datos = self._battle_buffer.pop(tag, None)
             self._seen_keys.pop(tag, None)
-
             if battle.won and datos:
                 with WINNER_LOGS.open("a", encoding="utf-8") as f:
                     for feats, action in datos:
@@ -166,7 +267,6 @@ class NeuralPlayer(SimpleHeuristicsPlayer):
             pass
 
     def _log_state_action(self, battle, feats: np.ndarray):
-        """Guarda (estado, acción_EXPERTO) si existe un vecino cercano."""
         try:
             tag = battle.battle_tag
             if tag not in self._battle_buffer:
@@ -193,9 +293,9 @@ class NeuralPlayer(SimpleHeuristicsPlayer):
         except Exception:
             pass
 
-    # ============================================================
-    # FEATURES
-    # ============================================================
+    # ------------------------------------------------------------
+    # Features
+    # ------------------------------------------------------------
     def _moves_seen_pokemon(self, pokemon):
         if pokemon is None:
             return set()
@@ -209,7 +309,10 @@ class NeuralPlayer(SimpleHeuristicsPlayer):
         feats[0] = min(battle.turn / 20.0, 1.0)
 
         p1 = list(battle.active_pokemon) if battle.active_pokemon else []
-        p2 = list(battle.opponent_active_pokemon) if battle.opponent_active_pokemon else []
+        p2 = (
+            list(battle.opponent_active_pokemon)
+            if battle.opponent_active_pokemon else []
+        )
 
         for i, p in enumerate(p1[:2]):
             if p is not None:
@@ -238,19 +341,27 @@ class NeuralPlayer(SimpleHeuristicsPlayer):
 
         try:
             w = battle.weather or {}
-            if "sunnyday" in w: feats[16] = 1.0
-            elif "raindance" in w: feats[17] = 1.0
-            elif "sandstorm" in w: feats[18] = 1.0
-            elif "snow" in w or "hail" in w: feats[19] = 1.0
+            if "sunnyday" in w:
+                feats[16] = 1.0
+            elif "raindance" in w:
+                feats[17] = 1.0
+            elif "sandstorm" in w:
+                feats[18] = 1.0
+            elif "snow" in w or "hail" in w:
+                feats[19] = 1.0
         except Exception:
             pass
 
         try:
             f = battle.fields or {}
-            if "electricterrain" in f: feats[21] = 1.0
-            elif "grassyterrain" in f: feats[22] = 1.0
-            elif "psychicterrain" in f: feats[23] = 1.0
-            elif "mistyterrain" in f: feats[24] = 1.0
+            if "electricterrain" in f:
+                feats[21] = 1.0
+            elif "grassyterrain" in f:
+                feats[22] = 1.0
+            elif "psychicterrain" in f:
+                feats[23] = 1.0
+            elif "mistyterrain" in f:
+                feats[24] = 1.0
         except Exception:
             pass
 
@@ -276,13 +387,24 @@ class NeuralPlayer(SimpleHeuristicsPlayer):
                 feats[moves_off + idx] = 1.0
 
         counts_off = moves_off + N_MOVES_BLOCK
-        feats[counts_off + 0] = min(len(self._moves_seen_pokemon(p1[0] if len(p1) > 0 else None)) / 4.0, 1.0)
-        feats[counts_off + 1] = min(len(self._moves_seen_pokemon(p1[1] if len(p1) > 1 else None)) / 4.0, 1.0)
-        feats[counts_off + 2] = min(len(self._moves_seen_pokemon(p2[0] if len(p2) > 0 else None)) / 4.0, 1.0)
-        feats[counts_off + 3] = min(len(self._moves_seen_pokemon(p2[1] if len(p2) > 1 else None)) / 4.0, 1.0)
+        feats[counts_off + 0] = min(
+            len(self._moves_seen_pokemon(p1[0] if len(p1) > 0 else None)) / 4.0, 1.0
+        )
+        feats[counts_off + 1] = min(
+            len(self._moves_seen_pokemon(p1[1] if len(p1) > 1 else None)) / 4.0, 1.0
+        )
+        feats[counts_off + 2] = min(
+            len(self._moves_seen_pokemon(p2[0] if len(p2) > 0 else None)) / 4.0, 1.0
+        )
+        feats[counts_off + 3] = min(
+            len(self._moves_seen_pokemon(p2[1] if len(p2) > 1 else None)) / 4.0, 1.0
+        )
 
         return feats
 
+    # ------------------------------------------------------------
+    # Elegir movimiento
+    # ------------------------------------------------------------
     def _choose_for_slot(self, battle, slot: int):
         active_list = list(battle.active_pokemon) if battle.active_pokemon else []
         if slot >= len(active_list) or active_list[slot] is None:
@@ -293,7 +415,6 @@ class NeuralPlayer(SimpleHeuristicsPlayer):
         if not movimientos:
             return None
 
-        disponibles_ids = set()
         try:
             if slot == 0:
                 disponibles_ids = {norm(m.id) for m in battle.available_moves}

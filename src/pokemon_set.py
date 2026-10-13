@@ -1,39 +1,55 @@
 # src/pokemon_set.py
 """
 Representa un PokemonSet con sistema de Stat Points de Champions.
-Detecta automáticamente si un Pokémon es físico o especial usando sus STATS BASE.
-Fuente de stats: base_stats.json (descargado de Showdown con scripts_fetch_base_stats.js).
+
+Champions usa "Stat Points" (SP): 66 puntos totales, 32 máx por stat.
+Es DIFERENTE a los EVs clásicos (510 total, 252 máx).
+
+Reparto por arquetipo:
+    fast_phys    -> 2 HP  / 32 Atk / 32 Spe     (Adamant / Jolly)
+    fast_spec    -> 2 HP  / 32 SpA / 32 Spe     (Modest / Timid)
+    bulky_phys   -> 32 HP / 32 Atk / 2 SpD      (Adamant)
+    bulky_spec   -> 32 HP / 32 SpA / 2 SpD      (Modest)
+    tr_phys      -> 32 HP / 32 Atk / 2 Def      (Brave)
+    tr_spec      -> 32 HP / 32 SpA / 2 Def      (Quiet)
+    support      -> 32 HP / 32 Def / 2 SpD (Bold)
+                   32 HP / 2 Def / 32 SpD (Calm) según bulk
+    wall_phys    -> 32 HP / 32 Def / 2 SpD      (Impish)
+    wall_spec    -> 32 HP / 2 Def / 32 SpD      (Careful)
+    mixed_fast   -> 2 HP  / 16 Atk / 16 SpA / 32 Spe (Naive)
+    mixed_bulky  -> 32 HP / 16 Atk / 16 SpA / 2 SpD  (Naive)
 """
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
 
+from src.config import BASE_STATS_FILE, PIKALYTICS_FULL
 
-# Nombres de especies que necesitan mapeo especial
+
+# ============================================================
+# MAPEOS DE NOMBRES
+# ============================================================
 NOMBRES_CORTOS = {
     "Floette-Eternal-Mega": "Floette-Mega",
     "Floette-Eternal": "Floette-Mega",
 }
 
 
+# ============================================================
+# STATS BASE
+# ============================================================
 def _cargar_stats_base() -> dict:
-    """
-    Carga stats base desde Showdown (data/raw/base_stats.json) si existe.
-    Fallback: pikalytics_full.json.
-    """
-    showdown_file = Path("data/raw/base_stats.json")
-    if showdown_file.exists():
-        with open(showdown_file, encoding="utf-8") as f:
+    if BASE_STATS_FILE.exists():
+        with open(BASE_STATS_FILE, encoding="utf-8") as f:
             return json.load(f)
 
-    # Fallback a pikalytics
-    raw_file = Path("data/raw/pikalytics_full.json")
-    if not raw_file.exists():
-        print(f"⚠️  No existe {showdown_file} ni {raw_file}")
+    if not PIKALYTICS_FULL.exists():
+        print(f"[WARN]  No existe {BASE_STATS_FILE} ni {PIKALYTICS_FULL}")
         print(f"    Corre primero: node scripts_fetch_base_stats.js")
         return {}
-    with open(raw_file, encoding="utf-8") as f:
+
+    with open(PIKALYTICS_FULL, encoding="utf-8") as f:
         raw = json.load(f)
 
     stats_por_pokemon = {}
@@ -60,12 +76,6 @@ def nombre_valido(nombre: str) -> str:
 
 
 def buscar_stats(nombre: str) -> dict:
-    """
-    Busca stats base de un Pokémon con múltiples fallbacks:
-    1. Nombre exacto
-    2. Nombre normalizado (Floette-Eternal-Mega → Floette-Mega)
-    3. Nombre en minúsculas
-    """
     if nombre in STATS_BASE:
         return STATS_BASE[nombre]
     nombre_corto = nombre_valido(nombre)
@@ -76,13 +86,13 @@ def buscar_stats(nombre: str) -> dict:
     return {}
 
 
+# ============================================================
+# CATEGORÍA FÍSICO/ESPECIAL
+# ============================================================
 def detectar_categoria(nombre: str) -> str:
     """
-    Devuelve 'fisico', 'especial' o 'mixto' según los stats base.
-    Regla:
-      - Si spa > atk + 15 → especial
-      - Si atk > spa + 15 → fisico
-      - Si similar → mixto
+    'fisico', 'especial' o 'mixto' según stats base.
+    Regla: diferencia >15 puntos decide.
     """
     stats = buscar_stats(nombre)
     if not stats:
@@ -98,6 +108,126 @@ def detectar_categoria(nombre: str) -> str:
     return "mixto"
 
 
+# ============================================================
+# DETECCIÓN DE ARQUETIPO
+# ============================================================
+def _norm(name: str) -> str:
+    return name.lower().replace(" ", "").replace("-", "").replace("'", "")
+
+
+_MOVES_SOPORTE = {
+    "fakeout", "followme", "ragepowder", "helpinghand", "partingshot",
+    "willowisp", "encore", "taunt", "wideguard", "quickguard",
+    "tailwind", "trickroom", "icywind", "snarl", "electroweb",
+    "reflect", "lightscreen", "auroraveil", "safeguard", "coaching",
+    "decorate", "lifedew", "skillswap", "topsyturvy", "spore",
+    "sleeppowder", "quash", "afteryou", "allyswitch", "healpulse",
+    "junglehealing", "chillyreception", "superfang",
+}
+_MOVES_TR = {"trickroom"}
+_MOVES_TW = {"tailwind"}
+_MOVES_SETUP = {
+    "swordsdance", "nastyplot", "calmmind", "dragondance", "bulkup",
+    "irondefense", "amnesia", "agility", "rockpolish", "shellsmash",
+}
+_MOVES_RECUPERACION = {
+    "recover", "slackoff", "roost", "synthesis", "moonlight", "morningsun",
+    "softboiled", "milkdrink", "shoreup", "strengthsap", "leechseed",
+    "drainpunch", "gigadrain", "drainingkiss", "hornleech", "oblivionwing",
+}
+
+
+def _clasificar_arquetipo(pokemon_dict: dict) -> str:
+    """Devuelve el nombre del arquetipo (clave de SPREADS)."""
+    stats = buscar_stats(pokemon_dict.get("pokemon", ""))
+    spe = stats.get("spe", 80)
+    atk = stats.get("atk", 80)
+    spa = stats.get("spa", 80)
+    hp = stats.get("hp", 80)
+    df = stats.get("def", 80)
+    spd = stats.get("spd", 80)
+    bulk = hp + df + spd
+
+    moves = {
+        _norm(m["name"])
+        for m in pokemon_dict.get("moves", [])
+        if m.get("name")
+    }
+
+    # 1) Trick Room user
+    if moves & _MOVES_TR:
+        return "tr_phys" if atk >= spa else "tr_spec"
+
+    # 2) Soporte puro (movs de soporte sin setup y stats no ofensivos)
+    tiene_soporte = bool(moves & _MOVES_SOPORTE)
+    tiene_setup = bool(moves & _MOVES_SETUP)
+    tiene_recup = bool(moves & _MOVES_RECUPERACION)
+
+    if tiene_soporte and not tiene_setup and max(atk, spa) < 95:
+        # Si tiene stats defensivos altos, es wall
+        if tiene_recup and bulk > 250:
+            return "wall_phys" if df >= spd else "wall_spec"
+        return "support"
+
+    # 3) Wall
+    if tiene_recup and max(atk, spa) < 90 and bulk > 250:
+        return "wall_phys" if df >= spd else "wall_spec"
+
+    # 4) Diferenciar físico / especial / mixto
+    diff = atk - spa
+    if abs(diff) <= 15:
+        return "mixed_fast" if spe >= 95 else "mixed_bulky"
+
+    if diff > 0:  # físico
+        if spe >= 95:
+            return "fast_phys"
+        return "bulky_phys" if bulk >= 260 else "fast_phys"
+
+    # especial
+    if spe >= 95:
+        return "fast_spec"
+    return "bulky_spec" if bulk >= 260 else "fast_spec"
+
+
+# ============================================================
+# SPREADS
+# ============================================================
+SPREADS: dict[str, tuple[dict[str, int], str]] = {
+    "fast_phys":   ({"HP": 2,  "Atk": 32, "Spe": 32},              "Adamant"),
+    "fast_spec":   ({"HP": 2,  "SpA": 32, "Spe": 32},              "Modest"),
+    "bulky_phys":  ({"HP": 32, "Atk": 32, "SpD": 2},               "Adamant"),
+    "bulky_spec":  ({"HP": 32, "SpA": 32, "SpD": 2},               "Modest"),
+    "tr_phys":     ({"HP": 32, "Atk": 32, "Def": 2},               "Brave"),
+    "tr_spec":     ({"HP": 32, "SpA": 32, "Def": 2},               "Quiet"),
+    "wall_phys":   ({"HP": 32, "Def": 32, "SpD": 2},               "Impish"),
+    "wall_spec":   ({"HP": 32, "Def": 2,  "SpD": 32},              "Careful"),
+    "mixed_fast":  ({"HP": 2,  "Atk": 16, "SpA": 16, "Spe": 32},   "Naive"),
+    "mixed_bulky": ({"HP": 32, "Atk": 16, "SpA": 16, "SpD": 2},    "Naive"),
+}
+
+
+def _spread_de(pokemon_dict: dict) -> tuple[dict[str, int], str]:
+    """Devuelve (stat_points, nature) coherentes con el arquetipo."""
+    arq = _clasificar_arquetipo(pokemon_dict)
+
+    # Caso especial: support -> elige Bold o Calm según bulk
+    if arq == "support":
+        stats = buscar_stats(pokemon_dict.get("pokemon", ""))
+        if stats.get("def", 80) >= stats.get("spd", 80):
+            return {"HP": 32, "Def": 32, "SpD": 2}, "Bold"
+        return {"HP": 32, "Def": 2, "SpD": 32}, "Calm"
+
+    if arq in SPREADS:
+        sp, nat = SPREADS[arq]
+        return dict(sp), nat
+
+    # Fallback razonable
+    return {"HP": 2, "Atk": 32, "Spe": 32}, "Adamant"
+
+
+# ============================================================
+# DATA CLASS
+# ============================================================
 @dataclass
 class PokemonSet:
     species: str
@@ -146,24 +276,7 @@ class PokemonSet:
         moves_data = data.get("moves", [])
         moves = [m["name"] for m in moves_data if m.get("name")]
 
-        categoria = detectar_categoria(species)
-
-        if categoria == "fisico":
-            stat_points = {"HP": 2, "Atk": 32, "Spe": 32}
-            nature = "Adamant"
-        elif categoria == "especial":
-            stat_points = {"HP": 2, "SpA": 32, "Spe": 32}
-            nature = "Modest"
-        else:
-            stats = buscar_stats(species)
-            atk = stats.get("atk", 0)
-            spa = stats.get("spa", 0)
-            if spa >= atk:
-                stat_points = {"HP": 2, "SpA": 32, "Spe": 32}
-                nature = "Modest"
-            else:
-                stat_points = {"HP": 2, "Atk": 32, "Spe": 32}
-                nature = "Adamant"
+        stat_points, nature = _spread_de(data)
 
         tera = data["types"][0].capitalize() if data.get("types") else None
 
@@ -183,18 +296,37 @@ def equipo_a_showdown(equipo: list[dict]) -> str:
     return "\n\n".join(s.to_showdown() for s in sets)
 
 
+# ============================================================
+# TEST RÁPIDO
+# ============================================================
 if __name__ == "__main__":
     print(f"Stats base cargados: {len(STATS_BASE)} Pokémon\n")
-    test_pokemon = [
-        "Rillaboom", "Sneasler", "Incineroar", "Typhlosion-Hisui",
-        "Gholdengo", "Rotom-Wash", "Garchomp", "Salamence",
-        "Charizard", "Hydreigon", "Malamar", "Indeedee-F",
-        "Gengar-Mega", "Metagross-Mega", "Floette-Eternal-Mega",
+
+    ejemplos = [
+        {"pokemon": "Rillaboom",
+         "moves": [{"name": "Fake Out"}, {"name": "Grassy Glide"},
+                   {"name": "Wood Hammer"}, {"name": "U-turn"}]},
+        {"pokemon": "Flutter Mane",
+         "moves": [{"name": "Moonblast"}, {"name": "Shadow Ball"},
+                   {"name": "Icy Wind"}, {"name": "Protect"}]},
+        {"pokemon": "Incineroar",
+         "moves": [{"name": "Fake Out"}, {"name": "Flare Blitz"},
+                   {"name": "Knock Off"}, {"name": "Parting Shot"}]},
+        {"pokemon": "Amoonguss",
+         "moves": [{"name": "Spore"}, {"name": "Rage Powder"},
+                   {"name": "Pollen Puff"}, {"name": "Protect"}]},
+        {"pokemon": "Iron Hands",
+         "moves": [{"name": "Fake Out"}, {"name": "Drain Punch"},
+                   {"name": "Wild Charge"}, {"name": "Detect"}]},
+        {"pokemon": "Ursaluna-Bloodmoon",
+         "moves": [{"name": "Blood Moon"}, {"name": "Earth Power"},
+                   {"name": "Hyper Voice"}, {"name": "Protect"}]},
+        {"pokemon": "Porygon2",
+         "moves": [{"name": "Trick Room"}, {"name": "Ice Beam"},
+                   {"name": "Recover"}, {"name": "Thunderbolt"}]},
     ]
-    for nombre in test_pokemon:
-        cat = detectar_categoria(nombre)
-        stats = buscar_stats(nombre)
-        atk = stats.get("atk", "?")
-        spa = stats.get("spa", "?")
-        spe = stats.get("spe", "?")
-        print(f"  {nombre:<25} atk={atk:<4} spa={spa:<4} spe={spe:<4} → {cat}")
+
+    for p in ejemplos:
+        arq = _clasificar_arquetipo(p)
+        sp, nat = _spread_de(p)
+        print(f"  {p['pokemon']:<22} -> {arq:<12} | {nat:<8} | {sp}")

@@ -43,27 +43,32 @@ def cobertura_defensiva(equipo: list[dict]) -> float:
 # ============================================================
 # SINERGIA OFENSIVA
 # ============================================================
-TIPOS_CLAVE = ["ground", "fire", "fighting"]
+# Tipos clave anti-meta Reg M-C / Champions:
+#   - ground:   golpea Steel/Rock/Electrics masivos
+#   - fire:     golpea Grass/Steel/ICE y rompe Focus Sash
+#   - fighting: golpea Normal/Steel/Dark (Incineroar, Kingambit, Ursaluna)
+#   - ice:      golpea Dragon/Flying/Ground (Garchomp, Dragonite, Landorus)
+#   - dark:     golpea Ghost/Psychic (Flutter Mane, Gholdengo)
+TIPOS_CLAVE = ["ground", "fire", "fighting", "ice", "dark"]
 
 
 def sinergia_ofensiva(equipo: list[dict]) -> float:
     """
-    Mide si el equipo cubre los 3 tipos clave anti-meta (Ground, Fire, Fighting).
-    Ideal: al menos 2 Pokémon por tipo clave → score 1.0.
+    Mide si el equipo cubre los tipos clave anti-meta.
+    Ideal: al menos 2 Pokémon por tipo clave.
+    Devuelve promedio sobre los tipos clave.
     """
-    cobertura = {}
+    scores = []
     for tipo in TIPOS_CLAVE:
         n = sum(1 for p in equipo if _puede_golpear_con(p, tipo))
-        cobertura[tipo] = n
-
-    scores = [min(n, 2) / 2.0 for n in cobertura.values()]
-    return sum(scores) / len(scores)
+        scores.append(min(n, 2) / 2.0)
+    return sum(scores) / len(scores) if scores else 0.0
 
 
 def _puede_golpear_con(pokemon: dict, tipo_ataque: str) -> bool:
     """True si el Pokémon tiene al menos un movimiento del tipo indicado."""
     for move in pokemon.get("moves", []):
-        if move.get("type", "").lower() == tipo_ataque.lower():
+        if (move.get("type") or "").lower() == tipo_ataque.lower():
             return True
     return False
 
@@ -74,20 +79,20 @@ def _puede_golpear_con(pokemon: dict, tipo_ataque: str) -> bool:
 def diversidad_de_tipos(equipo: list[dict]) -> float:
     """
     Mide la diversidad de tipos defensivos del equipo.
-    Con 6 Pokémon, lo ideal es tener al menos 10 tipos únicos.
+    Con 6 Pokémon, ideal: al menos 10 tipos únicos.
     """
     tipos_unicos = set()
     for p in equipo:
         for t in p.get("types", []):
             tipos_unicos.add(t.lower())
-
     return min(len(tipos_unicos) / 10.0, 1.0)
 
 
 if __name__ == "__main__":
     import json
+    from src.config import SAMPLE_TEAMS_FILE
 
-    with open("data/processed/sample_teams.json", encoding="utf-8") as f:
+    with open(SAMPLE_TEAMS_FILE, encoding="utf-8") as f:
         equipos = json.load(f)
 
     for i, equipo in enumerate(equipos[:5]):

@@ -3,29 +3,27 @@
 Reconstruye ga_elites.json desde ga_result.json del último run.
 Útil cuando el GA crashea después de guardar el resultado pero antes
 de actualizar los elites.
+
+Uso:
+    python -m src.rebuild_elites
 """
 import json
-from pathlib import Path
 
+from src.config import ELITES_FILE, GA_RESULT_FILE
 from src.pokemon_pool import construir_pool
-
-POOL = construir_pool()
-# Mapa nombre -> índice en el pool
-name_to_idx = {p["pokemon"]: i for i, p in enumerate(POOL)}
-
-RESULT_FILE = Path("data/processed/ga_result.json")
-ELITES_FILE = Path("data/processed/ga_elites.json")
 
 
 def main():
-    if not RESULT_FILE.exists():
-        print(f"❌ No existe {RESULT_FILE}")
+    POOL = construir_pool()
+    name_to_idx = {p["pokemon"]: i for i, p in enumerate(POOL)}
+
+    if not GA_RESULT_FILE.exists():
+        print(f"[ERROR] No existe {GA_RESULT_FILE}")
         return
 
-    with open(RESULT_FILE, encoding="utf-8") as f:
+    with open(GA_RESULT_FILE, encoding="utf-8") as f:
         resultado = json.load(f)
 
-    # Coger top5 del resultado; si no hay, usar solo el equipo ganador
     top5 = resultado.get("top5", [])
     if not top5:
         top5 = [{
@@ -42,7 +40,7 @@ def main():
         for p in equipo:
             idx = name_to_idx.get(p["pokemon"])
             if idx is None:
-                print(f"⚠️  No encontrado en pool actual: {p['pokemon']}")
+                print(f"[WARN]  No encontrado en pool actual: {p['pokemon']}")
                 valido = False
                 break
             genoma.append(idx)
@@ -55,7 +53,7 @@ def main():
             })
 
     if not elites:
-        print("❌ No se pudo reconstruir ningún elite (nombres no coinciden con el pool)")
+        print("[ERROR] No se pudo reconstruir ningún elite (nombres no coinciden con el pool)")
         return
 
     ELITES_FILE.parent.mkdir(parents=True, exist_ok=True)
@@ -64,7 +62,7 @@ def main():
         encoding="utf-8",
     )
 
-    print(f"✅ Guardados {len(elites)} elites en {ELITES_FILE}")
+    print(f"[OK] Guardados {len(elites)} elites en {ELITES_FILE}")
     for e in elites:
         print(f"   fitness={e['fitness']:.3f} | {', '.join(e['nombres'])}")
 

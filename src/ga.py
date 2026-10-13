@@ -1,73 +1,68 @@
 # src/ga.py
 """
-Algoritmo Genético v2.1 con:
+Algoritmo Genético v2.2:
 - Inicialización ponderada por usage
-- Fitness HÍBRIDO: rivales fijos (ancla) + co-evolución (diversidad)
-- Score de roles (con coherencia TR/Tailwind)
+- Fitness HÍBRIDO: rivales fijos (ancla) + co-evolución
+- Score de roles (coherencia TR/Tailwind)
 - Modelo de islas + migración
 - Checkpoint y warm start
-- Prints de progreso en cada evaluación
+- Arena persistente (event loop único, batallas en paralelo)
+- Dos agentes independientes (bc_model.pt vs bc_model_2.pt)
 """
 import json
 import random
 from datetime import datetime
-from pathlib import Path
 
 from deap import base, creator, tools
 
-from src.pokemon_pool import construir_pool
-from src.simulator import simular_enfrentamiento
+from src.config import (
+    CHECKPOINT_FILE,
+    CXPB,
+    EQUIPO_SIZE,
+    GA_ELITES_FILE,
+    GA_HISTORY_FILE,
+    GA_RESULT_FILE,
+    GENERACIONES_POR_CICLO,
+    LAMBDA_DIVERSIDAD,
+    MODEL_PATH,
+    MODEL_PATH_2,
+    MUTPB,
+    N_BATALLAS_COEVOLUCION,
+    N_BATALLAS_FIJOS,
+    N_GEN,
+    N_ISLAS,
+    N_MIGRANTES,
+    N_RIVALES_FIJOS,
+    N_RIVALES_POBLACION,
+    PESO_COBERTURA,
+    PESO_ROLES,
+    PESO_SINERGIA,
+    PESO_WINRATE_FIJO,
+    PESO_WINRATE_POBLACION,
+    POP_POR_ISLA,
+    SAMPLE_TEAMS_FILE,
+    SEED,
+    TOP_CANDIDATOS,
+    TOP_EVAL_FIJOS,
+    TOP_EVAL_FIJOS_BATALLAS,
+    TOP_EVAL_POB,
+    TOP_EVAL_POB_BATALLAS,
+    UMBRAL_SIMILITUD,
+    USE_WARM_START,
+    WARM_START_N,
+)
 from src.fit import (
     cobertura_defensiva,
-    sinergia_ofensiva,
     diversidad_de_tipos,
+    sinergia_ofensiva,
 )
+from src.pokemon_pool import construir_pool
 from src.roles import score_roles
+from src.simulator import BattleArena
 
-# ============ CONFIGURACIÓN ============
-EQUIPO_SIZE = 6
+# Nota: el import raro de arriba es porque en config.py definimos GA_HISTORY_FILE
+# y no HISTORY_FILE. Lo dejo limpio:
 
-# Island model
-N_ISLAS = 4
-POP_POR_ISLA = 8
-GENERACIONES_POR_CICLO = 3
-N_MIGRANTES = 2
-
-# Evolución
-N_GEN = 15
-CXPB = 0.6
-MUTPB = 0.5
-
-# Rivales FIJOS (ancla al meta real)
-N_RIVALES_FIJOS = 5
-N_BATALLAS_FIJOS = 1
-
-# Co-evolución (rivales de la población)
-N_RIVALES_POBLACION = 5
-N_BATALLAS_COEVOLUCION = 1
-
-# Pesos del fitness (suman 1.0)
-PESO_WINRATE_FIJO = 0.40
-PESO_WINRATE_POBLACION = 0.30
-PESO_ROLES = 0.15
-PESO_COBERTURA = 0.10
-PESO_SINERGIA = 0.05
-
-# Diversidad (Jaccard)
-LAMBDA_DIVERSIDAD = 0.8
-UMBRAL_SIMILITUD = 0.2
-
-# Warm start
-USE_WARM_START = True
-WARM_START_N = 3
-
-# Archivos
-CHECKPOINT_FILE = Path("data/processed/checkpoint.json")
-ELITES_FILE = Path("data/processed/ga_elites.json")
-RESULT_FILE = Path("data/processed/ga_result.json")
-HISTORY_FILE = Path("data/processed/ga_history.json")
-
-SEED = 47
 random.seed(SEED)
 
 
@@ -75,8 +70,18 @@ random.seed(SEED)
 POOL = construir_pool()
 N_POOL = len(POOL)
 
-with open("data/processed/sample_teams.json", encoding="utf-8") as f:
+with open(SAMPLE_TEAMS_FILE, encoding="utf-8") as f:
     RIVALES_FIJOS = json.load(f)
+
+
+# ============ DETERMINAR SI HAY SEGUNDO MODELO ============
+MODEL_B = str(MODEL_PATH_2) if MODEL_PATH_2.exists() else None
+if MODEL_B is None:
+    print("[WARN]  No existe bc_model_2.pt — usando el mismo modelo para ambos agentes.")
+    print("   Esto introduce sesgo de self-play.")
+    print("   Entrená el segundo modelo con:")
+    print("   python -m src.bc_train --seed 123 --output models_bc/bc_model_2.pt\n")
+MODEL_A = str(MODEL_PATH)
 
 
 # ============ GENOMA Y FITNESS ============
@@ -85,7 +90,6 @@ creator.create("Individual", list, fitness=creator.FitnessMax)
 
 
 def crear_individuo():
-    """Crea un equipo aleatorio PONDERADO POR USAGE."""
     pesos = [max(p.get("usage_pct", 0), 0.1) + 0.5 for p in POOL]
     seleccionados = []
     keys_usados = set()
@@ -168,12 +172,9 @@ def mutar(individuo, indpb=0.5):
     return (individuo,)
 
 
-def evaluar_hibrido(individuo, poblacion, verbose=False):
+def evaluar_hibrido(individuo, poblacion, arena: BattleArena, verbose=False):
     """
-    Fitness v2.1 HÍBRIDO:
-      - winrate vs rivales fijos (ancla al meta real)
-      - winrate vs población (co-evolución)
-      - score_roles + estructura
+    Fitness v2.2 HÍBRIDO usando BattleArena persistente.
     """
     equipo = [POOL[i] for i in individuo]
 
@@ -182,11 +183,15 @@ def evaluar_hibrido(individuo, poblacion, verbose=False):
     rivales_fijos = random.sample(RIVALES_FIJOS, n_fijos)
     winrates_fijos = []
     for rival in rivales_fijos:
-        wr = simular_enfrentamiento(equipo, rival, n_batallas=N_BATALLAS_FIJOS)
+        wr = arena.battle(
+            equipo, rival,
+            n_batallas=N_BATALLAS_FIJOS,
+            model_a=MODEL_A, model_b=MODEL_B,
+        )
         winrates_fijos.append(wr)
     wr_fijo = sum(winrates_fijos) / len(winrates_fijos) if winrates_fijos else 0.0
 
-    # --- 2. Rivales de POBLACIÓN (co-evolución) ---
+    # --- 2. Rivales de POBLACIÓN ---
     rivales_disp = [p for p in poblacion if list(p) != list(individuo)]
     if len(rivales_disp) < N_RIVALES_POBLACION:
         rivales_pob = rivales_disp
@@ -196,7 +201,11 @@ def evaluar_hibrido(individuo, poblacion, verbose=False):
     winrates_pob = []
     for rival_ind in rivales_pob:
         rival_eq = [POOL[i] for i in rival_ind]
-        wr = simular_enfrentamiento(equipo, rival_eq, n_batallas=N_BATALLAS_COEVOLUCION)
+        wr = arena.battle(
+            equipo, rival_eq,
+            n_batallas=N_BATALLAS_COEVOLUCION,
+            model_a=MODEL_A, model_b=MODEL_B,
+        )
         winrates_pob.append(wr)
     wr_pob = sum(winrates_pob) / len(winrates_pob) if winrates_pob else 0.0
 
@@ -258,19 +267,22 @@ def _clonar_con_fitness(ind):
 def migrar(islas, n_migrantes):
     migrantes = []
     for isla in islas:
-        validos = [ind for ind in isla if ind.fitness.valid and len(ind.fitness.values) > 0]
+        validos = [i for i in isla if i.fitness.valid and len(i.fitness.values) > 0]
         if not validos:
             migrantes.append([])
             continue
         top = tools.selBest(validos, min(n_migrantes, len(validos)))
-        migrantes.append([_clonar_con_fitness(ind) for ind in top])
+        migrantes.append([_clonar_con_fitness(i) for i in top])
 
     for i, isla in enumerate(islas):
         origen = migrantes[i]
         if not origen:
             continue
         destino = islas[(i + 1) % len(islas)]
-        peores_idx = sorted(range(len(destino)), key=lambda k: _fitness_seguro(destino[k]))[:n_migrantes]
+        peores_idx = sorted(
+            range(len(destino)),
+            key=lambda k: _fitness_seguro(destino[k]),
+        )[:n_migrantes]
         for k, migrante in zip(peores_idx, origen):
             destino[k] = _clonar_con_fitness(migrante)
     return islas
@@ -320,17 +332,19 @@ def cargar_checkpoint():
             "islas": islas,
         }
     except Exception as e:
-        print(f"⚠️  Checkpoint corrupto: {e}")
+        print(f"[WARN]  Checkpoint corrupto: {e}")
         return None
 
 
 # ============ MAIN ============
 def main():
     print(f"Pool: {N_POOL} Pokémon")
-    print(f"Islas: {N_ISLAS} × {POP_POR_ISLA} = {N_ISLAS * POP_POR_ISLA} individuos")
+    print(f"Islas: {N_ISLAS} x {POP_POR_ISLA} = {N_ISLAS * POP_POR_ISLA} individuos")
     print(f"Generaciones: {N_GEN} | Migración cada {GENERACIONES_POR_CICLO} gen")
-    print(f"Rivales fijos: {N_RIVALES_FIJOS} × {N_BATALLAS_FIJOS} batallas")
-    print(f"Co-evolución: {N_RIVALES_POBLACION} × {N_BATALLAS_COEVOLUCION} batallas")
+    print(f"Rivales fijos: {N_RIVALES_FIJOS} x {N_BATALLAS_FIJOS} batallas")
+    print(f"Co-evolución: {N_RIVALES_POBLACION} x {N_BATALLAS_COEVOLUCION} batallas")
+    print(f"Modelo A: {MODEL_A}")
+    print(f"Modelo B: {MODEL_B if MODEL_B else '(self-play)'}")
     print(f"Pesos: FIJ={PESO_WINRATE_FIJO}, POB={PESO_WINRATE_POBLACION}, "
           f"ROL={PESO_ROLES}, COB={PESO_COBERTURA}, SIN={PESO_SINERGIA}")
     print()
@@ -340,7 +354,7 @@ def main():
     toolbox.register("population", tools.initRepeat, list, toolbox.individual)
     toolbox.register("mate", cruzar)
     toolbox.register("mutate", mutar)
-    toolbox.register("select", tools.selTournament, tournsize=3)
+    toolbox.register("select", tools.selTournament, tournsize=4)
 
     logbook = tools.Logbook()
     logbook.header = ["gen", "isla", "nevals", "avg", "max"]
@@ -351,236 +365,265 @@ def main():
         gen_global = estado["gen_global"]
         ciclo = estado["ciclo"]
         gen_local = estado["gen_local"]
-        print(f"📂 Checkpoint cargado: gen {gen_global}, ciclo {ciclo}, gen_local {gen_local}\n")
+        print(f"[LOAD] Checkpoint cargado: gen {gen_global}, ciclo {ciclo}, gen_local {gen_local}\n")
     else:
         islas = [toolbox.population(n=POP_POR_ISLA) for _ in range(N_ISLAS)]
         gen_global = 0
         ciclo = 0
         gen_local = 0
 
-        if WARM_START_N > 0 and ELITES_FILE.exists():
+        if WARM_START_N > 0 and GA_ELITES_FILE.exists():
             try:
-                elites_data = json.loads(ELITES_FILE.read_text(encoding="utf-8"))
+                elites_data = json.loads(GA_ELITES_FILE.read_text(encoding="utf-8"))
                 n_reinyectar = min(len(elites_data), WARM_START_N)
                 for k in range(n_reinyectar):
                     genoma = elites_data[k]["genoma"]
                     if len(genoma) == EQUIPO_SIZE and all(0 <= g < N_POOL for g in genoma):
                         isla_destino = islas[k % N_ISLAS]
                         isla_destino[k // N_ISLAS] = creator.Individual(genoma)
-                print(f"🔥 Warm start: {n_reinyectar} elites reinyectados\n")
+                print(f"[FIRE] Warm start: {n_reinyectar} elites reinyectados\n")
             except Exception as e:
-                print(f"⚠️  No se pudieron cargar elites: {e}\n")
+                print(f"[WARN]  No se pudieron cargar elites: {e}\n")
 
-    while gen_global < N_GEN:
-        poblacion_snapshot = [ind for isla in islas for ind in isla]
+    # ========== ARENA PERSISTENTE ==========
+    arena = BattleArena()
 
-        for idx_isla, isla in enumerate(islas):
-            print(f"\n=== Gen {gen_global} | Isla {idx_isla} | Evaluando {len(isla)} ===")
+    try:
+        while gen_global < N_GEN:
+            poblacion_snapshot = [ind for isla in islas for ind in isla]
 
-            # ===== Evaluación de la población (padres) =====
-            sin_evaluar = [ind for ind in isla if not ind.fitness.valid]
-            if sin_evaluar:
-                for k, ind in enumerate(sin_evaluar, 1):
-                    fit = evaluar_hibrido(ind, poblacion_snapshot)
-                    ind.fitness.values = (fit,)
-                    equipo = [POOL[i] for i in ind]
-                    nombres = ", ".join(p["pokemon"] for p in equipo[:3])
-                    print(f"    [Isla {idx_isla}] {k}/{len(sin_evaluar)} | fit={fit:.3f} | {nombres}...")
+            for idx_isla, isla in enumerate(islas):
+                print(f"\n=== Gen {gen_global} | Isla {idx_isla} | Evaluando {len(isla)} ===")
 
-            aplicar_diversidad(isla)
+                # Evaluación de padres
+                sin_evaluar = [ind for ind in isla if not ind.fitness.valid]
+                if sin_evaluar:
+                    for k, ind in enumerate(sin_evaluar, 1):
+                        fit = evaluar_hibrido(ind, poblacion_snapshot, arena)
+                        ind.fitness.values = (fit,)
+                        equipo = [POOL[i] for i in ind]
+                        nombres = ", ".join(p["pokemon"] for p in equipo[:3])
+                        print(f"    [Isla {idx_isla}] {k}/{len(sin_evaluar)} | fit={fit:.3f} | {nombres}...")
 
-            avg = sum(ind.fitness.values[0] for ind in isla) / len(isla)
-            mx = max(ind.fitness.values[0] for ind in isla)
-            logbook.record(gen=gen_global, isla=idx_isla, nevals=len(isla), avg=avg, max=mx)
+                aplicar_diversidad(isla)
 
-            # ===== Evolución =====
-            offspring = toolbox.select(isla, len(isla))
-            offspring = [toolbox.clone(ind) for ind in offspring]
+                avg = sum(ind.fitness.values[0] for ind in isla) / len(isla)
+                mx = max(ind.fitness.values[0] for ind in isla)
+                logbook.record(gen=gen_global, isla=idx_isla, nevals=len(isla), avg=avg, max=mx)
 
-            for c1, c2 in zip(offspring[::2], offspring[1::2]):
-                if random.random() < CXPB:
-                    toolbox.mate(c1, c2)
-                    del c1.fitness.values
-                    del c2.fitness.values
+                # Evolución
+                offspring = toolbox.select(isla, len(isla))
+                offspring = [toolbox.clone(ind) for ind in offspring]
 
-            for mutant in offspring:
-                if random.random() < MUTPB:
-                    toolbox.mutate(mutant)
-                    del mutant.fitness.values
+                for c1, c2 in zip(offspring[::2], offspring[1::2]):
+                    if random.random() < CXPB:
+                        toolbox.mate(c1, c2)
+                        del c1.fitness.values
+                        del c2.fitness.values
 
-            elite = tools.selBest(isla, 1)
-            offspring[-1:] = [toolbox.clone(ind) for ind in elite]
+                for mutant in offspring:
+                    if random.random() < MUTPB:
+                        toolbox.mutate(mutant)
+                        del mutant.fitness.values
 
-            # ===== Evaluación de hijos =====
-            nuevos = [ind for ind in offspring if not ind.fitness.valid]
-            if nuevos:
-                for j, ind in enumerate(nuevos, 1):
-                    fit = evaluar_hibrido(ind, poblacion_snapshot)
-                    ind.fitness.values = (fit,)
-                    equipo = [POOL[i] for i in ind]
-                    nombres = ", ".join(p["pokemon"] for p in equipo[:3])
-                    print(f"    [Isla {idx_isla}] hijo {j}/{len(nuevos)} | fit={fit:.3f} | {nombres}...")
+                elite = tools.selBest(isla, 1)
+                offspring[-1:] = [toolbox.clone(ind) for ind in elite]
 
-            islas[idx_isla] = offspring
+                # Evaluación de hijos
+                nuevos = [ind for ind in offspring if not ind.fitness.valid]
+                if nuevos:
+                    for j, ind in enumerate(nuevos, 1):
+                        fit = evaluar_hibrido(ind, poblacion_snapshot, arena)
+                        ind.fitness.values = (fit,)
+                        equipo = [POOL[i] for i in ind]
+                        nombres = ", ".join(p["pokemon"] for p in equipo[:3])
+                        print(f"    [Isla {idx_isla}] hijo {j}/{len(nuevos)} | fit={fit:.3f} | {nombres}...")
 
-            # ===== Resumen isla =====
-            validos = [ind for ind in offspring if ind.fitness.valid]
-            if validos:
-                avg_isla = sum(ind.fitness.values[0] for ind in validos) / len(validos)
-                mx_isla = max(ind.fitness.values[0] for ind in validos)
-                print(f"    → Isla {idx_isla}: avg={avg_isla:.3f}, max={mx_isla:.3f}")
+                islas[idx_isla] = offspring
 
-        gen_global += 1
-        gen_local += 1
-        guardar_checkpoint(gen_global, ciclo, gen_local, islas)
-        print(f"\n💾 Checkpoint guardado (gen {gen_global})")
+                validos = [ind for ind in offspring if ind.fitness.valid]
+                if validos:
+                    avg_isla = sum(ind.fitness.values[0] for ind in validos) / len(validos)
+                    mx_isla = max(ind.fitness.values[0] for ind in validos)
+                    print(f"    -> Isla {idx_isla}: avg={avg_isla:.3f}, max={mx_isla:.3f}")
 
-        if gen_local >= GENERACIONES_POR_CICLO and gen_global < N_GEN:
-            islas = migrar(islas, N_MIGRANTES)
-            print(f"🔄 Migración tras gen {gen_global}")
-            ciclo += 1
-            gen_local = 0
+            gen_global += 1
+            gen_local += 1
             guardar_checkpoint(gen_global, ciclo, gen_local, islas)
+            print(f"\n[SAVE] Checkpoint guardado (gen {gen_global})")
 
-    print()
-    print(logbook.stream)
+            if gen_local >= GENERACIONES_POR_CICLO and gen_global < N_GEN:
+                islas = migrar(islas, N_MIGRANTES)
+                print(f" Migración tras gen {gen_global}")
+                ciclo += 1
+                gen_local = 0
+                guardar_checkpoint(gen_global, ciclo, gen_local, islas)
 
-    # ============ RESULTADO FINAL ============
-    pop_final = [ind for isla in islas for ind in isla]
-    # 20 candidatos × 25 batallas (mismo tiempo que 10×50, mejor Top 5)
-    candidatos = tools.selBest(pop_final, min(20, len(pop_final)))
+        print()
+        print(logbook.stream)
 
-    print("\n" + "=" * 60)
-    print("🏆 TOP 5 EQUIPOS ENCONTRADOS")
-    print("=" * 60)
+        # ============ RESULTADO FINAL ============
+        pop_final = [ind for isla in islas for ind in isla]
+        candidatos = tools.selBest(pop_final, min(TOP_CANDIDATOS, len(pop_final)))
 
-    resultados_top5 = []
-    for ind in candidatos:
-        equipo = [POOL[i] for i in ind]
+        print("\n" + "=" * 60)
+        print("[TOP] TOP 5 EQUIPOS ENCONTRADOS")
+        print("=" * 60)
 
-        # 5 rivales fijos × 3 batallas = 15
-        rivales_eval = random.sample(RIVALES_FIJOS, min(len(RIVALES_FIJOS), 5))
-        winrates = []
-        for rival in rivales_eval:
-            wr = simular_enfrentamiento(equipo, rival, n_batallas=3)
-            winrates.append(wr)
-        wr_fijo = sum(winrates) / len(winrates) if winrates else 0.0
+        resultados_top5 = []
+        for ind in candidatos:
+            equipo = [POOL[i] for i in ind]
 
-        # 5 rivales población × 2 batallas = 10
-        rivales_pob_eval = random.sample(
-            [p for p in pop_final if list(p) != list(ind)],
-            min(5, len(pop_final) - 1)
-        )
-        winrates_pob = []
-        for rival_ind in rivales_pob_eval:
-            rival_eq = [POOL[i] for i in rival_ind]
-            wr = simular_enfrentamiento(equipo, rival_eq, n_batallas=2)
-            winrates_pob.append(wr)
-        wr_pob = sum(winrates_pob) / len(winrates_pob) if winrates_pob else 0.0
-        # Total: 25 batallas por candidato × 20 candidatos = 500 (mismo costo)
+            rivales_eval = random.sample(RIVALES_FIJOS, min(len(RIVALES_FIJOS), TOP_EVAL_FIJOS))
+            winrates = []
+            for rival in rivales_eval:
+                wr = arena.battle(
+                    equipo, rival,
+                    n_batallas=TOP_EVAL_FIJOS_BATALLAS,
+                    model_a=MODEL_A, model_b=MODEL_B,
+                )
+                winrates.append(wr)
+            wr_fijo = sum(winrates) / len(winrates) if winrates else 0.0
 
-        roles_score = score_roles(equipo)
-        cob = cobertura_defensiva(equipo)
-        sin = sinergia_ofensiva(equipo)
+            rivales_pob_eval = random.sample(
+                [p for p in pop_final if list(p) != list(ind)],
+                min(TOP_EVAL_POB, len(pop_final) - 1),
+            )
+            winrates_pob = []
+            for rival_ind in rivales_pob_eval:
+                rival_eq = [POOL[i] for i in rival_ind]
+                wr = arena.battle(
+                    equipo, rival_eq,
+                    n_batallas=TOP_EVAL_POB_BATALLAS,
+                    model_a=MODEL_A, model_b=MODEL_B,
+                )
+                winrates_pob.append(wr)
+            wr_pob = sum(winrates_pob) / len(winrates_pob) if winrates_pob else 0.0
 
-        fitness_recalculado = (
-            PESO_WINRATE_FIJO * wr_fijo
-            + PESO_WINRATE_POBLACION * wr_pob
-            + PESO_ROLES * roles_score
-            + PESO_COBERTURA * cob
-            + PESO_SINERGIA * sin
-        )
+            roles_score = score_roles(equipo)
+            cob = cobertura_defensiva(equipo)
+            sin = sinergia_ofensiva(equipo)
 
-        resultados_top5.append({
-            "equipo": equipo,
-            "fitness": fitness_recalculado,
-            "fitness_evolucion": ind.fitness.values[0],
-            "desglose": {
-                "winrate_fijo": wr_fijo,
-                "winrate_poblacion": wr_pob,
-                "score_roles": roles_score,
-                "cobertura_defensiva": cob,
-                "sinergia_ofensiva": sin,
+            fitness_recalculado = (
+                PESO_WINRATE_FIJO * wr_fijo
+                + PESO_WINRATE_POBLACION * wr_pob
+                + PESO_ROLES * roles_score
+                + PESO_COBERTURA * cob
+                + PESO_SINERGIA * sin
+            )
+
+            resultados_top5.append({
+                "equipo": equipo,
+                "fitness": fitness_recalculado,
+                "fitness_evolucion": ind.fitness.values[0],
+                "desglose": {
+                    "winrate_fijo": wr_fijo,
+                    "winrate_poblacion": wr_pob,
+                    "score_roles": roles_score,
+                    "cobertura_defensiva": cob,
+                    "sinergia_ofensiva": sin,
+                },
+            })
+
+        resultados_top5.sort(key=lambda x: x["fitness"], reverse=True)
+        resultados_top5 = resultados_top5[:5]
+
+        for i, r in enumerate(resultados_top5, 1):
+            r["rank"] = i
+            equipo = r["equipo"]
+            d = r["desglose"]
+            print(f"\n--- #{i} ---")
+            for j, p in enumerate(equipo):
+                tipos = "/".join(p["types"])
+                print(f"  {j+1}. {p['pokemon']:<25} [{tipos}]")
+            print(f"  WR_Fijo: {d['winrate_fijo']:.1%} | WR_Pob: {d['winrate_poblacion']:.1%} | "
+                  f"Roles: {d['score_roles']:.2f} | Cob: {d['cobertura_defensiva']:.2f} | "
+                  f"Sin: {d['sinergia_ofensiva']:.2f}")
+            print(f"  FITNESS rec: {r['fitness']:.3f} | FITNESS evo: {r['fitness_evolucion']:.3f}")
+
+        mejor = resultados_top5[0]
+
+        resultado = {
+            "timestamp": datetime.now().isoformat(),
+            "equipo": mejor["equipo"],
+            "fitness": mejor["fitness"],
+            "top5": resultados_top5,
+            "desglose": mejor["desglose"],
+            "config": {
+                "N_ISLAS": N_ISLAS, "POP_POR_ISLA": POP_POR_ISLA,
+                "N_GEN": N_GEN, "GENERACIONES_POR_CICLO": GENERACIONES_POR_CICLO,
+                "N_MIGRANTES": N_MIGRANTES, "CXPB": CXPB, "MUTPB": MUTPB,
+                "N_RIVALES_FIJOS": N_RIVALES_FIJOS,
+                "N_BATALLAS_FIJOS": N_BATALLAS_FIJOS,
+                "N_RIVALES_POBLACION": N_RIVALES_POBLACION,
+                "N_BATALLAS_COEVOLUCION": N_BATALLAS_COEVOLUCION,
+                "PESO_WINRATE_FIJO": PESO_WINRATE_FIJO,
+                "PESO_WINRATE_POBLACION": PESO_WINRATE_POBLACION,
+                "PESO_ROLES": PESO_ROLES,
+                "PESO_COBERTURA": PESO_COBERTURA,
+                "PESO_SINERGIA": PESO_SINERGIA,
+                "LAMBDA_DIVERSIDAD": LAMBDA_DIVERSIDAD,
+                "UMBRAL_SIMILITUD": UMBRAL_SIMILITUD,
+                "SEED": SEED,
+                "modelo_a": MODEL_A,
+                "modelo_b": MODEL_B,
             },
+            "logbook": [dict(r) for r in logbook],
+        }
+        GA_RESULT_FILE.write_text(
+            json.dumps(resultado, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
+
+        historial = (
+            json.loads(GA_HISTORY_FILE.read_text(encoding="utf-8"))
+            if GA_HISTORY_FILE.exists() else []
+        )
+        historial.append({
+            "timestamp": resultado["timestamp"],
+            "fitness": mejor["fitness"],
+            "winrate_fijo": mejor["desglose"]["winrate_fijo"],
+            "config": resultado["config"],
+            "top5_nombres": [
+                {"rank": r["rank"],
+                 "equipo": [p["pokemon"] for p in r["equipo"]],
+                 "fitness": r["fitness"]}
+                for r in resultados_top5
+            ],
         })
+        GA_HISTORY_FILE.write_text(
+            json.dumps(historial, indent=2, ensure_ascii=False), encoding="utf-8"
+        )
 
-    resultados_top5.sort(key=lambda x: x["fitness"], reverse=True)
-    resultados_top5 = resultados_top5[:5]
+        elites_previos = (
+            json.loads(GA_ELITES_FILE.read_text(encoding="utf-8"))
+            if GA_ELITES_FILE.exists() else []
+        )
+        candidatos_validos = [
+            i for i in pop_final if i.fitness.valid and len(i.fitness.values) > 0
+        ]
+        top_validos = tools.selBest(candidatos_validos, min(5, len(candidatos_validos)))
+        nuevos = [
+            {"genoma": list(ind), "fitness": ind.fitness.values[0],
+             "nombres": [POOL[i]["pokemon"] for i in ind]}
+            for ind in top_validos
+        ]
+        todos = elites_previos + nuevos
+        todos.sort(key=lambda x: x["fitness"], reverse=True)
+        GA_ELITES_FILE.write_text(
+            json.dumps(todos[:10], indent=2, ensure_ascii=False), encoding="utf-8"
+        )
 
-    for i, r in enumerate(resultados_top5, 1):
-        r["rank"] = i
-        equipo = r["equipo"]
-        d = r["desglose"]
-        print(f"\n--- #{i} ---")
-        for j, p in enumerate(equipo):
-            tipos = "/".join(p["types"])
-            print(f"  {j+1}. {p['pokemon']:<25} [{tipos}]")
-        print(f"  WR_Fijo: {d['winrate_fijo']:.1%} | WR_Pob: {d['winrate_poblacion']:.1%} | "
-              f"Roles: {d['score_roles']:.2f} | Cob: {d['cobertura_defensiva']:.2f} | "
-              f"Sin: {d['sinergia_ofensiva']:.2f}")
-        print(f"  FITNESS rec: {r['fitness']:.3f} | FITNESS evo: {r['fitness_evolucion']:.3f}")
+        if CHECKPOINT_FILE.exists():
+            CHECKPOINT_FILE.unlink()
 
-    mejor = resultados_top5[0]
+        print(f"\n[OK] Resultado: {GA_RESULT_FILE}")
+        print(f"[OK] Historial: {GA_HISTORY_FILE}")
+        print(f"[OK] Elites:    {GA_ELITES_FILE}")
+        print(f"[TIP] Checkpoint borrado (corrida terminada)")
 
-    out_dir = Path("data/processed")
-    out_dir.mkdir(parents=True, exist_ok=True)
-
-    resultado = {
-        "timestamp": datetime.now().isoformat(),
-        "equipo": mejor["equipo"],
-        "fitness": mejor["fitness"],
-        "top5": resultados_top5,
-        "desglose": mejor["desglose"],
-        "config": {
-            "N_ISLAS": N_ISLAS, "POP_POR_ISLA": POP_POR_ISLA,
-            "N_GEN": N_GEN, "GENERACIONES_POR_CICLO": GENERACIONES_POR_CICLO,
-            "N_MIGRANTES": N_MIGRANTES, "CXPB": CXPB, "MUTPB": MUTPB,
-            "N_RIVALES_FIJOS": N_RIVALES_FIJOS, "N_BATALLAS_FIJOS": N_BATALLAS_FIJOS,
-            "N_RIVALES_POBLACION": N_RIVALES_POBLACION,
-            "N_BATALLAS_COEVOLUCION": N_BATALLAS_COEVOLUCION,
-            "PESO_WINRATE_FIJO": PESO_WINRATE_FIJO,
-            "PESO_WINRATE_POBLACION": PESO_WINRATE_POBLACION,
-            "PESO_ROLES": PESO_ROLES,
-            "PESO_COBERTURA": PESO_COBERTURA,
-            "PESO_SINERGIA": PESO_SINERGIA,
-            "LAMBDA_DIVERSIDAD": LAMBDA_DIVERSIDAD, "SEED": SEED,
-        },
-        "logbook": [dict(r) for r in logbook],
-    }
-    RESULT_FILE.write_text(json.dumps(resultado, indent=2, ensure_ascii=False), encoding="utf-8")
-
-    historial = json.loads(HISTORY_FILE.read_text(encoding="utf-8")) if HISTORY_FILE.exists() else []
-    historial.append({
-        "timestamp": resultado["timestamp"],
-        "fitness": mejor["fitness"],
-        "winrate_fijo": mejor["desglose"]["winrate_fijo"],
-        "config": resultado["config"],
-        "top5_nombres": [
-            {"rank": r["rank"], "equipo": [p["pokemon"] for p in r["equipo"]], "fitness": r["fitness"]}
-            for r in resultados_top5
-        ],
-    })
-    HISTORY_FILE.write_text(json.dumps(historial, indent=2, ensure_ascii=False), encoding="utf-8")
-
-    elites_previos = json.loads(ELITES_FILE.read_text(encoding="utf-8")) if ELITES_FILE.exists() else []
-    candidatos_validos = [ind for ind in pop_final if ind.fitness.valid and len(ind.fitness.values) > 0]
-    top_validos = tools.selBest(candidatos_validos, min(5, len(candidatos_validos)))
-    nuevos = [
-        {"genoma": list(ind), "fitness": ind.fitness.values[0],
-         "nombres": [POOL[i]["pokemon"] for i in ind]}
-        for ind in top_validos
-    ]
-    todos = elites_previos + nuevos
-    todos.sort(key=lambda x: x["fitness"], reverse=True)
-    ELITES_FILE.write_text(json.dumps(todos[:10], indent=2, ensure_ascii=False), encoding="utf-8")
-
-    if CHECKPOINT_FILE.exists():
-        CHECKPOINT_FILE.unlink()
-
-    print(f"\n✅ Resultado: {RESULT_FILE}")
-    print(f"✅ Historial: {HISTORY_FILE}")
-    print(f"✅ Elites: {ELITES_FILE}")
-    print(f"💡 Checkpoint borrado (corrida terminada)")
+    finally:
+        arena.close()
+        print("[CLOSED] Arena cerrada.")
 
 
 if __name__ == "__main__":

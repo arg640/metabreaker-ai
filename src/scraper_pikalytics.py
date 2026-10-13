@@ -21,12 +21,12 @@ def descargar_html(url: str, nombre_archivo: str) -> None:
 
     ruta = OUTPUT_DIR / nombre_archivo
     ruta.write_text(response.text, encoding="utf-8")
-    print(f"✅ Guardado: {ruta} ({len(response.text)} caracteres)")
+    print(f"[OK] Guardado: {ruta} ({len(response.text)} caracteres)")
 
     if "Rillaboom" in response.text:
-        print("🎯 ¡'Rillaboom' encontrado en el HTML! Los datos están ahí.")
+        print(" ¡'Rillaboom' encontrado en el HTML! Los datos están ahí.")
     else:
-        print("⚠️ 'Rillaboom' NO está en el HTML. Necesitaremos otra estrategia.")
+        print("[WARN] 'Rillaboom' NO está en el HTML. Necesitaremos otra estrategia.")
 
 if __name__ == "__main__":
     descargar_html(URL, "pikalytics_regmc.html")

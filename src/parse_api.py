@@ -118,13 +118,13 @@ def parse_pokemon(entry: dict) -> tuple[dict | None, str]:
 
 def main():
     if not INPUT.exists():
-        print(f"❌ No existe {INPUT}. Corre primero src/scraper_full.py")
+        print(f"[ERROR] No existe {INPUT}. Corre primero src/scraper_full.py")
         return
 
     with open(INPUT, encoding="utf-8") as f:
         data = json.load(f)
 
-    print(f"📥 Entradas en el JSON crudo: {len(data)}\n")
+    print(f"[IN] Entradas en el JSON crudo: {len(data)}\n")
 
     pool = []
     motivos = Counter()
@@ -144,29 +144,29 @@ def main():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(pool, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    print(f"✅ Pool final: {len(pool)} Pokémon")
-    print(f"\n📊 Descartados:")
+    print(f"[OK] Pool final: {len(pool)} Pokémon")
+    print(f"\n[STATS] Descartados:")
     for motivo, n in motivos.most_common():
         print(f"   {motivo}: {n}")
 
-    print(f"\n📊 Species keys duplicados: {len(duplicados)}")
+    print(f"\n[STATS] Species keys duplicados: {len(duplicados)}")
     for k, v in sorted(duplicados.items(), key=lambda x: -x[1])[:10]:
         formas = [p["pokemon"] for p in pool if p["species_key"] == k]
         print(f"   - {k}: {formas}")
 
-    print(f"\n📊 Top 10 del pool:")
+    print(f"\n[STATS] Top 10 del pool:")
     for p in pool[:10]:
         tipos = "/".join(p["types"])
         ab = p["ability"] or "—"
         it = p["item"] or "—"
         print(f"   {p['pokemon']:<25} [{tipos:<20}] uso={p['usage_pct']:.2f}%  ab={ab:<15} item={it}")
 
-    print(f"\n📊 Últimos 5 (los más raros que pasaron el filtro):")
+    print(f"\n[STATS] Últimos 5 (los más raros que pasaron el filtro):")
     for p in pool[-5:]:
         tipos = "/".join(p["types"])
         print(f"   {p['pokemon']:<25} [{tipos:<20}] uso={p['usage_pct']:.4f}%  games={p['games']}")
 
-    print(f"\n✅ Guardado en: {OUTPUT}")
+    print(f"\n[OK] Guardado en: {OUTPUT}")
 
 
 if __name__ == "__main__":

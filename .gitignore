@@ -1,29 +1,38 @@
 # Entorno virtual
 venv/
-env/
 .venv/
+env/
 
 # Python
 __pycache__/
 *.py[cod]
 *.egg-info/
 .pytest_cache/
+.mypy_cache/
+build/
+dist/
+
+# Datos crudos y procesados
+data/raw/
+data/processed/
+!data/processed/.gitkeep
+
+# Modelos (son binarios grandes)
+models_bc/*.pt
+models_bc/*.pkl
+models_bc/*.pth
 
 # Servidor de Showdown
 pokemon-showdown/
 
-# Datos crudos
-data/raw/
-
-# Jupyter
-.ipynb_checkpoints/
-
-# VS Code
+# IDE
 .vscode/
+.idea/
+*.swp
 
 # Sistema operativo
-.DS_Store
 Thumbs.db
+.DS_Store
 
-data/ga_logs/*.jsonl
-data/ga_logs/*.json
+# Logs
+*.log

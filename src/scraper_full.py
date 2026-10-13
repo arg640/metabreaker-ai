@@ -40,7 +40,7 @@ def descargar_lista() -> list[dict]:
     response = requests.get(API_LIST, headers=get_headers(), timeout=30)
     response.raise_for_status()
     data = response.json()
-    print(f"✅ Lista descargada: {len(data)} Pokémon")
+    print(f"[OK] Lista descargada: {len(data)} Pokémon")
     return data
 
 
@@ -96,7 +96,7 @@ def main():
     ruta = OUTPUT_DIR / "pikalytics_full.json"
     ruta.write_text(json.dumps(pokemon_completos, indent=2, ensure_ascii=False), encoding="utf-8")
 
-    print(f"\n✅ Guardado: {ruta}")
+    print(f"\n[OK] Guardado: {ruta}")
     print(f"   Pokémon completos: {len(pokemon_completos)}")
     print(f"   Fallos: {len(fallos)}")
     if fallos:

@@ -1,8 +1,9 @@
 # src/roles.py
 """
 Detección de roles para Pokémon en un equipo.
+
 - Detecta roles según movimientos.
-- Verifica COHERENCIA: Trick Room requiere Pokémon lentos, Tailwind requiere rápidos.
+- Verifica COHERENCIA: Trick Room requiere Pokémon lentos, Tailwind rápidos.
 """
 from src.pokemon_set import buscar_stats
 
@@ -16,7 +17,8 @@ MOVIMIENTOS_SOPORTE = {
     "Will-O-Wisp", "Taunt", "Quash", "After You", "Ally Switch",
     "Wide Guard", "Quick Guard", "Reflect", "Light Screen",
     "Aurora Veil", "Safeguard", "Coaching", "Decorate", "Life Dew",
-    "Skill Swap", "Topsy-Turvy", "Snarl", "Icy Wind",
+    "Skill Swap", "Topsy-Turvy", "Snarl", "Icy Wind", "Super Fang",
+    "Heal Pulse", "Jungle Healing", "Chilly Reception",
 }
 
 MOVIMIENTOS_SPEED_CONTROL = {
@@ -30,40 +32,51 @@ MOVIMIENTOS_RECUPERACION = {
     "Drain Punch", "Giga Drain", "Draining Kiss", "Horn Leech", "Oblivion Wing",
 }
 
-MOVIMIENTOS_STATUS = MOVIMIENTOS_SOPORTE | MOVIMIENTOS_RECUPERACION | {
+MOVIMIENTOS_PROTECT = {
     "Protect", "Detect", "King's Shield", "Spiky Shield", "Baneful Bunker",
     "Obstruct", "Silk Trap", "Burning Bulwark",
-    "Swords Dance", "Nasty Plot", "Calm Mind", "Dragon Dance", "Bulk Up",
-    "Iron Defense", "Amnesia", "Agility", "Rock Polish", "Shell Smash",
-    "Substitute", "Rest", "Sleep Talk", "Toxic", "Toxic Spikes",
-    "Stealth Rock", "Spikes", "Sticky Web", "Rain Dance", "Sunny Day",
-    "Sandstorm", "Snowscape", "Chilly Reception", "Haze", "Clear Smog",
-    "Defog", "Rapid Spin",
 }
 
-# Umbrales de velocidad
-SPE_LENTO = 70     # <= 70 → abusa de Trick Room
-SPE_RAPIDO = 100   # >= 100 → abusa de Tailwind
+MOVIMIENTOS_STATUS = (
+    MOVIMIENTOS_SOPORTE
+    | MOVIMIENTOS_RECUPERACION
+    | MOVIMIENTOS_PROTECT
+    | {
+        "Swords Dance", "Nasty Plot", "Calm Mind", "Dragon Dance", "Bulk Up",
+        "Iron Defense", "Amnesia", "Agility", "Rock Polish", "Shell Smash",
+        "Substitute", "Rest", "Sleep Talk", "Toxic", "Toxic Spikes",
+        "Stealth Rock", "Spikes", "Sticky Web", "Rain Dance", "Sunny Day",
+        "Sandstorm", "Snowscape", "Haze", "Clear Smog", "Defog", "Rapid Spin",
+    }
+)
+
+# Umbrales de velocidad (base stat de Velocidad)
+SPE_LENTO = 60     # <= 60 -> TR real
+SPE_RAPIDO = 100   # >= 100 -> Tailwind real
+
+# Movimientos que están en listas de soporte/recuperación pero SÍ hacen daño.
+# Sin esto, atacantes híbridos como Incineroar o Iron Hands no se detectan.
+MOVIMIENTOS_DANO_HIBRIDO = {
+    "Fake Out", "Icy Wind", "Snarl", "Electroweb", "Super Fang",
+    "Drain Punch", "Giga Drain", "Draining Kiss", "Horn Leech", "Oblivion Wing",
+}
 
 
 def es_movimiento_dano(move_name: str) -> bool:
+    if move_name in MOVIMIENTOS_DANO_HIBRIDO:
+        return True
     return move_name not in MOVIMIENTOS_STATUS
 
-
 def _stats_de(pokemon: dict) -> dict:
-    """Devuelve los stats base de un Pokémon."""
-    nombre = pokemon.get("pokemon", "")
-    return buscar_stats(nombre)
+    return buscar_stats(pokemon.get("pokemon", ""))
 
 
 def _speed_de(pokemon: dict) -> int:
-    """Devuelve la velocidad base del Pokémon (0 si no se conoce)."""
     return _stats_de(pokemon).get("spe", 0)
 
 
 def detectar_roles(pokemon: dict) -> set:
-    """Devuelve los roles que cumple un Pokémon según sus moves."""
-    roles = set()
+    roles: set[str] = set()
     moves = {m["name"] for m in pokemon.get("moves", [])}
 
     if not moves:
@@ -75,10 +88,7 @@ def detectar_roles(pokemon: dict) -> set:
     if moves & MOVIMIENTOS_SPEED_CONTROL:
         roles.add("speed_control")
 
-    tiene_protect = bool(moves & {
-        "Protect", "Detect", "King's Shield", "Spiky Shield",
-        "Baneful Bunker", "Obstruct",
-    })
+    tiene_protect = bool(moves & MOVIMIENTOS_PROTECT)
     tiene_recuperacion = bool(moves & MOVIMIENTOS_RECUPERACION)
     if tiene_protect and tiene_recuperacion:
         roles.add("tanque")
@@ -92,21 +102,18 @@ def detectar_roles(pokemon: dict) -> set:
 
 def score_roles(equipo: list) -> float:
     """
-    Score de 0 a 1 según distribución y COHERENCIA de roles.
-    Verifica que TR/Tailwind tengan sentido con los stats del equipo.
+    Score 0..1 según distribución y coherencia de roles en el equipo.
     """
     conteos = {"soporte": 0, "speed_control": 0, "tanque": 0, "atacante": 0}
     for p in equipo:
         for rol in detectar_roles(p):
             conteos[rol] += 1
 
-    # Contar Pokémon lentos y rápidos
     speeds = [_speed_de(p) for p in equipo]
     n_lentos = sum(1 for s in speeds if 0 < s <= SPE_LENTO)
     n_rapidos = sum(1 for s in speeds if s >= SPE_RAPIDO)
 
-    # ¿Qué speed control tiene el equipo?
-    todos_los_moves = set()
+    todos_los_moves: set[str] = set()
     for p in equipo:
         for m in p.get("moves", []):
             todos_los_moves.add(m["name"])
@@ -116,7 +123,7 @@ def score_roles(equipo: list) -> float:
 
     score = 1.0
 
-    # --- Reglas generales de roles ---
+    # Roles generales
     if conteos["atacante"] < 2:
         score -= 0.25
     if conteos["atacante"] > 5:
@@ -128,7 +135,7 @@ def score_roles(equipo: list) -> float:
     if conteos["tanque"] == 0:
         score -= 0.15
 
-    # --- Coherencia del speed control ---
+    # Coherencia del speed control
     if not tiene_tr and not tiene_tw:
         score -= 0.35
     else:
@@ -142,8 +149,9 @@ def score_roles(equipo: list) -> float:
 
 if __name__ == "__main__":
     import json
+    from src.config import SAMPLE_TEAMS_FILE
 
-    with open("data/processed/sample_teams.json", encoding="utf-8") as f:
+    with open(SAMPLE_TEAMS_FILE, encoding="utf-8") as f:
         equipos = json.load(f)
 
     for i, eq in enumerate(equipos[:5]):

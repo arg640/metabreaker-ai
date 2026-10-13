@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metabreaker-ai"
+version = "0.3.0"
+description = "Sistema de IA que genera equipos anti-meta para Pokémon VGC usando Algoritmos Genéticos con Co-evolución y Fitness Híbrido."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Alvaro Rizo" },
+]
+license = { text = "Proyecto académico" }
+
+[tool.setuptools]
+packages = ["src", "scripts"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+addopts = "-ra -q"
